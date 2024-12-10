@@ -8,10 +8,7 @@ import java.util.List;
 
 public interface UserDao {
     void addUser(User user);
-    User getUserById(int id);
+    User getUserById(String id);
     List<User> getUsers();
-    void updateUser(User user, String id, String password, String name, UserRoleEnum userRoleEnum, StateEnum stateEnum, int idCompany);
-    void deleteUser(User user);
-    void deleteAllUsers();
-    void truncateUser();
+    void updateUser(User user, String password, String name, UserRoleEnum userRoleEnum, StateEnum stateEnum, int idCompany);
 }

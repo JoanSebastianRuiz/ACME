@@ -2,6 +2,7 @@ package projectacme.model;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.SQLException;
 
 public class ConnectionData {
     private String url;
@@ -15,10 +16,11 @@ public class ConnectionData {
         this.password = password;
     }
 
-    public static java.sql.Connection getConnectionDatabase(){
-        if (instance == null) {
+    public static java.sql.Connection getConnectionDatabase() throws SQLException {
+        if (instance == null || instance.isClosed()) {
             try {
-            instance = DriverManager.getConnection("jdbc:mysql://localhost:3306/astronomy", "root", "WandaSQL");
+            instance = DriverManager.getConnection("jdbc:mysql://localhost:3306/Acme", "root", "WandaSQL");
+            System.out.println("Connection Successfully");
             } catch (Exception e) {
                 System.out.println(e.getMessage());
             }
