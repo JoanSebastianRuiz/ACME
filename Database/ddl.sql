@@ -23,7 +23,7 @@ CREATE TABLE User(
     id VARCHAR(10) PRIMARY KEY NOT NULL,
     password VARCHAR(100) NOT NULL,
     name VARCHAR(100) NOT NULL,
-    role ENUM("sudo", "manager", "officer", "security guard") NOT NULL,
+    role ENUM("sudo", "manager", "officer", "securityGuard") NOT NULL,
     state ENUM("active", "inactive") NOT NULL,
     idCompany INT NULL,
     FOREIGN KEY(idCompany) REFERENCES Company(id)

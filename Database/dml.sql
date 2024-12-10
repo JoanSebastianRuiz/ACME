@@ -14,11 +14,11 @@ INSERT INTO User (id, password, name, role, state, idCompany) VALUES
 ("1012345681", "officerpass4", "James Wilson", "officer", "active", 4),
 ("1012345682", "officerpass5", "Olivia Taylor", "officer", "active", 5),
 
-("1012345683", "securitypass1", "Aiden Clark", "security guard", "active", null),
-("1012345684", "securitypass2", "Mason Lewis", "security guard", "active", null),
-("1012345685", "securitypass3", "Isabella Harris", "security guard", "active", null),
-("1012345686", "securitypass4", "Lucas Martin", "security guard", "active", null),
-("1012345687", "securitypass5", "Amelia Young", "security guard", "active", null),
+("1012345683", "securitypass1", "Aiden Clark", "securityGuard", "active", null),
+("1012345684", "securitypass2", "Mason Lewis", "securityGuard", "active", null),
+("1012345685", "securitypass3", "Isabella Harris", "securityGuard", "active", null),
+("1012345686", "securitypass4", "Lucas Martin", "securityGuard", "active", null),
+("1012345687", "securitypass5", "Amelia Young", "securityGuard", "active", null),
 
 ("1012345688", "managerpass1", "David Lee", "manager", "active", 1),
 ("1012345689", "managerpass2", "Emma Walker", "manager", "active", 2),
