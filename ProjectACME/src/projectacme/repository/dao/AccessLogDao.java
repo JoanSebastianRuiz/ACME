@@ -1,8 +1,6 @@
 package projectacme.repository.dao;
 
 import projectacme.model.Enum.AccessType;
-import projectacme.model.Enum.StateEnum;
-import projectacme.model.Enum.UserRoleEnum;
 import projectacme.model.AccessLog;
 
 import java.sql.Date;
