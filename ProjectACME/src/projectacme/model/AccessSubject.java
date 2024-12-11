@@ -3,20 +3,24 @@ package projectacme.model;
 import projectacme.model.Enum.StateEnum;
 import projectacme.model.Enum.UserRoleEnum;
 
-public class User {
+public class AccessSubject {
     private String id;
-    private String password;
     private String name;
+    private String phone;
+    private String emailAddress;
     private UserRoleEnum role;
     private StateEnum state;
+    private String password;
     private int idCompany;
 
-    public User(String id, String password, String name, UserRoleEnum role, StateEnum state, int idCompany) {
+    public AccessSubject(String id, String name, String phone, String emailAddress, UserRoleEnum role, StateEnum state, String password, int idCompany) {
         this.id = id;
-        this.password = password;
         this.name = name;
+        this.phone = phone;
+        this.emailAddress = emailAddress;
         this.role = role;
         this.state = state;
+        this.password = password;
         this.idCompany = idCompany;
     }
 
@@ -28,20 +32,28 @@ public class User {
         this.id = id;
     }
 
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
     public String getName() {
         return name;
     }
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
+    public String getEmailAddress() {
+        return emailAddress;
+    }
+
+    public void setEmailAddress(String emailAddress) {
+        this.emailAddress = emailAddress;
     }
 
     public UserRoleEnum getRole() {
@@ -58,6 +70,14 @@ public class User {
 
     public void setState(StateEnum state) {
         this.state = state;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     public int getIdCompany() {
