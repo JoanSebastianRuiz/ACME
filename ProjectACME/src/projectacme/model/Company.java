@@ -5,7 +5,13 @@ public class Company {
     private String name;
     private String phone;
 
+    public Company(String name, String phone) {
+        this.name = name;
+        this.phone = phone;
+    }
+
     public Company(int id, String name, String phone) {
+        this.id = id;
         this.name = name;
         this.phone = phone;
     }

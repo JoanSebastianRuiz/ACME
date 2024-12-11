@@ -2,29 +2,31 @@ package projectacme.model;
 
 import projectacme.model.Enum.AccessType;
 
-import java.sql.Date;
 import java.sql.Timestamp;
 
 public class AccessLog {
     private int id; // * Autoincrement
     private AccessType type;
     private Timestamp datetime;
-    private String idIndividual;
-    private String idUser;
+    private String idAccessSubject;
+    private int idScanner;
+    private String idAccessSubjectLogger;
 
-    public AccessLog(AccessType type, Timestamp datetime, String idIndividual, String idUser) {
+    public AccessLog(AccessType type, Timestamp datetime, String idAccessSubject, int idScanner, String idAccessSubjectLogger) {
         this.type = type;
         this.datetime = datetime;
-        this.idIndividual = idIndividual;
-        this.idUser = idUser;
+        this.idAccessSubject = idAccessSubject;
+        this.idScanner = idScanner;
+        this.idAccessSubjectLogger = idAccessSubjectLogger;
     }
 
-    public AccessLog(int id, AccessType type, Timestamp datetime, String idIndividual, String idUser) {
+    public AccessLog(int id, AccessType type, Timestamp datetime, String idAccessSubject, int idScanner, String idAccessSubjectLogger) {
         this.id = id;
         this.type = type;
         this.datetime = datetime;
-        this.idIndividual = idIndividual;
-        this.idUser = idUser;
+        this.idAccessSubject = idAccessSubject;
+        this.idScanner = idScanner;
+        this.idAccessSubjectLogger = idAccessSubjectLogger;
     }
 
     public int getId() {
@@ -51,19 +53,27 @@ public class AccessLog {
         this.datetime = datetime;
     }
 
-    public String getIdIndividual() {
-        return idIndividual;
+    public String getIdAccessSubject() {
+        return idAccessSubject;
     }
 
-    public void setIdIndividual(String idIndividual) {
-        this.idIndividual = idIndividual;
+    public void setIdAccessSubject(String idAccessSubject) {
+        this.idAccessSubject = idAccessSubject;
     }
 
-    public String getIdUser() {
-        return idUser;
+    public int getIdScanner() {
+        return idScanner;
     }
 
-    public void setIdUser(String idUser) {
-        this.idUser = idUser;
+    public void setIdScanner(int idScanner) {
+        this.idScanner = idScanner;
+    }
+
+    public String getIdAccessSubjectLogger() {
+        return idAccessSubjectLogger;
+    }
+
+    public void setIdAccessSubjectLogger(String idAccessSubjectLogger) {
+        this.idAccessSubjectLogger = idAccessSubjectLogger;
     }
 }
