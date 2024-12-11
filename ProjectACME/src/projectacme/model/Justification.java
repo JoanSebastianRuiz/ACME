@@ -1,18 +1,26 @@
 package projectacme.model;
 
-import java.sql.Date;
+import java.sql.Timestamp;
 
 public class Justification {
     private int id; // * Autoincrement
-    private Date datetime;
+    private Timestamp datetime;
     private String reason;
-    private String idUser;
+    private String idAccessSubjectLogger;
     private String idAnnotation;
 
-    public Justification(Date datetime, String reason, String idUser, String idAnnotation) {
+    public Justification(Timestamp datetime, String reason, String idAccessSubjectLogger, String idAnnotation) {
         this.datetime = datetime;
         this.reason = reason;
-        this.idUser = idUser;
+        this.idAccessSubjectLogger = idAccessSubjectLogger;
+        this.idAnnotation = idAnnotation;
+    }
+
+    public Justification(int id, Timestamp datetime, String reason, String idAccessSubjectLogger, String idAnnotation) {
+        this.id = id;
+        this.datetime = datetime;
+        this.reason = reason;
+        this.idAccessSubjectLogger = idAccessSubjectLogger;
         this.idAnnotation = idAnnotation;
     }
 
@@ -24,11 +32,11 @@ public class Justification {
         this.id = id;
     }
 
-    public Date getDatetime() {
+    public Timestamp getDatetime() {
         return datetime;
     }
 
-    public void setDatetime(Date datetime) {
+    public void setDatetime(Timestamp datetime) {
         this.datetime = datetime;
     }
 
@@ -40,12 +48,12 @@ public class Justification {
         this.reason = reason;
     }
 
-    public String getIdUser() {
-        return idUser;
+    public String getIdAccessSubjectLogger() {
+        return idAccessSubjectLogger;
     }
 
-    public void setIdUser(String idUser) {
-        this.idUser = idUser;
+    public void setIdAccessSubjectLogger(String idAccessSubjectLogger) {
+        this.idAccessSubjectLogger = idAccessSubjectLogger;
     }
 
     public String getIdAnnotation() {
