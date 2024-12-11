@@ -3,17 +3,18 @@ package projectacme.model;
 import projectacme.util.Enum.StateEnum;
 
 import java.sql.Date;
+import java.sql.Timestamp;
 
 public class Annotation {
     private int id; // * Autoincrement
-    private Date datetime;
+    private Timestamp datetime;
     private String reason;
     private Boolean suspended;
     private StateEnum state;
     private String idAccessSubject;
     private String idAccessSubjectLogger;
 
-    public Annotation(Date datetime, String reason, Boolean suspended, StateEnum state, String idAccessSubject, String idAccessSubjectLogger) {
+    public Annotation(Timestamp datetime, String reason, Boolean suspended, StateEnum state, String idAccessSubject, String idAccessSubjectLogger) {
         this.datetime = datetime;
         this.reason = reason;
         this.suspended = suspended;
@@ -22,7 +23,7 @@ public class Annotation {
         this.idAccessSubjectLogger = idAccessSubjectLogger;
     }
 
-    public Annotation(int id, Date datetime, String reason, Boolean suspended, StateEnum state, String idAccessSubject, String idAccessSubjectLogger) {
+    public Annotation(int id, Timestamp datetime, String reason, Boolean suspended, StateEnum state, String idAccessSubject, String idAccessSubjectLogger) {
         this.id = id;
         this.datetime = datetime;
         this.reason = reason;
@@ -40,11 +41,11 @@ public class Annotation {
         this.id = id;
     }
 
-    public Date getDatetime() {
+    public Timestamp getDatetime() {
         return datetime;
     }
 
-    public void setDatetime(Date datetime) {
+    public void setDatetime(Timestamp datetime) {
         this.datetime = datetime;
     }
 
