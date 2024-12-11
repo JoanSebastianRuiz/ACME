@@ -36,4 +36,13 @@ public class Vehicle {
     public void setIdIndividual(String idIndividual) {
         this.idIndividual = idIndividual;
     }
+
+    @Override
+    public String toString() {
+        return "Vehicle{" +
+                "plate='" + plate + '\'' +
+                ", type=" + type +
+                ", idIndividual='" + idIndividual + '\'' +
+                '}';
+    }
 }
