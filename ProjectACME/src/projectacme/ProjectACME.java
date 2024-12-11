@@ -4,17 +4,19 @@
  */
 package projectacme;
 
+import projectacme.view.InterfaceSudo;
+
 /**
  *
  * @author USUARIO
  */
 public class ProjectACME {
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
-        // TODO code application logic here
+        InterfaceSudo ventana = new InterfaceSudo();
+        
+        ventana.setVisible(true);
+        
     }
     
 }
