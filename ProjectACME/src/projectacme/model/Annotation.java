@@ -10,16 +10,26 @@ public class Annotation {
     private String reason;
     private Boolean suspended;
     private StateEnum state;
-    private String idIndividual;
-    private String idUser;
+    private String idAccessSubject;
+    private String idAccessSubjectLogger;
 
-    public Annotation(Date datetime, String reason, Boolean suspended, StateEnum state, String idIndividual, String idUser) {
+    public Annotation(Date datetime, String reason, Boolean suspended, StateEnum state, String idAccessSubject, String idAccessSubjectLogger) {
         this.datetime = datetime;
         this.reason = reason;
         this.suspended = suspended;
         this.state = state;
-        this.idIndividual = idIndividual;
-        this.idUser = idUser;
+        this.idAccessSubject = idAccessSubject;
+        this.idAccessSubjectLogger = idAccessSubjectLogger;
+    }
+
+    public Annotation(int id, Date datetime, String reason, Boolean suspended, StateEnum state, String idAccessSubject, String idAccessSubjectLogger) {
+        this.id = id;
+        this.datetime = datetime;
+        this.reason = reason;
+        this.suspended = suspended;
+        this.state = state;
+        this.idAccessSubject = idAccessSubject;
+        this.idAccessSubjectLogger = idAccessSubjectLogger;
     }
 
     public int getId() {
@@ -62,19 +72,19 @@ public class Annotation {
         this.state = state;
     }
 
-    public String getIdIndividual() {
-        return idIndividual;
+    public String getIdAccessSubject() {
+        return idAccessSubject;
     }
 
-    public void setIdIndividual(String idIndividual) {
-        this.idIndividual = idIndividual;
+    public void setIdAccessSubject(String idAccessSubject) {
+        this.idAccessSubject = idAccessSubject;
     }
 
-    public String getIdUser() {
-        return idUser;
+    public String getIdAccessSubjectLogger() {
+        return idAccessSubjectLogger;
     }
 
-    public void setIdUser(String idUser) {
-        this.idUser = idUser;
+    public void setIdAccessSubjectLogger(String idAccessSubjectLogger) {
+        this.idAccessSubjectLogger = idAccessSubjectLogger;
     }
 }

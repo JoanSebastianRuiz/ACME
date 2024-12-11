@@ -5,12 +5,12 @@ import projectacme.model.Enum.VehicleEnum;
 public class Vehicle {
     private String plate;
     private VehicleEnum type;
-    private String idIndividual;
+    private String idAccessSubject;
 
-    public Vehicle(String plate, VehicleEnum type, String idIndividual) {
+    public Vehicle(String plate, VehicleEnum type, String idAccessSubject) {
         this.plate = plate;
         this.type = type;
-        this.idIndividual = idIndividual;
+        this.idAccessSubject = idAccessSubject;
     }
 
     public String getPlate() {
@@ -29,20 +29,11 @@ public class Vehicle {
         this.type = type;
     }
 
-    public String getIdIndividual() {
-        return idIndividual;
+    public String getIdAccessSubject() {
+        return idAccessSubject;
     }
 
-    public void setIdIndividual(String idIndividual) {
-        this.idIndividual = idIndividual;
-    }
-
-    @Override
-    public String toString() {
-        return "Vehicle{" +
-                "plate='" + plate + '\'' +
-                ", type=" + type +
-                ", idIndividual='" + idIndividual + '\'' +
-                '}';
+    public void setIdAccessSubject(String idAccessSubject) {
+        this.idAccessSubject = idAccessSubject;
     }
 }

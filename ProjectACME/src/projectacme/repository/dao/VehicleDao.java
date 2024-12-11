@@ -1,7 +1,5 @@
 package projectacme.repository.dao;
 
-import projectacme.model.Enum.StateEnum;
-import projectacme.model.Enum.UserRoleEnum;
 import projectacme.model.Enum.VehicleEnum;
 import projectacme.model.Vehicle;
 

@@ -14,12 +14,12 @@ import java.util.List;
 public class VehicleImpl implements VehicleDao {
     @Override
     public void addVehicle(Vehicle vehicle) {
-        String sql = "INSERT INTO Vehicle(plate, type, idIndividual) VALUES (?, ?, ?);";
+        String sql = "INSERT INTO Vehicle(plate, type, idAccessSubject) VALUES (?, ?, ?);";
         try (java.sql.Connection connection = ConnectionData.getConnectionDatabase();
              PreparedStatement statement = connection.prepareStatement(sql)) {
             statement.setString(1, vehicle.getPlate());
             statement.setString(2, vehicle.getType().toString());
-            statement.setString(3, vehicle.getIdIndividual());
+            statement.setString(3, vehicle.getIdAccessSubject());
             statement.executeUpdate();
             System.out.println("Added: " + vehicle.getPlate());
         } catch (SQLException e) {
@@ -37,7 +37,7 @@ public class VehicleImpl implements VehicleDao {
             statement.setString(1, plate);
             ResultSet resultSet = statement.executeQuery();
             if (resultSet.next()) {
-                return new Vehicle(resultSet.getString("plate"), VehicleEnum.valueOf(resultSet.getString("type")), resultSet.getString("idIndividual"));
+                return new Vehicle(resultSet.getString("plate"), VehicleEnum.valueOf(resultSet.getString("type")), resultSet.getString("idAccessSubject"));
             }
         } catch (SQLException e) {
             System.out.println(e.getMessage());
@@ -54,7 +54,7 @@ public class VehicleImpl implements VehicleDao {
             ResultSet resultSet = statement.executeQuery();
             List<Vehicle> vehicles = new ArrayList<>();
             while (resultSet.next()) {
-                Vehicle vehicle = new Vehicle(resultSet.getString("plate"), VehicleEnum.valueOf(resultSet.getString("type")), resultSet.getString("idIndividual"));
+                Vehicle vehicle = new Vehicle(resultSet.getString("plate"), VehicleEnum.valueOf(resultSet.getString("type")), resultSet.getString("idAccessSubject"));
                 vehicles.add(vehicle);
             }
             System.out.println("Found All Successfully");
