@@ -1,6 +1,6 @@
 package projectacme.repository.dao;
 
-import projectacme.model.Enum.VehicleEnum;
+import projectacme.util.Enum.VehicleEnum;
 import projectacme.model.Vehicle;
 
 import java.util.List;

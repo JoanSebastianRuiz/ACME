@@ -2,8 +2,8 @@ package projectacme.repository.implementation;
 
 import projectacme.model.AccessSubject;
 import projectacme.model.ConnectionData;
-import projectacme.model.Enum.StateEnum;
-import projectacme.model.Enum.UserRoleEnum;
+import projectacme.util.Enum.StateEnum;
+import projectacme.util.Enum.UserRoleEnum;
 import projectacme.repository.dao.AccessSubjectDao;
 
 import java.sql.PreparedStatement;

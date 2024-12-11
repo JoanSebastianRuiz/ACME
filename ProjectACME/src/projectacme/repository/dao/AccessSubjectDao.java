@@ -1,8 +1,8 @@
 package projectacme.repository.dao;
 
 import projectacme.model.AccessSubject;
-import projectacme.model.Enum.StateEnum;
-import projectacme.model.Enum.UserRoleEnum;
+import projectacme.util.Enum.StateEnum;
+import projectacme.util.Enum.UserRoleEnum;
 
 import java.util.List;
 

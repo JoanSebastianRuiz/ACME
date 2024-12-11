@@ -1,6 +1,6 @@
 package projectacme.repository.dao;
 
-import projectacme.model.Enum.ScannerType;
+import projectacme.util.Enum.ScannerType;
 import projectacme.model.Scanner;
 
 import java.util.List;

@@ -1,6 +1,6 @@
 package projectacme.model;
 
-import projectacme.model.Enum.StateEnum;
+import projectacme.util.Enum.StateEnum;
 
 import java.sql.Date;
 

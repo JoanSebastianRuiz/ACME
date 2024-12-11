@@ -1,6 +1,6 @@
 package projectacme.model;
 
-import projectacme.model.Enum.VehicleEnum;
+import projectacme.util.Enum.VehicleEnum;
 
 public class Vehicle {
     private String plate;

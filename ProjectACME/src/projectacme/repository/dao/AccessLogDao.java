@@ -1,6 +1,6 @@
 package projectacme.repository.dao;
 
-import projectacme.model.Enum.AccessType;
+import projectacme.util.Enum.AccessType;
 import projectacme.model.AccessLog;
 
 import java.sql.Timestamp;

@@ -1,7 +1,7 @@
 package projectacme.repository.implementation;
 
 import projectacme.model.ConnectionData;
-import projectacme.model.Enum.VehicleEnum;
+import projectacme.util.Enum.VehicleEnum;
 import projectacme.model.Vehicle;
 import projectacme.repository.dao.VehicleDao;
 

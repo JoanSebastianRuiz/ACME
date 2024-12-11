@@ -1,6 +1,6 @@
 package projectacme.model;
 
-import projectacme.model.Enum.ScannerType;
+import projectacme.util.Enum.ScannerType;
 
 public class Scanner {
     private int id; // * Autoincrement
