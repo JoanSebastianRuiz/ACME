@@ -24,6 +24,29 @@ public class AccessSubject {
         this.idCompany = idCompany;
     }
 
+    // * Individual
+    public AccessSubject(StateEnum state, UserRoleEnum role, String emailAddress, String phone, String name, String id, int idCompany) {
+        this.state = state;
+        this.role = role;
+        this.emailAddress = emailAddress;
+        this.phone = phone;
+        this.name = name;
+        this.id = id;
+        this.idCompany = idCompany;
+    }
+
+    // * User
+
+    public AccessSubject(String id, String name, String phone, String emailAddress, UserRoleEnum role, StateEnum state, String password) {
+        this.id = id;
+        this.name = name;
+        this.phone = phone;
+        this.emailAddress = emailAddress;
+        this.role = role;
+        this.state = state;
+        this.password = password;
+    }
+
     public String getId() {
         return id;
     }
