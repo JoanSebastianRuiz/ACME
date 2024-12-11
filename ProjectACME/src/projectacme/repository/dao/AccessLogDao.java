@@ -10,5 +10,5 @@ public interface AccessLogDao {
     void addAccessLog(AccessLog accessLog);
     AccessLog getAccessLogById(int id);
     List<AccessLog> getAllAccessLog();
-    void updateAccessLog(AccessLog accessLog, AccessType type, Timestamp datetime, String idIndividual, String idUser);
+    void updateAccessLog(AccessLog accessLog, AccessType type, Timestamp datetime, String idAccessSubject, int idScanner, String idAccessSubjectLogger);
 }

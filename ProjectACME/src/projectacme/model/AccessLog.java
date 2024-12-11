@@ -12,6 +12,7 @@ public class AccessLog {
     private int idScanner;
     private String idAccessSubjectLogger;
 
+    //Constructor to register
     public AccessLog(AccessType type, Timestamp datetime, String idAccessSubject, int idScanner, String idAccessSubjectLogger) {
         this.type = type;
         this.datetime = datetime;
@@ -20,6 +21,7 @@ public class AccessLog {
         this.idAccessSubjectLogger = idAccessSubjectLogger;
     }
 
+    //Constructor to get
     public AccessLog(int id, AccessType type, Timestamp datetime, String idAccessSubject, int idScanner, String idAccessSubjectLogger) {
         this.id = id;
         this.type = type;
