@@ -15,12 +15,11 @@ import java.util.List;
 public class ScannerImpl implements ScannerDao {
     @Override
     public void addScanner(Scanner scanner) {
-        String sql = "INSERT INTO Scanner(id,type) VALUES(?,?);";
+        String sql = "INSERT INTO Scanner(type) VALUES(?);";
 
         try(Connection connection = ConnectionData.getConnectionDatabase();
             PreparedStatement stmt = connection.prepareStatement(sql)){
-            stmt.setInt(1, scanner.getId());
-            stmt.setString(2, scanner.getType().name());
+            stmt.setString(1, scanner.getType().name());
             stmt.executeUpdate();
             System.out.println("Added new Scanner");
         } catch (SQLException e) {

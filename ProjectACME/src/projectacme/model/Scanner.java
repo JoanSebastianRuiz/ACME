@@ -11,6 +11,10 @@ public class Scanner {
         this.type = type;
     }
 
+    public Scanner(ScannerType type) {
+        this.type = type;
+    }
+
     public int getId() {
         return id;
     }
