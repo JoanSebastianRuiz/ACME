@@ -3,15 +3,24 @@ package projectacme.model;
 import projectacme.model.Enum.AccessType;
 
 import java.sql.Date;
+import java.sql.Timestamp;
 
 public class AccessLog {
     private int id; // * Autoincrement
     private AccessType type;
-    private Date datetime;
+    private Timestamp datetime;
     private String idIndividual;
     private String idUser;
 
-    public AccessLog(AccessType type, Date datetime, String idIndividual, String idUser) {
+    public AccessLog(AccessType type, Timestamp datetime, String idIndividual, String idUser) {
+        this.type = type;
+        this.datetime = datetime;
+        this.idIndividual = idIndividual;
+        this.idUser = idUser;
+    }
+
+    public AccessLog(int id, AccessType type, Timestamp datetime, String idIndividual, String idUser) {
+        this.id = id;
         this.type = type;
         this.datetime = datetime;
         this.idIndividual = idIndividual;
@@ -34,11 +43,11 @@ public class AccessLog {
         this.type = type;
     }
 
-    public Date getDatetime() {
+    public Timestamp getDatetime() {
         return datetime;
     }
 
-    public void setDatetime(Date datetime) {
+    public void setDatetime(Timestamp datetime) {
         this.datetime = datetime;
     }
 
