@@ -1,7 +1,7 @@
 package projectacme.repository.dao;
 
 import projectacme.model.Annotation;
-import projectacme.model.Enum.StateEnum;
+import projectacme.util.Enum.StateEnum;
 
 import java.sql.Date;
 import java.util.List;

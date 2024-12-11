@@ -1,4 +1,4 @@
-package projectacme.model.Enum;
+package projectacme.util.Enum;
 
 public enum StateEnum {
     active,

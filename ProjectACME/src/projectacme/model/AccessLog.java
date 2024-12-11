@@ -1,6 +1,6 @@
 package projectacme.model;
 
-import projectacme.model.Enum.AccessType;
+import projectacme.util.Enum.AccessType;
 
 import java.sql.Timestamp;
 

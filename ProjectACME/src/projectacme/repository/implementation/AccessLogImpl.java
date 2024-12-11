@@ -2,7 +2,7 @@ package projectacme.repository.implementation;
 
 import projectacme.model.AccessLog;
 import projectacme.model.ConnectionData;
-import projectacme.model.Enum.AccessType;
+import projectacme.util.Enum.AccessType;
 import projectacme.repository.dao.AccessLogDao;
 
 import java.sql.*;

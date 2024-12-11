@@ -1,7 +1,7 @@
 package projectacme.model;
 
-import projectacme.model.Enum.StateEnum;
-import projectacme.model.Enum.UserRoleEnum;
+import projectacme.util.Enum.StateEnum;
+import projectacme.util.Enum.UserRoleEnum;
 
 public class AccessSubject {
     private String id;
