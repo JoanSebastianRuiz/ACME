@@ -100,6 +100,7 @@ public class IntefarceLogin extends javax.swing.JFrame {
         TextButtonEnter.setForeground(new java.awt.Color(255, 255, 255));
         TextButtonEnter.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         TextButtonEnter.setText("ENTER");
+        TextButtonEnter.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         TextButtonEnter.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 TextButtonEnterMouseClicked(evt);

@@ -24,7 +24,7 @@ public class InterfaceSudoCreate extends javax.swing.JFrame {
 
         textPhone = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
+        ImageSudoInterface = new javax.swing.JLabel();
         Title = new javax.swing.JLabel();
         textID = new javax.swing.JLabel();
         inputID = new javax.swing.JTextField();
@@ -38,8 +38,8 @@ public class InterfaceSudoCreate extends javax.swing.JFrame {
         inputEmailAddress = new javax.swing.JTextField();
         CreateButton = new javax.swing.JPanel();
         TextButton = new javax.swing.JLabel();
-        jPanel2 = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
+        ExitButton = new javax.swing.JPanel();
+        TextExitButton = new javax.swing.JLabel();
         Header = new javax.swing.JPanel();
 
         textPhone.setFont(new java.awt.Font("Rasa Light", 0, 18)); // NOI18N
@@ -54,9 +54,9 @@ public class InterfaceSudoCreate extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/projectacme/view/images/ImageInterfaceSudo.jpg"))); // NOI18N
-        jLabel1.setText("jLabel1");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 350, -1));
+        ImageSudoInterface.setIcon(new javax.swing.ImageIcon(getClass().getResource("/projectacme/view/images/ImageInterfaceSudo.jpg"))); // NOI18N
+        ImageSudoInterface.setText("jLabel1");
+        jPanel1.add(ImageSudoInterface, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 350, -1));
 
         Title.setFont(new java.awt.Font("MathJax_Typewriter", 0, 24)); // NOI18N
         Title.setText("Create new Manager");
@@ -185,31 +185,31 @@ public class InterfaceSudoCreate extends javax.swing.JFrame {
 
         jPanel1.add(CreateButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(527, 511, -1, -1));
 
-        jPanel2.setBackground(new java.awt.Color(136, 169, 195));
+        ExitButton.setBackground(new java.awt.Color(136, 169, 195));
 
-        jLabel2.setBackground(new java.awt.Color(136, 169, 195));
-        jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setText("X");
-        jLabel2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jLabel2.addMouseListener(new java.awt.event.MouseAdapter() {
+        TextExitButton.setBackground(new java.awt.Color(136, 169, 195));
+        TextExitButton.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        TextExitButton.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        TextExitButton.setText("X");
+        TextExitButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        TextExitButton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel2MouseClicked(evt);
+                TextExitButtonMouseClicked(evt);
             }
         });
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+        javax.swing.GroupLayout ExitButtonLayout = new javax.swing.GroupLayout(ExitButton);
+        ExitButton.setLayout(ExitButtonLayout);
+        ExitButtonLayout.setHorizontalGroup(
+            ExitButtonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(TextExitButton, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
         );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+        ExitButtonLayout.setVerticalGroup(
+            ExitButtonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(TextExitButton, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
         );
 
-        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 0, 50, 50));
+        jPanel1.add(ExitButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 0, 50, 50));
 
         Header.setBackground(new java.awt.Color(136, 169, 195));
         Header.setForeground(new java.awt.Color(136, 169, 195));
@@ -347,9 +347,9 @@ public class InterfaceSudoCreate extends javax.swing.JFrame {
         inputEmailAddress.setForeground(Color.black);
     }//GEN-LAST:event_inputEmailAddressMousePressed
 
-    private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
+    private void TextExitButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TextExitButtonMouseClicked
         System.exit(0);
-    }//GEN-LAST:event_jLabel2MouseClicked
+    }//GEN-LAST:event_TextExitButtonMouseClicked
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -385,18 +385,18 @@ public class InterfaceSudoCreate extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel CreateButton;
+    private javax.swing.JPanel ExitButton;
     private javax.swing.JPanel Header;
+    private javax.swing.JLabel ImageSudoInterface;
     private javax.swing.JLabel TextButton;
+    private javax.swing.JLabel TextExitButton;
     private javax.swing.JLabel Title;
     private javax.swing.JTextField inputEmailAddress;
     private javax.swing.JTextField inputID;
     private javax.swing.JTextField inputName;
     private javax.swing.JPasswordField inputPassword;
     private javax.swing.JTextField inputPhone;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
     private javax.swing.JLabel textEmailAddress;
     private javax.swing.JLabel textID;
     private javax.swing.JLabel textName;

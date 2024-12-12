@@ -4,7 +4,7 @@
  */
 package projectacme;
 
-import projectacme.view.InterfaceSudoCreate;
+import projectacme.view.IntefarceLogin;
 
 /**
  *
@@ -13,7 +13,7 @@ import projectacme.view.InterfaceSudoCreate;
 public class ProjectACME {
 
     public static void main(String[] args) {
-        InterfaceSudoCreate ventana = new InterfaceSudoCreate();
+        IntefarceLogin ventana = new IntefarceLogin();
         
         ventana.setVisible(true);
         
