@@ -8,8 +8,8 @@ import projectacme.model.AccessSubject;
 import projectacme.service.Manager;
 import projectacme.service.Officer;
 import projectacme.util.Enum.StateEnum;
-import projectacme.util.Enum.UserRoleEnum;
-//import projectacme.view.IntefarceLogin;
+//import projectacme.util.Enum.UserRoleEnum;
+import projectacme.view.IntefarceLogin;
 
 import java.util.List;
 import java.util.Map;
@@ -28,7 +28,7 @@ import projectacme.view.InterfaceSecurityGuardMenu;
 public class ProjectACME {
 
     public static void main(String[] args) {
-        InterfaceSecurityGuardMenu ventana = new InterfaceSecurityGuardMenu();
+        IntefarceLogin ventana = new IntefarceLogin();
         
         ventana.setVisible(true);
         
