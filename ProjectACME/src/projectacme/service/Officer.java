@@ -1,11 +1,11 @@
 package projectacme.service;
 
 import projectacme.util.Enum.StateEnum;
-import projectacme.util.Enum.UserRoleEnum;
+import projectacme.util.Enum.AccessSubjectRoleEnum;
 
 public class Officer extends User implements ReportService{
     private int idCompany;
-    public Officer(String id, String name, String phone, String emailAddress, UserRoleEnum role, StateEnum state, String password, int idCompany) {
+    public Officer(String id, String name, String phone, String emailAddress, AccessSubjectRoleEnum role, StateEnum state, String password, int idCompany) {
         super(id, name, phone, emailAddress, role, state, password);
         this.idCompany = idCompany;
     }

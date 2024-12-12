@@ -2,10 +2,10 @@ package projectacme.service;
 
 import projectacme.util.Enum.ScannerType;
 import projectacme.util.Enum.StateEnum;
-import projectacme.util.Enum.UserRoleEnum;
+import projectacme.util.Enum.AccessSubjectRoleEnum;
 
 public class SecurityGuard extends User implements RegisterAccessService{
-    public SecurityGuard(String id, String name, String phone, String emailAddress, UserRoleEnum role, StateEnum state, String password) {
+    public SecurityGuard(String id, String name, String phone, String emailAddress, AccessSubjectRoleEnum role, StateEnum state, String password) {
         super(id, name, phone, emailAddress, role, state, password);
     }
 

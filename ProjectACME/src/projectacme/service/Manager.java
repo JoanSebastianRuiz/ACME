@@ -1,10 +1,10 @@
 package projectacme.service;
 
 import projectacme.util.Enum.StateEnum;
-import projectacme.util.Enum.UserRoleEnum;
+import projectacme.util.Enum.AccessSubjectRoleEnum;
 
 public class Manager extends User implements ReportService{
-    public Manager(String id, String name, String phone, String emailAddress, UserRoleEnum role, StateEnum state, String password) {
+    public Manager(String id, String name, String phone, String emailAddress, AccessSubjectRoleEnum role, StateEnum state, String password) {
         super(id, name, phone, emailAddress, role, state, password);
     }
 
