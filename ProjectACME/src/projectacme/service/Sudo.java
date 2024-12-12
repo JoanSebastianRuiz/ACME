@@ -9,12 +9,12 @@ import projectacme.util.validators.PhoneValidator;
 import projectacme.util.validators.StringValidator;
 
 public class Sudo extends User{
+    private static final AccessSubjectImpl accessSubject = new AccessSubjectImpl();
     public Sudo(String id, String name, String phone, String emailAddress, AccessSubjectRoleEnum role, StateEnum state, String password) {
         super(id, name, phone, emailAddress, role, state, password);
     }
 
     public void creationManager(String id, String name, String phone, String emailAddress, String password) {
-        AccessSubjectImpl accessSubject = new AccessSubjectImpl();
         if (StringValidator.StringLengthExactlyThanValidator(id, 10)
                 && StringValidator.StringLengthLessThanValidator(name, 100)
                 && PhoneValidator.phoneValidator(phone)
@@ -27,13 +27,11 @@ public class Sudo extends User{
     }
 
     public void inactivityManager(String id) {
-        AccessSubjectImpl accessSubject = new AccessSubjectImpl();
         AccessSubject individual = accessSubject.getAccessSubjectById(id);
         accessSubject.updateAccessSubject(individual, individual.getName(), individual.getPhone(), individual.getEmailAddress(), individual.getRole(), StateEnum.inactive, individual.getPassword());
     }
 
     public void activityManager(String id) {
-        AccessSubjectImpl accessSubject = new AccessSubjectImpl();
         AccessSubject individual = accessSubject.getAccessSubjectById(id);
         accessSubject.updateAccessSubject(individual, individual.getName(), individual.getPhone(), individual.getEmailAddress(), individual.getRole(), StateEnum.active, individual.getPassword());
     }

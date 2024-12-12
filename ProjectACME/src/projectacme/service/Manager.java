@@ -15,14 +15,14 @@ import java.util.Map;
 import java.util.stream.Collectors;
 
 public class Manager extends User implements ReportService{
-    private final ReportManagerImpl reportManagerImpl= new ReportManagerImpl();
+    private static final AccessSubjectImpl accessSubject = new AccessSubjectImpl();
+    private static final ReportManagerImpl reportManagerImpl= new ReportManagerImpl();
     public Manager(String id, String name, String phone, String emailAddress, AccessSubjectRoleEnum role, StateEnum state, String password) {
         super(id, name, phone, emailAddress, role, state, password);
     }
 
 
     public void createSecurityGuard(String id, String name, String phone, String emailAddress, String password) {
-        AccessSubjectImpl accessSubject = new AccessSubjectImpl();
         if (StringValidator.StringLengthExactlyThanValidator(id, 10)
                 && StringValidator.StringLengthLessThanValidator(name, 100)
                 && PhoneValidator.phoneValidator(phone)
@@ -35,7 +35,6 @@ public class Manager extends User implements ReportService{
     }
 
     public void createOfficer(String id, String name, String phone, String emailAddress, String password, int idCompany) {
-        AccessSubjectImpl accessSubject = new AccessSubjectImpl();
         if (StringValidator.StringLengthExactlyThanValidator(id, 10)
                 && StringValidator.StringLengthLessThanValidator(name, 100)
                 && PhoneValidator.phoneValidator(phone)
@@ -56,12 +55,10 @@ public class Manager extends User implements ReportService{
     }
 
     public void inactivateSecurityGuard(SecurityGuard securityGuard) {
-        AccessSubjectImpl accessSubject = new AccessSubjectImpl();
         accessSubject.updateAccessSubject(securityGuard, securityGuard.getName(), securityGuard.getPhone(), securityGuard.getEmailAddress(), securityGuard.getRole(), StateEnum.inactive, securityGuard.getPassword());
     }
 
     public  void activateSecurityGuard(SecurityGuard securityGuard) {
-        AccessSubjectImpl accessSubject = new AccessSubjectImpl();
         accessSubject.updateAccessSubject(securityGuard, securityGuard.getName(), securityGuard.getPhone(), securityGuard.getEmailAddress(), securityGuard.getRole(), StateEnum.active, securityGuard.getPassword());
     }
 

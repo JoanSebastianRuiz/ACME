@@ -14,8 +14,9 @@ import java.util.Map;
 import java.util.stream.Collectors;
 
 public class Officer extends User implements ReportService{
+    private static final AccessSubjectImpl accessSubject = new AccessSubjectImpl();
     private int idCompany;
-    private final ReportManagerImpl reportManagerImpl = new ReportManagerImpl();
+    private static final ReportManagerImpl reportManagerImpl = new ReportManagerImpl();
 
     public Officer(String id, String name, String phone, String emailAddress, AccessSubjectRoleEnum role, StateEnum state, String password, int idCompany) {
         super(id, name, phone, emailAddress, role, state, password);
@@ -33,7 +34,6 @@ public class Officer extends User implements ReportService{
     }
 
     public void workerRegistration(String id, String name, String phone, String emailAddress, String password){
-        AccessSubjectImpl accessSubject = new AccessSubjectImpl();
         if (StringValidator.StringLengthExactlyThanValidator(id, 10)
                 && StringValidator.StringLengthLessThanValidator(name, 100)
                 && PhoneValidator.phoneValidator(phone)
@@ -46,7 +46,6 @@ public class Officer extends User implements ReportService{
     }
 
     public void guestRegistration(String id, String name, String phone, String emailAddress, String password){
-        AccessSubjectImpl accessSubject = new AccessSubjectImpl();
         if (StringValidator.StringLengthExactlyThanValidator(id, 10)
                 && StringValidator.StringLengthLessThanValidator(name, 100)
                 && PhoneValidator.phoneValidator(phone)
@@ -59,13 +58,11 @@ public class Officer extends User implements ReportService{
     }
 
     public void inactiveIndividual(String id){
-        AccessSubjectImpl accessSubject = new AccessSubjectImpl();
         AccessSubject individual = accessSubject.getAccessSubjectById(id);
         accessSubject.updateAccessSubject(individual, individual.getName(), individual.getPhone(), individual.getEmailAddress(), individual.getRole(), StateEnum.inactive, individual.getPassword());
     }
 
     public void activateIndividual(String id){
-        AccessSubjectImpl accessSubject = new AccessSubjectImpl();
         AccessSubject individual = accessSubject.getAccessSubjectById(id);
         accessSubject.updateAccessSubject(individual, individual.getName(), individual.getPhone(), individual.getEmailAddress(), individual.getRole(), StateEnum.active, individual.getPassword());
     }

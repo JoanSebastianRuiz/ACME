@@ -1,5 +1,6 @@
 package projectacme.service;
 
+import projectacme.repository.implementation.AccessSubjectImpl;
 import projectacme.repository.implementation.ReportManagerImpl;
 import projectacme.model.AccessLog;
 import projectacme.repository.implementation.AccessLogImpl;
@@ -15,6 +16,7 @@ import java.util.List;
 import java.util.Map;
 
 public class SecurityGuard extends User implements RegisterAccessService{
+    private static final AccessLogImpl accessLogImpl = new AccessLogImpl();
     private final ReportManagerImpl reportManagerImpl = new ReportManagerImpl();
 
     public SecurityGuard(String id, String name, String phone, String emailAddress, AccessSubjectRoleEnum role, StateEnum state, String password) {
@@ -23,7 +25,6 @@ public class SecurityGuard extends User implements RegisterAccessService{
 
     @Override
     public void registerAccess(ScannerType type, String id) {
-        AccessLogImpl accessLogImpl = new AccessLogImpl();
         AccessLog lastAccessLog = accessLogImpl.getAllAccessLog().stream().filter(accessLog -> accessLog.getIdAccessSubject().equals(id)).findFirst().orElse(null);
         if (type == ScannerType.exit){
             if (lastAccessLog == null || !lastAccessLog.getType().toString().equals(ScannerType.exit.toString())){
