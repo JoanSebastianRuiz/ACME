@@ -9,20 +9,20 @@ public class AccessLog {
     private AccessType type;
     private Timestamp datetime;
     private String idAccessSubject;
-    private int idScanner;
+    private Integer idScanner;
     private String idAccessSubjectLogger;
 
     //Constructor to register
-    public AccessLog(AccessType type, Timestamp datetime, String idAccessSubject, int idScanner, String idAccessSubjectLogger) {
+    public AccessLog(AccessType type, Timestamp datetime, String idAccessSubject, Integer idScanner, String idAccessSubjectLogger) {
         this.type = type;
         this.datetime = datetime;
         this.idAccessSubject = idAccessSubject;
-        this.idScanner = idScanner;
+        this.idScanner = idScanner==null ? 0 : idScanner;
         this.idAccessSubjectLogger = idAccessSubjectLogger;
     }
 
     //Constructor to get
-    public AccessLog(int id, AccessType type, Timestamp datetime, String idAccessSubject, int idScanner, String idAccessSubjectLogger) {
+    public AccessLog(int id, AccessType type, Timestamp datetime, String idAccessSubject, Integer idScanner, String idAccessSubjectLogger) {
         this.id = id;
         this.type = type;
         this.datetime = datetime;
@@ -63,11 +63,11 @@ public class AccessLog {
         this.idAccessSubject = idAccessSubject;
     }
 
-    public int getIdScanner() {
+    public Integer getIdScanner() {
         return idScanner;
     }
 
-    public void setIdScanner(int idScanner) {
+    public void setIdScanner(Integer idScanner) {
         this.idScanner = idScanner;
     }
 

@@ -2,8 +2,6 @@ package projectacme.service;
 
 import projectacme.model.AccessSubject;
 import projectacme.repository.implementation.ReportManagerImpl;
-import projectacme.model.AccessSubject;
-import projectacme.model.Company;
 import projectacme.repository.implementation.AccessSubjectImpl;
 import projectacme.util.Enum.StateEnum;
 import projectacme.util.Enum.AccessSubjectRoleEnum;
@@ -12,7 +10,6 @@ import projectacme.util.validators.EmailValidator;
 import projectacme.util.validators.PhoneValidator;
 import projectacme.util.validators.StringValidator;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
