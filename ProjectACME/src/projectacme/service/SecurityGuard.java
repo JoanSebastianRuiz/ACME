@@ -1,8 +1,14 @@
 package projectacme.service;
 
+import projectacme.model.AccessLog;
+import projectacme.repository.implementation.AccessLogImpl;
+import projectacme.util.Enum.AccessType;
 import projectacme.util.Enum.ScannerType;
 import projectacme.util.Enum.StateEnum;
 import projectacme.util.Enum.AccessSubjectRoleEnum;
+
+import java.sql.Timestamp;
+import java.time.Instant;
 
 public class SecurityGuard extends User implements RegisterAccessService{
     public SecurityGuard(String id, String name, String phone, String emailAddress, AccessSubjectRoleEnum role, StateEnum state, String password) {
@@ -10,9 +16,26 @@ public class SecurityGuard extends User implements RegisterAccessService{
     }
 
     @Override
-    public void registerAccess(ScannerType type) {
-        // TODO: implement register access for security guard
-        // ! Entry And Exit
+    public void registerAccess(ScannerType type, String id) {
+        AccessLogImpl accessLogImpl = new AccessLogImpl();
+        AccessLog lastAccessLog = accessLogImpl.getAllAccessLog().stream().filter(accessLog -> accessLog.getIdAccessSubject().equals(id)).findFirst().orElse(null);
+        if (type == ScannerType.exit){
+            if (lastAccessLog == null || !lastAccessLog.getType().toString().equals(ScannerType.exit.toString())){
+           accessLogImpl.addAccessLog(new AccessLog(AccessType.exit, Timestamp.from(Instant.now()), id, -1, this.getId()));
+           // TODO: Manage Id Scanner Null
+            } else {
+                System.out.println("The Individual Is Already Outside");
+            }
+        } else if (type == ScannerType.entry) {
+            if (lastAccessLog == null || !lastAccessLog.getType().toString().equals(ScannerType.entry.toString())){
+            accessLogImpl.addAccessLog(new AccessLog(AccessType.entry, Timestamp.from(Instant.now()), id, -1, this.getId()));
+            // TODO: Manage Id Scanner Null
+            } else {
+                System.out.println("The Individual Is Already Inside");
+            }
+        } else {
+            System.out.println("AccessType Invalid");
+        }
     }
 
     public void viewUserAnnotation(){

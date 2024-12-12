@@ -1,7 +1,12 @@
 package projectacme.service;
 
+import projectacme.model.AccessSubject;
+import projectacme.repository.implementation.AccessSubjectImpl;
 import projectacme.util.Enum.StateEnum;
 import projectacme.util.Enum.AccessSubjectRoleEnum;
+import projectacme.util.validators.EmailValidator;
+import projectacme.util.validators.PhoneValidator;
+import projectacme.util.validators.StringValidator;
 
 public class Officer extends User implements ReportService{
     private int idCompany;
@@ -20,20 +25,42 @@ public class Officer extends User implements ReportService{
         this.idCompany = idCompany;
     }
 
-    public void workerRegistration(){
-        // TODO: Implement worker registration
+    public void workerRegistration(String id, String name, String phone, String emailAddress, String password){
+        AccessSubjectImpl accessSubject = new AccessSubjectImpl();
+        if (StringValidator.StringLengthExactlyThanValidator(id, 10)
+                && StringValidator.StringLengthLessThanValidator(name, 100)
+                && PhoneValidator.phoneValidator(phone)
+                && EmailValidator.emailValidator(emailAddress)
+                && StringValidator.StringLengthLessThanValidator(password, 100)) {
+            accessSubject.addAccessSubject(new AccessSubject(id, name, phone, emailAddress, AccessSubjectRoleEnum.worker, StateEnum.active, null, this.idCompany));
+        } else {
+            System.out.println("Invalid Data For Create Worker");
+        }
     }
 
-    public void guestRegistration(){
-        // TODO: Implement guest registration
+    public void guestRegistration(String id, String name, String phone, String emailAddress, String password){
+        AccessSubjectImpl accessSubject = new AccessSubjectImpl();
+        if (StringValidator.StringLengthExactlyThanValidator(id, 10)
+                && StringValidator.StringLengthLessThanValidator(name, 100)
+                && PhoneValidator.phoneValidator(phone)
+                && EmailValidator.emailValidator(emailAddress)
+                && StringValidator.StringLengthLessThanValidator(password, 100)) {
+            accessSubject.addAccessSubject(new AccessSubject(id, name, phone, emailAddress, AccessSubjectRoleEnum.guest, StateEnum.active, null, this.idCompany));
+        } else {
+            System.out.println("Invalid Data For Create Guest");
+        }
     }
 
-    public void inactiveIndividual(){
-        // TODO: Implement inactive individual
+    public void inactiveIndividual(String id){
+        AccessSubjectImpl accessSubject = new AccessSubjectImpl();
+        AccessSubject individual = accessSubject.getAccessSubjectById(id);
+        accessSubject.updateAccessSubject(individual, individual.getName(), individual.getPhone(), individual.getEmailAddress(), individual.getRole(), StateEnum.inactive, individual.getPassword());
     }
 
-    public void activateIndividual(){
-        // TODO: Implement activate individual
+    public void activateIndividual(String id){
+        AccessSubjectImpl accessSubject = new AccessSubjectImpl();
+        AccessSubject individual = accessSubject.getAccessSubjectById(id);
+        accessSubject.updateAccessSubject(individual, individual.getName(), individual.getPhone(), individual.getEmailAddress(), individual.getRole(), StateEnum.active, individual.getPassword());
     }
 
     @Override
