@@ -37,7 +37,15 @@ public class AccessLogImpl implements AccessLogDao {
             ResultSet rs = stmt.executeQuery();
 
             if (rs.next()) {
-                return new AccessLog(rs.getInt("id"), AccessType.valueOf(rs.getString("type")), rs.getTimestamp("datetime"), rs.getString("idAccessSubject"),rs.getInt("idScanner"), rs.getString("idAccessSubjectLogger"));
+                return rs.getString("idScanner")!=null ?
+                        new AccessLog.Builder(AccessType.valueOf(rs.getString("type")), rs.getTimestamp("datetime"), rs.getString("idAccessSubject"))
+                                .setId(rs.getInt("id"))
+                                .setIdScanner(rs.getInt("idScanner"))
+                                .build():
+                        new AccessLog.Builder(AccessType.valueOf(rs.getString("type")), rs.getTimestamp("datetime"), rs.getString("idAccessSubject"))
+                                .setId(rs.getInt("id"))
+                                .setIdAccessSubjectLogger("idAccessSubjectLogger")
+                                .build();
             } else{
                 return null;
             }
@@ -56,7 +64,15 @@ public class AccessLogImpl implements AccessLogDao {
             ArrayList<AccessLog> accessLogs = new ArrayList<>();
 
             while (rs.next()){
-                accessLogs.add(new AccessLog(rs.getInt("id"), AccessType.valueOf(rs.getString("type")), rs.getTimestamp("datetime"), rs.getString("idAccessSubject"),rs.getInt("idScanner"), rs.getString("idAccessSubjectLogger")));
+                accessLogs.add(rs.getString("idScanner")!=null ?
+                        new AccessLog.Builder(AccessType.valueOf(rs.getString("type")), rs.getTimestamp("datetime"), rs.getString("idAccessSubject"))
+                                .setId(rs.getInt("id"))
+                                .setIdScanner(rs.getInt("idScanner"))
+                                .build():
+                        new AccessLog.Builder(AccessType.valueOf(rs.getString("type")), rs.getTimestamp("datetime"), rs.getString("idAccessSubject"))
+                                .setId(rs.getInt("id"))
+                                .setIdAccessSubjectLogger("idAccessSubjectLogger")
+                                .build());
             }
             System.out.println("Found All AccessLogs Successfully");
             return  accessLogs;
