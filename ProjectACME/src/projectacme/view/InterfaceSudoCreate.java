@@ -150,7 +150,7 @@ public class InterfaceSudoCreate extends javax.swing.JFrame {
                 inputEmailAddressActionPerformed(evt);
             }
         });
-        jPanel1.add(inputEmailAddress, new org.netbeans.lib.awtextra.AbsoluteConstraints(393, 426, 166, 36));
+        jPanel1.add(inputEmailAddress, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 420, 166, 36));
 
         CreateButton.setBackground(new java.awt.Color(136, 169, 195));
         CreateButton.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -202,11 +202,14 @@ public class InterfaceSudoCreate extends javax.swing.JFrame {
         ExitButton.setLayout(ExitButtonLayout);
         ExitButtonLayout.setHorizontalGroup(
             ExitButtonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(TextExitButton, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ExitButtonLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(TextExitButton, javax.swing.GroupLayout.DEFAULT_SIZE, 38, Short.MAX_VALUE)
+                .addContainerGap())
         );
         ExitButtonLayout.setVerticalGroup(
             ExitButtonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(TextExitButton, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+            .addComponent(TextExitButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
         );
 
         jPanel1.add(ExitButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 0, 50, 50));
