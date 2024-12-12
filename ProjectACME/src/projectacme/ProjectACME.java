@@ -19,6 +19,7 @@ import projectacme.view.InterfaceCreateGuest;
 import projectacme.view.InterfaceCreateOfficer;
 import projectacme.view.InterfaceCreateSecurityGuard;
 import projectacme.view.InterfaceSudoCreate;
+import projectacme.view.InterfaceSecurityGuardMenu;
 
 /**
  *
@@ -27,7 +28,7 @@ import projectacme.view.InterfaceSudoCreate;
 public class ProjectACME {
 
     public static void main(String[] args) {
-        InterfaceSudoCreate ventana = new InterfaceSudoCreate();
+        InterfaceSecurityGuardMenu ventana = new InterfaceSecurityGuardMenu();
         
         ventana.setVisible(true);
         
