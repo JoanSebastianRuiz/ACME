@@ -1,5 +1,6 @@
 package projectacme.service;
 
+import projectacme.factory.AccessSubjectFactory;
 import projectacme.model.AccessSubject;
 import projectacme.repository.implementation.ReportManagerImpl;
 import projectacme.repository.implementation.AccessSubjectImpl;
@@ -28,7 +29,8 @@ public class Manager extends User implements ReportService{
                 && PhoneValidator.phoneValidator(phone)
                 && EmailValidator.emailValidator(emailAddress)
                 && StringValidator.StringLengthLessThanValidator(password, 100)) {
-            accessSubject.addAccessSubject(new AccessSubject(id, name, phone, emailAddress, AccessSubjectRoleEnum.securityGuard, StateEnum.active, password));
+
+            accessSubject.addAccessSubject(AccessSubjectFactory.createAccessSubject(id, name, phone, emailAddress, AccessSubjectRoleEnum.securityGuard, StateEnum.active, password, null));
         } else {
             System.out.println("Invalid Data For Create Security Guard");
         }
@@ -42,7 +44,7 @@ public class Manager extends User implements ReportService{
                 && StringValidator.StringLengthLessThanValidator(password, 100)
                 && CompanyValidator.CompanyIdValidator(idCompany)
         ) {
-            accessSubject.addAccessSubject(new AccessSubject(id, name, phone, emailAddress, AccessSubjectRoleEnum.officer, StateEnum.active, password, idCompany));
+            accessSubject.addAccessSubject(AccessSubjectFactory.createAccessSubject(id, name, phone, emailAddress, AccessSubjectRoleEnum.officer, StateEnum.active, password, idCompany));
         } else {
             System.out.println("Invalid Data For Create Officer");
         }

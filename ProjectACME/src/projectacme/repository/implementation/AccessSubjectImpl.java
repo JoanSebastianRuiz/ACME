@@ -1,5 +1,6 @@
 package projectacme.repository.implementation;
 
+import projectacme.factory.AccessSubjectFactory;
 import projectacme.model.AccessSubject;
 import projectacme.model.ConnectionData;
 import projectacme.util.Enum.StateEnum;
@@ -13,6 +14,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class AccessSubjectImpl implements AccessSubjectDao {
+
     @Override
     public void addAccessSubject(AccessSubject accessSubject) {
             String sql = "INSERT INTO AccessSubject(id, password, name, role, state, idCompany) VALUES (?, ?, ?, ?, ?, ?);";
@@ -42,7 +44,7 @@ public class AccessSubjectImpl implements AccessSubjectDao {
             statement.setString(1, id);
             ResultSet resultSet = statement.executeQuery();
             if (resultSet.next()) {
-                return new AccessSubject(resultSet.getString("id"), resultSet.getString("name"), resultSet.getString("phone"), resultSet.getString("emailAddress"), AccessSubjectRoleEnum.valueOf(resultSet.getString("role")), StateEnum.valueOf(resultSet.getString("state")), resultSet.getString("password"), resultSet.getInt("idCompany"));
+                return AccessSubjectFactory.createAccessSubject(resultSet.getString("id"), resultSet.getString("name"),resultSet.getString("phone"), resultSet.getString("emailAddress"), AccessSubjectRoleEnum.valueOf(resultSet.getString("role")),StateEnum.valueOf(resultSet.getString("state")), resultSet.getString("password"), resultSet.getInt("idCompany"));
             }
         } catch (SQLException e) {
             System.out.println(e.getMessage());
@@ -59,8 +61,7 @@ public class AccessSubjectImpl implements AccessSubjectDao {
             ResultSet resultSet = statement.executeQuery();
             List<AccessSubject> accessSubjects = new ArrayList<>();
             while (resultSet.next()) {
-                AccessSubject accessSubject = new AccessSubject(resultSet.getString("id"), resultSet.getString("name"), resultSet.getString("phone"), resultSet.getString("emailAddress"), AccessSubjectRoleEnum.valueOf(resultSet.getString("role")), StateEnum.valueOf(resultSet.getString("state")), resultSet.getString("password"), resultSet.getInt("idCompany"));
-                accessSubjects.add(accessSubject);
+                accessSubjects.add(AccessSubjectFactory.createAccessSubject(resultSet.getString("id"), resultSet.getString("name"),resultSet.getString("phone"), resultSet.getString("emailAddress"), AccessSubjectRoleEnum.valueOf(resultSet.getString("role")),StateEnum.valueOf(resultSet.getString("state")), resultSet.getString("password"), resultSet.getInt("idCompany")));
             }
             System.out.println("Found All Successfully");
             return accessSubjects;

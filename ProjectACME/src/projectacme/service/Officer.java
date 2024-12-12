@@ -1,5 +1,6 @@
 package projectacme.service;
 
+import projectacme.factory.AccessSubjectFactory;
 import projectacme.repository.implementation.ReportManagerImpl;
 import projectacme.model.AccessSubject;
 import projectacme.repository.implementation.AccessSubjectImpl;
@@ -33,13 +34,12 @@ public class Officer extends User implements ReportService{
         this.idCompany = idCompany;
     }
 
-    public void workerRegistration(String id, String name, String phone, String emailAddress, String password){
+    public void workerRegistration(String id, String name, String phone, String emailAddress){
         if (StringValidator.StringLengthExactlyThanValidator(id, 10)
                 && StringValidator.StringLengthLessThanValidator(name, 100)
                 && PhoneValidator.phoneValidator(phone)
-                && EmailValidator.emailValidator(emailAddress)
-                && StringValidator.StringLengthLessThanValidator(password, 100)) {
-            accessSubject.addAccessSubject(new AccessSubject(id, name, phone, emailAddress, AccessSubjectRoleEnum.worker, StateEnum.active, null, this.idCompany));
+                && EmailValidator.emailValidator(emailAddress)) {
+            accessSubject.addAccessSubject(AccessSubjectFactory.createAccessSubject(id, name, phone, emailAddress, AccessSubjectRoleEnum.worker, StateEnum.active, null, this.idCompany));
         } else {
             System.out.println("Invalid Data For Create Worker");
         }
@@ -51,7 +51,7 @@ public class Officer extends User implements ReportService{
                 && PhoneValidator.phoneValidator(phone)
                 && EmailValidator.emailValidator(emailAddress)
                 && StringValidator.StringLengthLessThanValidator(password, 100)) {
-            accessSubject.addAccessSubject(new AccessSubject(id, name, phone, emailAddress, AccessSubjectRoleEnum.guest, StateEnum.active, null, this.idCompany));
+            accessSubject.addAccessSubject(AccessSubjectFactory.createAccessSubject(id, name, phone, emailAddress, AccessSubjectRoleEnum.worker, StateEnum.active, null, this.idCompany));
         } else {
             System.out.println("Invalid Data For Create Guest");
         }

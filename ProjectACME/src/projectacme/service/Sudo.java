@@ -1,5 +1,6 @@
 package projectacme.service;
 
+import projectacme.factory.AccessSubjectFactory;
 import projectacme.model.AccessSubject;
 import projectacme.repository.implementation.AccessSubjectImpl;
 import projectacme.util.Enum.StateEnum;
@@ -20,7 +21,7 @@ public class Sudo extends User{
                 && PhoneValidator.phoneValidator(phone)
                 && EmailValidator.emailValidator(emailAddress)
                 && StringValidator.StringLengthLessThanValidator(password, 100)) {
-            accessSubject.addAccessSubject(new AccessSubject(id, name, phone, emailAddress, AccessSubjectRoleEnum.manager, StateEnum.active, password));
+            accessSubject.addAccessSubject(AccessSubjectFactory.createAccessSubject(id, name, phone, emailAddress, AccessSubjectRoleEnum.manager, StateEnum.active, password, null));
         } else {
             System.out.println("Invalid Data For Create Manager");
         }
