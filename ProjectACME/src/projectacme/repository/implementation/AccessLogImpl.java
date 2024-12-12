@@ -13,7 +13,6 @@ public class AccessLogImpl implements AccessLogDao {
     @Override
     public void addAccessLog(AccessLog accessLog) {
         String sql = "INSERT INTO AccessLog(type,datetime,idAccessSubject,idScanner,idAccessSubjectLogger) VALUES(?,?,?,?,?);";
-
         try(Connection connection = ConnectionData.getConnectionDatabase();
             PreparedStatement stmt = connection.prepareStatement(sql);){
             stmt.setString(1,accessLog.getType().name());
@@ -22,7 +21,7 @@ public class AccessLogImpl implements AccessLogDao {
             stmt.setInt(4,accessLog.getIdScanner());
             stmt.setString(5,accessLog.getIdAccessSubjectLogger());
             stmt.executeUpdate();
-            System.out.println("Added new AcessLog");
+            System.out.println("Added new AccessLog");
 
         } catch (SQLException e){
             throw new RuntimeException("Error inserting AccessLog", e);

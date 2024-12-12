@@ -1825,7 +1825,7 @@
 								"$ref": "AAAAAAGTrN+/3BmbrA8="
 							},
 							"name": "phone",
-							"type": "VARCHAR",
+							"type": "CHAR",
 							"length": "10",
 							"unique": true
 						},

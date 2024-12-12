@@ -9,7 +9,7 @@ import projectacme.service.Manager;
 import projectacme.service.Officer;
 import projectacme.util.Enum.StateEnum;
 import projectacme.util.Enum.UserRoleEnum;
-//import projectacme.view.InterfaceSudo;
+//import projectacme.view.IntefarceLogin;
 
 import java.util.List;
 import java.util.Map;
@@ -21,10 +21,9 @@ import java.util.Map;
 public class ProjectACME {
 
     public static void main(String[] args) {
-        Officer manager = new Officer("","","","", UserRoleEnum.manager, StateEnum.active,
-                "",1);
-        List<Map<String,Object>> securityGuards = manager.getReportsIndividuals();
-        securityGuards.forEach(System.out::println);
+        IntefarceLogin ventana = new IntefarceLogin();
+        
+        ventana.setVisible(true);
         
     }
     

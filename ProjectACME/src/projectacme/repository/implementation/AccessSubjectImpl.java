@@ -3,7 +3,7 @@ package projectacme.repository.implementation;
 import projectacme.model.AccessSubject;
 import projectacme.model.ConnectionData;
 import projectacme.util.Enum.StateEnum;
-import projectacme.util.Enum.UserRoleEnum;
+import projectacme.util.Enum.AccessSubjectRoleEnum;
 import projectacme.repository.dao.AccessSubjectDao;
 
 import java.sql.PreparedStatement;
@@ -42,7 +42,7 @@ public class AccessSubjectImpl implements AccessSubjectDao {
             statement.setString(1, id);
             ResultSet resultSet = statement.executeQuery();
             if (resultSet.next()) {
-                return new AccessSubject(resultSet.getString("id"), resultSet.getString("name"), resultSet.getString("phone"), resultSet.getString("emailAddress"), UserRoleEnum.valueOf(resultSet.getString("role")), StateEnum.valueOf(resultSet.getString("state")), resultSet.getString("password"), resultSet.getInt("idCompany"));
+                return new AccessSubject(resultSet.getString("id"), resultSet.getString("name"), resultSet.getString("phone"), resultSet.getString("emailAddress"), AccessSubjectRoleEnum.valueOf(resultSet.getString("role")), StateEnum.valueOf(resultSet.getString("state")), resultSet.getString("password"), resultSet.getInt("idCompany"));
             }
         } catch (SQLException e) {
             System.out.println(e.getMessage());
@@ -59,7 +59,7 @@ public class AccessSubjectImpl implements AccessSubjectDao {
             ResultSet resultSet = statement.executeQuery();
             List<AccessSubject> accessSubjects = new ArrayList<>();
             while (resultSet.next()) {
-                AccessSubject accessSubject = new AccessSubject(resultSet.getString("id"), resultSet.getString("name"), resultSet.getString("phone"), resultSet.getString("emailAddress"), UserRoleEnum.valueOf(resultSet.getString("role")), StateEnum.valueOf(resultSet.getString("state")), resultSet.getString("password"), resultSet.getInt("idCompany"));
+                AccessSubject accessSubject = new AccessSubject(resultSet.getString("id"), resultSet.getString("name"), resultSet.getString("phone"), resultSet.getString("emailAddress"), AccessSubjectRoleEnum.valueOf(resultSet.getString("role")), StateEnum.valueOf(resultSet.getString("state")), resultSet.getString("password"), resultSet.getInt("idCompany"));
                 accessSubjects.add(accessSubject);
             }
             System.out.println("Found All Successfully");
@@ -71,7 +71,7 @@ public class AccessSubjectImpl implements AccessSubjectDao {
     }
 
     @Override
-    public void updateAccessSubject(AccessSubject accessSubject, String name, String phone, String emailAddress, UserRoleEnum role, StateEnum state, String password) {
+    public void updateAccessSubject(AccessSubject accessSubject, String name, String phone, String emailAddress, AccessSubjectRoleEnum role, StateEnum state, String password) {
         String sql = "UPDATE AccessSubject SET name = ?, phone = ?, emailAddress = ?, role = ?, state = ?, password = ? WHERE id = ?;";
         try (java.sql.Connection connection = ConnectionData.getConnectionDatabase();
              PreparedStatement statement = connection.prepareStatement(sql);)

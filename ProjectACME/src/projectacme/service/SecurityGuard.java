@@ -1,9 +1,15 @@
 package projectacme.service;
 
 import projectacme.repository.implementation.ReportManagerImpl;
+import projectacme.model.AccessLog;
+import projectacme.repository.implementation.AccessLogImpl;
+import projectacme.util.Enum.AccessType;
 import projectacme.util.Enum.ScannerType;
 import projectacme.util.Enum.StateEnum;
-import projectacme.util.Enum.UserRoleEnum;
+import projectacme.util.Enum.AccessSubjectRoleEnum;
+
+import java.sql.Timestamp;
+import java.time.Instant;
 
 import java.util.List;
 import java.util.Map;
@@ -11,14 +17,29 @@ import java.util.Map;
 public class SecurityGuard extends User implements RegisterAccessService{
     private final ReportManagerImpl reportManagerImpl = new ReportManagerImpl();
 
-    public SecurityGuard(String id, String name, String phone, String emailAddress, UserRoleEnum role, StateEnum state, String password) {
+    public SecurityGuard(String id, String name, String phone, String emailAddress, AccessSubjectRoleEnum role, StateEnum state, String password) {
         super(id, name, phone, emailAddress, role, state, password);
     }
 
     @Override
-    public void registerAccess(ScannerType type) {
-        // TODO: implement register access for security guard
-        // ! Entry And Exit
+    public void registerAccess(ScannerType type, String id) {
+        AccessLogImpl accessLogImpl = new AccessLogImpl();
+        AccessLog lastAccessLog = accessLogImpl.getAllAccessLog().stream().filter(accessLog -> accessLog.getIdAccessSubject().equals(id)).findFirst().orElse(null);
+        if (type == ScannerType.exit){
+            if (lastAccessLog == null || !lastAccessLog.getType().toString().equals(ScannerType.exit.toString())){
+           accessLogImpl.addAccessLog(new AccessLog(AccessType.exit, Timestamp.from(Instant.now()), id, null, this.getId()));
+            } else {
+                System.out.println("The Individual Is Already Outside");
+            }
+        } else if (type == ScannerType.entry) {
+            if (lastAccessLog == null || !lastAccessLog.getType().toString().equals(ScannerType.entry.toString())){
+            accessLogImpl.addAccessLog(new AccessLog(AccessType.entry, Timestamp.from(Instant.now()), id, null, this.getId()));
+            } else {
+                System.out.println("The Individual Is Already Inside");
+            }
+        } else {
+            System.out.println("AccessType Invalid");
+        }
     }
 
     public void viewUserAnnotation(){

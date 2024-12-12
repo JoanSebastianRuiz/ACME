@@ -1,5 +1,5 @@
 package projectacme.util.Enum;
 
-public enum UserRoleEnum {
+public enum AccessSubjectRoleEnum {
     sudo, manager, officer, securityGuard, worker, guest
 }

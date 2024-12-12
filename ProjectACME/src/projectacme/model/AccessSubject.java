@@ -1,19 +1,19 @@
 package projectacme.model;
 
 import projectacme.util.Enum.StateEnum;
-import projectacme.util.Enum.UserRoleEnum;
+import projectacme.util.Enum.AccessSubjectRoleEnum;
 
 public class AccessSubject {
     private String id;
     private String name;
     private String phone;
     private String emailAddress;
-    private UserRoleEnum role;
+    private AccessSubjectRoleEnum role;
     private StateEnum state;
     private String password;
     private int idCompany;
 
-    public AccessSubject(String id, String name, String phone, String emailAddress, UserRoleEnum role, StateEnum state, String password, int idCompany) {
+    public AccessSubject(String id, String name, String phone, String emailAddress, AccessSubjectRoleEnum role, StateEnum state, String password, int idCompany) {
         this.id = id;
         this.name = name;
         this.phone = phone;
@@ -25,7 +25,7 @@ public class AccessSubject {
     }
 
     // * Individual
-    public AccessSubject(StateEnum state, UserRoleEnum role, String emailAddress, String phone, String name, String id, int idCompany) {
+    public AccessSubject(StateEnum state, AccessSubjectRoleEnum role, String emailAddress, String phone, String name, String id, int idCompany) {
         this.state = state;
         this.role = role;
         this.emailAddress = emailAddress;
@@ -37,7 +37,7 @@ public class AccessSubject {
 
     // * User
 
-    public AccessSubject(String id, String name, String phone, String emailAddress, UserRoleEnum role, StateEnum state, String password) {
+    public AccessSubject(String id, String name, String phone, String emailAddress, AccessSubjectRoleEnum role, StateEnum state, String password) {
         this.id = id;
         this.name = name;
         this.phone = phone;
@@ -93,11 +93,11 @@ public class AccessSubject {
         this.emailAddress = emailAddress;
     }
 
-    public UserRoleEnum getRole() {
+    public AccessSubjectRoleEnum getRole() {
         return role;
     }
 
-    public void setRole(UserRoleEnum role) {
+    public void setRole(AccessSubjectRoleEnum role) {
         this.role = role;
     }
 
