@@ -47,6 +47,20 @@ public class AccessSubject {
         this.password = password;
     }
 
+    @Override
+    public String toString() {
+        return "AccessSubject{" +
+                "id='" + id + '\'' +
+                ", name='" + name + '\'' +
+                ", phone='" + phone + '\'' +
+                ", emailAddress='" + emailAddress + '\'' +
+                ", role=" + role +
+                ", state=" + state +
+                ", password='" + password + '\'' +
+                ", idCompany=" + idCompany +
+                '}';
+    }
+
     public String getId() {
         return id;
     }

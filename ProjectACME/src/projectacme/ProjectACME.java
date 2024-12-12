@@ -4,7 +4,15 @@
  */
 package projectacme;
 
-import projectacme.view.InterfaceSudo;
+import projectacme.model.AccessSubject;
+import projectacme.service.Manager;
+import projectacme.service.Officer;
+import projectacme.util.Enum.StateEnum;
+import projectacme.util.Enum.UserRoleEnum;
+//import projectacme.view.InterfaceSudo;
+
+import java.util.List;
+import java.util.Map;
 
 /**
  *
@@ -13,9 +21,10 @@ import projectacme.view.InterfaceSudo;
 public class ProjectACME {
 
     public static void main(String[] args) {
-        InterfaceSudo ventana = new InterfaceSudo();
-        
-        ventana.setVisible(true);
+        Officer manager = new Officer("","","","", UserRoleEnum.manager, StateEnum.active,
+                "",1);
+        List<Map<String,Object>> securityGuards = manager.getReportsIndividuals();
+        securityGuards.forEach(System.out::println);
         
     }
     

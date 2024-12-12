@@ -15,7 +15,7 @@ import java.util.List;
 public class AccessSubjectImpl implements AccessSubjectDao {
     @Override
     public void addAccessSubject(AccessSubject accessSubject) {
-            String sql = "INSERT INTO User(id, password, name, role, state, idCompany) VALUES (?, ?, ?, ?, ?, ?);";
+            String sql = "INSERT INTO AccessSubject(id, password, name, role, state, idCompany) VALUES (?, ?, ?, ?, ?, ?);";
         try (java.sql.Connection connection = ConnectionData.getConnectionDatabase();
             PreparedStatement statement = connection.prepareStatement(sql)) {
             statement.setString(1, accessSubject.getId());
@@ -34,7 +34,7 @@ public class AccessSubjectImpl implements AccessSubjectDao {
 
     @Override
     public AccessSubject getAccessSubjectById(String id) {
-            String sql = "SELECT * FROM User WHERE id = ?;";
+            String sql = "SELECT * FROM AccessSubject WHERE id = ?;";
         try (java.sql.Connection connection = ConnectionData.getConnectionDatabase();
             PreparedStatement statement = connection.prepareStatement(sql);
         )
@@ -52,7 +52,7 @@ public class AccessSubjectImpl implements AccessSubjectDao {
 
     @Override
     public List<AccessSubject> getAccessSubjects() {
-            String sql = "SELECT * FROM User;";
+            String sql = "SELECT * FROM AccessSubject;";
         try (java.sql.Connection connection = ConnectionData.getConnectionDatabase();
             PreparedStatement statement = connection.prepareStatement(sql);
         ) {
@@ -72,7 +72,7 @@ public class AccessSubjectImpl implements AccessSubjectDao {
 
     @Override
     public void updateAccessSubject(AccessSubject accessSubject, String name, String phone, String emailAddress, UserRoleEnum role, StateEnum state, String password) {
-        String sql = "UPDATE User SET name = ?, phone = ?, emailAddress = ?, role = ?, state = ?, password = ? WHERE id = ?;";
+        String sql = "UPDATE AccessSubject SET name = ?, phone = ?, emailAddress = ?, role = ?, state = ?, password = ? WHERE id = ?;";
         try (java.sql.Connection connection = ConnectionData.getConnectionDatabase();
              PreparedStatement statement = connection.prepareStatement(sql);)
         {
