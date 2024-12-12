@@ -1,9 +1,11 @@
 package projectacme.service;
 
 import projectacme.model.AccessSubject;
+import projectacme.model.Company;
 import projectacme.repository.implementation.AccessSubjectImpl;
 import projectacme.util.Enum.StateEnum;
 import projectacme.util.Enum.AccessSubjectRoleEnum;
+import projectacme.util.validators.CompanyValidator;
 import projectacme.util.validators.EmailValidator;
 import projectacme.util.validators.PhoneValidator;
 import projectacme.util.validators.StringValidator;
@@ -26,14 +28,16 @@ public class Manager extends User implements ReportService{
         }
     }
 
-    public void createOfficer(String id, String name, String phone, String emailAddress, String password) {
+    public void createOfficer(String id, String name, String phone, String emailAddress, String password, int idCompany) {
         AccessSubjectImpl accessSubject = new AccessSubjectImpl();
         if (StringValidator.StringLengthExactlyThanValidator(id, 10)
                 && StringValidator.StringLengthLessThanValidator(name, 100)
                 && PhoneValidator.phoneValidator(phone)
                 && EmailValidator.emailValidator(emailAddress)
-                && StringValidator.StringLengthLessThanValidator(password, 100)) {
-            accessSubject.addAccessSubject(new AccessSubject(id, name, phone, emailAddress, AccessSubjectRoleEnum.officer, StateEnum.active, password));
+                && StringValidator.StringLengthLessThanValidator(password, 100)
+                && CompanyValidator.CompanyIdValidator(idCompany)
+        ) {
+            accessSubject.addAccessSubject(new AccessSubject(id, name, phone, emailAddress, AccessSubjectRoleEnum.officer, StateEnum.active, password, idCompany));
         } else {
             System.out.println("Invalid Data For Create Officer");
         }
