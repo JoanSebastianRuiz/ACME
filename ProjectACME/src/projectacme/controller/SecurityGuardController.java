@@ -28,8 +28,8 @@ public class SecurityGuardController {
         System.out.println("Notes registered");
     }
 
-    public void registerPlate() {
-        securityGuardService.registerPlate();
+    public void registerPlate(String plate, String id) {
+        securityGuardService.registerPlate(plate, id);
         System.out.println("Plate registered");
     }
 
