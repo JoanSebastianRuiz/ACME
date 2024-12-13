@@ -2,14 +2,12 @@ package projectacme.service;
 
 import projectacme.events.Observer;
 import projectacme.model.Vehicle;
-import projectacme.repository.implementation.AccessSubjectImpl;
 import projectacme.repository.implementation.ReportManagerImpl;
 import projectacme.model.AccessLog;
 import projectacme.repository.implementation.AccessLogImpl;
 import projectacme.repository.implementation.VehicleImpl;
 import projectacme.util.Enum.*;
 import projectacme.util.validators.PlateValidator;
-import projectacme.util.validators.StringValidator;
 import projectacme.util.validators.UserValidator;
 
 import java.sql.Timestamp;
