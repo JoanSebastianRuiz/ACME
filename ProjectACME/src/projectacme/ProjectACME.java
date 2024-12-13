@@ -39,7 +39,10 @@ import java.util.function.Supplier;
 public class ProjectACME {
 
     public static void main(String[] args) {
-
+        Manager manager = (Manager)AccessSubjectFactory.createAccessSubject("","","","",AccessSubjectRoleEnum.manager,StateEnum.active,"",null);
+        Map<String, Supplier<List<Map<String, Object>>>> reportFunctions = new HashMap<>();
+        reportFunctions.put("Report",()->manager.getReportsOfficers());
+        ThreadReportManage.generateReports(reportFunctions);
     }
 
 

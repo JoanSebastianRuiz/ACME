@@ -26,7 +26,6 @@ public class PdfGenerator {
         try(PdfWriter pdfWriter = new PdfWriter(pdfPath);
             PdfDocument pdfDoc = new PdfDocument(pdfWriter);
             Document document = new Document(pdfDoc)){
-
             for(int i=0; i<information.size(); i++){
                 // * Add title report
                 document.add(new Paragraph((titlesReport.get(i)))

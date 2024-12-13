@@ -6,6 +6,8 @@ import projectacme.util.Enum.AccessSubjectRoleEnum;
 import projectacme.util.Enum.StateEnum;
 import projectacme.util.pdf.PdfGenerator;
 
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -14,10 +16,12 @@ import java.util.function.Supplier;
 
 public class ThreadReportManage {
 
-    private final Map<String, Supplier<List<Map<String, Object>>>> reportFunctions = new HashMap<>();
 
     public static void generateReports(Map<String, Supplier<List<Map<String, Object>>>> reportFunctions){
-         String pdfPath = "generated_report.pdf";
+        String userHome = System.getProperty("user.home");
+        Path downloadsPath = Paths.get(userHome, "Downloads");
+        String pdfPath = downloadsPath.resolve("generated_report.pdf").toString();
+
         List<List<Map<String,Object>>> reports = new ArrayList<>();
         List<String> titles = new ArrayList<>();
 
