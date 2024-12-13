@@ -3,7 +3,10 @@ package projectacme.controller;
 import java.awt.Color;
 import projectacme.model.AccessSubject;
 import projectacme.repository.implementation.AccessSubjectImpl;
-import projectacme.view.IntefarceLogin;
+import projectacme.util.Login;
+import projectacme.view.*;
+
+import javax.swing.*;
 
 public class LoginController {
 
@@ -12,7 +15,7 @@ public class LoginController {
 
     public LoginController(IntefarceLogin loginView) {
         this.loginView = loginView;
-        this.accessSubjectService = new AccessSubjectImpl(); 
+        this.accessSubjectService = new AccessSubjectImpl();
         initController();
     }
 
@@ -26,20 +29,28 @@ public class LoginController {
     }
 
     private void handleLogin() {
-        String username = loginView.getInputUsername().getText();
+        String identification = loginView.getInputUsername().getText();
         String password = new String(loginView.getInputPassword().getPassword());
-
-        // Validación de usuario a través del DAO
-        AccessSubject user = accessSubjectService.getAccessSubjectById(username);
-                    System.out.println("A");
-
-
+        AccessSubject user = accessSubjectService.getAccessSubjectById(identification);
         if (user != null) {
+            if (Login.validationUser(identification, password)) {
             System.out.println("User Validated: " + user.getName());
-            // Abrir nueva ventana
-            IntefarceLogin newWindow = new IntefarceLogin();
-            newWindow.setVisible(true);
-            loginView.dispose(); // Cerrar ventana actual
+                JFrame newWindow = switch (user.getRole()) {
+                    case sudo -> new InterfaceSudoMenu();
+                    case officer -> new InterfaceOfficerMenu();
+                    case manager -> new InterfaceManagerMenu();
+                    case securityGuard -> new InterfaceSecurityGuardMenu();
+                    default -> null;
+                };
+                if (newWindow != null){
+                newWindow.setVisible(true);
+                }
+            loginView.dispose(); // * Close Actual Window
+            }
+            System.out.println("User Is Not Valid");
+            // Mostrar error en campos
+            loginView.getInputUsername().setForeground(Color.RED);
+            loginView.getInputPassword().setForeground(Color.RED);
         } else {
             System.out.println("User Is Not Valid");
             // Mostrar error en campos
