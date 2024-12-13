@@ -5,6 +5,9 @@
 package projectacme.view;
 
 import java.awt.Color;
+import javax.swing.JLabel;
+import javax.swing.JPasswordField;
+import javax.swing.JTextField;
 import projectacme.controller.LoginController;
 
 /**
@@ -177,31 +180,28 @@ public class IntefarceLogin extends javax.swing.JFrame {
     }//GEN-LAST:event_HeaderMouseDragged
 
     private void TextButtonEnterMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TextButtonEnterMouseClicked
-      if (LoginController.validationUser(InputUsername.getText(), InputPassword.getText())){
-          System.out.println("User Validated");
-      } else {
-          System.out.println("User Is Not Valid");
-      }
-        // TODO add your handling code here:
+    
     }//GEN-LAST:event_TextButtonEnterMouseClicked
 
     private void InputUsernameMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_InputUsernameMousePressed
-        InputUsername.setText("");
-        InputUsername.setForeground(Color.black);
-        InputPassword.setText("**********");
-        InputPassword.setForeground(Color.gray);
+    
     }//GEN-LAST:event_InputUsernameMousePressed
 
     private void InputPasswordMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_InputPasswordMousePressed
-        InputUsername.setText("Enter your username");
-        InputUsername.setForeground(Color.gray);
-        InputPassword.setText("");
-        InputPassword.setForeground(Color.black);
+    
     }//GEN-LAST:event_InputPasswordMousePressed
+    
+    public JLabel getTextButtonEnter(){
+        return TextButtonEnter;
+    }
 
-    /**
-     * @param args the command line arguments
-     */
+    public JTextField getInputUsername(){
+        return InputUsername;
+    } 
+
+    public JPasswordField getInputPassword(){
+        return InputPassword;
+    }
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
