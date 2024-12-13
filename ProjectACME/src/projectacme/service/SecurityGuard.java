@@ -1,5 +1,6 @@
 package projectacme.service;
 
+import projectacme.events.Observer;
 import projectacme.repository.implementation.AccessSubjectImpl;
 import projectacme.repository.implementation.ReportManagerImpl;
 import projectacme.model.AccessLog;
@@ -15,7 +16,7 @@ import java.time.Instant;
 import java.util.List;
 import java.util.Map;
 
-public class SecurityGuard extends User implements RegisterAccessService{
+public class SecurityGuard extends User implements RegisterAccessService, Observer {
     private static final AccessLogImpl accessLogImpl = new AccessLogImpl();
     private final ReportManagerImpl reportManagerImpl = new ReportManagerImpl();
 
@@ -24,17 +25,24 @@ public class SecurityGuard extends User implements RegisterAccessService{
     }
 
     @Override
+    public void update(String message) {
+        System.out.println("Security Guard received message: " + message);
+    }
+
+    @Override
     public void registerAccess(ScannerType type, String id) {
         AccessLog lastAccessLog = accessLogImpl.getAllAccessLog().stream().filter(accessLog -> accessLog.getIdAccessSubject().equals(id)).findFirst().orElse(null);
         if (type == ScannerType.exit){
             if (lastAccessLog == null || !lastAccessLog.getType().toString().equals(ScannerType.exit.toString())){
            accessLogImpl.addAccessLog(new AccessLog(AccessType.exit, Timestamp.from(Instant.now()), id, null, this.getId()));
+                // TODO: Change For Factory Method
             } else {
                 System.out.println("The Individual Is Already Outside");
             }
         } else if (type == ScannerType.entry) {
             if (lastAccessLog == null || !lastAccessLog.getType().toString().equals(ScannerType.entry.toString())){
             accessLogImpl.addAccessLog(new AccessLog(AccessType.entry, Timestamp.from(Instant.now()), id, null, this.getId()));
+                // TODO: Change For Factory Method
             } else {
                 System.out.println("The Individual Is Already Inside");
             }

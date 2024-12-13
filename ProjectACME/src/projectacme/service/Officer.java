@@ -1,5 +1,6 @@
 package projectacme.service;
 
+import projectacme.events.Observer;
 import projectacme.factory.AccessSubjectFactory;
 import projectacme.repository.implementation.ReportManagerImpl;
 import projectacme.model.AccessSubject;
@@ -14,7 +15,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
-public class Officer extends User implements ReportService{
+public class Officer extends User implements ReportService, Observer{
     private static final AccessSubjectImpl accessSubject = new AccessSubjectImpl();
     private int idCompany;
     private static final ReportManagerImpl reportManagerImpl = new ReportManagerImpl();
@@ -22,6 +23,11 @@ public class Officer extends User implements ReportService{
     public Officer(String id, String name, String phone, String emailAddress, AccessSubjectRoleEnum role, StateEnum state, String password, int idCompany) {
         super(id, name, phone, emailAddress, role, state, password);
         this.idCompany = idCompany;
+    }
+
+    @Override
+    public void update(String message) {
+        System.out.println("Officer received message: " + message);
     }
 
     @Override
