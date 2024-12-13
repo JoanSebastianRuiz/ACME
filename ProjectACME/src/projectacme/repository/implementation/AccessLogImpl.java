@@ -3,7 +3,7 @@ package projectacme.repository.implementation;
 import projectacme.events.Observer;
 import projectacme.events.Subject;
 import projectacme.model.AccessLog;
-import projectacme.model.ConnectionData;
+import projectacme.util.ConnectionData;
 import projectacme.util.Enum.AccessType;
 import projectacme.repository.dao.AccessLogDao;
 

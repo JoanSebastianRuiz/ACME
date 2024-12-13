@@ -1,7 +1,7 @@
 package projectacme.repository.implementation;
 
 import projectacme.model.Company;
-import projectacme.model.ConnectionData;
+import projectacme.util.ConnectionData;
 import projectacme.repository.dao.CompanyDao;
 
 import java.sql.Connection;

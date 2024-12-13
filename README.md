@@ -15,7 +15,7 @@
 
 ## General Information 📒
 
-Granja Estelar Database is a MySQL database designed to record and facilitate access to information about the agricultural production of a farm.
+A
 
 ## Requirements 📌
 
