@@ -28,13 +28,14 @@ public class SecurityGuard extends User implements RegisterAccessService{
         AccessLog lastAccessLog = accessLogImpl.getAllAccessLog().stream().filter(accessLog -> accessLog.getIdAccessSubject().equals(id)).findFirst().orElse(null);
         if (type == ScannerType.exit){
             if (lastAccessLog == null || !lastAccessLog.getType().toString().equals(ScannerType.exit.toString())){
-           accessLogImpl.addAccessLog(new AccessLog(AccessType.exit, Timestamp.from(Instant.now()), id, null, this.getId()));
+
+           accessLogImpl.addAccessLog(new AccessLog.Builder(AccessType.exit,Timestamp.from(Instant.now()),id).setIdAccessSubjectLogger(this.getId()).build());
             } else {
                 System.out.println("The Individual Is Already Outside");
             }
         } else if (type == ScannerType.entry) {
             if (lastAccessLog == null || !lastAccessLog.getType().toString().equals(ScannerType.entry.toString())){
-            accessLogImpl.addAccessLog(new AccessLog(AccessType.entry, Timestamp.from(Instant.now()), id, null, this.getId()));
+            accessLogImpl.addAccessLog(new AccessLog.Builder(AccessType.entry,Timestamp.from(Instant.now()),id).setIdAccessSubjectLogger(this.getId()).build());
             } else {
                 System.out.println("The Individual Is Already Inside");
             }

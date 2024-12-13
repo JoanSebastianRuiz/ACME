@@ -4,22 +4,33 @@
  */
 package projectacme;
 
+import com.itextpdf.kernel.pdf.PdfDocument;
+import com.itextpdf.kernel.pdf.PdfReader;
+import com.itextpdf.kernel.pdf.PdfWriter;
+import com.itextpdf.layout.Document;
+import com.itextpdf.layout.element.Paragraph;
+import projectacme.factory.AccessSubjectFactory;
 import projectacme.model.AccessSubject;
 import projectacme.service.Manager;
 import projectacme.service.Officer;
+import projectacme.util.Enum.AccessSubjectRoleEnum;
 import projectacme.util.Enum.StateEnum;
-import projectacme.util.Enum.UserRoleEnum;
+import projectacme.util.ThreadReportManage;
+import projectacme.util.pdf.PdfGenerator;
 //import projectacme.view.IntefarceLogin;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import projectacme.view.IntefaceCreateWorker;
-import projectacme.view.IntefarceLogin;
-import projectacme.view.InterfaceCreateGuest;
-import projectacme.view.InterfaceCreateOfficer;
-import projectacme.view.InterfaceCreateSecurityGuard;
-import projectacme.view.InterfaceSudoCreate;
-import projectacme.view.InterfaceSecurityGuardMenu;
+import java.util.function.Supplier;
+//import projectacme.view.IntefaceCreateWorker;
+//import projectacme.view.IntefarceLogin;
+//import projectacme.view.InterfaceCreateGuest;
+//import projectacme.view.InterfaceCreateOfficer;
+//import projectacme.view.InterfaceCreateSecurityGuard;
+//import projectacme.view.InterfaceSudoCreate;
+//import projectacme.view.InterfaceSecurityGuardMenu;
 
 /**
  *
@@ -28,10 +39,10 @@ import projectacme.view.InterfaceSecurityGuardMenu;
 public class ProjectACME {
 
     public static void main(String[] args) {
-        InterfaceSecurityGuardMenu ventana = new InterfaceSecurityGuardMenu();
-        
-        ventana.setVisible(true);
-        
+
     }
-    
+
+
 }
+
+

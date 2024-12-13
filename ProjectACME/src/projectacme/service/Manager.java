@@ -52,7 +52,12 @@ public class Manager extends User implements ReportService{
 
     public List<Map<String,Object>> getReportsSecurityGuard() {
         return reportManagerImpl.getInformationAccessSubjects().stream()
-                .filter(element->element.get("role").equals("securityGuard"))
+                .filter(element->element.get("Role").equals("securityGuard"))
+                .peek(element->{
+                    element.remove("idCompany");
+                    element.remove("Company Name");
+                    element.remove("Role");
+                })
                 .collect(Collectors.toList());
     }
 
@@ -67,27 +72,43 @@ public class Manager extends User implements ReportService{
     @Override
     public List<Map<String,Object>> getReportsWorkers() {
         return reportManagerImpl.getInformationAccessSubjects().stream()
-                .filter(element->element.get("role").equals("worker"))
+                .filter(element->element.get("Role").equals("worker"))
+                .peek(element->{
+                    element.remove("Role");
+                    element.remove("idCompany");
+                })
                 .collect(Collectors.toList());
     }
 
     @Override
     public List<Map<String,Object>> getReportsGuest() {
         return reportManagerImpl.getInformationAccessSubjects().stream()
-                .filter(element->element.get("role").equals("worker"))
+                .filter(element->element.get("Role").equals("guest"))
+                .peek(element->{
+                    element.remove("Role");
+                    element.remove("idCompany");
+                })
                 .collect(Collectors.toList());
     }
 
     @Override
     public List<Map<String, Object>> getReportsIndividuals() {
         return reportManagerImpl.getInformationAccessSubjects().stream()
-                .filter(element->element.get("role").equals("worker") || element.get("role").equals("guest"))
+                .filter(element->element.get("Role").equals("worker") || element.get("Role").equals("guest"))
+                .peek(element->{
+                    element.remove("Role");
+                    element.remove("idCompany");
+                })
                 .collect(Collectors.toList());
     }
 
     public List<Map<String, Object>> getReportsOfficers() {
         return reportManagerImpl.getInformationAccessSubjects().stream()
-                .filter(element->element.get("role").equals("officer"))
+                .filter(element->element.get("Role").equals("officer"))
+                .peek(element->{
+                    element.remove("Role");
+                    element.remove("idCompany");
+                })
                 .collect(Collectors.toList());
     }
 }

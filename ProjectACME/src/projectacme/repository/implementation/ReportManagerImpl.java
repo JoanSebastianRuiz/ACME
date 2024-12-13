@@ -26,13 +26,13 @@ public class ReportManagerImpl implements ReportManagerDAO {
 
             while(rs.next()){
                 HashMap<String, Object> map = new HashMap<>();
-                map.put("id", rs.getString("id"));
-                map.put("name", rs.getString("name"));
-                map.put("phone", rs.getString("phone"));
-                map.put("emailAddress", rs.getString("emailAddress"));
-                map.put("role", rs.getString("role"));
-                map.put("state", rs.getString("state"));
-                map.put("nameCompany", rs.getString("nameCompany"));
+                map.put("Document", rs.getString("id"));
+                map.put("Name", rs.getString("name"));
+                map.put("Phone", rs.getString("phone"));
+                map.put("Email Address", rs.getString("emailAddress"));
+                map.put("Role", rs.getString("role"));
+                map.put("State", rs.getString("state"));
+                map.put("Company Name", rs.getString("nameCompany"));
                 map.put("idCompany", rs.getInt("idCompany"));
                 accessSubjects.add(map);
             }
