@@ -5,6 +5,7 @@
 package projectacme.view;
 
 import java.awt.Color;
+import projectacme.controller.LoginController;
 
 /**
  *
@@ -176,6 +177,11 @@ public class IntefarceLogin extends javax.swing.JFrame {
     }//GEN-LAST:event_HeaderMouseDragged
 
     private void TextButtonEnterMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TextButtonEnterMouseClicked
+      if (LoginController.validationUser(InputUsername.getText(), InputPassword.getText())){
+          System.out.println("User Validated");
+      } else {
+          System.out.println("User Is Not Valid");
+      }
         // TODO add your handling code here:
     }//GEN-LAST:event_TextButtonEnterMouseClicked
 

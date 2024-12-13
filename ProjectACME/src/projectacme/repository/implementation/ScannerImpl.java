@@ -1,6 +1,6 @@
 package projectacme.repository.implementation;
 
-import projectacme.model.ConnectionData;
+import projectacme.util.ConnectionData;
 import projectacme.util.Enum.ScannerType;
 import projectacme.model.Scanner;
 import projectacme.repository.dao.ScannerDao;

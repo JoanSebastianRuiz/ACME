@@ -1,6 +1,6 @@
 package projectacme.repository.implementation;
 
-import projectacme.model.ConnectionData;
+import projectacme.util.ConnectionData;
 import projectacme.model.Justification;
 import projectacme.repository.dao.JustificationDao;
 

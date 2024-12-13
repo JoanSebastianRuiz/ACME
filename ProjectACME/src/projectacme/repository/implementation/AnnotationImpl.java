@@ -1,7 +1,7 @@
 package projectacme.repository.implementation;
 
 import projectacme.model.Annotation;
-import projectacme.model.ConnectionData;
+import projectacme.util.ConnectionData;
 import projectacme.repository.dao.AnnotationDao;
 import projectacme.util.Enum.StateEnum;
 

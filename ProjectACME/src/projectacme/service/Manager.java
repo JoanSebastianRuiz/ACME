@@ -1,7 +1,6 @@
 package projectacme.service;
 
 import projectacme.factory.AccessSubjectFactory;
-import projectacme.model.AccessSubject;
 import projectacme.repository.implementation.ReportManagerImpl;
 import projectacme.repository.implementation.AccessSubjectImpl;
 import projectacme.util.Enum.StateEnum;
@@ -13,15 +12,21 @@ import projectacme.util.validators.StringValidator;
 
 import java.util.List;
 import java.util.Map;
+import java.util.Observable;
+import projectacme.events.Observer;
 import java.util.stream.Collectors;
 
-public class Manager extends User implements ReportService{
+public class Manager extends User implements ReportService, Observer {
     private static final AccessSubjectImpl accessSubject = new AccessSubjectImpl();
     private static final ReportManagerImpl reportManagerImpl= new ReportManagerImpl();
     public Manager(String id, String name, String phone, String emailAddress, AccessSubjectRoleEnum role, StateEnum state, String password) {
         super(id, name, phone, emailAddress, role, state, password);
     }
 
+    @Override
+    public void update(String message) {
+        System.out.println("Manager received message: " + message);
+    }
 
     public void createSecurityGuard(String id, String name, String phone, String emailAddress, String password) {
         if (StringValidator.StringLengthExactlyThanValidator(id, 10)

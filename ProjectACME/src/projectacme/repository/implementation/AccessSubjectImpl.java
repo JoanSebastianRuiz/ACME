@@ -2,7 +2,7 @@ package projectacme.repository.implementation;
 
 import projectacme.factory.AccessSubjectFactory;
 import projectacme.model.AccessSubject;
-import projectacme.model.ConnectionData;
+import projectacme.util.ConnectionData;
 import projectacme.util.Enum.StateEnum;
 import projectacme.util.Enum.AccessSubjectRoleEnum;
 import projectacme.repository.dao.AccessSubjectDao;

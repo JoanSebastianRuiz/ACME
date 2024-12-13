@@ -1,7 +1,9 @@
 package projectacme.repository.implementation;
 
+import projectacme.events.Observer;
+import projectacme.events.Subject;
 import projectacme.model.AccessLog;
-import projectacme.model.ConnectionData;
+import projectacme.util.ConnectionData;
 import projectacme.util.Enum.AccessType;
 import projectacme.repository.dao.AccessLogDao;
 
@@ -9,7 +11,26 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class AccessLogImpl implements AccessLogDao {
+public class AccessLogImpl implements AccessLogDao, Subject{
+    private final List<Observer> observers = new ArrayList<Observer>();
+
+    @Override
+    public void registerObserver(Observer observer) {
+        observers.add(observer);
+    }
+
+    @Override
+    public void removeObserver(Observer observer) {
+        observers.remove(observer);
+    }
+
+    @Override
+    public void notifyObservers(String message) {
+        for (Observer observer : observers){
+            observer.update(message);
+        }
+    }
+
     @Override
     public void addAccessLog(AccessLog accessLog) {
         String sql = "INSERT INTO AccessLog(type,datetime,idAccessSubject,idScanner,idAccessSubjectLogger) VALUES(?,?,?,?,?);";
@@ -22,6 +43,7 @@ public class AccessLogImpl implements AccessLogDao {
             stmt.setString(5,accessLog.getIdAccessSubjectLogger());
             stmt.executeUpdate();
             System.out.println("Added new AccessLog");
+            notifyObservers("New AccessLog added: " + accessLog.getId());
 
         } catch (SQLException e){
             throw new RuntimeException("Error inserting AccessLog", e);
