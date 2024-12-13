@@ -44,5 +44,15 @@
         <SOURCES />
       </library>
     </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library>
+        <CLASSES>
+          <root url="file://$USER_HOME$/Downloads/iText-Core-9.0.0-only-jars" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+        <jarDirectory url="file://$USER_HOME$/Downloads/iText-Core-9.0.0-only-jars" recursive="false" />
+      </library>
+    </orderEntry>
   </component>
 </module>

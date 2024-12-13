@@ -9,6 +9,7 @@ import com.itextpdf.kernel.pdf.PdfReader;
 import com.itextpdf.kernel.pdf.PdfWriter;
 import com.itextpdf.layout.Document;
 import com.itextpdf.layout.element.Paragraph;
+import projectacme.controller.LoginController;
 import projectacme.factory.AccessSubjectFactory;
 import projectacme.model.AccessSubject;
 import projectacme.service.Manager;
@@ -17,6 +18,7 @@ import projectacme.util.Enum.AccessSubjectRoleEnum;
 import projectacme.util.Enum.StateEnum;
 import projectacme.util.ThreadReportManage;
 import projectacme.util.pdf.PdfGenerator;
+import projectacme.view.IntefarceLogin;
 //import projectacme.view.IntefarceLogin;
 
 import java.util.ArrayList;
@@ -24,6 +26,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.function.Supplier;
+import javax.swing.JFrame;
 //import projectacme.view.IntefaceCreateWorker;
 //import projectacme.view.IntefarceLogin;
 //import projectacme.view.InterfaceCreateGuest;
@@ -39,7 +42,9 @@ import java.util.function.Supplier;
 public class ProjectACME {
 
     public static void main(String[] args) {
-
+        IntefarceLogin interfaceLogin = new IntefarceLogin();
+        interfaceLogin.setVisible(true);
+        LoginController loginController = new LoginController(interfaceLogin);
     }
 
 
