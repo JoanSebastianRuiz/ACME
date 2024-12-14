@@ -15,31 +15,26 @@ public class ManagerMenuController {
 
     public ManagerMenuController(InterfaceManagerMenu managerMenuView) {
         this.managerMenuView = managerMenuView;
-        initController();
+        initController();  
     }
 
     private void initController() {
-        // Obtener los botones de la vista del menú del manager usando los métodos get
-        JButton buttonCreateGuard = managerMenuView.getButtonCreateGuard();
-        JButton buttonCreateOfficer = managerMenuView.getButtonCreateOfficer();
-        JButton buttonReports = managerMenuView.getButtonRegisterReport();
-
-        // Agregar los ActionListeners a los botones
-        buttonCreateGuard.addActionListener(new ActionListener() {
+        // Agregar ActionListener a los botones
+        managerMenuView.getButtonCreateGuard().addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 openCreateSecurityGuard();
             }
         });
 
-        buttonCreateOfficer.addActionListener(new ActionListener() {
+        managerMenuView.getButtonCreateOfficer().addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 openCreateOfficer();
             }
         });
 
-        buttonReports.addActionListener(new ActionListener() {
+        managerMenuView.getButtonReports().addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 openReports();
@@ -48,17 +43,15 @@ public class ManagerMenuController {
     }
 
     private void openCreateSecurityGuard() {
-        // Crear la interfaz para Crear Guardias de Seguridad
         InterfaceCreateSecurityGuard securityGuardView = new InterfaceCreateSecurityGuard();
         securityGuardView.setVisible(true);
-        managerMenuView.dispose(); // Cierra la ventana actual
+        managerMenuView.dispose(); 
     }
 
     private void openCreateOfficer() {
-        // Crear la interfaz para Crear Oficiales
         InterfaceCreateOfficer officerView = new InterfaceCreateOfficer();
         officerView.setVisible(true);
-        managerMenuView.dispose(); // Cierra la ventana actual
+        managerMenuView.dispose(); 
     }
 
     private void openReports() {
@@ -68,3 +61,4 @@ public class ManagerMenuController {
         managerMenuView.dispose(); // Cierra la ventana actual
     }
 }
+

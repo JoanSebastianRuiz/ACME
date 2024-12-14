@@ -14,6 +14,7 @@ public class InterfaceManagerMenu extends javax.swing.JFrame {
     int xMouse, yMouse;
     public InterfaceManagerMenu() {
         initComponents();
+        new ManagerMenuController(this);
     }
 
     /**
@@ -313,8 +314,8 @@ public class InterfaceManagerMenu extends javax.swing.JFrame {
         return ButtonCreateOfficer;
     }
     
-    public JButton getButtonRegisterReport(){
-        return ButtonRegisterReport;
+    public JButton getButtonReports(){
+        return ButtonReports;
     }
     
     public static void main(String args[]) {
