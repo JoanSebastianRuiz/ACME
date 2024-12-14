@@ -4,6 +4,9 @@
  */
 package projectacme.view;
 
+import javax.swing.JButton;
+import projectacme.controller.SecurityGuardMenuController;
+
 /**
  *
  * @author Sebastian
@@ -14,6 +17,7 @@ public class InterfaceSecurityGuardMenu extends javax.swing.JFrame {
     
     public InterfaceSecurityGuardMenu() {
         initComponents();
+        new SecurityGuardMenuController(this);
         
     }
 
@@ -31,12 +35,12 @@ public class InterfaceSecurityGuardMenu extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        ButtonReport = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
+        ButtonVehicle = new javax.swing.JButton();
+        ButtonIndividual = new javax.swing.JButton();
+        ButtonCreateReport = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setLocationByPlatform(true);
@@ -97,16 +101,21 @@ public class InterfaceSecurityGuardMenu extends javax.swing.JFrame {
             .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        jButton1.setBackground(new java.awt.Color(240, 242, 235));
-        jButton1.setFont(new java.awt.Font("Nimbus Sans Narrow", 0, 24)); // NOI18N
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/projectacme/view/images/icons8-documento-compartido-48.png"))); // NOI18N
-        jButton1.setText("Reports");
-        jButton1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jButton1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButton1.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        ButtonReport.setBackground(new java.awt.Color(240, 242, 235));
+        ButtonReport.setFont(new java.awt.Font("Nimbus Sans Narrow", 0, 24)); // NOI18N
+        ButtonReport.setIcon(new javax.swing.ImageIcon(getClass().getResource("/projectacme/view/images/icons8-documento-compartido-48.png"))); // NOI18N
+        ButtonReport.setText("Reports");
+        ButtonReport.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        ButtonReport.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        ButtonReport.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        ButtonReport.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                ButtonReportMouseClicked(evt);
+            }
+        });
+        ButtonReport.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                ButtonReportActionPerformed(evt);
             }
         });
 
@@ -116,43 +125,58 @@ public class InterfaceSecurityGuardMenu extends javax.swing.JFrame {
         jSeparator1.setBackground(new java.awt.Color(0, 0, 0));
         jSeparator1.setForeground(new java.awt.Color(0, 0, 0));
 
-        jButton3.setBackground(new java.awt.Color(240, 242, 235));
-        jButton3.setFont(new java.awt.Font("Nimbus Sans Narrow", 0, 24)); // NOI18N
-        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/projectacme/view/images/icons8-auto-48.png"))); // NOI18N
-        jButton3.setText("Vehicle");
-        jButton3.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jButton3.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButton3.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        ButtonVehicle.setBackground(new java.awt.Color(240, 242, 235));
+        ButtonVehicle.setFont(new java.awt.Font("Nimbus Sans Narrow", 0, 24)); // NOI18N
+        ButtonVehicle.setIcon(new javax.swing.ImageIcon(getClass().getResource("/projectacme/view/images/icons8-auto-48.png"))); // NOI18N
+        ButtonVehicle.setText("Vehicle");
+        ButtonVehicle.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        ButtonVehicle.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        ButtonVehicle.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        ButtonVehicle.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                ButtonVehicleMouseClicked(evt);
+            }
+        });
+        ButtonVehicle.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                ButtonVehicleActionPerformed(evt);
             }
         });
 
-        jButton4.setBackground(new java.awt.Color(240, 242, 235));
-        jButton4.setFont(new java.awt.Font("Nimbus Sans Narrow", 0, 24)); // NOI18N
-        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/projectacme/view/images/icons8-gerente-48.png"))); // NOI18N
-        jButton4.setText("Individual");
-        jButton4.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jButton4.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButton4.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
+        ButtonIndividual.setBackground(new java.awt.Color(240, 242, 235));
+        ButtonIndividual.setFont(new java.awt.Font("Nimbus Sans Narrow", 0, 24)); // NOI18N
+        ButtonIndividual.setIcon(new javax.swing.ImageIcon(getClass().getResource("/projectacme/view/images/icons8-gerente-48.png"))); // NOI18N
+        ButtonIndividual.setText("Individual");
+        ButtonIndividual.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        ButtonIndividual.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        ButtonIndividual.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        ButtonIndividual.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                ButtonIndividualMouseClicked(evt);
+            }
+        });
+        ButtonIndividual.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+                ButtonIndividualActionPerformed(evt);
             }
         });
 
-        jButton5.setBackground(new java.awt.Color(240, 242, 235));
-        jButton5.setFont(new java.awt.Font("Nimbus Sans Narrow", 0, 24)); // NOI18N
-        jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/projectacme/view/images/icons8-punta-de-lápiz-48.png"))); // NOI18N
-        jButton5.setText("Register Report");
-        jButton5.setToolTipText("");
-        jButton5.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jButton5.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButton5.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
+        ButtonCreateReport.setBackground(new java.awt.Color(240, 242, 235));
+        ButtonCreateReport.setFont(new java.awt.Font("Nimbus Sans Narrow", 0, 24)); // NOI18N
+        ButtonCreateReport.setIcon(new javax.swing.ImageIcon(getClass().getResource("/projectacme/view/images/icons8-punta-de-lápiz-48.png"))); // NOI18N
+        ButtonCreateReport.setText("Register Report");
+        ButtonCreateReport.setToolTipText("");
+        ButtonCreateReport.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        ButtonCreateReport.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        ButtonCreateReport.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        ButtonCreateReport.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                ButtonCreateReportMouseClicked(evt);
+            }
+        });
+        ButtonCreateReport.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
+                ButtonCreateReportActionPerformed(evt);
             }
         });
 
@@ -164,15 +188,15 @@ public class InterfaceSecurityGuardMenu extends javax.swing.JFrame {
             .addGroup(BackgroundLayout.createSequentialGroup()
                 .addGap(35, 35, 35)
                 .addGroup(BackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ButtonCreateReport, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ButtonIndividual, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(BackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(52, 52, 52)
-                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(ButtonVehicle, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(ButtonReport, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(68, 68, 68))
         );
         BackgroundLayout.setVerticalGroup(
@@ -185,11 +209,11 @@ public class InterfaceSecurityGuardMenu extends javax.swing.JFrame {
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(27, 27, 27)
                 .addGroup(BackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(ButtonVehicle, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ButtonIndividual, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ButtonReport, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 36, Short.MAX_VALUE)
-                .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(ButtonCreateReport, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(33, 33, 33))
         );
 
@@ -214,25 +238,52 @@ public class InterfaceSecurityGuardMenu extends javax.swing.JFrame {
         yMouse = evt.getY();
     }//GEN-LAST:event_HeaderMousePressed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void ButtonReportActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonReportActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_ButtonReportActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void ButtonVehicleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonVehicleActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_ButtonVehicleActionPerformed
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+    private void ButtonIndividualActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonIndividualActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton4ActionPerformed
+    }//GEN-LAST:event_ButtonIndividualActionPerformed
 
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+    private void ButtonCreateReportActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonCreateReportActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton5ActionPerformed
+    }//GEN-LAST:event_ButtonCreateReportActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
+    private void ButtonIndividualMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ButtonIndividualMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ButtonIndividualMouseClicked
+
+    private void ButtonVehicleMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ButtonVehicleMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ButtonVehicleMouseClicked
+
+    private void ButtonReportMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ButtonReportMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ButtonReportMouseClicked
+
+    private void ButtonCreateReportMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ButtonCreateReportMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ButtonCreateReportMouseClicked
+
+    public JButton getButtonIndividual(){
+        return ButtonIndividual;
+    }
+    
+    public JButton getButtonVehicle(){
+        return ButtonVehicle;
+    }
+    
+    public JButton getButtonReport(){
+        return ButtonReport;
+    }
+    public JButton getButtonCreateReport(){
+        return ButtonCreateReport;
+    }
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -268,11 +319,11 @@ public class InterfaceSecurityGuardMenu extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel Background;
+    private javax.swing.JButton ButtonCreateReport;
+    private javax.swing.JButton ButtonIndividual;
+    private javax.swing.JButton ButtonReport;
+    private javax.swing.JButton ButtonVehicle;
     private javax.swing.JPanel Header;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel6;
