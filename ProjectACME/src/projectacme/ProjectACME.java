@@ -3,45 +3,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
  */
 package projectacme;
-
-import com.itextpdf.kernel.pdf.PdfDocument;
-import com.itextpdf.kernel.pdf.PdfReader;
-import com.itextpdf.kernel.pdf.PdfWriter;
-import com.itextpdf.layout.Document;
-import com.itextpdf.layout.element.Paragraph;
-import projectacme.controller.LoginController;
-import projectacme.factory.AccessSubjectFactory;
-import projectacme.model.AccessSubject;
-import projectacme.model.Annotation;
 import projectacme.repository.implementation.AnnotationImpl;
-import projectacme.service.Manager;
-import projectacme.service.Officer;
-import projectacme.util.ConnectionData;
-import projectacme.util.Enum.AccessSubjectRoleEnum;
-import projectacme.util.Enum.StateEnum;
 import projectacme.util.FileManagement;
-import projectacme.util.ThreadReportManage;
-import projectacme.util.pdf.PdfGenerator;
-import projectacme.view.IntefarceLogin;
 import projectacme.view.InterfaceAccessDataBase;
-//import projectacme.view.IntefarceLogin;
-
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.function.Supplier;
-import javax.swing.*;
-import projectacme.controller.ManagerMenuController;
-import projectacme.view.InterfaceManagerMenu;
-//import projectacme.view.IntefaceCreateWorker;
-//import projectacme.view.IntefarceLogin;
-//import projectacme.view.InterfaceCreateGuest;
-//import projectacme.view.InterfaceCreateOfficer;
-//import projectacme.view.InterfaceCreateSecurityGuard;
-//import projectacme.view.InterfaceSudoCreate;
-//import projectacme.view.InterfaceSecurityGuardMenu;
-
 /**
  *
  * @author USUARIO

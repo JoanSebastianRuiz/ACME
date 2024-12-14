@@ -19,17 +19,7 @@
     <orderEntry type="module-library" exported="">
       <library>
         <CLASSES>
-          <root url="file://$MODULE_DIR$/../../../Jars/iText-Core-9.0.0-only-jars" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-        <jarDirectory url="file://$MODULE_DIR$/../../../Jars/iText-Core-9.0.0-only-jars" recursive="false" />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library" exported="">
-      <library>
-        <CLASSES>
-          <root url="jar://$MODULE_DIR$/../../../Jars/AbsoluteLayout.jar!/" />
+          <root url="jar://$MODULE_DIR$/src/projectacme/lib/AbsoluteLayout.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -38,7 +28,7 @@
     <orderEntry type="module-library" exported="">
       <library>
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/../../../Jars/slf4j-api-2.0.0.jar!/" />
+          <root url="jar://$MODULE_DIR$/src/projectacme/lib/slf4j-api-2.0.0.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -47,10 +37,20 @@
     <orderEntry type="module-library" exported="">
       <library>
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/../../../Jars/slf4j-nop-2.1.0-alpha1.jar!/" />
+          <root url="jar://$MODULE_DIR$/src/projectacme/lib/slf4j-nop-2.1.0-alpha1.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library>
+        <CLASSES>
+          <root url="file://$MODULE_DIR$/src/projectacme/lib/iText-Core-9.0.0-only-jars" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+        <jarDirectory url="file://$MODULE_DIR$/src/projectacme/lib/iText-Core-9.0.0-only-jars" recursive="false" />
       </library>
     </orderEntry>
   </component>
