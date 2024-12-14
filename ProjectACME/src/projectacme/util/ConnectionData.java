@@ -19,7 +19,7 @@ public class ConnectionData {
     public static java.sql.Connection getConnectionDatabase() throws SQLException {
         if (instance == null || instance.isClosed()) {
             try {
-            instance = DriverManager.getConnection("jdbc:mysql://localhost:3306/acme", "root", "tebas1998");
+            instance = DriverManager.getConnection("jdbc:mysql://localhost:3306/acme", "root", "WandaSQL");
             System.out.println("Connection Successfully");
             } catch (Exception e) {
                 System.out.println(e.getMessage());
