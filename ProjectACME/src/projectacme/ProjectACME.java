@@ -16,7 +16,7 @@ public class ProjectACME {
 
     public static void main(String[] args) {
         // Crear la vista principal (menú del manager)
-        InterfaceAccessDataBase accessDatabase= new InterfaceAccessDataBase();
+        InterfaceSudoMenu accessDatabase= new InterfaceSudoMenu();
         // Crear el controlador que maneja la vista
         
         // Mostrar la ventana

@@ -38,6 +38,7 @@ public class InterfaceSudoMenu extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         ButtonActivateManager = new javax.swing.JButton();
         ButtonInactivateManager = new javax.swing.JButton();
+        ButtonAccessDatabase = new javax.swing.JButton();
         ButtonCreateManager = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -137,6 +138,24 @@ public class InterfaceSudoMenu extends javax.swing.JFrame {
             }
         });
 
+        ButtonAccessDatabase.setBackground(new java.awt.Color(240, 242, 235));
+        ButtonAccessDatabase.setFont(new java.awt.Font("Nimbus Sans Narrow", 0, 24)); // NOI18N
+        ButtonAccessDatabase.setIcon(new javax.swing.ImageIcon(getClass().getResource("/projectacme/view/images/icons8-base-de-datos-48.png"))); // NOI18N
+        ButtonAccessDatabase.setText("Access Database");
+        ButtonAccessDatabase.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        ButtonAccessDatabase.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        ButtonAccessDatabase.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        ButtonAccessDatabase.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                ButtonAccessDatabaseMouseClicked(evt);
+            }
+        });
+        ButtonAccessDatabase.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ButtonAccessDatabaseActionPerformed(evt);
+            }
+        });
+
         ButtonCreateManager.setBackground(new java.awt.Color(240, 242, 235));
         ButtonCreateManager.setFont(new java.awt.Font("Nimbus Sans Narrow", 0, 24)); // NOI18N
         ButtonCreateManager.setIcon(new javax.swing.ImageIcon(getClass().getResource("/projectacme/view/images/icons8-gerente-48.png"))); // NOI18N
@@ -161,36 +180,45 @@ public class InterfaceSudoMenu extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(Header, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(35, 35, 35)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(44, 44, 44)
-                .addComponent(ButtonCreateManager, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(71, 71, 71)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(ButtonActivateManager)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(58, 58, 58)
                 .addComponent(ButtonInactivateManager)
-                .addGap(44, 44, 44))
+                .addGap(50, 50, 50))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(35, 35, 35)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(ButtonAccessDatabase)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel1Layout.createSequentialGroup()
+                    .addGap(55, 55, 55)
+                    .addComponent(ButtonCreateManager, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(561, Short.MAX_VALUE)))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(Header, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(36, 36, 36)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(67, 67, 67)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(ButtonInactivateManager, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(ButtonCreateManager, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(ButtonActivateManager, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(145, Short.MAX_VALUE))
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(27, 27, 27)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(ButtonActivateManager, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ButtonInactivateManager, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 45, Short.MAX_VALUE)
+                .addComponent(ButtonAccessDatabase, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                    .addContainerGap(191, Short.MAX_VALUE)
+                    .addComponent(ButtonCreateManager, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(175, 175, 175)))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -231,13 +259,13 @@ public class InterfaceSudoMenu extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_ButtonInactivateManagerActionPerformed
 
-    private void ButtonCreateManagerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonCreateManagerActionPerformed
+    private void ButtonAccessDatabaseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonAccessDatabaseActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_ButtonCreateManagerActionPerformed
+    }//GEN-LAST:event_ButtonAccessDatabaseActionPerformed
 
-    private void ButtonCreateManagerMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ButtonCreateManagerMouseClicked
+    private void ButtonAccessDatabaseMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ButtonAccessDatabaseMouseClicked
         // TODO add your handling code here:
-    }//GEN-LAST:event_ButtonCreateManagerMouseClicked
+    }//GEN-LAST:event_ButtonAccessDatabaseMouseClicked
 
     private void ButtonActivateManagerMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ButtonActivateManagerMouseClicked
         // TODO add your handling code here:
@@ -246,6 +274,14 @@ public class InterfaceSudoMenu extends javax.swing.JFrame {
     private void ButtonInactivateManagerMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ButtonInactivateManagerMouseClicked
         // TODO add your handling code here:
     }//GEN-LAST:event_ButtonInactivateManagerMouseClicked
+
+    private void ButtonCreateManagerMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ButtonCreateManagerMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ButtonCreateManagerMouseClicked
+
+    private void ButtonCreateManagerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonCreateManagerActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ButtonCreateManagerActionPerformed
     
     public JButton getButtonCreateManager(){
         return ButtonCreateManager;
@@ -257,6 +293,11 @@ public class InterfaceSudoMenu extends javax.swing.JFrame {
     
     public JButton getButtonInactivateManager(){
         return ButtonInactivateManager;
+    }
+    
+    
+    public JButton getButtonAccessDatabase(){
+        return ButtonAccessDatabase;
     }
     
     
@@ -293,6 +334,7 @@ public class InterfaceSudoMenu extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton ButtonAccessDatabase;
     private javax.swing.JButton ButtonActivateManager;
     private javax.swing.JButton ButtonCreateManager;
     private javax.swing.JButton ButtonInactivateManager;

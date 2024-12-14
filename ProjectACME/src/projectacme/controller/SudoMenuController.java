@@ -6,6 +6,7 @@ package projectacme.controller;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import projectacme.view.InterfaceAccessDataBase;
 import projectacme.view.InterfaceActivateGuard;
 import projectacme.view.InterfaceActivateManager;
 import projectacme.view.InterfaceCreateManager;
@@ -56,6 +57,13 @@ public class SudoMenuController {
                 openInactivateManager();
             }
         });
+        
+        sudoMenuView.getButtonAccessDatabase().addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                openAccessDatabase();
+            }
+        });
 
         
     }
@@ -75,6 +83,12 @@ public class SudoMenuController {
     private void openInactivateManager() {
         InterfaceInactivateManager inactivateManagerView = new InterfaceInactivateManager();
         inactivateManagerView.setVisible(true);
+        sudoMenuView.dispose(); // Cierra la ventana actual
+    }
+    
+    private void openAccessDatabase() {
+        InterfaceAccessDataBase accessDatabaseView = new InterfaceAccessDataBase();
+        accessDatabaseView.setVisible(true);
         sudoMenuView.dispose(); // Cierra la ventana actual
     }
 }
