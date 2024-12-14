@@ -12,10 +12,14 @@ import com.itextpdf.layout.element.Paragraph;
 import projectacme.controller.LoginController;
 import projectacme.factory.AccessSubjectFactory;
 import projectacme.model.AccessSubject;
+import projectacme.model.Annotation;
+import projectacme.repository.implementation.AnnotationImpl;
 import projectacme.service.Manager;
 import projectacme.service.Officer;
+import projectacme.util.ConnectionData;
 import projectacme.util.Enum.AccessSubjectRoleEnum;
 import projectacme.util.Enum.StateEnum;
+import projectacme.util.FileManagement;
 import projectacme.util.ThreadReportManage;
 import projectacme.util.pdf.PdfGenerator;
 import projectacme.view.IntefarceLogin;
@@ -42,15 +46,10 @@ import javax.swing.JFrame;
 public class ProjectACME {
 
     public static void main(String[] args) {
-        Manager manager = (Manager)AccessSubjectFactory.createAccessSubject("","","","",AccessSubjectRoleEnum.manager,StateEnum.active,"",null);
-        Map<String, Supplier<List<Map<String, Object>>>> reportFunctions = new HashMap<>();
-        reportFunctions.put("Report Officers",()->manager.getReportsOfficers());
-        reportFunctions.put("Report Individuals",()->manager.getReportsIndividuals());
-        reportFunctions.put("Report Workers",()->manager.getReportsWorkers());
-        ThreadReportManage.generateReports(reportFunctions);
+        FileManagement.SetConnectionDatabase();
+        AnnotationImpl annotation = new AnnotationImpl();
+        annotation.getAllAnnotation().forEach(e -> System.out.println(e.getReason()));
     }
-
-
 }
 
 
