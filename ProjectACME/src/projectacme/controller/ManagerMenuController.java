@@ -7,6 +7,9 @@ import projectacme.view.InterfaceViewReports;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import projectacme.view.InterfaceActivateGuard;
+import projectacme.view.InterfaceCreateReport;
+import projectacme.view.InterfaceInactivateGuard;
 import projectacme.view.InterfaceManagerMenu;
 
 public class ManagerMenuController {
@@ -40,6 +43,25 @@ public class ManagerMenuController {
                 openReports();
             }
         });
+        managerMenuView.getButtonActivate().addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                openActivate();
+            }
+        });
+        managerMenuView.getButtonInactive().addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                openInactivate();
+            }
+        });
+        
+        managerMenuView.ButtonRegisterReport().addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                openCreateReport();
+            }
+        });
     }
 
     private void openCreateSecurityGuard() {
@@ -60,5 +82,28 @@ public class ManagerMenuController {
         reportsView.setVisible(true);
         managerMenuView.dispose(); // Cierra la ventana actual
     }
+    
+    private void openActivate() {
+        // Crear la interfaz para Ver Reportes
+        InterfaceActivateGuard reportsView = new InterfaceActivateGuard();
+        reportsView.setVisible(true);
+        managerMenuView.dispose(); // Cierra la ventana actual
+    }
+    
+    private void openInactivate() {
+        // Crear la interfaz para Ver Reportes
+        InterfaceInactivateGuard reportsView = new InterfaceInactivateGuard();
+        reportsView.setVisible(true);
+        managerMenuView.dispose(); // Cierra la ventana actual
+    }
+    
+    private void openCreateReport() {
+        // Crear la interfaz para Ver Reportes
+        InterfaceCreateReport reportsView = new InterfaceCreateReport();
+        reportsView.setVisible(true);
+        managerMenuView.dispose(); // Cierra la ventana actual
+    }
+    
+    
 }
 

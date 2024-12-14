@@ -4,6 +4,9 @@
  */
 package projectacme.view;
 
+import javax.swing.JButton;
+import projectacme.controller.OfficerMenuController;
+
 /**
  *
  * @author Sebastian
@@ -13,6 +16,8 @@ public class InterfaceOfficerMenu extends javax.swing.JFrame {
     int xMouse, yMouse;
     public InterfaceOfficerMenu() {
         initComponents();
+        new OfficerMenuController(this);
+
     }
 
     /**
@@ -25,12 +30,12 @@ public class InterfaceOfficerMenu extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jButton6 = new javax.swing.JButton();
-        jButton7 = new javax.swing.JButton();
+        ButtonActivateIndividual = new javax.swing.JButton();
+        ButtonInactivateIndividual = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
+        ButtonRegisterGuest = new javax.swing.JButton();
+        ButtonRegisterWorker = new javax.swing.JButton();
         Header = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
@@ -40,29 +45,39 @@ public class InterfaceOfficerMenu extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(242, 240, 235));
 
-        jButton6.setBackground(new java.awt.Color(240, 242, 235));
-        jButton6.setFont(new java.awt.Font("Nimbus Sans Narrow", 0, 24)); // NOI18N
-        jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/projectacme/view/images/icons8-alternar-encendido-48.png"))); // NOI18N
-        jButton6.setText("Activate Individual");
-        jButton6.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jButton6.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButton6.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jButton6.addActionListener(new java.awt.event.ActionListener() {
+        ButtonActivateIndividual.setBackground(new java.awt.Color(240, 242, 235));
+        ButtonActivateIndividual.setFont(new java.awt.Font("Nimbus Sans Narrow", 0, 24)); // NOI18N
+        ButtonActivateIndividual.setIcon(new javax.swing.ImageIcon(getClass().getResource("/projectacme/view/images/icons8-alternar-encendido-48.png"))); // NOI18N
+        ButtonActivateIndividual.setText("Activate Individual");
+        ButtonActivateIndividual.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        ButtonActivateIndividual.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        ButtonActivateIndividual.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        ButtonActivateIndividual.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                ButtonActivateIndividualMouseClicked(evt);
+            }
+        });
+        ButtonActivateIndividual.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton6ActionPerformed(evt);
+                ButtonActivateIndividualActionPerformed(evt);
             }
         });
 
-        jButton7.setBackground(new java.awt.Color(240, 242, 235));
-        jButton7.setFont(new java.awt.Font("Nimbus Sans Narrow", 0, 24)); // NOI18N
-        jButton7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/projectacme/view/images/icons8-alternar-apagado-48.png"))); // NOI18N
-        jButton7.setText("Inactivate Individual");
-        jButton7.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jButton7.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButton7.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jButton7.addActionListener(new java.awt.event.ActionListener() {
+        ButtonInactivateIndividual.setBackground(new java.awt.Color(240, 242, 235));
+        ButtonInactivateIndividual.setFont(new java.awt.Font("Nimbus Sans Narrow", 0, 24)); // NOI18N
+        ButtonInactivateIndividual.setIcon(new javax.swing.ImageIcon(getClass().getResource("/projectacme/view/images/icons8-alternar-apagado-48.png"))); // NOI18N
+        ButtonInactivateIndividual.setText("Inactivate Individual");
+        ButtonInactivateIndividual.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        ButtonInactivateIndividual.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        ButtonInactivateIndividual.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        ButtonInactivateIndividual.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                ButtonInactivateIndividualMouseClicked(evt);
+            }
+        });
+        ButtonInactivateIndividual.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton7ActionPerformed(evt);
+                ButtonInactivateIndividualActionPerformed(evt);
             }
         });
 
@@ -72,29 +87,39 @@ public class InterfaceOfficerMenu extends javax.swing.JFrame {
         jSeparator1.setBackground(new java.awt.Color(0, 0, 0));
         jSeparator1.setForeground(new java.awt.Color(0, 0, 0));
 
-        jButton3.setBackground(new java.awt.Color(240, 242, 235));
-        jButton3.setFont(new java.awt.Font("Nimbus Sans Narrow", 0, 24)); // NOI18N
-        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/projectacme/view/images/icons8-invitado-masculino-48.png"))); // NOI18N
-        jButton3.setText("Register Guest");
-        jButton3.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jButton3.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButton3.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        ButtonRegisterGuest.setBackground(new java.awt.Color(240, 242, 235));
+        ButtonRegisterGuest.setFont(new java.awt.Font("Nimbus Sans Narrow", 0, 24)); // NOI18N
+        ButtonRegisterGuest.setIcon(new javax.swing.ImageIcon(getClass().getResource("/projectacme/view/images/icons8-invitado-masculino-48.png"))); // NOI18N
+        ButtonRegisterGuest.setText("Register Guest");
+        ButtonRegisterGuest.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        ButtonRegisterGuest.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        ButtonRegisterGuest.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        ButtonRegisterGuest.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                ButtonRegisterGuestMouseClicked(evt);
+            }
+        });
+        ButtonRegisterGuest.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                ButtonRegisterGuestActionPerformed(evt);
             }
         });
 
-        jButton4.setBackground(new java.awt.Color(240, 242, 235));
-        jButton4.setFont(new java.awt.Font("Nimbus Sans Narrow", 0, 24)); // NOI18N
-        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/projectacme/view/images/icons8-trabajador-de-caminos-48.png"))); // NOI18N
-        jButton4.setText("Register Worker");
-        jButton4.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jButton4.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButton4.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
+        ButtonRegisterWorker.setBackground(new java.awt.Color(240, 242, 235));
+        ButtonRegisterWorker.setFont(new java.awt.Font("Nimbus Sans Narrow", 0, 24)); // NOI18N
+        ButtonRegisterWorker.setIcon(new javax.swing.ImageIcon(getClass().getResource("/projectacme/view/images/icons8-trabajador-de-caminos-48.png"))); // NOI18N
+        ButtonRegisterWorker.setText("Register Worker");
+        ButtonRegisterWorker.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        ButtonRegisterWorker.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        ButtonRegisterWorker.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        ButtonRegisterWorker.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                ButtonRegisterWorkerMouseClicked(evt);
+            }
+        });
+        ButtonRegisterWorker.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+                ButtonRegisterWorkerActionPerformed(evt);
             }
         });
 
@@ -156,11 +181,11 @@ public class InterfaceOfficerMenu extends javax.swing.JFrame {
             .addComponent(Header, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(55, 55, 55)
-                .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(ButtonRegisterWorker, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(55, 55, 55)
-                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 214, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(ButtonRegisterGuest, javax.swing.GroupLayout.PREFERRED_SIZE, 214, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton6)
+                .addComponent(ButtonActivateIndividual)
                 .addGap(35, 35, 35))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -171,7 +196,7 @@ public class InterfaceOfficerMenu extends javax.swing.JFrame {
                             .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(46, 46, 46)
-                        .addComponent(jButton7)))
+                        .addComponent(ButtonInactivateIndividual)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -185,11 +210,11 @@ public class InterfaceOfficerMenu extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(29, 29, 29)
-                        .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(ButtonRegisterWorker, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(ButtonRegisterGuest, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ButtonActivateIndividual, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 47, Short.MAX_VALUE)
-                .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(ButtonInactivateIndividual, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(20, 20, 20))
         );
 
@@ -207,21 +232,21 @@ public class InterfaceOfficerMenu extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+    private void ButtonActivateIndividualActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonActivateIndividualActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton6ActionPerformed
+    }//GEN-LAST:event_ButtonActivateIndividualActionPerformed
 
-    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+    private void ButtonInactivateIndividualActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonInactivateIndividualActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton7ActionPerformed
+    }//GEN-LAST:event_ButtonInactivateIndividualActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void ButtonRegisterGuestActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonRegisterGuestActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_ButtonRegisterGuestActionPerformed
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+    private void ButtonRegisterWorkerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonRegisterWorkerActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton4ActionPerformed
+    }//GEN-LAST:event_ButtonRegisterWorkerActionPerformed
 
     private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
         System.exit(0);
@@ -239,9 +264,37 @@ public class InterfaceOfficerMenu extends javax.swing.JFrame {
         yMouse = evt.getY();
     }//GEN-LAST:event_HeaderMousePressed
 
-    /**
-     * @param args the command line arguments
-     */
+    private void ButtonRegisterWorkerMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ButtonRegisterWorkerMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ButtonRegisterWorkerMouseClicked
+
+    private void ButtonRegisterGuestMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ButtonRegisterGuestMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ButtonRegisterGuestMouseClicked
+
+    private void ButtonActivateIndividualMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ButtonActivateIndividualMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ButtonActivateIndividualMouseClicked
+
+    private void ButtonInactivateIndividualMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ButtonInactivateIndividualMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ButtonInactivateIndividualMouseClicked
+    
+    public JButton getButtonRegisterWorker(){
+        return ButtonRegisterWorker;
+    }
+    
+    public JButton getButtonRegisterGuest(){
+        return ButtonRegisterGuest;
+    }
+    
+    public JButton getButtonActivateIndividual(){
+        return ButtonActivateIndividual;
+    }
+    public JButton getButtonInactivateIndividual(){
+        return ButtonInactivateIndividual;
+    }
+    
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -275,11 +328,11 @@ public class InterfaceOfficerMenu extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton ButtonActivateIndividual;
+    private javax.swing.JButton ButtonInactivateIndividual;
+    private javax.swing.JButton ButtonRegisterGuest;
+    private javax.swing.JButton ButtonRegisterWorker;
     private javax.swing.JPanel Header;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton7;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel6;

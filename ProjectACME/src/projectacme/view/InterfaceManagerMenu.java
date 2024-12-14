@@ -163,6 +163,11 @@ public class InterfaceManagerMenu extends javax.swing.JFrame {
         ButtonRegisterReport.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         ButtonRegisterReport.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         ButtonRegisterReport.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        ButtonRegisterReport.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                ButtonRegisterReportMouseClicked(evt);
+            }
+        });
         ButtonRegisterReport.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ButtonRegisterReportActionPerformed(evt);
@@ -176,6 +181,11 @@ public class InterfaceManagerMenu extends javax.swing.JFrame {
         ButtonActivate.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         ButtonActivate.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         ButtonActivate.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        ButtonActivate.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                ButtonActivateMouseClicked(evt);
+            }
+        });
         ButtonActivate.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ButtonActivateActionPerformed(evt);
@@ -189,6 +199,11 @@ public class InterfaceManagerMenu extends javax.swing.JFrame {
         ButtonInactive.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         ButtonInactive.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         ButtonInactive.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        ButtonInactive.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                ButtonInactiveMouseClicked(evt);
+            }
+        });
         ButtonInactive.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ButtonInactiveActionPerformed(evt);
@@ -306,6 +321,18 @@ public class InterfaceManagerMenu extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_ButtonReportsMouseClicked
 
+    private void ButtonActivateMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ButtonActivateMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ButtonActivateMouseClicked
+
+    private void ButtonInactiveMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ButtonInactiveMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ButtonInactiveMouseClicked
+
+    private void ButtonRegisterReportMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ButtonRegisterReportMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ButtonRegisterReportMouseClicked
+
     public JButton getButtonCreateGuard(){
         return ButtonCreateGuard;
     }
@@ -316,6 +343,18 @@ public class InterfaceManagerMenu extends javax.swing.JFrame {
     
     public JButton getButtonReports(){
         return ButtonReports;
+    }
+    
+    public JButton getButtonActivate(){
+        return ButtonActivate;
+    }
+    
+    public JButton getButtonInactive(){
+        return ButtonInactive;
+    }
+    
+    public JButton ButtonRegisterReport(){
+        return ButtonRegisterReport;
     }
     
     public static void main(String args[]) {
