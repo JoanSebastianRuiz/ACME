@@ -10,11 +10,11 @@ import java.awt.Color;
  *
  * @author camper
  */
-public class InterfaceSudoCreate extends javax.swing.JFrame {
+public class InterfaceCreateManager extends javax.swing.JFrame {
     
     int xMouse, yMouse;
     
-    public InterfaceSudoCreate() {
+    public InterfaceCreateManager() {
         initComponents();
     }
 
@@ -67,7 +67,6 @@ public class InterfaceSudoCreate extends javax.swing.JFrame {
         jPanel1.add(textID, new org.netbeans.lib.awtextra.AbsoluteConstraints(393, 180, -1, -1));
 
         inputID.setForeground(new java.awt.Color(102, 102, 102));
-        inputID.setText("enter the ID");
         inputID.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 inputIDMousePressed(evt);
@@ -85,7 +84,6 @@ public class InterfaceSudoCreate extends javax.swing.JFrame {
         jPanel1.add(textPhone1, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 180, -1, -1));
 
         inputPhone.setForeground(new java.awt.Color(102, 102, 102));
-        inputPhone.setText("enter the Phone");
         inputPhone.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 inputPhoneMousePressed(evt);
@@ -103,7 +101,6 @@ public class InterfaceSudoCreate extends javax.swing.JFrame {
         jPanel1.add(textName, new org.netbeans.lib.awtextra.AbsoluteConstraints(393, 278, -1, -1));
 
         inputName.setForeground(new java.awt.Color(102, 102, 102));
-        inputName.setText("enter the Name");
         inputName.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 inputNameMousePressed(evt);
@@ -121,7 +118,6 @@ public class InterfaceSudoCreate extends javax.swing.JFrame {
         jPanel1.add(textPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(594, 278, -1, -1));
 
         inputPassword.setForeground(new java.awt.Color(102, 102, 102));
-        inputPassword.setText("jPasswordField1");
         inputPassword.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 inputPasswordMousePressed(evt);
@@ -139,7 +135,6 @@ public class InterfaceSudoCreate extends javax.swing.JFrame {
         jPanel1.add(textEmailAddress, new org.netbeans.lib.awtextra.AbsoluteConstraints(393, 384, 166, -1));
 
         inputEmailAddress.setForeground(new java.awt.Color(102, 102, 102));
-        inputEmailAddress.setText("enter the Email");
         inputEmailAddress.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 inputEmailAddressMousePressed(evt);
@@ -286,68 +281,23 @@ public class InterfaceSudoCreate extends javax.swing.JFrame {
     }//GEN-LAST:event_HeaderMouseDragged
 
     private void inputIDMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_inputIDMousePressed
-        inputID.setText("");
-        inputID.setForeground(Color.black);
-        inputPhone.setText("Enter the phone");
-        inputPhone.setForeground(Color.gray);
-        inputName.setText("Enter the name");
-        inputName.setForeground(Color.gray);
-        inputPassword.setText("Enter the password");
-        inputPassword.setForeground(Color.gray);
-        inputEmailAddress.setText("Enter the EmailAddress");
-        inputEmailAddress.setForeground(Color.gray);
+
     }//GEN-LAST:event_inputIDMousePressed
 
     private void inputPhoneMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_inputPhoneMousePressed
-        inputID.setText("Enter the ID");
-        inputID.setForeground(Color.gray);
-        inputPhone.setText("");
-        inputPhone.setForeground(Color.black);
-        inputName.setText("Enter the name");
-        inputName.setForeground(Color.gray);
-        inputPassword.setText("Enter the password");
-        inputPassword.setForeground(Color.gray);
-        inputEmailAddress.setText("Enter the EmailAddress");
-        inputEmailAddress.setForeground(Color.gray);
+        
     }//GEN-LAST:event_inputPhoneMousePressed
 
     private void inputNameMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_inputNameMousePressed
-        inputID.setText("Enter the ID");
-        inputID.setForeground(Color.gray);
-        inputPhone.setText("Enter the phone");
-        inputPhone.setForeground(Color.gray);
-        inputName.setText("");
-        inputName.setForeground(Color.black);
-        inputPassword.setText("Enter the password");
-        inputPassword.setForeground(Color.gray);
-        inputEmailAddress.setText("Enter the EmailAddress");
-        inputEmailAddress.setForeground(Color.gray);
+       
     }//GEN-LAST:event_inputNameMousePressed
 
     private void inputPasswordMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_inputPasswordMousePressed
-        inputID.setText("Enter the ID");
-        inputID.setForeground(Color.gray);
-        inputPhone.setText("Enter the phone");
-        inputPhone.setForeground(Color.gray);
-        inputName.setText("Enter the name");
-        inputName.setForeground(Color.gray);
-        inputPassword.setText("");
-        inputPassword.setForeground(Color.black);
-        inputEmailAddress.setText("Enter the EmailAddress");
-        inputEmailAddress.setForeground(Color.gray);
+      
     }//GEN-LAST:event_inputPasswordMousePressed
 
     private void inputEmailAddressMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_inputEmailAddressMousePressed
-        inputID.setText("Enter the ID");
-        inputID.setForeground(Color.gray);
-        inputPhone.setText("Enter the phone");
-        inputPhone.setForeground(Color.gray);
-        inputName.setText("Enter the name");
-        inputName.setForeground(Color.gray);
-        inputPassword.setText("Enter the password");
-        inputPassword.setForeground(Color.gray);
-        inputEmailAddress.setText("");
-        inputEmailAddress.setForeground(Color.black);
+      
     }//GEN-LAST:event_inputEmailAddressMousePressed
 
     private void TextExitButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TextExitButtonMouseClicked
@@ -368,20 +318,21 @@ public class InterfaceSudoCreate extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(InterfaceSudoCreate.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(InterfaceCreateManager.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(InterfaceSudoCreate.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(InterfaceCreateManager.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(InterfaceSudoCreate.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(InterfaceCreateManager.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(InterfaceSudoCreate.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(InterfaceCreateManager.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new InterfaceSudoCreate().setVisible(true);
+                new InterfaceCreateManager().setVisible(true);
             }
         });
     }

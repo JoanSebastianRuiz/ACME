@@ -1,0 +1,80 @@
+/* 
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package projectacme.controller;
+
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import projectacme.view.InterfaceActivateGuard;
+import projectacme.view.InterfaceActivateManager;
+import projectacme.view.InterfaceCreateManager;
+import projectacme.view.InterfaceCreateOfficer;
+import projectacme.view.InterfaceCreateReport;
+import projectacme.view.InterfaceCreateSecurityGuard;
+import projectacme.view.InterfaceInactivateGuard;
+import projectacme.view.InterfaceInactivateManager;
+import projectacme.view.InterfaceManagerMenu;
+import projectacme.view.InterfaceSudoMenu;
+import projectacme.view.InterfaceViewReports;
+
+/**
+ * Controlador principal del menú del superusuario (Sudo).
+ * Maneja las acciones de los botones en la interfaz de menú de superusuario.
+ * Permite la navegación hacia diferentes vistas relacionadas con la gestión de personal y reportes.
+ * 
+ * @author Sebastian
+ */
+public class SudoMenuController {
+
+    private InterfaceSudoMenu sudoMenuView;
+
+    public SudoMenuController(InterfaceSudoMenu sudoMenuView) {
+        this.sudoMenuView = sudoMenuView;
+        initController();  
+    }
+
+    private void initController() {
+        // Agregar ActionListener a los botones
+        sudoMenuView.getButtonCreateManager().addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                openCreateManager();
+            }
+        });
+
+        sudoMenuView.getButtonActivateManager().addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                openActivateManager();
+            }
+        });
+
+        sudoMenuView.getButtonInactivateManager().addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                openInactivateManager();
+            }
+        });
+
+        
+    }
+
+    private void openCreateManager() {
+        InterfaceCreateManager createManagerView = new InterfaceCreateManager();
+        createManagerView.setVisible(true);
+        sudoMenuView.dispose(); 
+    }
+
+    private void openActivateManager() {
+        InterfaceActivateManager activateManagerView = new InterfaceActivateManager();
+        activateManagerView.setVisible(true);
+        sudoMenuView.dispose(); 
+    }
+
+    private void openInactivateManager() {
+        InterfaceInactivateManager inactivateManagerView = new InterfaceInactivateManager();
+        inactivateManagerView.setVisible(true);
+        sudoMenuView.dispose(); // Cierra la ventana actual
+    }
+}

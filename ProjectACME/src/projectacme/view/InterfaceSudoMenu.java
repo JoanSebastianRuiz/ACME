@@ -4,6 +4,9 @@
  */
 package projectacme.view;
 
+import javax.swing.JButton;
+import projectacme.controller.SudoMenuController;
+
 /**
  *
  * @author Sebastian
@@ -14,6 +17,7 @@ public class InterfaceSudoMenu extends javax.swing.JFrame {
     
     public InterfaceSudoMenu() {
         initComponents();
+        new SudoMenuController(this);
     }
 
     /**
@@ -32,9 +36,9 @@ public class InterfaceSudoMenu extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jButton6 = new javax.swing.JButton();
-        jButton7 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
+        ButtonActivateManager = new javax.swing.JButton();
+        ButtonInactivateManager = new javax.swing.JButton();
+        ButtonCreateManager = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -97,42 +101,57 @@ public class InterfaceSudoMenu extends javax.swing.JFrame {
             .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        jButton6.setBackground(new java.awt.Color(240, 242, 235));
-        jButton6.setFont(new java.awt.Font("Nimbus Sans Narrow", 0, 24)); // NOI18N
-        jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/projectacme/view/images/icons8-alternar-encendido-48.png"))); // NOI18N
-        jButton6.setText("Activate Manager");
-        jButton6.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jButton6.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButton6.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jButton6.addActionListener(new java.awt.event.ActionListener() {
+        ButtonActivateManager.setBackground(new java.awt.Color(240, 242, 235));
+        ButtonActivateManager.setFont(new java.awt.Font("Nimbus Sans Narrow", 0, 24)); // NOI18N
+        ButtonActivateManager.setIcon(new javax.swing.ImageIcon(getClass().getResource("/projectacme/view/images/icons8-alternar-encendido-48.png"))); // NOI18N
+        ButtonActivateManager.setText("Activate Manager");
+        ButtonActivateManager.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        ButtonActivateManager.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        ButtonActivateManager.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        ButtonActivateManager.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                ButtonActivateManagerMouseClicked(evt);
+            }
+        });
+        ButtonActivateManager.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton6ActionPerformed(evt);
+                ButtonActivateManagerActionPerformed(evt);
             }
         });
 
-        jButton7.setBackground(new java.awt.Color(240, 242, 235));
-        jButton7.setFont(new java.awt.Font("Nimbus Sans Narrow", 0, 24)); // NOI18N
-        jButton7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/projectacme/view/images/icons8-alternar-apagado-48.png"))); // NOI18N
-        jButton7.setText("Inactivate Manager");
-        jButton7.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jButton7.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButton7.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jButton7.addActionListener(new java.awt.event.ActionListener() {
+        ButtonInactivateManager.setBackground(new java.awt.Color(240, 242, 235));
+        ButtonInactivateManager.setFont(new java.awt.Font("Nimbus Sans Narrow", 0, 24)); // NOI18N
+        ButtonInactivateManager.setIcon(new javax.swing.ImageIcon(getClass().getResource("/projectacme/view/images/icons8-alternar-apagado-48.png"))); // NOI18N
+        ButtonInactivateManager.setText("Inactivate Manager");
+        ButtonInactivateManager.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        ButtonInactivateManager.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        ButtonInactivateManager.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        ButtonInactivateManager.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                ButtonInactivateManagerMouseClicked(evt);
+            }
+        });
+        ButtonInactivateManager.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton7ActionPerformed(evt);
+                ButtonInactivateManagerActionPerformed(evt);
             }
         });
 
-        jButton4.setBackground(new java.awt.Color(240, 242, 235));
-        jButton4.setFont(new java.awt.Font("Nimbus Sans Narrow", 0, 24)); // NOI18N
-        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/projectacme/view/images/icons8-gerente-48.png"))); // NOI18N
-        jButton4.setText("Create Manager");
-        jButton4.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jButton4.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButton4.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
+        ButtonCreateManager.setBackground(new java.awt.Color(240, 242, 235));
+        ButtonCreateManager.setFont(new java.awt.Font("Nimbus Sans Narrow", 0, 24)); // NOI18N
+        ButtonCreateManager.setIcon(new javax.swing.ImageIcon(getClass().getResource("/projectacme/view/images/icons8-gerente-48.png"))); // NOI18N
+        ButtonCreateManager.setText("Create Manager");
+        ButtonCreateManager.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        ButtonCreateManager.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        ButtonCreateManager.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        ButtonCreateManager.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                ButtonCreateManagerMouseClicked(evt);
+            }
+        });
+        ButtonCreateManager.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+                ButtonCreateManagerActionPerformed(evt);
             }
         });
 
@@ -149,11 +168,11 @@ public class InterfaceSudoMenu extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(44, 44, 44)
-                .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(ButtonCreateManager, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(71, 71, 71)
-                .addComponent(jButton6)
+                .addComponent(ButtonActivateManager)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton7)
+                .addComponent(ButtonInactivateManager)
                 .addGap(44, 44, 44))
         );
         jPanel1Layout.setVerticalGroup(
@@ -168,9 +187,9 @@ public class InterfaceSudoMenu extends javax.swing.JFrame {
                         .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(67, 67, 67)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(ButtonInactivateManager, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(ButtonCreateManager, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(ButtonActivateManager, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(145, Short.MAX_VALUE))
         );
 
@@ -204,21 +223,43 @@ public class InterfaceSudoMenu extends javax.swing.JFrame {
         yMouse = evt.getY();
     }//GEN-LAST:event_HeaderMousePressed
 
-    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+    private void ButtonActivateManagerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonActivateManagerActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton6ActionPerformed
+    }//GEN-LAST:event_ButtonActivateManagerActionPerformed
 
-    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+    private void ButtonInactivateManagerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonInactivateManagerActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton7ActionPerformed
+    }//GEN-LAST:event_ButtonInactivateManagerActionPerformed
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+    private void ButtonCreateManagerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonCreateManagerActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton4ActionPerformed
+    }//GEN-LAST:event_ButtonCreateManagerActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
+    private void ButtonCreateManagerMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ButtonCreateManagerMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ButtonCreateManagerMouseClicked
+
+    private void ButtonActivateManagerMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ButtonActivateManagerMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ButtonActivateManagerMouseClicked
+
+    private void ButtonInactivateManagerMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ButtonInactivateManagerMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ButtonInactivateManagerMouseClicked
+    
+    public JButton getButtonCreateManager(){
+        return ButtonCreateManager;
+    }
+    
+    public JButton getButtonActivateManager(){
+        return ButtonActivateManager;
+    }
+    
+    public JButton getButtonInactivateManager(){
+        return ButtonInactivateManager;
+    }
+    
+    
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -252,10 +293,10 @@ public class InterfaceSudoMenu extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton ButtonActivateManager;
+    private javax.swing.JButton ButtonCreateManager;
+    private javax.swing.JButton ButtonInactivateManager;
     private javax.swing.JPanel Header;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton7;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel6;

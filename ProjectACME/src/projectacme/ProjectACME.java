@@ -6,6 +6,8 @@ package projectacme;
 import projectacme.repository.implementation.AnnotationImpl;
 import projectacme.util.FileManagement;
 import projectacme.view.InterfaceAccessDataBase;
+import projectacme.view.InterfaceManagerMenu;
+import projectacme.view.InterfaceSudoMenu;
 /**
  *
  * @author USUARIO
@@ -13,11 +15,12 @@ import projectacme.view.InterfaceAccessDataBase;
 public class ProjectACME {
 
     public static void main(String[] args) {
-        InterfaceAccessDataBase interfaceAccessDataBase = new InterfaceAccessDataBase();
-        interfaceAccessDataBase.setVisible(true);
-        FileManagement.SetConnectionDatabase();
-        AnnotationImpl annotation = new AnnotationImpl();
-        annotation.getAllAnnotation().forEach(e -> System.out.println(e.getReason()));
+        // Crear la vista principal (menú del manager)
+        InterfaceSudoMenu SudoMenuView = new InterfaceSudoMenu();
+        // Crear el controlador que maneja la vista
+        
+        // Mostrar la ventana
+        SudoMenuView.setVisible(true);
     }
 }
 
