@@ -1,25 +1,28 @@
 package projectacme.service;
 
 import projectacme.events.Observer;
+import projectacme.model.Annotation;
 import projectacme.model.Vehicle;
+import projectacme.repository.implementation.AnnotationImpl;
 import projectacme.repository.implementation.ReportManagerImpl;
 import projectacme.model.AccessLog;
 import projectacme.repository.implementation.AccessLogImpl;
 import projectacme.repository.implementation.VehicleImpl;
 import projectacme.util.Enum.*;
-import projectacme.util.validators.PlateValidator;
-import projectacme.util.validators.UserValidator;
+import projectacme.util.validators.*;
 
 import java.sql.Timestamp;
 import java.time.Instant;
 
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 public class SecurityGuard extends User implements RegisterAccessService, Observer {
     private static final AccessLogImpl accessLogImpl = new AccessLogImpl();
     private final ReportManagerImpl reportManagerImpl = new ReportManagerImpl();
     private static final VehicleImpl vehicleImpl = new VehicleImpl();
+    private static final AnnotationImpl annotationImpl = new AnnotationImpl();
 
     public SecurityGuard(String id, String name, String phone, String emailAddress, AccessSubjectRoleEnum role, StateEnum state, String password) {
         super(id, name, phone, emailAddress, role, state, password);
@@ -31,52 +34,126 @@ public class SecurityGuard extends User implements RegisterAccessService, Observ
     }
 
     @Override
-    public void registerAccess(ScannerType type, String id) {
+    public boolean registerAccess(ScannerType type, String id) {
         AccessLog lastAccessLog = accessLogImpl.getAllAccessLog().stream().filter(accessLog -> accessLog.getIdAccessSubject().equals(id)).findFirst().orElse(null);
         if (type == ScannerType.exit){
             if (lastAccessLog == null || !lastAccessLog.getType().toString().equals(ScannerType.exit.toString())){
 
            accessLogImpl.addAccessLog(new AccessLog.Builder(AccessType.exit,Timestamp.from(Instant.now()),id).setIdAccessSubjectLogger(this.getId()).build());
+           return true;
             } else {
                 System.out.println("The Individual Is Already Outside");
+                return false;
             }
         } else if (type == ScannerType.entry) {
-            if (lastAccessLog == null || !lastAccessLog.getType().toString().equals(ScannerType.entry.toString())){
+            if ((lastAccessLog == null || !lastAccessLog.getType().toString().equals(ScannerType.entry.toString()))
+                && !AnnotationValidator.personHasAnnotations(id)){
             accessLogImpl.addAccessLog(new AccessLog.Builder(AccessType.entry,Timestamp.from(Instant.now()),id).setIdAccessSubjectLogger(this.getId()).build());
+            return true;
             } else {
-                System.out.println("The Individual Is Already Inside");
+                System.out.println("The Individual Is Already Inside or Has Annotations");
+                return false;
             }
         } else {
             System.out.println("AccessType Invalid");
+            return false;
         }
     }
 
-    public void viewUserAnnotation(){
-        // TODO: implement view user annotation
+    public List<Map<String, Object>> getReportAnnotations(){
+        return reportManagerImpl.getInformationAnnotations()
+                .stream().peek(element->{
+                    if(Boolean.parseBoolean(String.valueOf(element.get("State")))){
+                        element.put("State","Yes");
+                    } else{
+                        element.put("State","No");
+                    }
+                })
+                .collect(Collectors.toList());
     }
 
-    public void registerNotes(){
-        // TODO: implement register notes
+    public List<Map<String, Object>> getReportJustifications(){
+        return reportManagerImpl.getInformationJustifications()
+                .stream().peek(element->{
+                    element.remove("idAccessSubjectLogger");
+                })
+                .collect(Collectors.toList());
     }
 
-    public void registerPlate(String plate, String id){
+    public boolean registerAnnotation(String reason, Boolean suspended, String idAccessSubject){
+        if(AccessSubjectValidator.accessSubjectValidator(idAccessSubject)){
+            if(StringValidator.StringLengthLessThanValidator(reason,500)){
+                annotationImpl.addAnnotation(new Annotation(Timestamp.from(Instant.now()), reason, suspended, StateEnum.active, idAccessSubject, this.getId()));
+                return true;
+            } else {
+                System.out.println("Reason too long, it only could have 500 characters");
+                return false;
+            }
+        } else{
+            System.out.println("The AccessSubject doesn't exist in the database");
+            return false;
+        }
+
+    }
+
+    public boolean registerPlate(String plate, String id){
         if (UserValidator.UserIdValidator(id)){
-        if (PlateValidator.plateCarValidator(plate)){
-            vehicleImpl.addVehicle(new Vehicle(plate, VehicleEnum.car, id));
-        } else if (PlateValidator.plateMotorcycleValidator(plate)){
-            vehicleImpl.addVehicle(new Vehicle(plate, VehicleEnum.motorcycle, id));
-        } else {
-            System.out.println("Invalid Plate Format");
-        }}
+            if (PlateValidator.plateCarValidator(plate)){
+                vehicleImpl.addVehicle(new Vehicle(plate, VehicleEnum.car, id));
+                return true;
+            } else if (PlateValidator.plateMotorcycleValidator(plate)){
+                vehicleImpl.addVehicle(new Vehicle(plate, VehicleEnum.motorcycle, id));
+                return true;
+            } else {
+                System.out.println("Invalid Plate Format");
+                return false;
+            }
+        }
         System.out.println("Invalid Identification");
+        return false;
     }
 
-    public void getReportsUsers(){
-        // TODO: implement get reports users
+    public List<Map<String, Object>> getReportsAccessSubjects(){
+        return reportManagerImpl.getInformationAccessSubjects().stream()
+                .filter(element->!element.get("Role").equals("sudo"))
+                .peek(element->{
+                    element.remove("Role");
+                    element.remove("idCompany");
+                    element.remove("Email Address");
+                    element.remove("Phone");
+                    if(element.get("Role").equals("securityGuard") || element.get("Role").equals("manager")){
+                        element.put("Company","");
+                    }
+                })
+                .collect(Collectors.toList());
     }
 
     public List<Map<String, Object>> getReportsVehicles(){
-        return reportManagerImpl.getInformationVehicles();
+        return reportManagerImpl.getInformationVehicles()
+                .stream().peek(element->{
+                    element.remove("idCompany");
+                })
+                .collect(Collectors.toList());
+    }
+
+    public List<Map<String, Object>> getReportsCompanies(){
+        return reportManagerImpl.getInformationCompanies()
+                .stream().peek(element->{
+                    element.remove("id");
+                })
+                .collect(Collectors.toList());
+    }
+
+    public List<Map<String, Object>> getReportsAccessLogs(){
+        return reportManagerImpl.getInformationAccessLogs()
+                .stream().peek(element->{
+                    if(element.get("Logger")==null){
+                        element.put("Logger", "Scanner "+element.get("idScanner"));
+                    }
+                    element.remove("idScanner");
+                    element.remove("idCompany");
+                })
+                .collect(Collectors.toList());
     }
 
 }

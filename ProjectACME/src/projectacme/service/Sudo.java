@@ -5,6 +5,7 @@ import projectacme.model.AccessSubject;
 import projectacme.repository.implementation.AccessSubjectImpl;
 import projectacme.util.Enum.StateEnum;
 import projectacme.util.Enum.AccessSubjectRoleEnum;
+import projectacme.util.validators.AccessSubjectValidator;
 import projectacme.util.validators.EmailValidator;
 import projectacme.util.validators.PhoneValidator;
 import projectacme.util.validators.StringValidator;
@@ -15,25 +16,36 @@ public class Sudo extends User{
         super(id, name, phone, emailAddress, role, state, password);
     }
 
-    public void creationManager(String id, String name, String phone, String emailAddress, String password) {
+    public boolean creationManager(String id, String name, String phone, String emailAddress, String password) {
         if (StringValidator.StringLengthExactlyThanValidator(id, 10)
                 && StringValidator.StringLengthLessThanValidator(name, 100)
                 && PhoneValidator.phoneValidator(phone)
                 && EmailValidator.emailValidator(emailAddress)
-                && StringValidator.StringLengthLessThanValidator(password, 100)) {
+                && StringValidator.StringLengthLessThanValidator(password, 100)
+                && !AccessSubjectValidator.accessSubjectValidator(id)) {
             accessSubject.addAccessSubject(AccessSubjectFactory.createAccessSubject(id, name, phone, emailAddress, AccessSubjectRoleEnum.manager, StateEnum.active, password, null));
+            return true;
         } else {
             System.out.println("Invalid Data For Create Manager");
+            return false;
         }
     }
 
-    public void inactivityManager(String id) {
-        AccessSubject individual = accessSubject.getAccessSubjectById(id);
-        accessSubject.updateAccessSubject(individual, individual.getName(), individual.getPhone(), individual.getEmailAddress(), individual.getRole(), StateEnum.inactive, individual.getPassword());
+    public boolean inactivityManager(Manager manager) {
+        if(AccessSubjectValidator.accessSubjectValidator(manager.getId())){
+            accessSubject.updateAccessSubject(manager, manager.getName(), manager.getPhone(), manager.getEmailAddress(), manager.getRole(), StateEnum.inactive, manager.getPassword());
+            return true;
+        } else {
+            return false;
+        }
     }
 
-    public void activityManager(String id) {
-        AccessSubject individual = accessSubject.getAccessSubjectById(id);
-        accessSubject.updateAccessSubject(individual, individual.getName(), individual.getPhone(), individual.getEmailAddress(), individual.getRole(), StateEnum.active, individual.getPassword());
+    public boolean activityManager(Manager manager) {
+        if(AccessSubjectValidator.accessSubjectValidator(manager.getId())){
+            accessSubject.updateAccessSubject(manager, manager.getName(), manager.getPhone(), manager.getEmailAddress(), manager.getRole(), StateEnum.active, manager.getPassword());
+            return true;
+        } else {
+            return false;
+        }
     }
 }

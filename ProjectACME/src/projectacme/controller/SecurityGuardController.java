@@ -19,13 +19,13 @@ public class SecurityGuardController {
     }
 
     public void viewUserAnnotation() {
-        securityGuardService.viewUserAnnotation();
+        securityGuardService.getReportAnnotations();
         System.out.println("User annotation viewed");
     }
 
-    public void registerNotes() {
-        securityGuardService.registerNotes();
-        System.out.println("Notes registered");
+    public void registerAnnotation(String reason, Boolean suspended, String idAccessSubject) {
+        securityGuardService.registerAnnotation(reason, suspended, idAccessSubject);
+        System.out.println("Annotation registered");
     }
 
     public void registerPlate(String plate, String id) {
@@ -33,9 +33,9 @@ public class SecurityGuardController {
         System.out.println("Plate registered");
     }
 
-    public void getReportsUsers() {
-        securityGuardService.getReportsUsers();
-        System.out.println("User reports retrieved");
+    public void getReportsAccessSubjects() {
+        securityGuardService.getReportsAccessSubjects();
+        System.out.println("AccessSubject report retrieved");
     }
 
     public void getReportsVehicles() {

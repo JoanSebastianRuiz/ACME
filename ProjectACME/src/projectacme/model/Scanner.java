@@ -4,6 +4,7 @@ import projectacme.repository.implementation.AccessLogImpl;
 import projectacme.service.RegisterAccessService;
 import projectacme.util.Enum.AccessType;
 import projectacme.util.Enum.ScannerType;
+import projectacme.util.validators.AnnotationValidator;
 
 import java.sql.Timestamp;
 import java.time.Instant;
@@ -39,25 +40,31 @@ public class Scanner implements RegisterAccessService {
     }
 
     @Override
-    public void registerAccess(ScannerType type, String id) {
+    public boolean registerAccess(ScannerType type, String id) {
         AccessLogImpl accessLogImpl = new AccessLogImpl();
         AccessLog lastAccessLog = accessLogImpl.getAllAccessLog().stream().filter(accessLog -> accessLog.getIdAccessSubject().equals(id)).findFirst().orElse(null);
         if (type == ScannerType.entry){
-            if (lastAccessLog == null || !lastAccessLog.getType().toString().equals(ScannerType.entry.toString())){
+            if ((lastAccessLog == null || !lastAccessLog.getType().toString().equals(ScannerType.entry.toString()))
+                && !AnnotationValidator.personHasAnnotations(id)){
             accessLogImpl.addAccessLog(new AccessLog.Builder(AccessType.entry,Timestamp.from(Instant.now()),id).setIdScanner(this.id).build());
             System.out.println("Entry Logged");
+            return true;
             } else {
-                System.out.println("The Individual Is Already Inside");
+                System.out.println("The Individual Is Already Inside or Has Annotations");
+                return false;
             }
         } else if (type == ScannerType.exit) {
             if (lastAccessLog == null || !lastAccessLog.getType().toString().equals(ScannerType.exit.toString())){
             accessLogImpl.addAccessLog(new AccessLog.Builder(AccessType.exit,Timestamp.from(Instant.now()),id).setIdScanner(this.id).build());
             System.out.println("Exit Logged");
+            return true;
             } else {
                 System.out.println("The Individual Is Already Outside");
+                return false;
             }
         } else {
             System.out.println("Access Type Invalid");
+            return false;
         }
     }
 }
