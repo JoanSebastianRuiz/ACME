@@ -103,7 +103,7 @@ public class SecurityGuard extends User implements RegisterAccessService, Observ
                 annotationImpl.updateAnnotation(annotation,annotation.getDatetime(),annotation.getReason(),annotation.getSuspended(),StateEnum.inactive);
                 return true;
             } else {
-                System.out.println("Reason too long, it only could have 500 characters or Annotation already has Justification");
+                System.out.println("Invalid Data For Register Justification");
                 return false;
             }
         } else{

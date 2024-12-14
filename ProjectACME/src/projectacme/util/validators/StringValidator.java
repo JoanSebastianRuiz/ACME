@@ -10,4 +10,10 @@ public class StringValidator {
         String stringTrim = string.trim();
         return (stringTrim.length() == exact);
     }
+
+    public static boolean PasswordValidator(String password){
+        return password.matches("^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[!@#$%^&*()_+\\-\\[\\]{};':\"\\\\|,.<>/?]).{8,}$");
+    }
+
 }
+

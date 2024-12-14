@@ -17,7 +17,7 @@ public class JustificationImpl implements JustificationDao{
             statement.setString(1, justification.getDatetime().toString());
             statement.setString(2, justification.getReason());
             statement.setString(3, justification.getIdAccessSubjectLogger());
-            statement.setString(4, justification.getIdAnnotation());
+            statement.setInt(4, justification.getIdAnnotation());
             statement.executeUpdate();
             System.out.println("Added - Justification Id: " + justification.getIdAnnotation());
         } catch (SQLException e) {
@@ -35,7 +35,7 @@ public class JustificationImpl implements JustificationDao{
             statement.setInt(1, id);
             ResultSet resultSet = statement.executeQuery();
             if (resultSet.next()) {
-                return new Justification(resultSet.getTimestamp("datetime"), resultSet.getString("reason"), resultSet.getString("idAccessSubjectLogger"), resultSet.getString("idAnnotation"));
+                return new Justification(resultSet.getTimestamp("datetime"), resultSet.getString("reason"), resultSet.getString("idAccessSubjectLogger"), resultSet.getInt("idAnnotation"));
             }
         } catch (SQLException e) {
             System.out.println(e.getMessage());
@@ -52,7 +52,7 @@ public class JustificationImpl implements JustificationDao{
             ResultSet resultSet = statement.executeQuery();
             List<Justification> justifications = new ArrayList<>();
             while (resultSet.next()) {
-                Justification justification = new Justification(resultSet.getTimestamp("datetime"), resultSet.getString("reason"), resultSet.getString("idAccessSubjectLogger"), resultSet.getString("idAnnotation"));
+                Justification justification = new Justification(resultSet.getTimestamp("datetime"), resultSet.getString("reason"), resultSet.getString("idAccessSubjectLogger"), resultSet.getInt("idAnnotation"));
                 justifications.add(justification);
             }
             System.out.println("Found All Successfully");
@@ -71,7 +71,7 @@ public class JustificationImpl implements JustificationDao{
         {
             statement.setString(1, datetime.toString());
             statement.setString(2, reason);
-            statement.setString(3, justification.getIdAnnotation());
+            statement.setInt(3, justification.getIdAnnotation());
             statement.executeUpdate();
             System.out.println("Updated Successfully");
         } catch (SQLException e) {

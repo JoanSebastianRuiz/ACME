@@ -22,7 +22,8 @@ public class Sudo extends User{
                 && PhoneValidator.phoneValidator(phone)
                 && EmailValidator.emailValidator(emailAddress)
                 && StringValidator.StringLengthLessThanValidator(password, 100)
-                && !AccessSubjectValidator.accessSubjectValidator(id)) {
+                && !AccessSubjectValidator.accessSubjectValidator(id)
+                && StringValidator.PasswordValidator(password)) {
             accessSubject.addAccessSubject(AccessSubjectFactory.createAccessSubject(id, name, phone, emailAddress, AccessSubjectRoleEnum.manager, StateEnum.active, password, null));
             return true;
         } else {

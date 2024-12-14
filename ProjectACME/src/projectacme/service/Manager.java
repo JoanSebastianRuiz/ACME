@@ -31,7 +31,8 @@ public class Manager extends User implements ReportService, Observer {
                 && PhoneValidator.phoneValidator(phone)
                 && EmailValidator.emailValidator(emailAddress)
                 && StringValidator.StringLengthLessThanValidator(password, 100)
-                && !AccessSubjectValidator.accessSubjectValidator(id)) {
+                && !AccessSubjectValidator.accessSubjectValidator(id)
+                && StringValidator.PasswordValidator(password)) {
 
             accessSubject.addAccessSubject(AccessSubjectFactory.createAccessSubject(id, name, phone, emailAddress, AccessSubjectRoleEnum.securityGuard, StateEnum.active, password, null));
             return true;
@@ -78,6 +79,7 @@ public class Manager extends User implements ReportService, Observer {
                 && CompanyValidator.CompanyIdValidator(idCompany)
                 && !CompanyValidator.companyHasOfficer(idCompany)
                 && !AccessSubjectValidator.accessSubjectValidator(id)
+                && StringValidator.PasswordValidator(password)
         ) {
             accessSubject.addAccessSubject(AccessSubjectFactory.createAccessSubject(id, name, phone, emailAddress, AccessSubjectRoleEnum.officer, StateEnum.active, password, idCompany));
             return true;
