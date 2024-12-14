@@ -4,6 +4,10 @@
  */
 package projectacme.view;
 
+import java.util.List;
+import java.util.Map;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author camper
@@ -22,8 +26,8 @@ public class InterfaceViewReports extends javax.swing.JFrame {
 
         Background = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
-        jLabel1 = new javax.swing.JLabel();
+        tableInformationReport = new javax.swing.JTable();
+        textTitleReport = new javax.swing.JLabel();
         Header = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
@@ -37,7 +41,7 @@ public class InterfaceViewReports extends javax.swing.JFrame {
 
         Background.setBackground(new java.awt.Color(255, 240, 235));
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tableInformationReport.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null,  new Boolean(true), null},
                 {null, null, null, null, null},
@@ -59,10 +63,10 @@ public class InterfaceViewReports extends javax.swing.JFrame {
                 return types [columnIndex];
             }
         });
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(tableInformationReport);
 
-        jLabel1.setFont(new java.awt.Font("Liberation Sans", 3, 24)); // NOI18N
-        jLabel1.setText("Reports");
+        textTitleReport.setFont(new java.awt.Font("Liberation Sans", 3, 24)); // NOI18N
+        textTitleReport.setText("Reports");
 
         Header.setBackground(new java.awt.Color(61, 119, 195));
         Header.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
@@ -122,8 +126,8 @@ public class InterfaceViewReports extends javax.swing.JFrame {
             .addGroup(BackgroundLayout.createSequentialGroup()
                 .addGap(32, 32, 32)
                 .addGroup(BackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 723, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 723, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(textTitleReport, javax.swing.GroupLayout.PREFERRED_SIZE, 470, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addComponent(Header, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
@@ -132,7 +136,7 @@ public class InterfaceViewReports extends javax.swing.JFrame {
             .addGroup(BackgroundLayout.createSequentialGroup()
                 .addComponent(Header, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(9, 9, 9)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(textTitleReport, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 382, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(50, Short.MAX_VALUE))
@@ -194,15 +198,31 @@ public class InterfaceViewReports extends javax.swing.JFrame {
             }
         });
     }
-
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel Background;
     private javax.swing.JPanel Header;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
+    private javax.swing.JTable tableInformationReport;
+    private javax.swing.JLabel textTitleReport;
     // End of variables declaration//GEN-END:variables
+
+public void setTitle(String title){
+    this.textTitleReport.setText(title);
+}
+
+public void setTable(List<Map<String, Object>>  information){
+    DefaultTableModel table = new DefaultTableModel();
+    Object modelData[][] = new Object[0][0];
+    table = new DefaultTableModel(modelData, information.get(0).keySet().toArray());
+    
+    for(Map<String, Object> map : information){
+        table.addRow(map.values().toArray());
+    }
+    
+    this.tableInformationReport.setModel(table);
+}
 }
