@@ -16,11 +16,11 @@ public class ProjectACME {
 
     public static void main(String[] args) {
         // Crear la vista principal (menú del manager)
-        InterfaceSudoMenu SudoMenuView = new InterfaceSudoMenu();
+        InterfaceAccessDataBase accessDatabase= new InterfaceAccessDataBase();
         // Crear el controlador que maneja la vista
         
         // Mostrar la ventana
-        SudoMenuView.setVisible(true);
+        accessDatabase.setVisible(true);
     }
 }
 

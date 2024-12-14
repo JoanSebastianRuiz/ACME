@@ -80,7 +80,26 @@ git clone https://github.com/JoanSebastianRuiz/ACME.git
 
 ## Class Structure ☕
 
-<img src="Granja Estelar UML E-R JPG.jpg">
+## General Structure For Users
+<img src="readmeFiles/AcmeClassDiagram1.png">
+
+## General Structure Of Packages
+<img src="readmeFiles/AcmeClassDiagram2.png">
+
+## Dao Structure
+<img src="readmeFiles/AcmeClassDiagram3.png">
+
+## Controller And Views
+<img src="readmeFiles/AcmeClassDiagram4.png">
+
+## Events
+<img src="readmeFiles/AcmeClassDiagram5.png">
+
+## Util
+<img src="readmeFiles/AcmeClassDiagram6.png">
+
+## Factory
+<img src="readmeFiles/AcmeClassDiagram7.png">
 
 ## Authors 🪶
 
