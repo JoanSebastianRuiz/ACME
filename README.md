@@ -10,7 +10,7 @@
 2. [Requirements](#requirements-)
 3. [System Requirements](#system-requirements-)
 4. [Installation and Configuration](#installation-and-configuration-)
-5. [Database Structure](#database-structure-%EF%B8%8F)
+5. [Database Model](#database-model-%EF%B8%8F)
 6. [Class Structure](#class-structure-)
 
 ## General Information 📒
@@ -73,9 +73,9 @@ git clone https://github.com/JoanSebastianRuiz/ACME.git
 6. Run the `main` file.  
 
 
-## Database Structure 🗃️
+## Database Model 🗃️
 
-<img src="Granja Estelar UML E-R JPG.jpg">
+<img src="readmeFiles/AcmeDatabaseModel.png">
 
 
 ## Class Structure ☕
