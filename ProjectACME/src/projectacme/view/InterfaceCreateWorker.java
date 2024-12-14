@@ -61,7 +61,6 @@ public class InterfaceCreateWorker extends javax.swing.JFrame {
         textID.setText("ID");
 
         inputID.setForeground(new java.awt.Color(102, 102, 102));
-        inputID.setText("enter the ID");
         inputID.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 inputIDMousePressed(evt);
@@ -77,7 +76,6 @@ public class InterfaceCreateWorker extends javax.swing.JFrame {
         textPhone1.setText("Phone");
 
         inputPhone.setForeground(new java.awt.Color(102, 102, 102));
-        inputPhone.setText("enter the Phone");
         inputPhone.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 inputPhoneMousePressed(evt);
@@ -93,7 +91,6 @@ public class InterfaceCreateWorker extends javax.swing.JFrame {
         textName.setText("Name");
 
         inputName.setForeground(new java.awt.Color(102, 102, 102));
-        inputName.setText("enter the Name");
         inputName.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 inputNameMousePressed(evt);
@@ -109,7 +106,6 @@ public class InterfaceCreateWorker extends javax.swing.JFrame {
         textPassword.setText("Password ");
 
         inputPassword.setForeground(new java.awt.Color(102, 102, 102));
-        inputPassword.setText("jPasswordField1");
         inputPassword.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 inputPasswordMousePressed(evt);
@@ -125,7 +121,6 @@ public class InterfaceCreateWorker extends javax.swing.JFrame {
         textEmailAddress.setText("Email");
 
         inputEmailAddress.setForeground(new java.awt.Color(102, 102, 102));
-        inputEmailAddress.setText("enter the Email");
         inputEmailAddress.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 inputEmailAddressMousePressed(evt);
@@ -171,7 +166,7 @@ public class InterfaceCreateWorker extends javax.swing.JFrame {
         ExitButton.setBackground(new java.awt.Color(136, 169, 195));
 
         TextExitButton.setBackground(new java.awt.Color(136, 169, 195));
-        TextExitButton.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        TextExitButton.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
         TextExitButton.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         TextExitButton.setText("X");
         TextExitButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -319,16 +314,7 @@ public class InterfaceCreateWorker extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void inputIDMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_inputIDMousePressed
-        inputID.setText("");
-        inputID.setForeground(Color.black);
-        inputPhone.setText("Enter the phone");
-        inputPhone.setForeground(Color.gray);
-        inputName.setText("Enter the name");
-        inputName.setForeground(Color.gray);
-        inputPassword.setText("Enter the password");
-        inputPassword.setForeground(Color.gray);
-        inputEmailAddress.setText("Enter the EmailAddress");
-        inputEmailAddress.setForeground(Color.gray);
+        
     }//GEN-LAST:event_inputIDMousePressed
 
     private void inputIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputIDActionPerformed
@@ -336,16 +322,7 @@ public class InterfaceCreateWorker extends javax.swing.JFrame {
     }//GEN-LAST:event_inputIDActionPerformed
 
     private void inputPhoneMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_inputPhoneMousePressed
-        inputID.setText("Enter the ID");
-        inputID.setForeground(Color.gray);
-        inputPhone.setText("");
-        inputPhone.setForeground(Color.black);
-        inputName.setText("Enter the name");
-        inputName.setForeground(Color.gray);
-        inputPassword.setText("Enter the password");
-        inputPassword.setForeground(Color.gray);
-        inputEmailAddress.setText("Enter the EmailAddress");
-        inputEmailAddress.setForeground(Color.gray);
+      
     }//GEN-LAST:event_inputPhoneMousePressed
 
     private void inputPhoneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputPhoneActionPerformed
@@ -353,16 +330,7 @@ public class InterfaceCreateWorker extends javax.swing.JFrame {
     }//GEN-LAST:event_inputPhoneActionPerformed
 
     private void inputNameMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_inputNameMousePressed
-        inputID.setText("Enter the ID");
-        inputID.setForeground(Color.gray);
-        inputPhone.setText("Enter the phone");
-        inputPhone.setForeground(Color.gray);
-        inputName.setText("");
-        inputName.setForeground(Color.black);
-        inputPassword.setText("Enter the password");
-        inputPassword.setForeground(Color.gray);
-        inputEmailAddress.setText("Enter the EmailAddress");
-        inputEmailAddress.setForeground(Color.gray);
+      
     }//GEN-LAST:event_inputNameMousePressed
 
     private void inputNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputNameActionPerformed
@@ -370,16 +338,7 @@ public class InterfaceCreateWorker extends javax.swing.JFrame {
     }//GEN-LAST:event_inputNameActionPerformed
 
     private void inputPasswordMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_inputPasswordMousePressed
-        inputID.setText("Enter the ID");
-        inputID.setForeground(Color.gray);
-        inputPhone.setText("Enter the phone");
-        inputPhone.setForeground(Color.gray);
-        inputName.setText("Enter the name");
-        inputName.setForeground(Color.gray);
-        inputPassword.setText("");
-        inputPassword.setForeground(Color.black);
-        inputEmailAddress.setText("Enter the EmailAddress");
-        inputEmailAddress.setForeground(Color.gray);
+      
     }//GEN-LAST:event_inputPasswordMousePressed
 
     private void inputPasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputPasswordActionPerformed
@@ -387,16 +346,7 @@ public class InterfaceCreateWorker extends javax.swing.JFrame {
     }//GEN-LAST:event_inputPasswordActionPerformed
 
     private void inputEmailAddressMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_inputEmailAddressMousePressed
-        inputID.setText("Enter the ID");
-        inputID.setForeground(Color.gray);
-        inputPhone.setText("Enter the phone");
-        inputPhone.setForeground(Color.gray);
-        inputName.setText("Enter the name");
-        inputName.setForeground(Color.gray);
-        inputPassword.setText("Enter the password");
-        inputPassword.setForeground(Color.gray);
-        inputEmailAddress.setText("");
-        inputEmailAddress.setForeground(Color.black);
+       
     }//GEN-LAST:event_inputEmailAddressMousePressed
 
     private void inputEmailAddressActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputEmailAddressActionPerformed

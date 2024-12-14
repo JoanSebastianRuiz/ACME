@@ -51,10 +51,16 @@ public class InterfaceAccssesUsers extends javax.swing.JFrame {
             }
         });
 
-        jLabel25.setFont(new java.awt.Font("Sitka Banner", 0, 36)); // NOI18N
+        jLabel25.setFont(new java.awt.Font("Calibri", 0, 36)); // NOI18N
         jLabel25.setForeground(new java.awt.Color(255, 255, 255));
         jLabel25.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel25.setText("Accsses");
+        jLabel25.setText("Access");
+        jLabel25.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLabel25.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel25MouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout CreateButton24Layout = new javax.swing.GroupLayout(CreateButton24);
         CreateButton24.setLayout(CreateButton24Layout);
@@ -74,7 +80,6 @@ public class InterfaceAccssesUsers extends javax.swing.JFrame {
         getContentPane().add(textID, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 180, -1, -1));
 
         inputID.setForeground(new java.awt.Color(102, 102, 102));
-        inputID.setText("enter the ID");
         inputID.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 inputIDMousePressed(evt);
@@ -90,7 +95,7 @@ public class InterfaceAccssesUsers extends javax.swing.JFrame {
         ExitButton.setBackground(new java.awt.Color(136, 169, 195));
 
         TextExitButton.setBackground(new java.awt.Color(136, 169, 195));
-        TextExitButton.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        TextExitButton.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
         TextExitButton.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         TextExitButton.setText("X");
         TextExitButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -104,17 +109,16 @@ public class InterfaceAccssesUsers extends javax.swing.JFrame {
         ExitButton.setLayout(ExitButtonLayout);
         ExitButtonLayout.setHorizontalGroup(
             ExitButtonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ExitButtonLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(TextExitButton, javax.swing.GroupLayout.DEFAULT_SIZE, 38, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(TextExitButton, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
         );
         ExitButtonLayout.setVerticalGroup(
             ExitButtonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(TextExitButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ExitButtonLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(TextExitButton, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
-        getContentPane().add(ExitButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(851, 6, -1, -1));
+        getContentPane().add(ExitButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 0, -1, -1));
 
         ImageSudoInterface.setIcon(new javax.swing.ImageIcon(getClass().getResource("/projectacme/view/images/ImageForm.jpg"))); // NOI18N
         ImageSudoInterface.setText("jLabel1");
@@ -137,21 +141,20 @@ public class InterfaceAccssesUsers extends javax.swing.JFrame {
         Header.setLayout(HeaderLayout);
         HeaderLayout.setHorizontalGroup(
             HeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 880, Short.MAX_VALUE)
+            .addGap(0, 830, Short.MAX_VALUE)
         );
         HeaderLayout.setVerticalGroup(
             HeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 50, Short.MAX_VALUE)
         );
 
-        getContentPane().add(Header, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 0, -1, -1));
+        getContentPane().add(Header, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 0, 830, -1));
 
         textName.setFont(new java.awt.Font("Rasa Light", 0, 18)); // NOI18N
         textName.setText("Name");
         getContentPane().add(textName, new org.netbeans.lib.awtextra.AbsoluteConstraints(645, 178, -1, -1));
 
         inputName.setForeground(new java.awt.Color(102, 102, 102));
-        inputName.setText("enter the Name");
         inputName.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 inputNameMousePressed(evt);
@@ -169,7 +172,6 @@ public class InterfaceAccssesUsers extends javax.swing.JFrame {
         getContentPane().add(textPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(434, 283, -1, -1));
 
         inputPassword.setForeground(new java.awt.Color(102, 102, 102));
-        inputPassword.setText("jPasswordField1");
         inputPassword.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 inputPasswordMousePressed(evt);
@@ -264,6 +266,10 @@ public class InterfaceAccssesUsers extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_CreateButtonMouseClicked
 
+    private void jLabel25MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel25MouseClicked
+        
+    }//GEN-LAST:event_jLabel25MouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -300,31 +306,7 @@ public class InterfaceAccssesUsers extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel CreateButton;
-    private javax.swing.JPanel CreateButton1;
-    private javax.swing.JPanel CreateButton10;
-    private javax.swing.JPanel CreateButton11;
-    private javax.swing.JPanel CreateButton12;
-    private javax.swing.JPanel CreateButton13;
-    private javax.swing.JPanel CreateButton14;
-    private javax.swing.JPanel CreateButton15;
-    private javax.swing.JPanel CreateButton16;
-    private javax.swing.JPanel CreateButton17;
-    private javax.swing.JPanel CreateButton18;
-    private javax.swing.JPanel CreateButton19;
-    private javax.swing.JPanel CreateButton2;
-    private javax.swing.JPanel CreateButton20;
-    private javax.swing.JPanel CreateButton21;
-    private javax.swing.JPanel CreateButton22;
-    private javax.swing.JPanel CreateButton23;
     private javax.swing.JPanel CreateButton24;
-    private javax.swing.JPanel CreateButton3;
-    private javax.swing.JPanel CreateButton4;
-    private javax.swing.JPanel CreateButton5;
-    private javax.swing.JPanel CreateButton6;
-    private javax.swing.JPanel CreateButton7;
-    private javax.swing.JPanel CreateButton8;
-    private javax.swing.JPanel CreateButton9;
     private javax.swing.JPanel ExitButton;
     private javax.swing.JPanel Header;
     private javax.swing.JLabel ImageSudoInterface;
@@ -334,31 +316,7 @@ public class InterfaceAccssesUsers extends javax.swing.JFrame {
     private javax.swing.JTextField inputID;
     private javax.swing.JTextField inputName;
     private javax.swing.JPasswordField inputPassword;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel14;
-    private javax.swing.JLabel jLabel15;
-    private javax.swing.JLabel jLabel16;
-    private javax.swing.JLabel jLabel17;
-    private javax.swing.JLabel jLabel18;
-    private javax.swing.JLabel jLabel19;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel20;
-    private javax.swing.JLabel jLabel21;
-    private javax.swing.JLabel jLabel22;
-    private javax.swing.JLabel jLabel23;
-    private javax.swing.JLabel jLabel24;
     private javax.swing.JLabel jLabel25;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JLabel textID;
     private javax.swing.JLabel textName;
     private javax.swing.JLabel textPassword;
