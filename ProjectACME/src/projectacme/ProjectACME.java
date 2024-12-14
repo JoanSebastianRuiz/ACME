@@ -30,7 +30,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.function.Supplier;
-import javax.swing.JFrame;
+import javax.swing.*;
+import projectacme.view.InterfaceManagerMenu;
 //import projectacme.view.IntefaceCreateWorker;
 //import projectacme.view.IntefarceLogin;
 //import projectacme.view.InterfaceCreateGuest;
@@ -46,9 +47,12 @@ import javax.swing.JFrame;
 public class ProjectACME {
 
     public static void main(String[] args) {
-        FileManagement.SetConnectionDatabase();
-        AnnotationImpl annotation = new AnnotationImpl();
-        annotation.getAllAnnotation().forEach(e -> System.out.println(e.getReason()));
+        // Crear la vista principal (menú del manager)
+        InterfaceManagerMenu managerMenuView = new InterfaceManagerMenu();
+        // Crear el controlador que maneja la vista
+        ManagerMenuController controller = new ManagerMenuController(managerMenuView);
+        // Mostrar la ventana
+        managerMenuView.setVisible(true);
     }
 }
 
