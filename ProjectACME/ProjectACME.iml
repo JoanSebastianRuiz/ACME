@@ -10,16 +10,6 @@
     <orderEntry type="module-library" exported="">
       <library>
         <CLASSES>
-          <root url="file://$USER_HOME$/Downloads/iText-Core-9.0.0-only-jars" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-        <jarDirectory url="file://$USER_HOME$/Downloads/iText-Core-9.0.0-only-jars" recursive="false" />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library" exported="">
-      <library>
-        <CLASSES>
           <root url="jar://$USER_HOME$/Downloads/mysql-connector-j-9.1.0/mysql-connector-j-9.1.0/mysql-connector-j-9.1.0.jar!/" />
         </CLASSES>
         <JAVADOC />
@@ -29,7 +19,17 @@
     <orderEntry type="module-library" exported="">
       <library>
         <CLASSES>
-          <root url="jar://$USER_HOME$/Downloads/slf4j-api-2.0.0.jar!/" />
+          <root url="file://$MODULE_DIR$/../../../Jars/iText-Core-9.0.0-only-jars" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+        <jarDirectory url="file://$MODULE_DIR$/../../../Jars/iText-Core-9.0.0-only-jars" recursive="false" />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library>
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/../../../Jars/AbsoluteLayout.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -38,7 +38,7 @@
     <orderEntry type="module-library" exported="">
       <library>
         <CLASSES>
-          <root url="jar://$USER_HOME$/Downloads/slf4j-nop-2.1.0-alpha1.jar!/" />
+          <root url="jar://$MODULE_DIR$/../../../Jars/slf4j-api-2.0.0.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -47,7 +47,7 @@
     <orderEntry type="module-library" exported="">
       <library>
         <CLASSES>
-          <root url="jar://$USER_HOME$/Downloads/AbsoluteLayout.jar!/" />
+          <root url="jar://$MODULE_DIR$/../../../Jars/slf4j-nop-2.1.0-alpha1.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />

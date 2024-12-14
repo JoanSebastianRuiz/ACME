@@ -32,7 +32,7 @@ public class ReportManagerImpl implements ReportManagerDAO {
                 map.put("Email Address", rs.getString("emailAddress"));
                 map.put("Role", rs.getString("role"));
                 map.put("State", rs.getString("state"));
-                map.put("Company Name", rs.getString("nameCompany"));
+                map.put("Company", rs.getString("nameCompany"));
                 map.put("idCompany", rs.getInt("idCompany"));
                 accessSubjects.add(map);
             }
