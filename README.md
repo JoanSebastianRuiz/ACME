@@ -2,7 +2,7 @@
   <a href="">
     <img src="">
   </a>
-<h1 text-align="center">Acme Business Complex</h1>
+<h1 text-align="center">Acme Business Complex Access Control</h1>
 </div>
   
 ## Table of Contents 🔗
@@ -15,7 +15,17 @@
 
 ## General Information 📒
 
-A
+**Acme Business Complex Access Control** is a program developed in Java to record access to a business complex.
+
+For the development of this project, the following technologies were used:
+
+- **MySQL**
+
+- **IntelliJ**
+
+- **Apache NetBeans**
+
+- **StarUML**
 
 ## Requirements 📌
 
@@ -43,17 +53,25 @@ Some of the requirements our project addresses are:
 - MySQL Workbench Client
 or
 - DBeaver Client
+- JDK 17
+- Apache NetBeans
 
 ## Installation and Configuration 📦
 ```bash
 git clone https://github.com/JoanSebastianRuiz/ACME.git
 ```
-Using a:
+**Using MySQL Workbench Client or DBeaver Client:**
 
-1. a
-2. a
+1. Navigate to the **Database** folder.  
+2. Execute the `ddl.sql` file.  
+3. Execute the `dml.sql` file.  
 
-- a
+**Using Apache NetBeans:**
+
+4. Open the **ProjectACME** folder.  
+5. Install the libraries from the **lib** package.  
+6. Run the `main` file.  
+
 
 ## Database Structure 🗃️
 
