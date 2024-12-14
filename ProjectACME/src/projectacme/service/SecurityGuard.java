@@ -2,12 +2,10 @@ package projectacme.service;
 
 import projectacme.events.Observer;
 import projectacme.model.Annotation;
+import projectacme.model.Justification;
 import projectacme.model.Vehicle;
-import projectacme.repository.implementation.AnnotationImpl;
-import projectacme.repository.implementation.ReportManagerImpl;
+import projectacme.repository.implementation.*;
 import projectacme.model.AccessLog;
-import projectacme.repository.implementation.AccessLogImpl;
-import projectacme.repository.implementation.VehicleImpl;
 import projectacme.util.Enum.*;
 import projectacme.util.validators.*;
 
@@ -23,6 +21,7 @@ public class SecurityGuard extends User implements RegisterAccessService, Observ
     private final ReportManagerImpl reportManagerImpl = new ReportManagerImpl();
     private static final VehicleImpl vehicleImpl = new VehicleImpl();
     private static final AnnotationImpl annotationImpl = new AnnotationImpl();
+    private static final JustificationImpl justificationImpl = new JustificationImpl();
 
     public SecurityGuard(String id, String name, String phone, String emailAddress, AccessSubjectRoleEnum role, StateEnum state, String password) {
         super(id, name, phone, emailAddress, role, state, password);
@@ -93,7 +92,24 @@ public class SecurityGuard extends User implements RegisterAccessService, Observ
             System.out.println("The AccessSubject doesn't exist in the database");
             return false;
         }
+    }
 
+    public boolean registerJustification(Timestamp datetime, String reason, int idAnnotation){
+        if(AnnotationValidator.annotationValidator(idAnnotation)){
+            if(StringValidator.StringLengthLessThanValidator(reason,500)
+                && !AnnotationValidator.annotationHasJustification(idAnnotation)){
+                justificationImpl.addJustification(new Justification(Timestamp.from(Instant.now()), reason, this.getId(), idAnnotation));
+                Annotation annotation = annotationImpl.getAnnotationLogById(idAnnotation);
+                annotationImpl.updateAnnotation(annotation,annotation.getDatetime(),annotation.getReason(),annotation.getSuspended(),StateEnum.inactive);
+                return true;
+            } else {
+                System.out.println("Reason too long, it only could have 500 characters or Annotation already has Justification");
+                return false;
+            }
+        } else{
+            System.out.println("The Annotation doesn't exist in the database");
+            return false;
+        }
     }
 
     public boolean registerPlate(String plate, String id){

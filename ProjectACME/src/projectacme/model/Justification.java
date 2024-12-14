@@ -7,16 +7,16 @@ public class Justification {
     private Timestamp datetime;
     private String reason;
     private String idAccessSubjectLogger;
-    private String idAnnotation;
+    private int idAnnotation;
 
-    public Justification(Timestamp datetime, String reason, String idAccessSubjectLogger, String idAnnotation) {
+    public Justification(Timestamp datetime, String reason, String idAccessSubjectLogger, int idAnnotation) {
         this.datetime = datetime;
         this.reason = reason;
         this.idAccessSubjectLogger = idAccessSubjectLogger;
         this.idAnnotation = idAnnotation;
     }
 
-    public Justification(int id, Timestamp datetime, String reason, String idAccessSubjectLogger, String idAnnotation) {
+    public Justification(int id, Timestamp datetime, String reason, String idAccessSubjectLogger, int idAnnotation) {
         this.id = id;
         this.datetime = datetime;
         this.reason = reason;
@@ -56,11 +56,11 @@ public class Justification {
         this.idAccessSubjectLogger = idAccessSubjectLogger;
     }
 
-    public String getIdAnnotation() {
+    public int getIdAnnotation() {
         return idAnnotation;
     }
 
-    public void setIdAnnotation(String idAnnotation) {
+    public void setIdAnnotation(int idAnnotation) {
         this.idAnnotation = idAnnotation;
     }
 }

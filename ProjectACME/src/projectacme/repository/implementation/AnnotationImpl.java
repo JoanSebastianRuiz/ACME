@@ -5,10 +5,7 @@ import projectacme.util.ConnectionData;
 import projectacme.repository.dao.AnnotationDao;
 import projectacme.util.Enum.StateEnum;
 
-import java.sql.Date;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -58,7 +55,7 @@ public class AnnotationImpl implements AnnotationDao {
             ResultSet resultSet = statement.executeQuery();
             List<Annotation> annotations = new ArrayList<>();
             while (resultSet.next()) {
-                Annotation annotation = new Annotation(resultSet.getTimestamp("datetime"), resultSet.getString("reason"),resultSet.getBoolean("suspended"),StateEnum.valueOf(resultSet.getString("state")), resultSet.getString("idAccessSubject"), resultSet.getString("idAccessSubjectLogger"));
+                Annotation annotation = new Annotation(resultSet.getInt("id"), resultSet.getTimestamp("datetime"), resultSet.getString("reason"),resultSet.getBoolean("suspended"),StateEnum.valueOf(resultSet.getString("state")), resultSet.getString("idAccessSubject"), resultSet.getString("idAccessSubjectLogger"));
                 annotations.add(annotation);
             }
             System.out.println("Found All Successfully");
@@ -70,7 +67,7 @@ public class AnnotationImpl implements AnnotationDao {
     }
 
     @Override
-    public void updateAnnotation(Annotation annotation, Date datetime, String reason, Boolean suspended, StateEnum state) {
+    public void updateAnnotation(Annotation annotation, Timestamp datetime, String reason, Boolean suspended, StateEnum state) {
         String sql = "UPDATE Annotation SET datetime =?, reason =?, suspended =?, state =? WHERE id =?;";
         try (java.sql.Connection connection = ConnectionData.getConnectionDatabase();
              PreparedStatement statement = connection.prepareStatement(sql)) {
