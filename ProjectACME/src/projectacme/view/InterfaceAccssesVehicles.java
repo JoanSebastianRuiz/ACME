@@ -55,7 +55,7 @@ public class InterfaceAccssesVehicles extends javax.swing.JFrame {
         jLabel25.setFont(new java.awt.Font("Sitka Banner", 0, 36)); // NOI18N
         jLabel25.setForeground(new java.awt.Color(255, 255, 255));
         jLabel25.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel25.setText("Accsses");
+        jLabel25.setText("Access");
 
         javax.swing.GroupLayout CreateButton24Layout = new javax.swing.GroupLayout(CreateButton24);
         CreateButton24.setLayout(CreateButton24Layout);
@@ -106,16 +106,17 @@ public class InterfaceAccssesVehicles extends javax.swing.JFrame {
         ExitButtonLayout.setHorizontalGroup(
             ExitButtonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ExitButtonLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(TextExitButton, javax.swing.GroupLayout.DEFAULT_SIZE, 38, Short.MAX_VALUE)
-                .addContainerGap())
+                .addGap(0, 12, Short.MAX_VALUE)
+                .addComponent(TextExitButton, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         ExitButtonLayout.setVerticalGroup(
             ExitButtonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(TextExitButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ExitButtonLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(TextExitButton, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
-        getContentPane().add(ExitButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(851, 6, -1, -1));
+        getContentPane().add(ExitButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 0, -1, 50));
 
         ImageSudoInterface.setIcon(new javax.swing.ImageIcon(getClass().getResource("/projectacme/view/images/vehicleImage.jpg"))); // NOI18N
         ImageSudoInterface.setText("jLabel1");
@@ -138,14 +139,14 @@ public class InterfaceAccssesVehicles extends javax.swing.JFrame {
         Header.setLayout(HeaderLayout);
         HeaderLayout.setHorizontalGroup(
             HeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 880, Short.MAX_VALUE)
+            .addGap(0, 830, Short.MAX_VALUE)
         );
         HeaderLayout.setVerticalGroup(
             HeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 50, Short.MAX_VALUE)
         );
 
-        getContentPane().add(Header, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 0, -1, -1));
+        getContentPane().add(Header, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 0, 830, -1));
 
         textName.setFont(new java.awt.Font("Rasa Light", 0, 18)); // NOI18N
         textName.setText("Plate");

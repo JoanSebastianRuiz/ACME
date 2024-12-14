@@ -38,6 +38,8 @@ public class IntefarceLogin extends javax.swing.JFrame {
         ButtonEnter = new javax.swing.JPanel();
         TextButtonEnter = new javax.swing.JLabel();
         Header = new javax.swing.JPanel();
+        jPanel1 = new javax.swing.JPanel();
+        ButtonExit = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setLocationByPlatform(true);
@@ -140,14 +142,39 @@ public class IntefarceLogin extends javax.swing.JFrame {
         Header.setLayout(HeaderLayout);
         HeaderLayout.setHorizontalGroup(
             HeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 800, Short.MAX_VALUE)
+            .addGap(0, 750, Short.MAX_VALUE)
         );
         HeaderLayout.setVerticalGroup(
             HeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 40, Short.MAX_VALUE)
         );
 
-        Background.add(Header, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, 40));
+        Background.add(Header, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 750, 40));
+
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+
+        ButtonExit.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
+        ButtonExit.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        ButtonExit.setText("X");
+        ButtonExit.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        ButtonExit.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                ButtonExitMouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(ButtonExit, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(ButtonExit, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+
+        Background.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 0, 50, 40));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -190,6 +217,10 @@ public class IntefarceLogin extends javax.swing.JFrame {
     private void InputPasswordMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_InputPasswordMousePressed
     
     }//GEN-LAST:event_InputPasswordMousePressed
+
+    private void ButtonExitMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ButtonExitMouseClicked
+        System.exit(0);
+    }//GEN-LAST:event_ButtonExitMouseClicked
     
     public JLabel getTextButtonEnter(){
         return TextButtonEnter;
@@ -237,6 +268,7 @@ public class IntefarceLogin extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel Background;
     private javax.swing.JPanel ButtonEnter;
+    private javax.swing.JLabel ButtonExit;
     private javax.swing.JPanel Header;
     private javax.swing.JPasswordField InputPassword;
     private javax.swing.JTextField InputUsername;
@@ -247,5 +279,6 @@ public class IntefarceLogin extends javax.swing.JFrame {
     private javax.swing.JLabel TextPassword;
     private javax.swing.JLabel TextSingUp;
     private javax.swing.JLabel TextUsername;
+    private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }
