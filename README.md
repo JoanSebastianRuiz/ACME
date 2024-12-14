@@ -77,6 +77,121 @@ git clone https://github.com/JoanSebastianRuiz/ACME.git
 
 <img src="readmeFiles/AcmeDatabaseModel.png">
 
+---
+
+## **Entities and Relationships**
+
+### 1. **Scanner**
+Represents devices (entry or exit) used to log access events.
+
+| **Property**     | **Type**                 | **Description**                        |
+|------------------|--------------------------|----------------------------------------|
+| `id`            | INTEGER (PK)            | Unique identifier for the scanner.     |
+| `type`          | ENUM (entry, exit)      | Indicates the scanner type.            |
+
+- **Relationships**:  
+  Linked to `AccessLog` to record scanner activity.
+
+---
+
+### 2. **AccessLog**
+Logs access events recorded.
+
+| **Property**             | **Type**                  | **Description**                          |
+|--------------------------|---------------------------|------------------------------------------|
+| `id`                    | INTEGER (PK)             | Unique identifier for the log.           |
+| `type`                  | ENUM (entry, exit)       | Entry or exit type for the event.        |
+| `datetime`              | DATETIME                 | Timestamp of the access event.           |
+| `idAccessSubject`       | VARCHAR(10) (FK)         | References the subject being logged.     |
+| `idScanner`             | INTEGER (FK, Nullable)   | References the scanner used.             |
+| `idAccessSubjectLogger` | VARCHAR(10) (FK, Nullable)| References the user monitoring the event.|
+
+- **Relationships**:  
+  - Linked to `Scanner` (via `idScanner`) for tracking scanner activity.  
+  - Linked to `AccessSubject` (via `idAccessSubject` and `idAccessSubjectLogger`) to identify the subject being logged and the user monitoring it.
+
+---
+
+### 3. **AccessSubject**
+Represents users or individuals accessing the system.
+
+| **Property**       | **Type**                              | **Description**                        |
+|--------------------|---------------------------------------|----------------------------------------|
+| `id`              | VARCHAR(10) (PK)                    | Unique identifier for the subject.      |
+| `name`            | VARCHAR(100)                        | Full name of the subject.               |
+| `phone`           | CHAR(10) (Unique)                   | Contact number.                         |
+| `emailAddress`    | VARCHAR(100) (Unique)               | Unique email for authentication.        |
+| `role`            | ENUM (sudo, manager, officer, securityGuard, worker, guest ) | Role of the subject in the system.      |
+| `state`           | ENUM (active, inactive)             | State of the access subject.            |
+| `password`        | VARCHAR(100) (Nullable)             | Password for authentication.            |
+| `idCompany`       | INTEGER (FK, Nullable)              | References the company the subject belongs to.|
+
+- **Relationships**:  
+  - Linked to `Company` to identify the subject’s organization.  
+  - Linked to `AccessLog`, `Annotation`, and `Vehicle` for access monitoring and related records.
+
+---
+
+### 4. **Company**
+Represents companies inside the business complex.
+
+| **Property**     | **Type**           | **Description**                        |
+|------------------|--------------------|----------------------------------------|
+| `id`            | INTEGER (PK)       | Unique identifier for the company.     |
+| `name`          | VARCHAR(100) (Unique)        | Name of the company.            |
+| `phone`         | CHAR(10) (Unique)           | Contact phone number of the company.   |
+
+- **Relationships**:  
+  Linked to `AccessSubject` to identify the subject's company.
+
+---
+
+### 5. **Vehicle**
+Tracks vehicles associated with subjects.
+
+| **Property**       | **Type**            | **Description**                        |
+|--------------------|---------------------|----------------------------------------|
+| `plate`           | VARCHAR(6) (PK)     | Vehicle's unique license plate.        |
+| `type`            | ENUM (car, motorcycle)| Type of the vehicle.                   |
+| `idAccessSubject` | VARCHAR(10) (FK)    | References the vehicle’s owner.        |
+
+- **Relationships**:  
+  Linked to `AccessSubject` to track ownership.
+
+---
+
+### 6. **Annotation**
+Stores observations or issues related to access subjects.
+
+| **Property**             | **Type**                   | **Description**                          |
+|--------------------------|----------------------------|------------------------------------------|
+| `id`                    | INTEGER (PK)              | Unique identifier for the annotation.    |
+| `datetime`              | DATETIME                  | Timestamp of the annotation.             |
+| `reason`                | TEXT(500)                 | Description of the annotation.           |
+| `suspended`             | BOOLEAN                   | Indicates if the subject is suspended.   |
+| `state`                 | ENUM (active, inactive)    | State of the annotation.                 |
+| `idAccessSubject`       | VARCHAR(10) (FK)          | References the subject being annotated.  |
+| `idAccessSubjectLogger` | INTEGER (FK)              | References the logger responsible.       |
+
+- **Relationships**:  
+  Linked to `AccessSubject` for annotations and monitoring.
+
+---
+
+### 7. **Justification**
+Provides explanations for annotations or access-related issues.
+
+| **Property**             | **Type**                  | **Description**                          |
+|--------------------------|---------------------------|------------------------------------------|
+| `id`                    | INTEGER (PK)             | Unique identifier for the justification. |
+| `datetime`              | DATETIME                 | Timestamp of the justification.          |
+| `reason`                | TEXT(500)                | Description or explanation provided.     |
+| `idAccessSubjectLogger` | VARCHAR(10) (FK)         | References the logger responsible.       |
+| `idAnotation`           | INTEGER (FK, Unique)     | References the related annotation.       |
+
+- **Relationships**:  
+  - Linked to `Annotation` to justify the withdrawal of the annotation.  
+  - Linked to `AccessSubject` as the responsible logger.
 
 ## Class Structure ☕
 
