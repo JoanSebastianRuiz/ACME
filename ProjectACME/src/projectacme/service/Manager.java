@@ -60,7 +60,7 @@ public class Manager extends User implements ReportService, Observer {
                 .filter(element->element.get("Role").equals("securityGuard"))
                 .peek(element->{
                     element.remove("idCompany");
-                    element.remove("Company Name");
+                    element.remove("Company");
                     element.remove("Role");
                 })
                 .collect(Collectors.toList());

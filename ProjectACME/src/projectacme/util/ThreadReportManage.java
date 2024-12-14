@@ -8,10 +8,7 @@ import projectacme.util.pdf.PdfGenerator;
 
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.function.Supplier;
 
 public class ThreadReportManage {
@@ -36,9 +33,10 @@ public class ThreadReportManage {
                 throw new RuntimeException(e);
             }
         });
+
         threads.forEach(thread -> {
-            reports.add(thread.getReportResult());
-            titles.add(thread.getReportTitle());
+                reports.add(thread.getReportResult());
+                titles.add(thread.getReportTitle());
         });
 
 
@@ -60,7 +58,9 @@ class ReportThread extends Thread{
 
     @Override
     public void run(){
-        this.reportResult=reportFunction.get();
+        synchronized (ReportThread.class){
+            this.reportResult = reportFunction.get();
+        }
     }
 
     public List<Map<String, Object>> getReportResult() {
