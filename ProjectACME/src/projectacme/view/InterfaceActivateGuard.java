@@ -4,6 +4,9 @@
  */
 package projectacme.view;
 
+import javax.swing.JLabel;
+import javax.swing.JTextField;
+
 /**
  *
  * @author Sebastian
@@ -35,6 +38,9 @@ public class InterfaceActivateGuard extends javax.swing.JFrame {
         TextExitButton = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setLocationByPlatform(true);
+        setUndecorated(true);
+        setResizable(false);
 
         Header.setBackground(new java.awt.Color(136, 169, 195));
         Header.setForeground(new java.awt.Color(136, 169, 195));
@@ -222,10 +228,14 @@ public class InterfaceActivateGuard extends javax.swing.JFrame {
     private void TextExitButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TextExitButtonMouseClicked
         System.exit(0);
     }//GEN-LAST:event_TextExitButtonMouseClicked
-
-    /**
-     * @param args the command line arguments
-     */
+    
+    public JTextField getinputID(){
+        return inputID;
+    }
+    public JLabel getTextActivate(){
+        return TextActivate;
+    }
+    
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">

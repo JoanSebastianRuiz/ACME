@@ -4,6 +4,9 @@
  */
 package projectacme.view;
 
+import javax.swing.JLabel;
+import javax.swing.JTextField;
+
 /**
  *
  * @author Sebastian
@@ -29,7 +32,7 @@ public class InterfaceInactivateIndividual extends javax.swing.JFrame {
         ImageSudoInterface = new javax.swing.JLabel();
         Title = new javax.swing.JLabel();
         CreateButton = new javax.swing.JPanel();
-        TextActivate = new javax.swing.JLabel();
+        TextInactivate = new javax.swing.JLabel();
         textID = new javax.swing.JLabel();
         inputID = new javax.swing.JTextField();
         ExitButton = new javax.swing.JPanel();
@@ -38,6 +41,9 @@ public class InterfaceInactivateIndividual extends javax.swing.JFrame {
         ExitButton1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setLocationByPlatform(true);
+        setUndecorated(true);
+        setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
@@ -79,14 +85,14 @@ public class InterfaceInactivateIndividual extends javax.swing.JFrame {
             }
         });
 
-        TextActivate.setFont(new java.awt.Font("Rasa Light", 0, 24)); // NOI18N
-        TextActivate.setForeground(new java.awt.Color(255, 255, 255));
-        TextActivate.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        TextActivate.setText("Inactivate");
-        TextActivate.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        TextActivate.addMouseListener(new java.awt.event.MouseAdapter() {
+        TextInactivate.setFont(new java.awt.Font("Rasa Light", 0, 24)); // NOI18N
+        TextInactivate.setForeground(new java.awt.Color(255, 255, 255));
+        TextInactivate.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        TextInactivate.setText("Inactivate");
+        TextInactivate.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        TextInactivate.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                TextActivateMouseClicked(evt);
+                TextInactivateMouseClicked(evt);
             }
         });
 
@@ -94,13 +100,16 @@ public class InterfaceInactivateIndividual extends javax.swing.JFrame {
         CreateButton.setLayout(CreateButtonLayout);
         CreateButtonLayout.setHorizontalGroup(
             CreateButtonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(TextActivate, javax.swing.GroupLayout.DEFAULT_SIZE, 160, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, CreateButtonLayout.createSequentialGroup()
+                .addContainerGap(27, Short.MAX_VALUE)
+                .addComponent(TextInactivate, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(20, 20, 20))
         );
         CreateButtonLayout.setVerticalGroup(
             CreateButtonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, CreateButtonLayout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(TextActivate, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(TextInactivate, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         textID.setFont(new java.awt.Font("Rasa Light", 0, 18)); // NOI18N
@@ -178,24 +187,25 @@ public class InterfaceInactivateIndividual extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(ImageSudoInterface, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(43, 43, 43)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(43, 43, 43)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(jPanel1Layout.createSequentialGroup()
                                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(textID)
                                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                                .addGap(134, 134, 134)
-                                                .addComponent(CreateButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                        .addGap(143, 143, 143))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(29, 29, 29)))
-                                .addComponent(ExitButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                .addComponent(textID)
+                                                .addGap(420, 420, 420))
+                                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addGap(29, 29, 29)))
+                                        .addComponent(ExitButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addGap(30, 30, 30)
+                                        .addComponent(Title, javax.swing.GroupLayout.PREFERRED_SIZE, 299, javax.swing.GroupLayout.PREFERRED_SIZE))))
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(30, 30, 30)
-                                .addComponent(Title, javax.swing.GroupLayout.PREFERRED_SIZE, 299, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addGap(140, 140, 140)
+                                .addComponent(CreateButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(390, 390, 390)
                         .addComponent(inputID, javax.swing.GroupLayout.PREFERRED_SIZE, 269, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -223,7 +233,8 @@ public class InterfaceInactivateIndividual extends javax.swing.JFrame {
                                 .addGap(50, 50, 50)
                                 .addComponent(textID)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(CreateButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(CreateButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(65, 65, 65)))
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
@@ -244,9 +255,9 @@ public class InterfaceInactivateIndividual extends javax.swing.JFrame {
         yMouse = evt.getY();
     }//GEN-LAST:event_HeaderMousePressed
 
-    private void TextActivateMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TextActivateMouseClicked
+    private void TextInactivateMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TextInactivateMouseClicked
 
-    }//GEN-LAST:event_TextActivateMouseClicked
+    }//GEN-LAST:event_TextInactivateMouseClicked
 
     private void CreateButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CreateButtonMouseClicked
         // TODO add your handling code here:
@@ -268,9 +279,12 @@ public class InterfaceInactivateIndividual extends javax.swing.JFrame {
         System.exit(0);
     }//GEN-LAST:event_ExitButton1MouseClicked
 
-    /**
-     * @param args the command line arguments
-     */
+    public JTextField getinputID(){
+        return inputID;
+    }
+    public JLabel getTextInactivate(){
+        return TextInactivate;
+    }
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -309,8 +323,8 @@ public class InterfaceInactivateIndividual extends javax.swing.JFrame {
     private javax.swing.JLabel ExitButton1;
     private javax.swing.JPanel Header;
     private javax.swing.JLabel ImageSudoInterface;
-    private javax.swing.JLabel TextActivate;
     private javax.swing.JLabel TextExitButton;
+    private javax.swing.JLabel TextInactivate;
     private javax.swing.JLabel Title;
     private javax.swing.JTextField inputID;
     private javax.swing.JPanel jPanel1;

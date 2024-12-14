@@ -5,6 +5,9 @@
 package projectacme.view;
 
 import java.awt.Color;
+import javax.swing.JLabel;
+import javax.swing.JPasswordField;
+import javax.swing.JTextField;
 
 /**
  *
@@ -27,7 +30,7 @@ public class InterfaceAccssesUsers extends javax.swing.JFrame {
     private void initComponents() {
 
         CreateButton24 = new javax.swing.JPanel();
-        jLabel25 = new javax.swing.JLabel();
+        ButtonAccess = new javax.swing.JLabel();
         textID = new javax.swing.JLabel();
         inputID = new javax.swing.JTextField();
         ExitButton = new javax.swing.JPanel();
@@ -42,6 +45,9 @@ public class InterfaceAccssesUsers extends javax.swing.JFrame {
         TextButton = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setLocationByPlatform(true);
+        setUndecorated(true);
+        setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         CreateButton24.setBackground(new java.awt.Color(136, 169, 195));
@@ -51,14 +57,14 @@ public class InterfaceAccssesUsers extends javax.swing.JFrame {
             }
         });
 
-        jLabel25.setFont(new java.awt.Font("Calibri", 0, 36)); // NOI18N
-        jLabel25.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel25.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel25.setText("Access");
-        jLabel25.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jLabel25.addMouseListener(new java.awt.event.MouseAdapter() {
+        ButtonAccess.setFont(new java.awt.Font("Calibri", 0, 36)); // NOI18N
+        ButtonAccess.setForeground(new java.awt.Color(255, 255, 255));
+        ButtonAccess.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        ButtonAccess.setText("Access");
+        ButtonAccess.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        ButtonAccess.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel25MouseClicked(evt);
+                ButtonAccessMouseClicked(evt);
             }
         });
 
@@ -66,11 +72,11 @@ public class InterfaceAccssesUsers extends javax.swing.JFrame {
         CreateButton24.setLayout(CreateButton24Layout);
         CreateButton24Layout.setHorizontalGroup(
             CreateButton24Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel25, javax.swing.GroupLayout.DEFAULT_SIZE, 160, Short.MAX_VALUE)
+            .addComponent(ButtonAccess, javax.swing.GroupLayout.DEFAULT_SIZE, 160, Short.MAX_VALUE)
         );
         CreateButton24Layout.setVerticalGroup(
             CreateButton24Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel25, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(ButtonAccess, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         getContentPane().add(CreateButton24, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 460, -1, -1));
@@ -212,12 +218,7 @@ public class InterfaceAccssesUsers extends javax.swing.JFrame {
     }//GEN-LAST:event_inputPasswordActionPerformed
 
     private void inputPasswordMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_inputPasswordMousePressed
-        inputID.setText("Enter the ID");
-        inputID.setForeground(Color.gray);
-        inputName.setText("Enter the name");
-        inputName.setForeground(Color.gray);
-        inputPassword.setText("");
-        inputPassword.setForeground(Color.black);
+        
     }//GEN-LAST:event_inputPasswordMousePressed
 
     private void inputNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputNameActionPerformed
@@ -225,12 +226,7 @@ public class InterfaceAccssesUsers extends javax.swing.JFrame {
     }//GEN-LAST:event_inputNameActionPerformed
 
     private void inputNameMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_inputNameMousePressed
-        inputID.setText("Enter the ID");
-        inputID.setForeground(Color.gray);
-        inputName.setText("");
-        inputName.setForeground(Color.black);
-        inputPassword.setText("Enter the password");
-        inputPassword.setForeground(Color.gray);
+        
     }//GEN-LAST:event_inputNameMousePressed
 
     private void HeaderMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_HeaderMousePressed
@@ -254,25 +250,32 @@ public class InterfaceAccssesUsers extends javax.swing.JFrame {
     }//GEN-LAST:event_inputIDActionPerformed
 
     private void inputIDMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_inputIDMousePressed
-        inputID.setText("");
-        inputID.setForeground(Color.black);
-        inputName.setText("Enter the name");
-        inputName.setForeground(Color.gray);
-        inputPassword.setText("Enter the password");
-        inputPassword.setForeground(Color.gray);
+        
     }//GEN-LAST:event_inputIDMousePressed
 
     private void CreateButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CreateButtonMouseClicked
         // TODO add your handling code here:
     }//GEN-LAST:event_CreateButtonMouseClicked
 
-    private void jLabel25MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel25MouseClicked
+    private void ButtonAccessMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ButtonAccessMouseClicked
         
-    }//GEN-LAST:event_jLabel25MouseClicked
+    }//GEN-LAST:event_ButtonAccessMouseClicked
 
-    /**
-     * @param args the command line arguments
-     */
+    public JTextField getinputID(){
+        return inputID;
+    }
+
+    public JTextField getinputName(){
+        return inputName;
+    } 
+
+    public JPasswordField getinputPassword(){
+        return inputPassword;
+    }
+    
+    public JLabel getButtonAccess(){
+        return ButtonAccess;
+    }
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -306,6 +309,7 @@ public class InterfaceAccssesUsers extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel ButtonAccess;
     private javax.swing.JPanel CreateButton24;
     private javax.swing.JPanel ExitButton;
     private javax.swing.JPanel Header;
@@ -316,7 +320,6 @@ public class InterfaceAccssesUsers extends javax.swing.JFrame {
     private javax.swing.JTextField inputID;
     private javax.swing.JTextField inputName;
     private javax.swing.JPasswordField inputPassword;
-    private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel textID;
     private javax.swing.JLabel textName;
     private javax.swing.JLabel textPassword;
