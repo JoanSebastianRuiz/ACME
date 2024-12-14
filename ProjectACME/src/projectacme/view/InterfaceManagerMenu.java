@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package projectacme.view;
+import javax.swing.JButton;
 import projectacme.controller.ManagerMenuController;
 /**
  *
@@ -49,6 +50,11 @@ public class InterfaceManagerMenu extends javax.swing.JFrame {
         ButtonReports.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         ButtonReports.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         ButtonReports.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        ButtonReports.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                ButtonReportsMouseClicked(evt);
+            }
+        });
         ButtonReports.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ButtonReportsActionPerformed(evt);
@@ -68,6 +74,11 @@ public class InterfaceManagerMenu extends javax.swing.JFrame {
         ButtonCreateGuard.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         ButtonCreateGuard.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         ButtonCreateGuard.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        ButtonCreateGuard.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                ButtonCreateGuardMouseClicked(evt);
+            }
+        });
         ButtonCreateGuard.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ButtonCreateGuardActionPerformed(evt);
@@ -81,6 +92,11 @@ public class InterfaceManagerMenu extends javax.swing.JFrame {
         ButtonCreateOfficer.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         ButtonCreateOfficer.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         ButtonCreateOfficer.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        ButtonCreateOfficer.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                ButtonCreateOfficerMouseClicked(evt);
+            }
+        });
         ButtonCreateOfficer.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ButtonCreateOfficerActionPerformed(evt);
@@ -277,9 +293,30 @@ public class InterfaceManagerMenu extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_ButtonInactiveActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
+    private void ButtonCreateOfficerMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ButtonCreateOfficerMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ButtonCreateOfficerMouseClicked
+
+    private void ButtonCreateGuardMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ButtonCreateGuardMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ButtonCreateGuardMouseClicked
+
+    private void ButtonReportsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ButtonReportsMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ButtonReportsMouseClicked
+
+    public JButton getButtonCreateGuard(){
+        return ButtonCreateGuard;
+    }
+    
+    public JButton getButtonCreateOfficer(){
+        return ButtonCreateOfficer;
+    }
+    
+    public JButton getButtonRegisterReport(){
+        return ButtonRegisterReport;
+    }
+    
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
