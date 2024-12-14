@@ -23,6 +23,7 @@ import projectacme.util.FileManagement;
 import projectacme.util.ThreadReportManage;
 import projectacme.util.pdf.PdfGenerator;
 import projectacme.view.IntefarceLogin;
+import projectacme.view.InterfaceAccessDataBase;
 //import projectacme.view.IntefarceLogin;
 
 import java.util.ArrayList;
@@ -46,6 +47,8 @@ import javax.swing.JFrame;
 public class ProjectACME {
 
     public static void main(String[] args) {
+        InterfaceAccessDataBase interfaceAccessDataBase = new InterfaceAccessDataBase();
+        interfaceAccessDataBase.setVisible(true);
         FileManagement.SetConnectionDatabase();
         AnnotationImpl annotation = new AnnotationImpl();
         annotation.getAllAnnotation().forEach(e -> System.out.println(e.getReason()));
