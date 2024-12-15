@@ -401,9 +401,7 @@ public class InterfaceAccessDataBase extends javax.swing.JFrame {
         return inputPassword;
     }
 
-    public JLabel getTextButton() {
-        return TextButton;
-    }
+    
     
     public JPanel getCreateButton() {
         return CreateButton;
