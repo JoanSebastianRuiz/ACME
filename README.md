@@ -1,6 +1,6 @@
 <div align="center">
   <a href="">
-    <img src="readmeFiles/LogoAcmeZone.png
+    <img src="readmeFiles/LogoAcmeZone.png">
   </a>
 <h1 text-align="center">Acme Business Complex Access Control</h1>
 </div>
