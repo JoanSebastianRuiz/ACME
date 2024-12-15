@@ -7,7 +7,7 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import projectacme.view.InterfaceAccssesUsers;
-import projectacme.view.InterfaceAccssesVehicles;
+import projectacme.view.InterfaceCreateVehicle;
 import projectacme.view.InterfaceActivateGuard;
 import projectacme.view.InterfaceCreateReport;
 import projectacme.view.InterfaceInactivateGuard;
@@ -60,7 +60,7 @@ public class SecurityGuardMenuController {
     }
 
     private void openVehicleView() {
-        InterfaceAccssesVehicles vehicleView = new InterfaceAccssesVehicles();
+        InterfaceCreateVehicle vehicleView = new InterfaceCreateVehicle();
         vehicleView.setVisible(true);
         securityGuardMenuView.dispose(); 
     }

@@ -5,18 +5,21 @@
 package projectacme.view;
 
 import java.awt.Color;
+import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
+import projectacme.util.Enum.VehicleEnum;
 
 /**
  *
  * @author Sebastian
  */
-public class InterfaceAccssesVehicles extends javax.swing.JFrame {
+public class InterfaceCreateVehicle extends javax.swing.JFrame {
 
     int xMouse, yMouse;
-    public InterfaceAccssesVehicles() {
+    public InterfaceCreateVehicle() {
         initComponents();
+         fillsComboUp();
     }
 
     /**
@@ -29,7 +32,7 @@ public class InterfaceAccssesVehicles extends javax.swing.JFrame {
     private void initComponents() {
 
         CreateButton24 = new javax.swing.JPanel();
-        ButtonAccess = new javax.swing.JLabel();
+        ButtonCreate = new javax.swing.JLabel();
         textID = new javax.swing.JLabel();
         inputID = new javax.swing.JTextField();
         ExitButton = new javax.swing.JPanel();
@@ -39,10 +42,9 @@ public class InterfaceAccssesVehicles extends javax.swing.JFrame {
         textName = new javax.swing.JLabel();
         inputPlate = new javax.swing.JTextField();
         Title = new javax.swing.JLabel();
-        TextButton = new javax.swing.JLabel();
         textName1 = new javax.swing.JLabel();
-        inputType = new javax.swing.JTextField();
-        inputName2 = new javax.swing.JTextField();
+        textMessage = new javax.swing.JLabel();
+        comboType = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setLocationByPlatform(true);
@@ -57,20 +59,20 @@ public class InterfaceAccssesVehicles extends javax.swing.JFrame {
             }
         });
 
-        ButtonAccess.setFont(new java.awt.Font("Sitka Banner", 0, 36)); // NOI18N
-        ButtonAccess.setForeground(new java.awt.Color(255, 255, 255));
-        ButtonAccess.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        ButtonAccess.setText("Access");
+        ButtonCreate.setFont(new java.awt.Font("Sitka Banner", 0, 36)); // NOI18N
+        ButtonCreate.setForeground(new java.awt.Color(255, 255, 255));
+        ButtonCreate.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        ButtonCreate.setText("Create");
 
         javax.swing.GroupLayout CreateButton24Layout = new javax.swing.GroupLayout(CreateButton24);
         CreateButton24.setLayout(CreateButton24Layout);
         CreateButton24Layout.setHorizontalGroup(
             CreateButton24Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(ButtonAccess, javax.swing.GroupLayout.DEFAULT_SIZE, 160, Short.MAX_VALUE)
+            .addComponent(ButtonCreate, javax.swing.GroupLayout.DEFAULT_SIZE, 160, Short.MAX_VALUE)
         );
         CreateButton24Layout.setVerticalGroup(
             CreateButton24Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(ButtonAccess, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(ButtonCreate, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         getContentPane().add(CreateButton24, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 460, -1, -1));
@@ -90,7 +92,7 @@ public class InterfaceAccssesVehicles extends javax.swing.JFrame {
                 inputIDActionPerformed(evt);
             }
         });
-        getContentPane().add(inputID, new org.netbeans.lib.awtextra.AbsoluteConstraints(434, 214, 166, 36));
+        getContentPane().add(inputID, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 210, 166, 36));
 
         ExitButton.setBackground(new java.awt.Color(136, 169, 195));
 
@@ -154,7 +156,7 @@ public class InterfaceAccssesVehicles extends javax.swing.JFrame {
 
         textName.setFont(new java.awt.Font("Rasa Light", 0, 18)); // NOI18N
         textName.setText("Plate");
-        getContentPane().add(textName, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 300, -1, -1));
+        getContentPane().add(textName, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 300, 260, -1));
 
         inputPlate.setForeground(new java.awt.Color(102, 102, 102));
         inputPlate.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -167,54 +169,23 @@ public class InterfaceAccssesVehicles extends javax.swing.JFrame {
                 inputPlateActionPerformed(evt);
             }
         });
-        getContentPane().add(inputPlate, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 340, 166, 36));
+        getContentPane().add(inputPlate, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 340, 166, 36));
 
         Title.setFont(new java.awt.Font("MathJax_Typewriter", 0, 24)); // NOI18N
-        Title.setText("Login Vehicles");
+        Title.setText("Crew new Vehicle");
         getContentPane().add(Title, new org.netbeans.lib.awtextra.AbsoluteConstraints(434, 91, 248, 37));
-
-        TextButton.setFont(new java.awt.Font("Rasa Light", 0, 24)); // NOI18N
-        TextButton.setForeground(new java.awt.Color(255, 255, 255));
-        TextButton.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        TextButton.setText("Accesses");
-        TextButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        TextButton.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                TextButtonMouseClicked(evt);
-            }
-        });
-        getContentPane().add(TextButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 411, 703, 42));
 
         textName1.setFont(new java.awt.Font("Rasa Light", 0, 18)); // NOI18N
         textName1.setText("Type");
         getContentPane().add(textName1, new org.netbeans.lib.awtextra.AbsoluteConstraints(645, 178, -1, -1));
 
-        inputType.setForeground(new java.awt.Color(102, 102, 102));
-        inputType.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                inputTypeMousePressed(evt);
-            }
-        });
-        inputType.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                inputTypeActionPerformed(evt);
-            }
-        });
-        getContentPane().add(inputType, new org.netbeans.lib.awtextra.AbsoluteConstraints(645, 214, 166, 36));
+        textMessage.setFont(new java.awt.Font("Rasa Light", 0, 18)); // NOI18N
+        textMessage.setText("Message");
+        getContentPane().add(textMessage, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 400, 330, -1));
 
-        inputName2.setForeground(new java.awt.Color(102, 102, 102));
-        inputName2.setText("enter the Name");
-        inputName2.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                inputName2MousePressed(evt);
-            }
-        });
-        inputName2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                inputName2ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(inputName2, new org.netbeans.lib.awtextra.AbsoluteConstraints(645, 214, 166, 36));
+        comboType.setMinimumSize(new java.awt.Dimension(64, 22));
+        comboType.setPreferredSize(new java.awt.Dimension(64, 22));
+        getContentPane().add(comboType, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 210, 180, 40));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -255,41 +226,33 @@ public class InterfaceAccssesVehicles extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_inputPlateActionPerformed
 
-    private void inputTypeMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_inputTypeMousePressed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_inputTypeMousePressed
-
-    private void inputTypeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputTypeActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_inputTypeActionPerformed
-
-    private void inputName2MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_inputName2MousePressed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_inputName2MousePressed
-
-    private void inputName2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputName2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_inputName2ActionPerformed
-
-    private void TextButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TextButtonMouseClicked
-
-    }//GEN-LAST:event_TextButtonMouseClicked
-
     public JTextField getinputID(){
         return inputID;
     }
 
-    public JTextField getinputName(){
+    public JTextField getInputPlate() {
         return inputPlate;
-    } 
+    }
 
-    public JTextField getinputType(){
-        return inputType;
+    public JLabel getTextMessage() {
+        return textMessage;
+    }
+
+    public JComboBox<String> getComboType() {
+        return comboType;
+    }
+
+    private void fillsComboUp(){
+        for(VehicleEnum value: VehicleEnum.values()){
+            this.comboType.addItem(value.name());
+        }
+    }
+
+    public JLabel getButtonCreate() {
+        return ButtonCreate;
     }
     
-    public JLabel getButtonAccess(){
-        return ButtonAccess;
-    }
+    
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -304,38 +267,38 @@ public class InterfaceAccssesVehicles extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(InterfaceAccssesVehicles.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(InterfaceCreateVehicle.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(InterfaceAccssesVehicles.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(InterfaceCreateVehicle.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(InterfaceAccssesVehicles.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(InterfaceCreateVehicle.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(InterfaceAccssesVehicles.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(InterfaceCreateVehicle.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new InterfaceAccssesVehicles().setVisible(true);
+                new InterfaceCreateVehicle().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel ButtonAccess;
+    private javax.swing.JLabel ButtonCreate;
     private javax.swing.JPanel CreateButton24;
     private javax.swing.JPanel ExitButton;
     private javax.swing.JPanel Header;
     private javax.swing.JLabel ImageSudoInterface;
-    private javax.swing.JLabel TextButton;
     private javax.swing.JLabel TextExitButton;
     private javax.swing.JLabel Title;
+    private javax.swing.JComboBox<String> comboType;
     private javax.swing.JTextField inputID;
-    private javax.swing.JTextField inputName2;
     private javax.swing.JTextField inputPlate;
-    private javax.swing.JTextField inputType;
     private javax.swing.JLabel textID;
+    private javax.swing.JLabel textMessage;
     private javax.swing.JLabel textName;
     private javax.swing.JLabel textName1;
     // End of variables declaration//GEN-END:variables

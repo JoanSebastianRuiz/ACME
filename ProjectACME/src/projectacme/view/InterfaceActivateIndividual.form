@@ -204,7 +204,7 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="MathJax_Typewriter" size="24" style="0"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Acitvate Individual"/>
+            <Property name="text" type="java.lang.String" value="Activate Individual"/>
           </Properties>
         </Component>
         <Container class="javax.swing.JPanel" name="CreateButton">

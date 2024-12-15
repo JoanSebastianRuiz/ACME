@@ -106,7 +106,7 @@ public class InterfaceActivateIndividual extends javax.swing.JFrame {
         ImageSudoInterface.setText("jLabel1");
 
         Title.setFont(new java.awt.Font("MathJax_Typewriter", 0, 24)); // NOI18N
-        Title.setText("Acitvate Individual");
+        Title.setText("Activate Individual");
 
         CreateButton.setBackground(new java.awt.Color(136, 169, 195));
         CreateButton.addMouseListener(new java.awt.event.MouseAdapter() {
