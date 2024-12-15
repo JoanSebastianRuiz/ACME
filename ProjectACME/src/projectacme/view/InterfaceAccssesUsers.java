@@ -42,7 +42,6 @@ public class InterfaceAccssesUsers extends javax.swing.JFrame {
         textPassword = new javax.swing.JLabel();
         inputPassword = new javax.swing.JPasswordField();
         Title = new javax.swing.JLabel();
-        TextButton = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setLocationByPlatform(true);
@@ -194,24 +193,8 @@ public class InterfaceAccssesUsers extends javax.swing.JFrame {
         Title.setText("Login Users");
         getContentPane().add(Title, new org.netbeans.lib.awtextra.AbsoluteConstraints(434, 91, 248, 37));
 
-        TextButton.setFont(new java.awt.Font("Rasa Light", 0, 24)); // NOI18N
-        TextButton.setForeground(new java.awt.Color(255, 255, 255));
-        TextButton.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        TextButton.setText("Accesses");
-        TextButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        TextButton.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                TextButtonMouseClicked(evt);
-            }
-        });
-        getContentPane().add(TextButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 411, 703, 42));
-
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void TextButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TextButtonMouseClicked
-
-    }//GEN-LAST:event_TextButtonMouseClicked
 
     private void inputPasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputPasswordActionPerformed
         // TODO add your handling code here:
@@ -314,7 +297,6 @@ public class InterfaceAccssesUsers extends javax.swing.JFrame {
     private javax.swing.JPanel ExitButton;
     private javax.swing.JPanel Header;
     private javax.swing.JLabel ImageSudoInterface;
-    private javax.swing.JLabel TextButton;
     private javax.swing.JLabel TextExitButton;
     private javax.swing.JLabel Title;
     private javax.swing.JTextField inputID;

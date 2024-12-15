@@ -75,7 +75,23 @@ git clone https://github.com/JoanSebastianRuiz/ACME.git
 
 ## Database Model 🗃️
 
+## **First Global Diagram**
+
+<img src="readmeFiles/AcmeDatabaseModel1.png">
+
+The entities that compose our database model.
+
+## **Second Global Diagram**
+
+<img src="readmeFiles/AcmeDatabaseModel2.png">
+
+The relation between each entity.
+
+## **Third Global Diagram**
+
 <img src="readmeFiles/AcmeDatabaseModel.png">
+
+Complete database model
 
 ---
 
