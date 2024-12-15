@@ -1,6 +1,6 @@
 <div align="center">
   <a href="">
-    <img src="readmeFiles/LogoAcmeZone.png">
+    <img src="readmeFiles/LogoAcmeZone.png
   </a>
 <h1 text-align="center">Acme Business Complex Access Control</h1>
 </div>
@@ -12,7 +12,6 @@
 4. [Installation and Configuration](#installation-and-configuration-)
 5. [Database Model](#database-model-%EF%B8%8F)
 6. [Class Structure](#class-structure-)
-
 ## General Information 📒
 
 **Acme Business Complex Access Control** is a program developed in Java to record access to a business complex.
@@ -78,46 +77,46 @@ git clone https://github.com/JoanSebastianRuiz/ACME.git
 
 Identification
 ```
-- 1085748963
+1085748963
 ```
 Password
 ```
-- password123
+password123
 ```
 
 **Officer**
 
 Identification
 ```
-- 1012345678
+1012345678
 ```
 Password
 ```
-- officerpass1
+officerpass1
 ```
 
 **Manager**
 
 Identification
 ```
-- 1012345688
+1012345688
 ```
 
 Password
 ```
-- managerpass1
+managerpass1
 ```
 
 **Security Guard**
 
 Identification
 ```
-- 1012345683
+1012345683
 ```
 
 Password
 ```
-- securitypass1
+securitypass1
 ```
 ## Database Model 🗃️
 
