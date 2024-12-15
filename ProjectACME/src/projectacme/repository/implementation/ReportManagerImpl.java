@@ -142,7 +142,7 @@ public class ReportManagerImpl implements ReportManagerDAO {
             while(rs.next()){
                 HashMap<String, Object> map = new HashMap<>();
                 map.put("id", rs.getInt("id"));
-                map.put("Company", rs.getTimestamp("name"));
+                map.put("Company", rs.getString("name"));
                 map.put("Phone", rs.getString("phone"));
                 accessSubjects.add(map);
             }

@@ -23,17 +23,17 @@ public class ReportsManagerController {
             }
         });
 
+        view.getTextSecurityGuards().addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                createReportGuards();
+            }
+        });
+
         view.getTextGuests().addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
                 createReportGuests();
-            }
-        });
-
-        view.getTextAccessLogs().addMouseListener(new MouseAdapter() {
-            @Override
-            public void mouseClicked(MouseEvent e) {
-                createReportAccessLogs();
             }
         });
 
@@ -55,6 +55,13 @@ public class ReportsManagerController {
             @Override
             public void mouseClicked(MouseEvent e) {
                 createReportOfficers();
+            }
+        });
+
+        view.getTextCompanies().addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                createReportCompanies();
             }
         });
     }
@@ -101,6 +108,14 @@ public class ReportsManagerController {
 
     public void createReportOfficers(){
         Report report = new Report(manager.getReportsOfficers(),"Officers");
+        InterfaceViewReports viewReports = new InterfaceViewReports();
+        ViewReportsController viewReportsController = new ViewReportsController(viewReports, report);
+        viewReports.setVisible(true);
+        view.setVisible(false);
+    }
+
+    public void createReportCompanies(){
+        Report report = new Report(manager.getReportsCompanies(),"Companies");
         InterfaceViewReports viewReports = new InterfaceViewReports();
         ViewReportsController viewReportsController = new ViewReportsController(viewReports, report);
         viewReports.setVisible(true);

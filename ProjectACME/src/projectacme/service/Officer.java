@@ -102,21 +102,35 @@ public class Officer extends User implements ReportService, Observer, RegisterAc
     @Override
     public List<Map<String,Object>> getReportsWorkers() {
         return reportManagerImpl.getInformationAccessSubjects().stream()
-                .filter(element->element.get("role").equals("worker") && (int)element.get("idCompany")==this.idCompany)
+                .filter(element->element.get("Role").equals("worker") && element.get("idCompany")==(Integer)this.idCompany)
+                .peek(element->{
+                    element.remove("idCompany");
+                    element.remove("Company");
+                    element.remove("Role");
+                })
                 .collect(Collectors.toList());
     }
 
     @Override
     public List<Map<String,Object>> getReportsGuest() {
         return reportManagerImpl.getInformationAccessSubjects().stream()
-                .filter(element->element.get("role").equals("guest") && (int)element.get("idCompany")==this.idCompany)
+                .filter(element->element.get("Role").equals("guest") && element.get("idCompany")==(Integer)this.idCompany)
+                .peek(element->{
+                    element.remove("idCompany");
+                    element.remove("Company");
+                    element.remove("Role");
+                })
                 .collect(Collectors.toList());
     }
 
     @Override
     public List<Map<String, Object>> getReportsIndividuals() {
         return reportManagerImpl.getInformationAccessSubjects().stream()
-                .filter(element->(element.get("role").equals("worker") || element.get("role").equals("guest")) && (int)element.get("idCompany")==this.idCompany)
+                .filter(element->(element.get("Role").equals("worker") || element.get("role").equals("guest")) && element.get("idCompany")==(Integer)this.idCompany)
+                .peek(element->{
+                    element.remove("idCompany");
+                    element.remove("Company");
+                })
                 .collect(Collectors.toList());
     }
 
@@ -150,7 +164,19 @@ public class Officer extends User implements ReportService, Observer, RegisterAc
                     }
                     element.remove("idScanner");
                     element.remove("idCompany");
+                    element.remove("Company");
 
+                })
+                .collect(Collectors.toList());
+    }
+
+    public List<Map<String, Object>> getReportsVehicles(){
+        return reportManagerImpl.getInformationVehicles()
+                .stream()
+                .filter(element->element.get("idCompany")==(Integer)this.idCompany)
+                .peek(element->{
+                    element.remove("idCompany");
+                    element.remove("Company");
                 })
                 .collect(Collectors.toList());
     }

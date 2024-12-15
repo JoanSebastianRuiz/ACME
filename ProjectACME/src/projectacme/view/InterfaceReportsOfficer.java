@@ -11,10 +11,10 @@ import javax.swing.JTextField;
  *
  * @author Sebastian
  */
-public class InterfaceActivateManager extends javax.swing.JFrame {
+public class InterfaceReportsOfficer extends javax.swing.JFrame {
 
     int xMouse,yMouse;
-    public InterfaceActivateManager() {
+    public InterfaceReportsOfficer() {
         initComponents();
     }
 
@@ -30,16 +30,19 @@ public class InterfaceActivateManager extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         ImageSudoInterface = new javax.swing.JLabel();
         Title = new javax.swing.JLabel();
-        CreateButton = new javax.swing.JPanel();
-        TextActivate = new javax.swing.JLabel();
-        textID = new javax.swing.JLabel();
-        inputID = new javax.swing.JTextField();
         ExitButton = new javax.swing.JPanel();
         TextExitButton = new javax.swing.JLabel();
         Header = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        textMessage = new javax.swing.JLabel();
+        CreateButton2 = new javax.swing.JPanel();
+        TextGuests = new javax.swing.JLabel();
+        CreateButton1 = new javax.swing.JPanel();
+        TextWorkers = new javax.swing.JLabel();
+        CreateButton3 = new javax.swing.JPanel();
+        TextAccessLogs = new javax.swing.JLabel();
+        CreateButton4 = new javax.swing.JPanel();
+        TextVehicles = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setLocationByPlatform(true);
@@ -53,53 +56,7 @@ public class InterfaceActivateManager extends javax.swing.JFrame {
         ImageSudoInterface.setText("jLabel1");
 
         Title.setFont(new java.awt.Font("MathJax_Typewriter", 0, 24)); // NOI18N
-        Title.setText("Activate Manager");
-
-        CreateButton.setBackground(new java.awt.Color(136, 169, 195));
-        CreateButton.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                CreateButtonMouseClicked(evt);
-            }
-        });
-
-        TextActivate.setFont(new java.awt.Font("Rasa Light", 0, 24)); // NOI18N
-        TextActivate.setForeground(new java.awt.Color(255, 255, 255));
-        TextActivate.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        TextActivate.setText("Activate");
-        TextActivate.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        TextActivate.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                TextActivateMouseClicked(evt);
-            }
-        });
-
-        javax.swing.GroupLayout CreateButtonLayout = new javax.swing.GroupLayout(CreateButton);
-        CreateButton.setLayout(CreateButtonLayout);
-        CreateButtonLayout.setHorizontalGroup(
-            CreateButtonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(TextActivate, javax.swing.GroupLayout.DEFAULT_SIZE, 160, Short.MAX_VALUE)
-        );
-        CreateButtonLayout.setVerticalGroup(
-            CreateButtonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, CreateButtonLayout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(TextActivate, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
-
-        textID.setFont(new java.awt.Font("Rasa Light", 0, 18)); // NOI18N
-        textID.setText("ID");
-
-        inputID.setForeground(new java.awt.Color(102, 102, 102));
-        inputID.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                inputIDMousePressed(evt);
-            }
-        });
-        inputID.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                inputIDActionPerformed(evt);
-            }
-        });
+        Title.setText("Reports");
 
         ExitButton.setBackground(new java.awt.Color(136, 169, 195));
 
@@ -179,8 +136,129 @@ public class InterfaceActivateManager extends javax.swing.JFrame {
                     .addGap(0, 0, Short.MAX_VALUE)))
         );
 
-        textMessage.setFont(new java.awt.Font("Rasa Light", 0, 18)); // NOI18N
-        textMessage.setText("Message");
+        CreateButton2.setBackground(new java.awt.Color(136, 169, 195));
+        CreateButton2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                CreateButton2MouseClicked(evt);
+            }
+        });
+
+        TextGuests.setFont(new java.awt.Font("Rasa Light", 0, 24)); // NOI18N
+        TextGuests.setForeground(new java.awt.Color(255, 255, 255));
+        TextGuests.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        TextGuests.setText("Guests");
+        TextGuests.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        TextGuests.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                TextGuestsMouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout CreateButton2Layout = new javax.swing.GroupLayout(CreateButton2);
+        CreateButton2.setLayout(CreateButton2Layout);
+        CreateButton2Layout.setHorizontalGroup(
+            CreateButton2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(TextGuests, javax.swing.GroupLayout.DEFAULT_SIZE, 226, Short.MAX_VALUE)
+        );
+        CreateButton2Layout.setVerticalGroup(
+            CreateButton2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, CreateButton2Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(TextGuests, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+
+        CreateButton1.setBackground(new java.awt.Color(136, 169, 195));
+        CreateButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                CreateButton1MouseClicked(evt);
+            }
+        });
+
+        TextWorkers.setFont(new java.awt.Font("Rasa Light", 0, 24)); // NOI18N
+        TextWorkers.setForeground(new java.awt.Color(255, 255, 255));
+        TextWorkers.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        TextWorkers.setText("Workers");
+        TextWorkers.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        TextWorkers.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                TextWorkersMouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout CreateButton1Layout = new javax.swing.GroupLayout(CreateButton1);
+        CreateButton1.setLayout(CreateButton1Layout);
+        CreateButton1Layout.setHorizontalGroup(
+            CreateButton1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(TextWorkers, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        CreateButton1Layout.setVerticalGroup(
+            CreateButton1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, CreateButton1Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(TextWorkers, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+
+        CreateButton3.setBackground(new java.awt.Color(136, 169, 195));
+        CreateButton3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                CreateButton3MouseClicked(evt);
+            }
+        });
+
+        TextAccessLogs.setFont(new java.awt.Font("Rasa Light", 0, 24)); // NOI18N
+        TextAccessLogs.setForeground(new java.awt.Color(255, 255, 255));
+        TextAccessLogs.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        TextAccessLogs.setText("Access logs");
+        TextAccessLogs.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        TextAccessLogs.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                TextAccessLogsMouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout CreateButton3Layout = new javax.swing.GroupLayout(CreateButton3);
+        CreateButton3.setLayout(CreateButton3Layout);
+        CreateButton3Layout.setHorizontalGroup(
+            CreateButton3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(TextAccessLogs, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        CreateButton3Layout.setVerticalGroup(
+            CreateButton3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, CreateButton3Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(TextAccessLogs, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+
+        CreateButton4.setBackground(new java.awt.Color(136, 169, 195));
+        CreateButton4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                CreateButton4MouseClicked(evt);
+            }
+        });
+
+        TextVehicles.setFont(new java.awt.Font("Rasa Light", 0, 24)); // NOI18N
+        TextVehicles.setForeground(new java.awt.Color(255, 255, 255));
+        TextVehicles.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        TextVehicles.setText("Vehicles");
+        TextVehicles.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        TextVehicles.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                TextVehiclesMouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout CreateButton4Layout = new javax.swing.GroupLayout(CreateButton4);
+        CreateButton4.setLayout(CreateButton4Layout);
+        CreateButton4Layout.setHorizontalGroup(
+            CreateButton4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(TextVehicles, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        CreateButton4Layout.setVerticalGroup(
+            CreateButton4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, CreateButton4Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(TextVehicles, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -193,28 +271,19 @@ public class InterfaceActivateManager extends javax.swing.JFrame {
                         .addComponent(ImageSudoInterface, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(43, 43, 43)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                                .addGap(134, 134, 134)
-                                                .addComponent(CreateButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addGap(143, 143, 143))
-                                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addGap(29, 29, 29)))
-                                        .addComponent(ExitButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addGap(30, 30, 30)
-                                        .addComponent(Title, javax.swing.GroupLayout.PREFERRED_SIZE, 299, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addComponent(textID)))
+                                .addGap(405, 405, 405)
+                                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(29, 29, 29)
+                                .addComponent(ExitButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(40, 40, 40)
-                                .addComponent(textMessage, javax.swing.GroupLayout.PREFERRED_SIZE, 312, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(390, 390, 390)
-                        .addComponent(inputID, javax.swing.GroupLayout.PREFERRED_SIZE, 269, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(73, 73, 73)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(Title, javax.swing.GroupLayout.PREFERRED_SIZE, 299, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                        .addComponent(CreateButton1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(CreateButton2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(CreateButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(CreateButton4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))))
                     .addComponent(Header, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(0, 0, Short.MAX_VALUE))
         );
@@ -226,22 +295,19 @@ public class InterfaceActivateManager extends javax.swing.JFrame {
                     .addComponent(ImageSudoInterface)
                     .addComponent(ExitButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(210, 210, 210)
-                                .addComponent(inputID, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(Header, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                .addGap(43, 43, 43)
-                                .addComponent(Title, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(50, 50, 50)
-                                .addComponent(textID)))
-                        .addGap(18, 18, 18)
-                        .addComponent(textMessage)
-                        .addGap(226, 226, 226)
-                        .addComponent(CreateButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(Header, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(43, 43, 43)
+                        .addComponent(Title, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(39, 39, 39)
+                        .addComponent(CreateButton1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(28, 28, 28)
+                        .addComponent(CreateButton2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(27, 27, 27)
+                        .addComponent(CreateButton3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(27, 27, 27)
+                        .addComponent(CreateButton4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
@@ -249,22 +315,6 @@ public class InterfaceActivateManager extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void TextActivateMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TextActivateMouseClicked
-
-    }//GEN-LAST:event_TextActivateMouseClicked
-
-    private void CreateButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CreateButtonMouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_CreateButtonMouseClicked
-
-    private void inputIDMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_inputIDMousePressed
-
-    }//GEN-LAST:event_inputIDMousePressed
-
-    private void inputIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputIDActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_inputIDActionPerformed
 
     private void TextExitButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TextExitButtonMouseClicked
         System.exit(0);
@@ -282,16 +332,59 @@ public class InterfaceActivateManager extends javax.swing.JFrame {
         yMouse = evt.getY();
     }//GEN-LAST:event_HeaderMousePressed
 
-    public JTextField getinputID(){
-        return inputID;
-    }
-    public JLabel getTextActivate(){
-        return TextActivate;
+    private void TextWorkersMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TextWorkersMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TextWorkersMouseClicked
+
+    private void CreateButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CreateButton1MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_CreateButton1MouseClicked
+
+    private void TextGuestsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TextGuestsMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TextGuestsMouseClicked
+
+    private void CreateButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CreateButton2MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_CreateButton2MouseClicked
+
+    private void TextAccessLogsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TextAccessLogsMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TextAccessLogsMouseClicked
+
+    private void CreateButton3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CreateButton3MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_CreateButton3MouseClicked
+
+    private void TextVehiclesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TextVehiclesMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TextVehiclesMouseClicked
+
+    private void CreateButton4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CreateButton4MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_CreateButton4MouseClicked
+
+    public JLabel getTextAccessLogs() {
+        return TextAccessLogs;
     }
 
-    public JLabel getTextMessage() {
-        return textMessage;
+    public JLabel getTextGuests() {
+        return TextGuests;
     }
+
+    public JLabel getTextVehicles() {
+        return TextVehicles;
+    }
+
+    public JLabel getTextWorkers() {
+        return TextWorkers;
+    }
+
+
+ 
+    
+
+
     
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -326,18 +419,21 @@ public class InterfaceActivateManager extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel CreateButton;
+    private javax.swing.JPanel CreateButton1;
+    private javax.swing.JPanel CreateButton2;
+    private javax.swing.JPanel CreateButton3;
+    private javax.swing.JPanel CreateButton4;
     private javax.swing.JPanel ExitButton;
     private javax.swing.JPanel Header;
     private javax.swing.JLabel ImageSudoInterface;
-    private javax.swing.JLabel TextActivate;
+    private javax.swing.JLabel TextAccessLogs;
     private javax.swing.JLabel TextExitButton;
+    private javax.swing.JLabel TextGuests;
+    private javax.swing.JLabel TextVehicles;
+    private javax.swing.JLabel TextWorkers;
     private javax.swing.JLabel Title;
-    private javax.swing.JTextField inputID;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JLabel textID;
-    private javax.swing.JLabel textMessage;
     // End of variables declaration//GEN-END:variables
 }

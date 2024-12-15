@@ -157,7 +157,6 @@ public class Manager extends User implements ReportService, Observer {
         return reportManagerImpl.getInformationAccessSubjects().stream()
                 .filter(element->element.get("Role").equals("worker") || element.get("Role").equals("guest"))
                 .peek(element->{
-                    element.remove("Role");
                     element.remove("idCompany");
                 })
                 .collect(Collectors.toList());
@@ -189,6 +188,14 @@ public class Manager extends User implements ReportService, Observer {
         return reportManagerImpl.getInformationVehicles()
                 .stream().peek(element->{
                     element.remove("idCompany");
+                })
+                .collect(Collectors.toList());
+    }
+
+    public List<Map<String, Object>> getReportsCompanies(){
+        return reportManagerImpl.getInformationCompanies()
+                .stream().peek(element->{
+                    element.remove("id");
                 })
                 .collect(Collectors.toList());
     }
