@@ -27,7 +27,6 @@ public class InterfaceCreateManager extends javax.swing.JFrame {
 
         textPhone = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
-        ImageSudoInterface = new javax.swing.JLabel();
         Title = new javax.swing.JLabel();
         textID = new javax.swing.JLabel();
         inputID = new javax.swing.JTextField();
@@ -44,6 +43,7 @@ public class InterfaceCreateManager extends javax.swing.JFrame {
         ExitButton = new javax.swing.JPanel();
         TextExitButton = new javax.swing.JLabel();
         Header = new javax.swing.JPanel();
+        ImageSudoInterface = new javax.swing.JLabel();
 
         textPhone.setFont(new java.awt.Font("Rasa Light", 0, 18)); // NOI18N
         textPhone.setText("Phone");
@@ -56,10 +56,6 @@ public class InterfaceCreateManager extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        ImageSudoInterface.setIcon(new javax.swing.ImageIcon(getClass().getResource("/projectacme/view/images/ImageInterfaceSudo.jpg"))); // NOI18N
-        ImageSudoInterface.setText("jLabel1");
-        jPanel1.add(ImageSudoInterface, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 350, -1));
 
         Title.setFont(new java.awt.Font("MathJax_Typewriter", 0, 24)); // NOI18N
         Title.setText("Create new Manager");
@@ -237,6 +233,10 @@ public class InterfaceCreateManager extends javax.swing.JFrame {
         );
 
         jPanel1.add(Header, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 880, 50));
+
+        ImageSudoInterface.setIcon(new javax.swing.ImageIcon(getClass().getResource("/projectacme/view/images/ImageInterfaceSudo.jpg"))); // NOI18N
+        ImageSudoInterface.setText("jLabel1");
+        jPanel1.add(ImageSudoInterface, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 350, -1));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 881, -1));
 

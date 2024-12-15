@@ -361,9 +361,7 @@ public class InterfaceCreateWorker extends javax.swing.JFrame {
         return inputName;
     }
 
-    public JPasswordField getInputPassword(){
-        return inputPassword;
-    }
+    
     
     public JTextField getInputEmailAddress(){
         return inputEmailAddress;

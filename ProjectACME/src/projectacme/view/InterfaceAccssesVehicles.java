@@ -34,8 +34,8 @@ public class InterfaceAccssesVehicles extends javax.swing.JFrame {
         inputID = new javax.swing.JTextField();
         ExitButton = new javax.swing.JPanel();
         TextExitButton = new javax.swing.JLabel();
-        ImageSudoInterface = new javax.swing.JLabel();
         Header = new javax.swing.JPanel();
+        ImageSudoInterface = new javax.swing.JLabel();
         textName = new javax.swing.JLabel();
         inputPlate = new javax.swing.JTextField();
         Title = new javax.swing.JLabel();
@@ -122,10 +122,6 @@ public class InterfaceAccssesVehicles extends javax.swing.JFrame {
 
         getContentPane().add(ExitButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 0, -1, 50));
 
-        ImageSudoInterface.setIcon(new javax.swing.ImageIcon(getClass().getResource("/projectacme/view/images/vehicleImage.jpg"))); // NOI18N
-        ImageSudoInterface.setText("jLabel1");
-        getContentPane().add(ImageSudoInterface, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -4, 350, 560));
-
         Header.setBackground(new java.awt.Color(136, 169, 195));
         Header.setForeground(new java.awt.Color(136, 169, 195));
         Header.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
@@ -143,14 +139,18 @@ public class InterfaceAccssesVehicles extends javax.swing.JFrame {
         Header.setLayout(HeaderLayout);
         HeaderLayout.setHorizontalGroup(
             HeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 830, Short.MAX_VALUE)
+            .addGap(0, 850, Short.MAX_VALUE)
         );
         HeaderLayout.setVerticalGroup(
             HeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 50, Short.MAX_VALUE)
         );
 
-        getContentPane().add(Header, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 0, 830, -1));
+        getContentPane().add(Header, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 850, -1));
+
+        ImageSudoInterface.setIcon(new javax.swing.ImageIcon(getClass().getResource("/projectacme/view/images/vehicleImage.jpg"))); // NOI18N
+        ImageSudoInterface.setText("jLabel1");
+        getContentPane().add(ImageSudoInterface, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -4, 350, 560));
 
         textName.setFont(new java.awt.Font("Rasa Light", 0, 18)); // NOI18N
         textName.setText("Plate");
