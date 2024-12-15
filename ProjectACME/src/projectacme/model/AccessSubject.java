@@ -11,9 +11,9 @@ public class AccessSubject {
     private AccessSubjectRoleEnum role;
     private StateEnum state;
     private String password;
-    private int idCompany;
+    private Integer idCompany;
 
-    public AccessSubject(String id, String name, String phone, String emailAddress, AccessSubjectRoleEnum role, StateEnum state, String password, int idCompany) {
+    public AccessSubject(String id, String name, String phone, String emailAddress, AccessSubjectRoleEnum role, StateEnum state, String password, Integer idCompany) {
         this.id = id;
         this.name = name;
         this.phone = phone;
@@ -25,7 +25,7 @@ public class AccessSubject {
     }
 
     // * Individual
-    public AccessSubject(StateEnum state, AccessSubjectRoleEnum role, String emailAddress, String phone, String name, String id, int idCompany) {
+    public AccessSubject(StateEnum state, AccessSubjectRoleEnum role, String emailAddress, String phone, String name, String id, Integer idCompany) {
         this.state = state;
         this.role = role;
         this.emailAddress = emailAddress;
@@ -117,11 +117,11 @@ public class AccessSubject {
         this.password = password;
     }
 
-    public int getIdCompany() {
+    public Integer getIdCompany() {
         return idCompany;
     }
 
-    public void setIdCompany(int idCompany) {
+    public void setIdCompany(Integer idCompany) {
         this.idCompany = idCompany;
     }
 }

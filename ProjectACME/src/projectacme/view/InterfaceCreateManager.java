@@ -362,8 +362,6 @@ public class InterfaceCreateManager extends javax.swing.JFrame {
         });
     }
 
-
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel CreateButton;
     private javax.swing.JPanel ExitButton;

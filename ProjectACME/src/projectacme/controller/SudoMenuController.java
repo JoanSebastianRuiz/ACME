@@ -70,6 +70,7 @@ public class SudoMenuController {
 
     private void openCreateManager() {
         InterfaceCreateManager createManagerView = new InterfaceCreateManager();
+        CreateManagerController createManagerController = new CreateManagerController(createManagerView);
         createManagerView.setVisible(true);
         sudoMenuView.dispose(); 
     }
