@@ -69,24 +69,26 @@ public class Manager extends User implements ReportService, Observer {
                 changeWorkerToOfficer((Individual) accessSubject.getAccessSubjectById(id));
                 return true;
             }
+        } else{
+            if (StringValidator.StringLengthExactlyThanValidator(id, 10)
+                    && StringValidator.StringLengthLessThanValidator(name, 100)
+                    && PhoneValidator.phoneValidator(phone)
+                    && EmailValidator.emailValidator(emailAddress)
+                    && StringValidator.StringLengthLessThanValidator(password, 100)
+                    && CompanyValidator.CompanyIdValidator(idCompany)
+                    && !CompanyValidator.companyHasOfficer(idCompany)
+                    && !AccessSubjectValidator.accessSubjectValidator(id)
+                    && StringValidator.PasswordValidator(password)
+            ) {
+                accessSubject.addAccessSubject(AccessSubjectFactory.createAccessSubject(id, name, phone, emailAddress, AccessSubjectRoleEnum.officer, StateEnum.active, password, idCompany));
+                return true;
+            } else {
+                System.out.println("Invalid Data For Create Officer");
+                return false;
+            }
+        }
 
-        }
-        if (StringValidator.StringLengthExactlyThanValidator(id, 10)
-                && StringValidator.StringLengthLessThanValidator(name, 100)
-                && PhoneValidator.phoneValidator(phone)
-                && EmailValidator.emailValidator(emailAddress)
-                && StringValidator.StringLengthLessThanValidator(password, 100)
-                && CompanyValidator.CompanyIdValidator(idCompany)
-                && !CompanyValidator.companyHasOfficer(idCompany)
-                && !AccessSubjectValidator.accessSubjectValidator(id)
-                && StringValidator.PasswordValidator(password)
-        ) {
-            accessSubject.addAccessSubject(AccessSubjectFactory.createAccessSubject(id, name, phone, emailAddress, AccessSubjectRoleEnum.officer, StateEnum.active, password, idCompany));
-            return true;
-        } else {
-            System.out.println("Invalid Data For Create Officer");
-            return false;
-        }
+        return false;
     }
 
     public List<Map<String,Object>> getReportsSecurityGuard() {
