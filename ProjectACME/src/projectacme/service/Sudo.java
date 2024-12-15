@@ -3,6 +3,7 @@ package projectacme.service;
 import projectacme.factory.AccessSubjectFactory;
 import projectacme.model.AccessSubject;
 import projectacme.repository.implementation.AccessSubjectImpl;
+import projectacme.repository.implementation.ReportManagerImpl;
 import projectacme.util.Enum.StateEnum;
 import projectacme.util.Enum.AccessSubjectRoleEnum;
 import projectacme.util.validators.AccessSubjectValidator;
@@ -10,8 +11,13 @@ import projectacme.util.validators.EmailValidator;
 import projectacme.util.validators.PhoneValidator;
 import projectacme.util.validators.StringValidator;
 
+import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
+
 public class Sudo extends User{
     private static final AccessSubjectImpl accessSubject = new AccessSubjectImpl();
+    private static final ReportManagerImpl reportManagerImpl= new ReportManagerImpl();
     public Sudo(String id, String name, String phone, String emailAddress, AccessSubjectRoleEnum role, StateEnum state, String password) {
         super(id, name, phone, emailAddress, role, state, password);
     }
@@ -48,5 +54,16 @@ public class Sudo extends User{
         } else {
             return false;
         }
+    }
+
+    public List<Map<String,Object>> getReportsManager() {
+        return reportManagerImpl.getInformationAccessSubjects().stream()
+                .filter(element->element.get("Role").equals("manager"))
+                .peek(element->{
+                    element.remove("idCompany");
+                    element.remove("Company");
+                    element.remove("Role");
+                })
+                .collect(Collectors.toList());
     }
 }

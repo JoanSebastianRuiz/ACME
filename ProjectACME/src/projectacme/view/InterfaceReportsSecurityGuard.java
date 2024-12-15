@@ -43,6 +43,10 @@ public class InterfaceReportsSecurityGuard extends javax.swing.JFrame {
         TextVehicles = new javax.swing.JLabel();
         CreateButton6 = new javax.swing.JPanel();
         TextCompanies = new javax.swing.JLabel();
+        CreateButton7 = new javax.swing.JPanel();
+        TextAnnotations = new javax.swing.JLabel();
+        CreateButton8 = new javax.swing.JPanel();
+        TextJustifications = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setLocationByPlatform(true);
@@ -262,6 +266,68 @@ public class InterfaceReportsSecurityGuard extends javax.swing.JFrame {
                 .addComponent(TextCompanies, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
+        CreateButton7.setBackground(new java.awt.Color(136, 169, 195));
+        CreateButton7.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                CreateButton7MouseClicked(evt);
+            }
+        });
+
+        TextAnnotations.setFont(new java.awt.Font("Rasa Light", 0, 24)); // NOI18N
+        TextAnnotations.setForeground(new java.awt.Color(255, 255, 255));
+        TextAnnotations.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        TextAnnotations.setText("Annotations");
+        TextAnnotations.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        TextAnnotations.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                TextAnnotationsMouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout CreateButton7Layout = new javax.swing.GroupLayout(CreateButton7);
+        CreateButton7.setLayout(CreateButton7Layout);
+        CreateButton7Layout.setHorizontalGroup(
+            CreateButton7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(TextAnnotations, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        CreateButton7Layout.setVerticalGroup(
+            CreateButton7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, CreateButton7Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(TextAnnotations, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+
+        CreateButton8.setBackground(new java.awt.Color(136, 169, 195));
+        CreateButton8.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                CreateButton8MouseClicked(evt);
+            }
+        });
+
+        TextJustifications.setFont(new java.awt.Font("Rasa Light", 0, 24)); // NOI18N
+        TextJustifications.setForeground(new java.awt.Color(255, 255, 255));
+        TextJustifications.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        TextJustifications.setText("Justifications");
+        TextJustifications.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        TextJustifications.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                TextJustificationsMouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout CreateButton8Layout = new javax.swing.GroupLayout(CreateButton8);
+        CreateButton8.setLayout(CreateButton8Layout);
+        CreateButton8Layout.setHorizontalGroup(
+            CreateButton8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(TextJustifications, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        CreateButton8Layout.setVerticalGroup(
+            CreateButton8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, CreateButton8Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(TextJustifications, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -285,7 +351,9 @@ public class InterfaceReportsSecurityGuard extends javax.swing.JFrame {
                                         .addComponent(CreateButton, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                         .addComponent(CreateButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                         .addComponent(CreateButton4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(CreateButton6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))))
+                                        .addComponent(CreateButton6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(CreateButton7, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(CreateButton8, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))))
                     .addComponent(Header, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(0, 0, Short.MAX_VALUE))
         );
@@ -305,7 +373,7 @@ public class InterfaceReportsSecurityGuard extends javax.swing.JFrame {
                             .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(43, 43, 43)
                         .addComponent(Title, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(76, 76, 76)
+                        .addGap(18, 18, 18)
                         .addComponent(CreateButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(CreateButton3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -313,6 +381,10 @@ public class InterfaceReportsSecurityGuard extends javax.swing.JFrame {
                         .addComponent(CreateButton4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(CreateButton6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(CreateButton7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(CreateButton8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
 
@@ -369,6 +441,22 @@ public class InterfaceReportsSecurityGuard extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_CreateButton6MouseClicked
 
+    private void TextAnnotationsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TextAnnotationsMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TextAnnotationsMouseClicked
+
+    private void CreateButton7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CreateButton7MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_CreateButton7MouseClicked
+
+    private void TextJustificationsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TextJustificationsMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TextJustificationsMouseClicked
+
+    private void CreateButton8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CreateButton8MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_CreateButton8MouseClicked
+
     public JLabel getTextAccessLogs() {
         return TextAccessLogs;
     }
@@ -387,6 +475,14 @@ public class InterfaceReportsSecurityGuard extends javax.swing.JFrame {
 
     public JLabel getTextCompanies() {
         return TextCompanies;
+    }
+
+    public JLabel getTextAnnotations() {
+        return TextAnnotations;
+    }
+
+    public JLabel getTextJustifications() {
+        return TextJustifications;
     }
     
     
@@ -432,13 +528,17 @@ public class InterfaceReportsSecurityGuard extends javax.swing.JFrame {
     private javax.swing.JPanel CreateButton3;
     private javax.swing.JPanel CreateButton4;
     private javax.swing.JPanel CreateButton6;
+    private javax.swing.JPanel CreateButton7;
+    private javax.swing.JPanel CreateButton8;
     private javax.swing.JPanel ExitButton;
     private javax.swing.JPanel Header;
     private javax.swing.JLabel ImageSudoInterface;
     private javax.swing.JLabel TextAccessLogs;
+    private javax.swing.JLabel TextAnnotations;
     private javax.swing.JLabel TextAuthorizedPeople;
     private javax.swing.JLabel TextCompanies;
     private javax.swing.JLabel TextExitButton;
+    private javax.swing.JLabel TextJustifications;
     private javax.swing.JLabel TextVehicles;
     private javax.swing.JLabel Title;
     private javax.swing.JLabel jLabel1;

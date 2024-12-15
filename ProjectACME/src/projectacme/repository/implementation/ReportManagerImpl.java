@@ -27,7 +27,7 @@ public class ReportManagerImpl implements ReportManagerDAO {
             while(rs.next()){
                 HashMap<String, Object> map = new HashMap<>();
                 map.put("Document", rs.getString("id"));
-                map.put("Full name", rs.getString("name"));
+                map.put("Person", rs.getString("name"));
                 map.put("Phone", rs.getString("phone"));
                 map.put("Email Address", rs.getString("emailAddress"));
                 map.put("Role", rs.getString("role"));
@@ -91,7 +91,7 @@ public class ReportManagerImpl implements ReportManagerDAO {
                 map.put("Suspended", rs.getBoolean("suspended"));
                 map.put("Reason", rs.getString("reason"));
                 map.put("State", rs.getString("state"));
-                map.put("Person Document", rs.getString("idAccessSubject"));
+                map.put("Document", rs.getString("idAccessSubject"));
                 map.put("Person", rs.getString("nameSubject"));
                 map.put("Security Guard", rs.getString("nameLogger"));
                 accessSubjects.add(map);
@@ -171,7 +171,7 @@ public class ReportManagerImpl implements ReportManagerDAO {
                 HashMap<String, Object> map = new HashMap<>();
                 map.put("Type Access", rs.getString("type"));
                 map.put("Date", rs.getTimestamp("datetime"));
-                map.put("Person Document", rs.getString("idAccessSubject"));
+                map.put("Document", rs.getString("idAccessSubject"));
                 map.put("Person", rs.getString("nameSubject"));
                 map.put("idScanner", rs.getInt("idScanner"));
                 map.put("Logger", rs.getString("nameLogger"));

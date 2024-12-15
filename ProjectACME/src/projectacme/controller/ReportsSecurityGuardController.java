@@ -47,6 +47,20 @@ public class ReportsSecurityGuardController {
                 createReportCompanies();
             }
         });
+
+        view.getTextAnnotations().addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                createReportAnnotations();
+            }
+        });
+
+        view.getTextJustifications().addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                createReportJustifications();
+            }
+        });
     }
 
     public void createReportAuthorizedPeople(){
@@ -75,6 +89,22 @@ public class ReportsSecurityGuardController {
 
     public void createReportCompanies(){
         Report report = new Report(securityGuard.getReportsCompanies(),"Companies");
+        InterfaceViewReports viewReports = new InterfaceViewReports();
+        ViewReportsController viewReportsController = new ViewReportsController(viewReports, report);
+        viewReports.setVisible(true);
+        view.setVisible(false);
+    }
+
+    public void createReportAnnotations(){
+        Report report = new Report(securityGuard.getReportAnnotations(),"Annotations");
+        InterfaceViewReports viewReports = new InterfaceViewReports();
+        ViewReportsController viewReportsController = new ViewReportsController(viewReports, report);
+        viewReports.setVisible(true);
+        view.setVisible(false);
+    }
+
+    public void createReportJustifications(){
+        Report report = new Report(securityGuard.getReportJustifications(),"Justifications");
         InterfaceViewReports viewReports = new InterfaceViewReports();
         ViewReportsController viewReportsController = new ViewReportsController(viewReports, report);
         viewReports.setVisible(true);
