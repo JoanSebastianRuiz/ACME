@@ -64,6 +64,7 @@ public class OfficerMenuController {
     private void openRegisterGuest() {
         // Crear la interfaz para Registrar Invitado
         InterfaceCreateGuest registerGuestView = new InterfaceCreateGuest();
+        CreateGuestController createGuestController = new CreateGuestController(registerGuestView);
         registerGuestView.setVisible(true);
         officerMenuView.dispose(); // Cierra la ventana actual
     }
@@ -71,6 +72,7 @@ public class OfficerMenuController {
     private void openRegisterWorker() {
         // Crear la interfaz para Registrar Trabajador
         InterfaceCreateWorker registerWorkerView = new InterfaceCreateWorker();
+        CreateWorkerController createWorkerController = new CreateWorkerController(registerWorkerView);
         registerWorkerView.setVisible(true);
         officerMenuView.dispose(); // Cierra la ventana actual
     }

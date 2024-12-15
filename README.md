@@ -1,6 +1,6 @@
 <div align="center">
   <a href="">
-    <img src="">
+    <img src="readmeFiles/LogoAcmeZone.png">
   </a>
 <h1 text-align="center">Acme Business Complex Access Control</h1>
 </div>
@@ -12,7 +12,6 @@
 4. [Installation and Configuration](#installation-and-configuration-)
 5. [Database Model](#database-model-%EF%B8%8F)
 6. [Class Structure](#class-structure-)
-
 ## General Information 📒
 
 **Acme Business Complex Access Control** is a program developed in Java to record access to a business complex.
@@ -72,10 +71,72 @@ git clone https://github.com/JoanSebastianRuiz/ACME.git
 5. Install the libraries from the **lib** package.  
 6. Run the `main` file.  
 
+**Credentials To Test**¨
 
+**Sudo**
+
+Identification
+```
+1085748963
+```
+Password
+```
+password123
+```
+
+**Officer**
+
+Identification
+```
+1012345678
+```
+Password
+```
+officerpass1
+```
+
+**Manager**
+
+Identification
+```
+1012345688
+```
+
+Password
+```
+managerpass1
+```
+
+**Security Guard**
+
+Identification
+```
+1012345683
+```
+
+Password
+```
+securitypass1
+```
 ## Database Model 🗃️
 
+## **First Global Diagram**
+
+<img src="readmeFiles/AcmeDatabaseModel1.png">
+
+The entities that compose our database model.
+
+## **Second Global Diagram**
+
+<img src="readmeFiles/AcmeDatabaseModel2.png">
+
+The relation between each entity.
+
+## **Third Global Diagram**
+
 <img src="readmeFiles/AcmeDatabaseModel.png">
+
+Complete database model
 
 ---
 

@@ -32,17 +32,17 @@ public class InterfaceAccssesUsers extends javax.swing.JFrame {
         CreateButton24 = new javax.swing.JPanel();
         ButtonAccess = new javax.swing.JLabel();
         textID = new javax.swing.JLabel();
+        Header = new javax.swing.JPanel();
+        BackButton = new javax.swing.JLabel();
         inputID = new javax.swing.JTextField();
         ExitButton = new javax.swing.JPanel();
         TextExitButton = new javax.swing.JLabel();
         ImageSudoInterface = new javax.swing.JLabel();
-        Header = new javax.swing.JPanel();
         textName = new javax.swing.JLabel();
         inputName = new javax.swing.JTextField();
         textPassword = new javax.swing.JLabel();
         inputPassword = new javax.swing.JPasswordField();
         Title = new javax.swing.JLabel();
-        TextButton = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setLocationByPlatform(true);
@@ -84,6 +84,43 @@ public class InterfaceAccssesUsers extends javax.swing.JFrame {
         textID.setFont(new java.awt.Font("Rasa Light", 0, 18)); // NOI18N
         textID.setText("ID");
         getContentPane().add(textID, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 180, -1, -1));
+
+        Header.setBackground(new java.awt.Color(136, 169, 195));
+        Header.setForeground(new java.awt.Color(136, 169, 195));
+        Header.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseDragged(java.awt.event.MouseEvent evt) {
+                HeaderMouseDragged(evt);
+            }
+        });
+        Header.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                HeaderMousePressed(evt);
+            }
+        });
+
+        BackButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/projectacme/view/images/icons8-flecha-responder-24.png"))); // NOI18N
+        BackButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        BackButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                BackButtonMouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout HeaderLayout = new javax.swing.GroupLayout(Header);
+        Header.setLayout(HeaderLayout);
+        HeaderLayout.setHorizontalGroup(
+            HeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(HeaderLayout.createSequentialGroup()
+                .addGap(14, 14, 14)
+                .addComponent(BackButton, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(780, Short.MAX_VALUE))
+        );
+        HeaderLayout.setVerticalGroup(
+            HeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(BackButton, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+        );
+
+        getContentPane().add(Header, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 850, -1));
 
         inputID.setForeground(new java.awt.Color(102, 102, 102));
         inputID.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -130,32 +167,6 @@ public class InterfaceAccssesUsers extends javax.swing.JFrame {
         ImageSudoInterface.setText("jLabel1");
         getContentPane().add(ImageSudoInterface, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -4, 350, 560));
 
-        Header.setBackground(new java.awt.Color(136, 169, 195));
-        Header.setForeground(new java.awt.Color(136, 169, 195));
-        Header.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
-            public void mouseDragged(java.awt.event.MouseEvent evt) {
-                HeaderMouseDragged(evt);
-            }
-        });
-        Header.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                HeaderMousePressed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout HeaderLayout = new javax.swing.GroupLayout(Header);
-        Header.setLayout(HeaderLayout);
-        HeaderLayout.setHorizontalGroup(
-            HeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 830, Short.MAX_VALUE)
-        );
-        HeaderLayout.setVerticalGroup(
-            HeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 50, Short.MAX_VALUE)
-        );
-
-        getContentPane().add(Header, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 0, 830, -1));
-
         textName.setFont(new java.awt.Font("Rasa Light", 0, 18)); // NOI18N
         textName.setText("Name");
         getContentPane().add(textName, new org.netbeans.lib.awtextra.AbsoluteConstraints(645, 178, -1, -1));
@@ -194,24 +205,8 @@ public class InterfaceAccssesUsers extends javax.swing.JFrame {
         Title.setText("Login Users");
         getContentPane().add(Title, new org.netbeans.lib.awtextra.AbsoluteConstraints(434, 91, 248, 37));
 
-        TextButton.setFont(new java.awt.Font("Rasa Light", 0, 24)); // NOI18N
-        TextButton.setForeground(new java.awt.Color(255, 255, 255));
-        TextButton.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        TextButton.setText("Accesses");
-        TextButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        TextButton.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                TextButtonMouseClicked(evt);
-            }
-        });
-        getContentPane().add(TextButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 411, 703, 42));
-
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void TextButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TextButtonMouseClicked
-
-    }//GEN-LAST:event_TextButtonMouseClicked
 
     private void inputPasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputPasswordActionPerformed
         // TODO add your handling code here:
@@ -261,6 +256,10 @@ public class InterfaceAccssesUsers extends javax.swing.JFrame {
         
     }//GEN-LAST:event_ButtonAccessMouseClicked
 
+    private void BackButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BackButtonMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BackButtonMouseClicked
+
     public JTextField getinputID(){
         return inputID;
     }
@@ -309,12 +308,12 @@ public class InterfaceAccssesUsers extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel BackButton;
     private javax.swing.JLabel ButtonAccess;
     private javax.swing.JPanel CreateButton24;
     private javax.swing.JPanel ExitButton;
     private javax.swing.JPanel Header;
     private javax.swing.JLabel ImageSudoInterface;
-    private javax.swing.JLabel TextButton;
     private javax.swing.JLabel TextExitButton;
     private javax.swing.JLabel Title;
     private javax.swing.JTextField inputID;
