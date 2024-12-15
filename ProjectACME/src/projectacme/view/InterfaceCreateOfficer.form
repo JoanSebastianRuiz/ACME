@@ -43,115 +43,141 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <EmptySpace min="0" pref="880" max="32767" attributes="0"/>
-              <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
-                  <Group type="102" attributes="0">
-                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" attributes="0">
-                              <Component id="ImageSudoInterface" min="-2" pref="350" max="-2" attributes="0"/>
-                              <EmptySpace min="43" pref="43" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" attributes="0">
-                                      <EmptySpace min="30" pref="30" max="-2" attributes="0"/>
-                                      <Component id="Title" min="-2" pref="248" max="-2" attributes="0"/>
+              <Group type="102" attributes="0">
+                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" attributes="0">
+                          <EmptySpace min="590" pref="590" max="-2" attributes="0"/>
+                          <Component id="textPhone1" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" attributes="0">
+                          <EmptySpace min="393" pref="393" max="-2" attributes="0"/>
+                          <Component id="inputName" min="-2" pref="166" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" attributes="0">
+                          <EmptySpace min="390" pref="390" max="-2" attributes="0"/>
+                          <Component id="inputID" min="-2" pref="166" max="-2" attributes="0"/>
+                      </Group>
+                      <Component id="Header" min="-2" max="-2" attributes="0"/>
+                      <Group type="102" attributes="0">
+                          <Component id="ImageSudoInterface" min="-2" pref="350" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" attributes="0">
+                                  <EmptySpace min="43" pref="43" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Group type="102" attributes="0">
+                                          <EmptySpace min="30" pref="30" max="-2" attributes="0"/>
+                                          <Component id="Title" min="-2" pref="248" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Component id="textID" min="-2" max="-2" attributes="0"/>
+                                      <Group type="102" attributes="0">
+                                          <EmptySpace min="197" pref="197" max="-2" attributes="0"/>
+                                          <Component id="inputPhone" min="-2" pref="175" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" attributes="0">
+                                          <Component id="textName" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace min="159" pref="159" max="-2" attributes="0"/>
+                                          <Component id="textPassword" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" attributes="0">
+                                          <EmptySpace min="134" pref="134" max="-2" attributes="0"/>
+                                          <Component id="CreateButton" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <Component id="textEmailAddress" min="-2" pref="166" max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
+                                          <Component id="textEmailAddress1" min="-2" pref="157" max="-2" attributes="0"/>
+                                      </Group>
                                   </Group>
-                                  <Component id="textID" min="-2" max="-2" attributes="0"/>
-                                  <Group type="102" attributes="0">
-                                      <EmptySpace min="197" pref="197" max="-2" attributes="0"/>
-                                      <Component id="inputPhone" min="-2" pref="175" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Group type="102" attributes="0">
-                                      <Component id="textName" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace min="159" pref="159" max="-2" attributes="0"/>
-                                      <Component id="textPassword" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Component id="textEmailAddress" min="-2" pref="166" max="-2" attributes="0"/>
-                                  <Group type="102" attributes="0">
-                                      <EmptySpace min="134" pref="134" max="-2" attributes="0"/>
-                                      <Component id="CreateButton" min="-2" max="-2" attributes="0"/>
-                                  </Group>
+                                  <EmptySpace min="65" pref="65" max="-2" attributes="0"/>
+                                  <Component id="ExitButton" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace min="65" pref="65" max="-2" attributes="0"/>
-                              <Component id="ExitButton" min="-2" max="-2" attributes="0"/>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
+                                  <Component id="textInvalid" min="-2" pref="345" max="-2" attributes="0"/>
+                              </Group>
                           </Group>
-                          <Group type="102" attributes="0">
-                              <EmptySpace min="590" pref="590" max="-2" attributes="0"/>
-                              <Component id="textPhone1" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" attributes="0">
-                              <EmptySpace min="594" pref="594" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="390" pref="390" max="-2" attributes="0"/>
+                          <Component id="inputEmailAddress" min="-2" pref="166" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="comboCompany" min="-2" pref="175" max="-2" attributes="0"/>
                               <Component id="inputPassword" min="-2" pref="175" max="-2" attributes="0"/>
                           </Group>
-                          <Group type="102" attributes="0">
-                              <EmptySpace min="393" pref="393" max="-2" attributes="0"/>
-                              <Component id="inputName" min="-2" pref="166" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" attributes="0">
-                              <EmptySpace min="390" pref="390" max="-2" attributes="0"/>
-                              <Component id="inputID" min="-2" pref="166" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" attributes="0">
-                              <EmptySpace min="390" pref="390" max="-2" attributes="0"/>
-                              <Component id="inputEmailAddress" min="-2" pref="166" max="-2" attributes="0"/>
-                          </Group>
-                          <Component id="Header" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                   </Group>
+                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
-              <EmptySpace min="0" pref="600" max="32767" attributes="0"/>
-              <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
-                  <Group type="102" attributes="0">
-                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="ImageSudoInterface" min="-2" max="-2" attributes="0"/>
-                          <Group type="102" attributes="0">
-                              <EmptySpace min="93" pref="93" max="-2" attributes="0"/>
-                              <Component id="Title" min="-2" pref="37" max="-2" attributes="0"/>
-                              <EmptySpace min="50" pref="50" max="-2" attributes="0"/>
-                              <Component id="textID" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="7" pref="7" max="-2" attributes="0"/>
-                              <Component id="inputPhone" min="-2" pref="36" max="-2" attributes="0"/>
-                              <EmptySpace min="32" pref="32" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="textName" min="-2" max="-2" attributes="0"/>
-                                  <Component id="textPassword" min="-2" max="-2" attributes="0"/>
+              <Group type="102" attributes="0">
+                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="ImageSudoInterface" min="-2" max="-2" attributes="0"/>
+                      <Component id="ExitButton" min="-2" max="-2" attributes="0"/>
+                      <Group type="102" attributes="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace min="314" pref="314" max="-2" attributes="0"/>
+                                  <Component id="inputName" min="-2" pref="36" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace min="83" pref="83" max="-2" attributes="0"/>
-                              <Component id="textEmailAddress" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="104" pref="104" max="-2" attributes="0"/>
-                              <Component id="CreateButton" min="-2" max="-2" attributes="0"/>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace min="210" pref="210" max="-2" attributes="0"/>
+                                  <Component id="inputID" min="-2" pref="36" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <EmptySpace min="93" pref="93" max="-2" attributes="0"/>
+                                          <Component id="Title" min="-2" pref="37" max="-2" attributes="0"/>
+                                          <EmptySpace min="50" pref="50" max="-2" attributes="0"/>
+                                          <Component id="textID" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace min="7" pref="7" max="-2" attributes="0"/>
+                                          <Component id="inputPhone" min="-2" pref="36" max="-2" attributes="0"/>
+                                          <EmptySpace min="32" pref="32" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Component id="textName" min="-2" max="-2" attributes="0"/>
+                                              <Component id="textPassword" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace min="83" pref="83" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="3" attributes="0">
+                                              <Component id="textEmailAddress" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="textEmailAddress1" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                      </Group>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <EmptySpace min="180" pref="180" max="-2" attributes="0"/>
+                                          <Component id="textPhone1" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <EmptySpace min="314" pref="314" max="-2" attributes="0"/>
+                                          <Component id="inputPassword" min="-2" pref="36" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Component id="Header" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Group type="102" attributes="0">
+                                          <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
+                                          <Component id="inputEmailAddress" min="-2" pref="36" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                          <Component id="comboCompany" min="-2" pref="36" max="-2" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                              </Group>
                           </Group>
-                          <Component id="ExitButton" min="-2" max="-2" attributes="0"/>
-                          <Group type="102" attributes="0">
-                              <EmptySpace min="180" pref="180" max="-2" attributes="0"/>
-                              <Component id="textPhone1" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" attributes="0">
-                              <EmptySpace min="314" pref="314" max="-2" attributes="0"/>
-                              <Component id="inputPassword" min="-2" pref="36" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" attributes="0">
-                              <EmptySpace min="314" pref="314" max="-2" attributes="0"/>
-                              <Component id="inputName" min="-2" pref="36" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" attributes="0">
-                              <EmptySpace min="210" pref="210" max="-2" attributes="0"/>
-                              <Component id="inputID" min="-2" pref="36" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" attributes="0">
-                              <EmptySpace min="420" pref="420" max="-2" attributes="0"/>
-                              <Component id="inputEmailAddress" min="-2" pref="36" max="-2" attributes="0"/>
-                          </Group>
-                          <Component id="Header" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Component id="textInvalid" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
+                          <Component id="CreateButton" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                   </Group>
+                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -385,6 +411,35 @@
             </DimensionLayout>
           </Layout>
         </Container>
+        <Component class="javax.swing.JLabel" name="textEmailAddress1">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Rasa Light" size="18" style="0"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Company"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JComboBox" name="comboCompany">
+          <Properties>
+            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+              <StringArray count="0"/>
+            </Property>
+          </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+          </AuxValues>
+        </Component>
+        <Component class="javax.swing.JLabel" name="textInvalid">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Rasa Light" size="18" style="0"/>
+            </Property>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="ff" red="ff" type="rgb"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="text"/>
+          </Properties>
+        </Component>
       </SubComponents>
     </Container>
   </SubComponents>

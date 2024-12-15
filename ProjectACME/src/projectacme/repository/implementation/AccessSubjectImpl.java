@@ -17,7 +17,7 @@ public class AccessSubjectImpl implements AccessSubjectDao {
 
     @Override
     public void addAccessSubject(AccessSubject accessSubject) {
-            String sql = "INSERT INTO AccessSubject(id, password, name, role, state, idCompany) VALUES (?, ?, ?, ?, ?, ?);";
+            String sql = "INSERT INTO AccessSubject(id, password, name, role, state, idCompany, phone, emailAddress) VALUES (?, ?, ?, ?, ?, ?,?,?);";
         try (java.sql.Connection connection = ConnectionData.getConnectionDatabase();
             PreparedStatement statement = connection.prepareStatement(sql)) {
             statement.setString(1, accessSubject.getId());
@@ -26,6 +26,8 @@ public class AccessSubjectImpl implements AccessSubjectDao {
             statement.setString(4, accessSubject.getRole().toString());
             statement.setString(5, accessSubject.getState().toString());
             statement.setInt(6, accessSubject.getIdCompany());
+            statement.setString(7, accessSubject.getPhone());
+            statement.setString(8, accessSubject.getEmailAddress());
             statement.executeUpdate();
             System.out.println("Added: " + accessSubject.getName());
 
