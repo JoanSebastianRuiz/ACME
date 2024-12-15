@@ -74,7 +74,6 @@ public class IntefarceLogin extends javax.swing.JFrame {
         TextUsername.setText("USERNAME");
         Background.add(TextUsername, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 120, 140, 40));
 
-        InputUsername.setText("Enter your Username");
         InputUsername.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 InputUsernameMousePressed(evt);
@@ -92,7 +91,6 @@ public class IntefarceLogin extends javax.swing.JFrame {
         TextPassword.setText("PASSWORD");
         Background.add(TextPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 240, 140, 40));
 
-        InputPassword.setText("jPasswordField1");
         InputPassword.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 InputPasswordMousePressed(evt);
