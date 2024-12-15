@@ -1,6 +1,8 @@
 package projectacme.controller;
 
 import java.awt.Color;
+
+import projectacme.UserActual;
 import projectacme.model.AccessSubject;
 import projectacme.repository.implementation.AccessSubjectImpl;
 import projectacme.util.Login;
@@ -34,7 +36,8 @@ public class LoginController {
         AccessSubject user = accessSubjectService.getAccessSubjectById(identification);
         if (user != null) {
             if (Login.validationUser(identification, password)) {
-            System.out.println("User Validated: " + user.getName());
+                UserActual.setAccessSubject(user);
+                System.out.println("User Validated: " + user.getName());
                 JFrame newWindow = switch (user.getRole()) {
                     case sudo -> new InterfaceSudoMenu();
                     case officer -> new InterfaceOfficerMenu();
@@ -46,14 +49,13 @@ public class LoginController {
                 newWindow.setVisible(true);
                 }
             loginView.dispose(); // * Close Actual Window
-            }
+            } else {
             System.out.println("User Is Not Valid");
-            // Mostrar error en campos
             loginView.getInputUsername().setForeground(Color.RED);
             loginView.getInputPassword().setForeground(Color.RED);
+            }
         } else {
             System.out.println("User Is Not Valid");
-            // Mostrar error en campos
             loginView.getInputUsername().setForeground(Color.RED);
             loginView.getInputPassword().setForeground(Color.RED);
         }

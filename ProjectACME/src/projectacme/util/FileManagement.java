@@ -1,6 +1,8 @@
 package projectacme.util;
 
 import projectacme.controller.AccessDatabaseController;
+import projectacme.controller.LoginController;
+import projectacme.view.IntefarceLogin;
 import projectacme.view.InterfaceAccessDataBase;
 
 import java.io.*;
@@ -9,6 +11,8 @@ import java.sql.SQLException;
 public class FileManagement {
     private static final File configurationDataBase = new File("src/projectacme/config/ConnectionDatabaseInformation.txt");
     private static final InterfaceAccessDataBase accessDatabaseView = new InterfaceAccessDataBase();
+    private static final IntefarceLogin loginView = new IntefarceLogin();
+    private static final LoginController loginController = new LoginController(loginView);
 
     public static void SetConnectionDatabase(String url, String user , String password) throws SQLException {
         ConnectionData.setUrl(url);
@@ -27,7 +31,8 @@ public class FileManagement {
                 ConnectionData.setUser(user);
                 ConnectionData.setPassword(password);
                 System.out.println("B");
-                accessDatabaseView.setVisible(false);
+                loginView.setVisible(true);
+                accessDatabaseView.dispose();
             } catch (Exception e) {
                 System.out.println(e.getMessage());
             }
@@ -58,6 +63,7 @@ public class FileManagement {
                 ConnectionData.setUser(user);
                 ConnectionData.setPassword(password);
                 System.out.println("D");
+                loginView.setVisible(true);
             } catch (IOException e) {
                 System.out.println("Error reading file: " + e.getMessage());
             }
