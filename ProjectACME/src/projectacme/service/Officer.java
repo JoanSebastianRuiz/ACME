@@ -62,14 +62,13 @@ public class Officer extends User implements ReportService, Observer, RegisterAc
         }
     }
 
-    public boolean guestRegistration(String id, String name, String phone, String emailAddress, String password){
+    public boolean guestRegistration(String id, String name, String phone, String emailAddress){
         if (StringValidator.StringLengthExactlyThanValidator(id, 10)
                 && StringValidator.StringLengthLessThanValidator(name, 100)
                 && PhoneValidator.phoneValidator(phone)
                 && EmailValidator.emailValidator(emailAddress)
-                && StringValidator.StringLengthLessThanValidator(password, 100)
                 && !AccessSubjectValidator.accessSubjectValidator(id)) {
-            accessSubject.addAccessSubject(AccessSubjectFactory.createAccessSubject(id, name, phone, emailAddress, AccessSubjectRoleEnum.worker, StateEnum.active, null, this.idCompany));
+            accessSubject.addAccessSubject(AccessSubjectFactory.createAccessSubject(id, name, phone, emailAddress, AccessSubjectRoleEnum.guest, StateEnum.active, null, this.idCompany));
             return true;
         } else {
             System.out.println("Invalid Data For Create Guest");
