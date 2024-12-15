@@ -39,10 +39,10 @@ public class OfficerMenuController {
             }
         });
 
-        officerMenuView.getButtonRegisterWorker().addActionListener(new ActionListener() {
+        officerMenuView.getButtonRegisterExit().addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                openRegisterWorker();
+                openRegisterExit();
             }
         });
     }
@@ -77,4 +77,10 @@ public class OfficerMenuController {
         officerMenuView.dispose(); // Cierra la ventana actual
     }
 
+    private void openRegisterExit() {
+        InterfaceRegisterExit registerExit = new InterfaceRegisterExit();
+        RegisterExitController registerExitController = new RegisterExitController(registerExit);
+        registerExit.setVisible(true);
+        officerMenuView.dispose();
+    }
 }

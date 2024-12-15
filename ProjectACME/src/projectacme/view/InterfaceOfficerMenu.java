@@ -40,6 +40,7 @@ public class InterfaceOfficerMenu extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
+        ButtonRegisterExit = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setLocationByPlatform(true);
@@ -177,30 +178,50 @@ public class InterfaceOfficerMenu extends javax.swing.JFrame {
             .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
+        ButtonRegisterExit.setBackground(new java.awt.Color(240, 242, 235));
+        ButtonRegisterExit.setFont(new java.awt.Font("Nimbus Sans Narrow", 0, 24)); // NOI18N
+        ButtonRegisterExit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/projectacme/view/images/exit.-con.png"))); // NOI18N
+        ButtonRegisterExit.setText("Register Exit");
+        ButtonRegisterExit.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        ButtonRegisterExit.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        ButtonRegisterExit.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        ButtonRegisterExit.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                ButtonRegisterExitMouseClicked(evt);
+            }
+        });
+        ButtonRegisterExit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ButtonRegisterExitActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(Header, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(55, 55, 55)
-                .addComponent(ButtonRegisterWorker, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(55, 55, 55)
-                .addComponent(ButtonRegisterGuest, javax.swing.GroupLayout.PREFERRED_SIZE, 214, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(ButtonActivateIndividual)
-                .addGap(35, 35, 35))
+                .addGap(35, 35, 35)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(35, 35, 35)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(55, 55, 55)
+                        .addComponent(ButtonRegisterWorker, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(46, 46, 46)
                         .addComponent(ButtonInactivateIndividual)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(48, 48, 48)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(ButtonRegisterExit, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(ButtonRegisterGuest, javax.swing.GroupLayout.DEFAULT_SIZE, 214, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(ButtonActivateIndividual)
+                .addGap(35, 35, 35))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -217,7 +238,9 @@ public class InterfaceOfficerMenu extends javax.swing.JFrame {
                     .addComponent(ButtonRegisterGuest, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(ButtonActivateIndividual, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 47, Short.MAX_VALUE)
-                .addComponent(ButtonInactivateIndividual, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(ButtonInactivateIndividual, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ButtonRegisterExit, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(20, 20, 20))
         );
 
@@ -282,6 +305,14 @@ public class InterfaceOfficerMenu extends javax.swing.JFrame {
     private void ButtonInactivateIndividualMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ButtonInactivateIndividualMouseClicked
         // TODO add your handling code here:
     }//GEN-LAST:event_ButtonInactivateIndividualMouseClicked
+
+    private void ButtonRegisterExitMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ButtonRegisterExitMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ButtonRegisterExitMouseClicked
+
+    private void ButtonRegisterExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonRegisterExitActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ButtonRegisterExitActionPerformed
     
     public JButton getButtonRegisterWorker(){
         return ButtonRegisterWorker;
@@ -297,7 +328,11 @@ public class InterfaceOfficerMenu extends javax.swing.JFrame {
     public JButton getButtonInactivateIndividual(){
         return ButtonInactivateIndividual;
     }
-    
+
+    public JButton getButtonRegisterExit() {
+        return ButtonRegisterExit;
+    }
+
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -333,6 +368,7 @@ public class InterfaceOfficerMenu extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton ButtonActivateIndividual;
     private javax.swing.JButton ButtonInactivateIndividual;
+    private javax.swing.JButton ButtonRegisterExit;
     private javax.swing.JButton ButtonRegisterGuest;
     private javax.swing.JButton ButtonRegisterWorker;
     private javax.swing.JPanel Header;
