@@ -1,17 +1,23 @@
 package projectacme.util;
 
+import projectacme.controller.AccessDatabaseController;
+import projectacme.view.InterfaceAccessDataBase;
+
 import java.io.*;
+import java.sql.SQLException;
 
 public class FileManagement {
-    public static void SetConnectionDatabase() {
-        File file = new File("ConnectionDatabaseInformation.txt");
-        if (!file.exists()) {
+    private static final File configurationDataBase = new File("src/projectacme/config/ConnectionDatabaseInformation.txt");
+    private static final InterfaceAccessDataBase accessDatabaseView = new InterfaceAccessDataBase();
+
+    public static void SetConnectionDatabase(String url, String user , String password) throws SQLException {
+        ConnectionData.setUrl(url);
+        ConnectionData.setUser(user);
+        ConnectionData.setPassword(password);
+        if (ConnectionData.getConnectionDatabase() != null){
             try {
-                file.createNewFile();
-                String url = "localhost:3306";
-                String user = "root";
-                String password = "WandaSQL";
-                try (FileWriter fileWriter = new FileWriter(file)) {
+                configurationDataBase.createNewFile();
+                try (FileWriter fileWriter = new FileWriter(configurationDataBase)) {
                     fileWriter.write("url: " + url + "\n");
                     fileWriter.write("user: " + user + "\n");
                     fileWriter.write("password: " + password + "\n");
@@ -21,11 +27,18 @@ public class FileManagement {
                 ConnectionData.setUser(user);
                 ConnectionData.setPassword(password);
                 System.out.println("B");
+                accessDatabaseView.setVisible(false);
             } catch (Exception e) {
                 System.out.println(e.getMessage());
             }
         } else {
-            try (BufferedReader bufferedReader = new BufferedReader(new FileReader(file))) {
+            System.out.println("Connection Database Failure");
+        }
+    }
+
+    public static void ReadConnectionDatabaseInformation() {
+        if (configurationDataBase.exists()) {
+            try (BufferedReader bufferedReader = new BufferedReader(new FileReader(configurationDataBase))) {
                 String line;
                 String url = "";
                 String user = "";
@@ -41,14 +54,17 @@ public class FileManagement {
                     }
                 }
                 System.out.println("C");
-                    ConnectionData.setUrl(url);
-                    ConnectionData.setUser(user);
-                    ConnectionData.setPassword(password);
+                ConnectionData.setUrl(url);
+                ConnectionData.setUser(user);
+                ConnectionData.setPassword(password);
                 System.out.println("D");
             } catch (IOException e) {
                 System.out.println("Error reading file: " + e.getMessage());
             }
-
+        } else {
+            System.out.println("File not found");
+            AccessDatabaseController accessDatabaseController = new AccessDatabaseController(accessDatabaseView);
+            accessDatabaseView.setVisible(true);
         }
     }
 }

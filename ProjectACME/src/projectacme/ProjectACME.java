@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
  */
 package projectacme;
+import projectacme.controller.AccessDatabaseController;
 import projectacme.repository.implementation.AnnotationImpl;
 import projectacme.util.FileManagement;
 import projectacme.view.InterfaceAccessDataBase;
@@ -14,13 +15,8 @@ import projectacme.view.InterfaceSudoMenu;
  */
 public class ProjectACME {
 
-    public static void main(String[] args) {
-        // Crear la vista principal (menú del manager)
-        InterfaceSudoMenu accessDatabase= new InterfaceSudoMenu();
-        // Crear el controlador que maneja la vista
-        
-        // Mostrar la ventana
-        accessDatabase.setVisible(true);
+public static void main(String[] args) {
+    FileManagement.ReadConnectionDatabaseInformation(); // * Part Of The Final Main Loop
     }
 }
 

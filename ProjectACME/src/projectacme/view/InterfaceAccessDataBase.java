@@ -4,6 +4,8 @@
  */
 package projectacme.view;
 
+import javax.swing.*;
+
 /**
  *
  * @author Sebastian
@@ -136,7 +138,7 @@ public class InterfaceAccessDataBase extends javax.swing.JFrame {
         );
 
         textID.setFont(new java.awt.Font("Rasa Light", 0, 18)); // NOI18N
-        textID.setText("ID");
+        textID.setText("IP");
 
         inputID.setForeground(new java.awt.Color(102, 102, 102));
         inputID.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -205,7 +207,7 @@ public class InterfaceAccessDataBase extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap(395, Short.MAX_VALUE)
+                .addContainerGap(394, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addComponent(textPassword)
@@ -366,6 +368,26 @@ public class InterfaceAccessDataBase extends javax.swing.JFrame {
                 new InterfaceAccessDataBase().setVisible(true);
             }
         });
+    }
+
+    public JTextField getInputID() {
+        return inputID;
+    }
+
+    public JTextField getInputUser() {
+        return inputUser;
+    }
+
+    public JPasswordField getInputPassword() {
+        return inputPassword;
+    }
+
+    public JLabel getTextButton() {
+        return TextButton;
+    }
+    
+    public JPanel getCreateButton() {
+        return CreateButton;
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

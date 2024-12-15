@@ -4,7 +4,6 @@ import projectacme.view.InterfaceCreateSecurityGuard;
 import projectacme.view.InterfaceCreateOfficer;
 import projectacme.view.InterfaceViewReports;
 
-import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import projectacme.view.InterfaceActivateGuard;
