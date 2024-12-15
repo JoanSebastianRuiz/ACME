@@ -233,8 +233,7 @@ public class InterfaceCreateOfficer extends javax.swing.JFrame {
         textEmailAddress1.setText("Company");
 
         textInvalid.setFont(new java.awt.Font("Rasa Light", 0, 18)); // NOI18N
-        textInvalid.setForeground(new java.awt.Color(255, 255, 255));
-        textInvalid.setText("text");
+        textInvalid.setText("Message");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);

@@ -40,9 +40,6 @@ public class CreateOfficerController {
                 String emailAddress = view.getInputEmailAddress().getText();
                 String companyName = view.getComboCompany().getSelectedItem().toString();
                 view.getTextInvalid().setForeground(Color.WHITE);
-                System.out.println("");
-                System.out.println(phone);
-                System.out.println(!PhoneValidator.phoneValidator(phone));
 
                 int idCompany = companyImpl.getAllCompanies().stream()
                         .filter(element->element.getName().equals(companyName))
@@ -80,6 +77,12 @@ public class CreateOfficerController {
                     model.createOfficer(document,name,phone,emailAddress,password,idCompany);
                     view.getTextInvalid().setText("Officer added");
                     view.getTextInvalid().setForeground(Color.GREEN);
+
+                    view.getInputName().setText("");
+                    view.getInputPassword().setText("");
+                    view.getInputPhone().setText("");
+                    view.getInputEmailAddress().setText("");
+                    view.getInputID().setText("");
                 }
             }
             });

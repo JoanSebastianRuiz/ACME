@@ -39,6 +39,7 @@ public class InterfaceInactivateIndividual extends javax.swing.JFrame {
         TextExitButton = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         ExitButton1 = new javax.swing.JLabel();
+        textMessage = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setLocationByPlatform(true);
@@ -178,6 +179,9 @@ public class InterfaceInactivateIndividual extends javax.swing.JFrame {
             .addComponent(ExitButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
+        textMessage.setFont(new java.awt.Font("Rasa Light", 0, 18)); // NOI18N
+        textMessage.setText("Message");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -205,7 +209,10 @@ public class InterfaceInactivateIndividual extends javax.swing.JFrame {
                                         .addComponent(Title, javax.swing.GroupLayout.PREFERRED_SIZE, 299, javax.swing.GroupLayout.PREFERRED_SIZE))))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(140, 140, 140)
-                                .addComponent(CreateButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addComponent(CreateButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(40, 40, 40)
+                                .addComponent(textMessage, javax.swing.GroupLayout.PREFERRED_SIZE, 332, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(390, 390, 390)
                         .addComponent(inputID, javax.swing.GroupLayout.PREFERRED_SIZE, 269, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -232,6 +239,8 @@ public class InterfaceInactivateIndividual extends javax.swing.JFrame {
                                 .addComponent(Title, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(50, 50, 50)
                                 .addComponent(textID)))
+                        .addGap(18, 18, 18)
+                        .addComponent(textMessage)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(CreateButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(65, 65, 65)))
@@ -285,6 +294,12 @@ public class InterfaceInactivateIndividual extends javax.swing.JFrame {
     public JLabel getTextInactivate(){
         return TextInactivate;
     }
+
+    public JLabel getTextMessage() {
+        return textMessage;
+    }
+    
+   
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -330,5 +345,6 @@ public class InterfaceInactivateIndividual extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JLabel textID;
+    private javax.swing.JLabel textMessage;
     // End of variables declaration//GEN-END:variables
 }
