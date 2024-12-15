@@ -4,6 +4,9 @@
  */
 package projectacme.view;
 
+import javax.swing.JLabel;
+import javax.swing.JTextField;
+
 /**
  *
  * @author Sebastian
@@ -29,7 +32,7 @@ public class InterfaceCreateReport extends javax.swing.JFrame {
         inputDate = new javax.swing.JTextField();
         Title = new javax.swing.JLabel();
         CreateButton = new javax.swing.JPanel();
-        TextButton = new javax.swing.JLabel();
+        TextButtonCreate = new javax.swing.JLabel();
         textReason = new javax.swing.JLabel();
         inputReason = new javax.swing.JTextField();
         ExitButton = new javax.swing.JPanel();
@@ -40,6 +43,9 @@ public class InterfaceCreateReport extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setLocationByPlatform(true);
+        setUndecorated(true);
+        setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
@@ -69,14 +75,14 @@ public class InterfaceCreateReport extends javax.swing.JFrame {
             }
         });
 
-        TextButton.setFont(new java.awt.Font("Rasa Light", 0, 24)); // NOI18N
-        TextButton.setForeground(new java.awt.Color(255, 255, 255));
-        TextButton.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        TextButton.setText("Create");
-        TextButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        TextButton.addMouseListener(new java.awt.event.MouseAdapter() {
+        TextButtonCreate.setFont(new java.awt.Font("Rasa Light", 0, 24)); // NOI18N
+        TextButtonCreate.setForeground(new java.awt.Color(255, 255, 255));
+        TextButtonCreate.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        TextButtonCreate.setText("Create");
+        TextButtonCreate.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        TextButtonCreate.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                TextButtonMouseClicked(evt);
+                TextButtonCreateMouseClicked(evt);
             }
         });
 
@@ -84,13 +90,13 @@ public class InterfaceCreateReport extends javax.swing.JFrame {
         CreateButton.setLayout(CreateButtonLayout);
         CreateButtonLayout.setHorizontalGroup(
             CreateButtonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(TextButton, javax.swing.GroupLayout.DEFAULT_SIZE, 160, Short.MAX_VALUE)
+            .addComponent(TextButtonCreate, javax.swing.GroupLayout.DEFAULT_SIZE, 160, Short.MAX_VALUE)
         );
         CreateButtonLayout.setVerticalGroup(
             CreateButtonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, CreateButtonLayout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(TextButton, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(TextButtonCreate, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         textReason.setFont(new java.awt.Font("Rasa Light", 0, 18)); // NOI18N
@@ -260,9 +266,9 @@ public class InterfaceCreateReport extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void TextButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TextButtonMouseClicked
+    private void TextButtonCreateMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TextButtonCreateMouseClicked
 
-    }//GEN-LAST:event_TextButtonMouseClicked
+    }//GEN-LAST:event_TextButtonCreateMouseClicked
 
     private void CreateButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CreateButtonMouseClicked
         // TODO add your handling code here:
@@ -300,9 +306,16 @@ public class InterfaceCreateReport extends javax.swing.JFrame {
         
     }//GEN-LAST:event_inputDateMousePressed
 
-    /**
-     * @param args the command line arguments
-     */
+    public JTextField getinputReason(){
+        return inputReason;
+    }
+    
+    public JTextField getinputDate(){
+        return inputDate;
+    }
+    public JLabel getTextButtonCreate(){
+        return TextButtonCreate;
+    }
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -340,7 +353,7 @@ public class InterfaceCreateReport extends javax.swing.JFrame {
     private javax.swing.JPanel ExitButton;
     private javax.swing.JPanel Header;
     private javax.swing.JLabel ImageSudoInterface;
-    private javax.swing.JLabel TextButton;
+    private javax.swing.JLabel TextButtonCreate;
     private javax.swing.JLabel TextExitButton;
     private javax.swing.JLabel Title;
     private javax.swing.JTextField inputDate;

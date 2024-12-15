@@ -4,6 +4,9 @@
  */
 package projectacme.view;
 
+import javax.swing.JLabel;
+import javax.swing.JTextField;
+
 /**
  *
  * @author Sebastian
@@ -27,7 +30,7 @@ public class InterfaceInactivateManager extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         Title = new javax.swing.JLabel();
         CreateButton1 = new javax.swing.JPanel();
-        TextActivate1 = new javax.swing.JLabel();
+        TextInactivate = new javax.swing.JLabel();
         textID = new javax.swing.JLabel();
         inputID = new javax.swing.JTextField();
         ExitButton = new javax.swing.JPanel();
@@ -38,6 +41,9 @@ public class InterfaceInactivateManager extends javax.swing.JFrame {
         ExitButton1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setLocationByPlatform(true);
+        setUndecorated(true);
+        setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
@@ -52,14 +58,14 @@ public class InterfaceInactivateManager extends javax.swing.JFrame {
             }
         });
 
-        TextActivate1.setFont(new java.awt.Font("Rasa Light", 0, 24)); // NOI18N
-        TextActivate1.setForeground(new java.awt.Color(255, 255, 255));
-        TextActivate1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        TextActivate1.setText("Inactivate");
-        TextActivate1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        TextActivate1.addMouseListener(new java.awt.event.MouseAdapter() {
+        TextInactivate.setFont(new java.awt.Font("Rasa Light", 0, 24)); // NOI18N
+        TextInactivate.setForeground(new java.awt.Color(255, 255, 255));
+        TextInactivate.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        TextInactivate.setText("Inactivate");
+        TextInactivate.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        TextInactivate.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                TextActivate1MouseClicked(evt);
+                TextInactivateMouseClicked(evt);
             }
         });
 
@@ -67,13 +73,13 @@ public class InterfaceInactivateManager extends javax.swing.JFrame {
         CreateButton1.setLayout(CreateButton1Layout);
         CreateButton1Layout.setHorizontalGroup(
             CreateButton1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(TextActivate1, javax.swing.GroupLayout.DEFAULT_SIZE, 160, Short.MAX_VALUE)
+            .addComponent(TextInactivate, javax.swing.GroupLayout.DEFAULT_SIZE, 160, Short.MAX_VALUE)
         );
         CreateButton1Layout.setVerticalGroup(
             CreateButton1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, CreateButton1Layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(TextActivate1, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(TextInactivate, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         textID.setFont(new java.awt.Font("Rasa Light", 0, 18)); // NOI18N
@@ -229,9 +235,9 @@ public class InterfaceInactivateManager extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void TextActivate1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TextActivate1MouseClicked
+    private void TextInactivateMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TextInactivateMouseClicked
 
-    }//GEN-LAST:event_TextActivate1MouseClicked
+    }//GEN-LAST:event_TextInactivateMouseClicked
 
     private void CreateButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CreateButton1MouseClicked
         // TODO add your handling code here:
@@ -265,9 +271,12 @@ public class InterfaceInactivateManager extends javax.swing.JFrame {
         System.exit(0);
     }//GEN-LAST:event_ExitButton1MouseClicked
 
-    /**
-     * @param args the command line arguments
-     */
+    public JTextField getinputID(){
+        return inputID;
+    }
+    public JLabel getTextInactivate(){
+        return TextInactivate;
+    }
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -306,8 +315,8 @@ public class InterfaceInactivateManager extends javax.swing.JFrame {
     private javax.swing.JLabel ExitButton1;
     private javax.swing.JPanel Header;
     private javax.swing.JLabel ImageSudoInterface;
-    private javax.swing.JLabel TextActivate1;
     private javax.swing.JLabel TextExitButton;
+    private javax.swing.JLabel TextInactivate;
     private javax.swing.JLabel Title;
     private javax.swing.JTextField inputID;
     private javax.swing.JPanel jPanel1;

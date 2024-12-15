@@ -6,6 +6,10 @@ package projectacme.view;
 
 import javax.swing.*;
 
+import javax.swing.JLabel;
+import javax.swing.JPasswordField;
+import javax.swing.JTextField;
+
 /**
  *
  * @author Sebastian
@@ -44,6 +48,9 @@ public class InterfaceAccessDataBase extends javax.swing.JFrame {
         ButtonExit = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setLocationByPlatform(true);
+        setUndecorated(true);
+        setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         Header.setBackground(new java.awt.Color(136, 169, 195));
@@ -335,9 +342,21 @@ public class InterfaceAccessDataBase extends javax.swing.JFrame {
         System.exit(0);
     }//GEN-LAST:event_ButtonExitMouseClicked
 
-    /**
-     * @param args the command line arguments
-     */
+    public JTextField getinputID(){
+        return inputID;
+    }
+
+    public JTextField getinputUser(){
+        return inputUser;
+    } 
+
+    public JPasswordField getinputPassword(){
+        return inputPassword;
+    }
+    
+    public JLabel getTextButton(){
+        return TextButton;
+    }
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">

@@ -5,6 +5,9 @@
 package projectacme.view;
 
 import java.awt.Color;
+import javax.swing.JLabel;
+import javax.swing.JPasswordField;
+import javax.swing.JTextField;
 
 /**
  *
@@ -37,7 +40,7 @@ public class InterfaceCreateManager extends javax.swing.JFrame {
         textEmailAddress = new javax.swing.JLabel();
         inputEmailAddress = new javax.swing.JTextField();
         CreateButton = new javax.swing.JPanel();
-        TextButton = new javax.swing.JLabel();
+        TextButtonCreate = new javax.swing.JLabel();
         ExitButton = new javax.swing.JPanel();
         TextExitButton = new javax.swing.JLabel();
         Header = new javax.swing.JPanel();
@@ -154,14 +157,14 @@ public class InterfaceCreateManager extends javax.swing.JFrame {
             }
         });
 
-        TextButton.setFont(new java.awt.Font("Rasa Light", 0, 24)); // NOI18N
-        TextButton.setForeground(new java.awt.Color(255, 255, 255));
-        TextButton.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        TextButton.setText("Create");
-        TextButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        TextButton.addMouseListener(new java.awt.event.MouseAdapter() {
+        TextButtonCreate.setFont(new java.awt.Font("Rasa Light", 0, 24)); // NOI18N
+        TextButtonCreate.setForeground(new java.awt.Color(255, 255, 255));
+        TextButtonCreate.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        TextButtonCreate.setText("Create");
+        TextButtonCreate.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        TextButtonCreate.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                TextButtonMouseClicked(evt);
+                TextButtonCreateMouseClicked(evt);
             }
         });
 
@@ -169,13 +172,13 @@ public class InterfaceCreateManager extends javax.swing.JFrame {
         CreateButton.setLayout(CreateButtonLayout);
         CreateButtonLayout.setHorizontalGroup(
             CreateButtonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(TextButton, javax.swing.GroupLayout.DEFAULT_SIZE, 160, Short.MAX_VALUE)
+            .addComponent(TextButtonCreate, javax.swing.GroupLayout.DEFAULT_SIZE, 160, Short.MAX_VALUE)
         );
         CreateButtonLayout.setVerticalGroup(
             CreateButtonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, CreateButtonLayout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(TextButton, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(TextButtonCreate, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         jPanel1.add(CreateButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(527, 511, -1, -1));
@@ -264,9 +267,9 @@ public class InterfaceCreateManager extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_CreateButtonMouseClicked
 
-    private void TextButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TextButtonMouseClicked
+    private void TextButtonCreateMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TextButtonCreateMouseClicked
         
-    }//GEN-LAST:event_TextButtonMouseClicked
+    }//GEN-LAST:event_TextButtonCreateMouseClicked
 
     private void HeaderMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_HeaderMousePressed
         xMouse = evt.getX();
@@ -303,7 +306,29 @@ public class InterfaceCreateManager extends javax.swing.JFrame {
     private void TextExitButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TextExitButtonMouseClicked
         System.exit(0);
     }//GEN-LAST:event_TextExitButtonMouseClicked
+    
+    public JTextField getInputID(){
+        return inputID;
+    }
+    
+    public JTextField getInputPhone(){
+        return inputPhone;
+    }
+    public JTextField getInputName(){
+        return inputName;
+    }
 
+    public JPasswordField getInputPassword(){
+        return inputPassword;
+    }
+    
+    public JTextField getInputEmailAddress(){
+        return inputEmailAddress;
+    }
+    public JLabel getTextButtonCreate(){
+        return TextButtonCreate;
+    }
+    
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -342,7 +367,7 @@ public class InterfaceCreateManager extends javax.swing.JFrame {
     private javax.swing.JPanel ExitButton;
     private javax.swing.JPanel Header;
     private javax.swing.JLabel ImageSudoInterface;
-    private javax.swing.JLabel TextButton;
+    private javax.swing.JLabel TextButtonCreate;
     private javax.swing.JLabel TextExitButton;
     private javax.swing.JLabel Title;
     private javax.swing.JTextField inputEmailAddress;

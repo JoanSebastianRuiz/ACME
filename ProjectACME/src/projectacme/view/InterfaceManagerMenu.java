@@ -41,6 +41,9 @@ public class InterfaceManagerMenu extends javax.swing.JFrame {
         ButtonInactive = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setLocationByPlatform(true);
+        setUndecorated(true);
+        setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(242, 240, 235));
 
