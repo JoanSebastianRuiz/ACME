@@ -184,4 +184,12 @@ public class Manager extends User implements ReportService, Observer {
                 })
                 .collect(Collectors.toList());
     }
+
+    public List<Map<String, Object>> getReportsVehicles(){
+        return reportManagerImpl.getInformationVehicles()
+                .stream().peek(element->{
+                    element.remove("idCompany");
+                })
+                .collect(Collectors.toList());
+    }
 }
