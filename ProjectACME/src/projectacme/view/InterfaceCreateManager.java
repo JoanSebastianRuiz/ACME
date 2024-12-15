@@ -43,6 +43,7 @@ public class InterfaceCreateManager extends javax.swing.JFrame {
         ExitButton = new javax.swing.JPanel();
         TextExitButton = new javax.swing.JLabel();
         Header = new javax.swing.JPanel();
+        BackButton1 = new javax.swing.JLabel();
         ImageSudoInterface = new javax.swing.JLabel();
 
         textPhone.setFont(new java.awt.Font("Rasa Light", 0, 18)); // NOI18N
@@ -221,15 +222,29 @@ public class InterfaceCreateManager extends javax.swing.JFrame {
             }
         });
 
+        BackButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/projectacme/view/images/icons8-flecha-responder-24.png"))); // NOI18N
+        BackButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        BackButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                BackButton1MouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout HeaderLayout = new javax.swing.GroupLayout(Header);
         Header.setLayout(HeaderLayout);
         HeaderLayout.setHorizontalGroup(
             HeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 880, Short.MAX_VALUE)
+            .addGroup(HeaderLayout.createSequentialGroup()
+                .addGap(14, 14, 14)
+                .addComponent(BackButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(810, Short.MAX_VALUE))
         );
         HeaderLayout.setVerticalGroup(
             HeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 50, Short.MAX_VALUE)
+            .addGroup(HeaderLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(BackButton1, javax.swing.GroupLayout.DEFAULT_SIZE, 38, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         jPanel1.add(Header, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 880, 50));
@@ -306,6 +321,10 @@ public class InterfaceCreateManager extends javax.swing.JFrame {
     private void TextExitButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TextExitButtonMouseClicked
         System.exit(0);
     }//GEN-LAST:event_TextExitButtonMouseClicked
+
+    private void BackButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BackButton1MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BackButton1MouseClicked
     
     public JTextField getInputID(){
         return inputID;
@@ -363,6 +382,7 @@ public class InterfaceCreateManager extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel BackButton1;
     private javax.swing.JPanel CreateButton;
     private javax.swing.JPanel ExitButton;
     private javax.swing.JPanel Header;

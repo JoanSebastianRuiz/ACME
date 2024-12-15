@@ -33,6 +33,7 @@ public class InterfaceAccssesUsers extends javax.swing.JFrame {
         ButtonAccess = new javax.swing.JLabel();
         textID = new javax.swing.JLabel();
         Header = new javax.swing.JPanel();
+        BackButton = new javax.swing.JLabel();
         inputID = new javax.swing.JTextField();
         ExitButton = new javax.swing.JPanel();
         TextExitButton = new javax.swing.JLabel();
@@ -97,15 +98,26 @@ public class InterfaceAccssesUsers extends javax.swing.JFrame {
             }
         });
 
+        BackButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/projectacme/view/images/icons8-flecha-responder-24.png"))); // NOI18N
+        BackButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        BackButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                BackButtonMouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout HeaderLayout = new javax.swing.GroupLayout(Header);
         Header.setLayout(HeaderLayout);
         HeaderLayout.setHorizontalGroup(
             HeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 850, Short.MAX_VALUE)
+            .addGroup(HeaderLayout.createSequentialGroup()
+                .addGap(14, 14, 14)
+                .addComponent(BackButton, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(780, Short.MAX_VALUE))
         );
         HeaderLayout.setVerticalGroup(
             HeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 50, Short.MAX_VALUE)
+            .addComponent(BackButton, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
         );
 
         getContentPane().add(Header, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 850, -1));
@@ -244,6 +256,10 @@ public class InterfaceAccssesUsers extends javax.swing.JFrame {
         
     }//GEN-LAST:event_ButtonAccessMouseClicked
 
+    private void BackButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BackButtonMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BackButtonMouseClicked
+
     public JTextField getinputID(){
         return inputID;
     }
@@ -292,6 +308,7 @@ public class InterfaceAccssesUsers extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel BackButton;
     private javax.swing.JLabel ButtonAccess;
     private javax.swing.JPanel CreateButton24;
     private javax.swing.JPanel ExitButton;

@@ -29,6 +29,8 @@ public class InterfaceActivateGuard extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         Header6 = new javax.swing.JPanel();
+        BackButton = new javax.swing.JLabel();
+        TextExitButton = new javax.swing.JLabel();
         ImageSudoInterface = new javax.swing.JLabel();
         Title = new javax.swing.JLabel();
         CreateButton = new javax.swing.JPanel();
@@ -36,7 +38,6 @@ public class InterfaceActivateGuard extends javax.swing.JFrame {
         textID = new javax.swing.JLabel();
         inputID = new javax.swing.JTextField();
         ExitButton = new javax.swing.JPanel();
-        TextExitButton = new javax.swing.JLabel();
         textMessage = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -57,15 +58,40 @@ public class InterfaceActivateGuard extends javax.swing.JFrame {
             }
         });
 
+        BackButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/projectacme/view/images/icons8-flecha-responder-24.png"))); // NOI18N
+        BackButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        BackButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                BackButtonMouseClicked(evt);
+            }
+        });
+
+        TextExitButton.setBackground(new java.awt.Color(136, 169, 195));
+        TextExitButton.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        TextExitButton.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        TextExitButton.setText("X");
+        TextExitButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        TextExitButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                TextExitButtonMouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout Header6Layout = new javax.swing.GroupLayout(Header6);
         Header6.setLayout(Header6Layout);
         Header6Layout.setHorizontalGroup(
             Header6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 830, Short.MAX_VALUE)
+            .addGroup(Header6Layout.createSequentialGroup()
+                .addGap(14, 14, 14)
+                .addComponent(BackButton, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(764, 764, 764)
+                .addComponent(TextExitButton, javax.swing.GroupLayout.DEFAULT_SIZE, 38, Short.MAX_VALUE)
+                .addContainerGap())
         );
         Header6Layout.setVerticalGroup(
             Header6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 50, Short.MAX_VALUE)
+            .addComponent(BackButton, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+            .addComponent(TextExitButton, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
         );
 
         ImageSudoInterface.setIcon(new javax.swing.ImageIcon(getClass().getResource("/projectacme/view/images/ImageInterfaceSudo.jpg"))); // NOI18N
@@ -122,29 +148,15 @@ public class InterfaceActivateGuard extends javax.swing.JFrame {
 
         ExitButton.setBackground(new java.awt.Color(136, 169, 195));
 
-        TextExitButton.setBackground(new java.awt.Color(136, 169, 195));
-        TextExitButton.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        TextExitButton.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        TextExitButton.setText("X");
-        TextExitButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        TextExitButton.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                TextExitButtonMouseClicked(evt);
-            }
-        });
-
         javax.swing.GroupLayout ExitButtonLayout = new javax.swing.GroupLayout(ExitButton);
         ExitButton.setLayout(ExitButtonLayout);
         ExitButtonLayout.setHorizontalGroup(
             ExitButtonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ExitButtonLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(TextExitButton, javax.swing.GroupLayout.DEFAULT_SIZE, 38, Short.MAX_VALUE)
-                .addContainerGap())
+            .addGap(0, 50, Short.MAX_VALUE)
         );
         ExitButtonLayout.setVerticalGroup(
             ExitButtonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(TextExitButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+            .addGap(0, 50, Short.MAX_VALUE)
         );
 
         textMessage.setFont(new java.awt.Font("Rasa Light", 0, 18)); // NOI18N
@@ -154,7 +166,7 @@ public class InterfaceActivateGuard extends javax.swing.JFrame {
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 900, Short.MAX_VALUE)
+            .addGap(0, 948, Short.MAX_VALUE)
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel1Layout.createSequentialGroup()
                     .addGap(0, 10, Short.MAX_VALUE)
@@ -181,28 +193,35 @@ public class InterfaceActivateGuard extends javax.swing.JFrame {
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 600, Short.MAX_VALUE)
+            .addGap(0, 609, Short.MAX_VALUE)
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel1Layout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(jPanel1Layout.createSequentialGroup()
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(jPanel1Layout.createSequentialGroup()
+                                    .addGap(180, 180, 180)
+                                    .addComponent(textID))
+                                .addGroup(jPanel1Layout.createSequentialGroup()
+                                    .addGap(264, 264, 264)
+                                    .addComponent(textMessage))
+                                .addComponent(ExitButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGap(0, 0, Short.MAX_VALUE))
+                        .addGroup(jPanel1Layout.createSequentialGroup()
                             .addComponent(Header6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(43, 43, 43)
-                            .addComponent(Title, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(80, 80, 80)
-                            .addComponent(inputID, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(268, 268, 268)
-                            .addComponent(CreateButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(jPanel1Layout.createSequentialGroup()
-                            .addGap(180, 180, 180)
-                            .addComponent(textID))
-                        .addGroup(jPanel1Layout.createSequentialGroup()
-                            .addGap(264, 264, 264)
-                            .addComponent(textMessage))
-                        .addComponent(ImageSudoInterface)
-                        .addComponent(ExitButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGap(0, 0, Short.MAX_VALUE)))
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(jPanel1Layout.createSequentialGroup()
+                                    .addGap(43, 43, 43)
+                                    .addComponent(Title, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(80, 80, 80)
+                                    .addComponent(inputID, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(268, 268, 268)
+                                    .addComponent(CreateButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addContainerGap())
+                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(ImageSudoInterface, javax.swing.GroupLayout.PREFERRED_SIZE, 553, javax.swing.GroupLayout.PREFERRED_SIZE)))))))
         );
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
@@ -241,6 +260,10 @@ public class InterfaceActivateGuard extends javax.swing.JFrame {
     private void TextExitButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TextExitButtonMouseClicked
         System.exit(0);
     }//GEN-LAST:event_TextExitButtonMouseClicked
+
+    private void BackButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BackButtonMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BackButtonMouseClicked
 
     public JTextField getinputID(){
         return inputID;
@@ -286,6 +309,7 @@ public class InterfaceActivateGuard extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel BackButton;
     private javax.swing.JPanel CreateButton;
     private javax.swing.JPanel ExitButton;
     private javax.swing.JPanel Header6;
