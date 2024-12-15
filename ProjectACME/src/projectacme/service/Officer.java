@@ -39,12 +39,12 @@ public class Officer extends User implements ReportService, Observer, RegisterAc
     }
 
     @Override
-    public int getIdCompany() {
+    public Integer getIdCompany() {
         return idCompany;
     }
 
     @Override
-    public void setIdCompany(int idCompany) {
+    public void setIdCompany(Integer idCompany) {
         this.idCompany = idCompany;
     }
 

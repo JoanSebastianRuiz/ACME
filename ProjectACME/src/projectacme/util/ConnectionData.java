@@ -21,6 +21,7 @@ public class ConnectionData {
             System.out.println("Connection Successfully");
             } catch (Exception e) {
                 System.out.println(e.getMessage());
+                return null;
             }
         }
         return instance;

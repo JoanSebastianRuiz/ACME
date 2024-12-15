@@ -255,10 +255,6 @@ public class InterfaceAccssesVehicles extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_inputPlateActionPerformed
 
-    private void TextButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TextButtonMouseClicked
-
-    }//GEN-LAST:event_TextButtonMouseClicked
-
     private void inputTypeMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_inputTypeMousePressed
         // TODO add your handling code here:
     }//GEN-LAST:event_inputTypeMousePressed
@@ -274,6 +270,10 @@ public class InterfaceAccssesVehicles extends javax.swing.JFrame {
     private void inputName2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputName2ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_inputName2ActionPerformed
+
+    private void TextButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TextButtonMouseClicked
+
+    }//GEN-LAST:event_TextButtonMouseClicked
 
     public JTextField getinputID(){
         return inputID;

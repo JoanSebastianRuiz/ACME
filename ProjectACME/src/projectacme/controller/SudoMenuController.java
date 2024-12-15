@@ -1,4 +1,4 @@
-/* 
+/*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
@@ -6,6 +6,9 @@ package projectacme.controller;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.SQLException;
+
+import projectacme.util.FileManagement;
 import projectacme.view.InterfaceAccessDataBase;
 import projectacme.view.InterfaceActivateGuard;
 import projectacme.view.InterfaceActivateManager;
@@ -23,7 +26,7 @@ import projectacme.view.InterfaceViewReports;
  * Controlador principal del menú del superusuario (Sudo).
  * Maneja las acciones de los botones en la interfaz de menú de superusuario.
  * Permite la navegación hacia diferentes vistas relacionadas con la gestión de personal y reportes.
- * 
+ *
  * @author Sebastian
  */
 public class SudoMenuController {
@@ -32,7 +35,7 @@ public class SudoMenuController {
 
     public SudoMenuController(InterfaceSudoMenu sudoMenuView) {
         this.sudoMenuView = sudoMenuView;
-        initController();  
+        initController();
     }
 
     private void initController() {
@@ -57,7 +60,7 @@ public class SudoMenuController {
                 openInactivateManager();
             }
         });
-        
+
         sudoMenuView.getButtonAccessDatabase().addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -65,31 +68,35 @@ public class SudoMenuController {
             }
         });
 
-        
+
     }
 
     private void openCreateManager() {
         InterfaceCreateManager createManagerView = new InterfaceCreateManager();
         CreateManagerController createManagerController = new CreateManagerController(createManagerView);
         createManagerView.setVisible(true);
-        sudoMenuView.dispose(); 
+        sudoMenuView.dispose();
     }
 
     private void openActivateManager() {
         InterfaceActivateManager activateManagerView = new InterfaceActivateManager();
         activateManagerView.setVisible(true);
-        sudoMenuView.dispose(); 
+        sudoMenuView.dispose();
     }
 
     private void openInactivateManager() {
         InterfaceInactivateManager inactivateManagerView = new InterfaceInactivateManager();
         inactivateManagerView.setVisible(true);
-        sudoMenuView.dispose(); // Cierra la ventana actual
+        sudoMenuView.dispose();
     }
-    
+
     private void openAccessDatabase() {
-        InterfaceAccessDataBase accessDatabaseView = new InterfaceAccessDataBase();
-        accessDatabaseView.setVisible(true);
-        sudoMenuView.dispose(); // Cierra la ventana actual
+        InterfaceAccessDataBase accessDataBaseView = new InterfaceAccessDataBase();
+        try {
+            FileManagement.ChangeConnectionDatabase();
+            sudoMenuView.dispose();
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
     }
 }
