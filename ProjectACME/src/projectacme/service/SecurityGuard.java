@@ -62,10 +62,10 @@ public class SecurityGuard extends User implements RegisterAccessService, Observ
     public List<Map<String, Object>> getReportAnnotations(){
         return reportManagerImpl.getInformationAnnotations()
                 .stream().peek(element->{
-                    if(Boolean.parseBoolean(String.valueOf(element.get("State")))){
-                        element.put("State","Yes");
+                    if(Boolean.parseBoolean(String.valueOf(element.get("Suspended")))){
+                        element.put("Suspended","Yes");
                     } else{
-                        element.put("State","No");
+                        element.put("Suspended","No");
                     }
                 })
                 .collect(Collectors.toList());
@@ -131,15 +131,15 @@ public class SecurityGuard extends User implements RegisterAccessService, Observ
 
     public List<Map<String, Object>> getReportsAccessSubjects(){
         return reportManagerImpl.getInformationAccessSubjects().stream()
-                .filter(element->!element.get("Role").equals("sudo"))
+                .filter(element->!element.get("Role").equals("sudo") && element.get("State").equals("active"))
                 .peek(element->{
-                    element.remove("Role");
-                    element.remove("idCompany");
-                    element.remove("Email Address");
-                    element.remove("Phone");
                     if(element.get("Role").equals("securityGuard") || element.get("Role").equals("manager")){
                         element.put("Company","");
                     }
+                    element.remove("idCompany");
+                    element.remove("Email Address");
+                    element.remove("Phone");
+                    element.remove("State");
                 })
                 .collect(Collectors.toList());
     }
