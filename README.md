@@ -1,6 +1,6 @@
 <div align="center">
   <a href="">
-    <img src="">
+    <img src="readmeFiles/LogoZonaAcme.png">
   </a>
 <h1 text-align="center">Acme Business Complex Access Control</h1>
 </div>
@@ -72,7 +72,53 @@ git clone https://github.com/JoanSebastianRuiz/ACME.git
 5. Install the libraries from the **lib** package.  
 6. Run the `main` file.  
 
+**Credentials To Test**¨
 
+**Sudo**
+
+Identification
+```
+- 1085748963
+```
+Password
+```
+- password123
+```
+
+**Officer**
+
+Identification
+```
+- 1012345678
+```
+Password
+```
+- officerpass1
+```
+
+**Manager**
+
+Identification
+```
+- 1012345688
+```
+
+Password
+```
+- managerpass1
+```
+
+**Security Guard**
+
+Identification
+```
+- 1012345683
+```
+
+Password
+```
+- securitypass1
+```
 ## Database Model 🗃️
 
 ## **First Global Diagram**
