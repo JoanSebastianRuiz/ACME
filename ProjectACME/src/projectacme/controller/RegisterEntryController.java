@@ -43,7 +43,7 @@ public class RegisterEntryController {
         } catch(Exception e) {
             System.out.println(e.getMessage());
             if (UserActual.getAccessSubjectSecurityGuard().registerAccess(ScannerType.entry, registerExitView.getinputID().getText())) {
-                registerExitView.getTextMessage().setText("Successful exit recorded");
+                registerExitView.getTextMessage().setText("Successful entry recorded");
                 registerExitView.getTextMessage().setForeground(Color.GREEN);
             } else{
                 registerExitView.getinputID().setForeground(Color.RED);
