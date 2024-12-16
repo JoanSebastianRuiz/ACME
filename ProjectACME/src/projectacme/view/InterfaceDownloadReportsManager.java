@@ -7,7 +7,6 @@ package projectacme.view;
 import javax.swing.JCheckBox;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
-import projectacme.controller.DownloadReportsManagerController;
 
 /**
  *
@@ -20,7 +19,6 @@ public class InterfaceDownloadReportsManager extends javax.swing.JFrame {
         initComponents();
         this.setResizable(false);
         this.setLocationRelativeTo(null);
-        new DownloadReportsManagerController(this);
     }
 
     /**

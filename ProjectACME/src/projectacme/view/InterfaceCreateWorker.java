@@ -8,7 +8,6 @@ import java.awt.Color;
 import javax.swing.JLabel;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
-import projectacme.controller.CreateWorkerController;
 
 /**
  *
@@ -22,7 +21,6 @@ public class InterfaceCreateWorker extends javax.swing.JFrame {
         initComponents();
         this.setResizable(false);
         this.setLocationRelativeTo(null);
-        new CreateWorkerController(this);
     }
 
     /**

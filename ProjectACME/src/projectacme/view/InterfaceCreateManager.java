@@ -22,7 +22,6 @@ public class InterfaceCreateManager extends javax.swing.JFrame {
         initComponents();
         this.setResizable(false);
         this.setLocationRelativeTo(null);
-        new CreateManagerController(this);
     }
 
     @SuppressWarnings("unchecked")

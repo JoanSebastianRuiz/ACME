@@ -9,9 +9,11 @@ import projectacme.util.Enum.AccessSubjectRoleEnum;
 import projectacme.util.validators.AccessSubjectValidator;
 import projectacme.view.InterfaceInactivateManager;
 
+import javax.swing.*;
 import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.sql.SQLOutput;
 
 public class InactivateManagerController {
     private InterfaceInactivateManager view;
@@ -39,23 +41,26 @@ public class InactivateManagerController {
             if(accessSubject.getRole()== AccessSubjectRoleEnum.manager){
                 Manager manager = (Manager) accessSubject;
                 boolean result = sudo.inactivityManager(manager);
+                System.out.println(result);
 
                 if(result){
-                    view.getinputID().setText("");
-                    view.getTextMessage().setText("Manager inactivated");
-                    view.getTextMessage().setForeground(Color.GREEN);
+                        view.getTextMessage().setText("Manager inactivated");
+                        view.getTextMessage().setForeground(Color.GREEN);
+                        view.getinputID().setText("");
                 } else{
-                    view.getTextMessage().setText("Invalid ID");
-                    view.getTextMessage().setForeground(Color.RED);
+                    
+                        view.getTextMessage().setText("Invalid ID");
+                        view.getTextMessage().setForeground(Color.RED);
+
                 }
             }
             else{
-                view.getTextMessage().setText("Invalid ID");
-                view.getTextMessage().setForeground(Color.RED);
+                    view.getTextMessage().setText("Invalid ID");
+                    view.getTextMessage().setForeground(Color.RED);
             }
         } else{
-            view.getTextMessage().setText("Invalid ID");
-            view.getTextMessage().setForeground(Color.RED);
+                view.getTextMessage().setText("Invalid ID");
+                view.getTextMessage().setForeground(Color.RED);
         }
 
     }

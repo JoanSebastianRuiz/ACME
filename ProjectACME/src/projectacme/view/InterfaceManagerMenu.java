@@ -4,7 +4,6 @@
  */
 package projectacme.view;
 import javax.swing.JButton;
-import projectacme.controller.ManagerMenuController;
 /**
  *
  * @author Sebastian
@@ -14,7 +13,6 @@ public class InterfaceManagerMenu extends javax.swing.JFrame {
     int xMouse, yMouse;
     public InterfaceManagerMenu() {
         initComponents();
-        new ManagerMenuController(this);
         this.setResizable(false);
         this.setLocationRelativeTo(null);
     }

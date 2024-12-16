@@ -4,6 +4,7 @@ import projectacme.UserActual;
 import projectacme.service.Manager;
 import projectacme.view.InterfaceCreateManager;
 
+import javax.swing.*;
 import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
@@ -33,21 +34,24 @@ public class CreateManagerController {
         String phone = interfaceCreateManager.getInputPhone().getText();
         String email = interfaceCreateManager.getInputEmailAddress().getText();
         String password = new String(interfaceCreateManager.getInputPassword().getPassword());
+
         boolean result = UserActual.getAccessSubjectSudo().creationManager(id, name, phone, email, password);
         System.out.println("Success: -" + result);
 
         if(result){
-            interfaceCreateManager.getTextMessage().setForeground(Color.GREEN);
-            interfaceCreateManager.getTextMessage().setText("Create manager sucessfully");
 
-            interfaceCreateManager.getInputID().setText("");
-            interfaceCreateManager.getInputName().setText("");
-            interfaceCreateManager.getInputPhone().setText("");
-            interfaceCreateManager.getInputEmailAddress().setText("");
-            interfaceCreateManager.getInputPassword().setText("");
+                interfaceCreateManager.getTextMessage().setForeground(Color.GREEN);
+                interfaceCreateManager.getTextMessage().setText("Create manager successfully");
+
+                interfaceCreateManager.getInputID().setText("");
+                interfaceCreateManager.getInputName().setText("");
+                interfaceCreateManager.getInputPhone().setText("");
+                interfaceCreateManager.getInputEmailAddress().setText("");
+                interfaceCreateManager.getInputPassword().setText("");
+
         } else{
-            interfaceCreateManager.getTextMessage().setForeground(Color.RED);
-            interfaceCreateManager.getTextMessage().setText("Invalid data");
+                interfaceCreateManager.getTextMessage().setForeground(Color.RED);
+                interfaceCreateManager.getTextMessage().setText("Invalid data");
         }
     }
 

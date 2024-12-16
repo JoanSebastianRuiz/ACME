@@ -19,7 +19,6 @@ public class InterfaceActivateIndividual extends javax.swing.JFrame {
         initComponents();
         this.setResizable(false);
         this.setLocationRelativeTo(null);
-        new ActivateIndividualController(this);
     }
 
     /**

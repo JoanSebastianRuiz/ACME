@@ -7,7 +7,6 @@ package projectacme.view;
 import javax.swing.JCheckBox;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
-import projectacme.controller.DownloadReportsSudoController;
 
 /**
  *
@@ -20,7 +19,6 @@ public class InterfaceDownloadReportsSudo extends javax.swing.JFrame {
         initComponents();
         this.setResizable(false);
         this.setLocationRelativeTo(null);
-        new DownloadReportsSudoController(this);
     }
 
     /**

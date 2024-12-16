@@ -6,8 +6,6 @@ package projectacme.view;
 
 import javax.swing.JLabel;
 import javax.swing.JTextField;
-import projectacme.controller.InactivateGuardController;
-import projectacme.controller.InactivateManagerController;
 
 /**
  *
@@ -20,7 +18,6 @@ public class InterfaceInactivateGuard extends javax.swing.JFrame {
         initComponents();
         this.setResizable(false);
         this.setLocationRelativeTo(null);
-        new InactivateGuardController(this);
     }
 
     /**

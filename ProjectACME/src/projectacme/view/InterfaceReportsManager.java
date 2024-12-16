@@ -6,7 +6,6 @@ package projectacme.view;
 
 import javax.swing.JLabel;
 import javax.swing.JTextField;
-import projectacme.controller.ReportsManagerController;
 
 /**
  *
@@ -19,7 +18,6 @@ public class InterfaceReportsManager extends javax.swing.JFrame {
         initComponents();
         this.setResizable(false);
         this.setLocationRelativeTo(null);
-        new ReportsManagerController(this);
     }
 
     /**
