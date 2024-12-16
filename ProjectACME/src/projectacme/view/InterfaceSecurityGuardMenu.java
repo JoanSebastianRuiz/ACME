@@ -36,7 +36,6 @@ public class InterfaceSecurityGuardMenu extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         ButtonVehicle = new javax.swing.JButton();
-        ButtonIndividual = new javax.swing.JButton();
         ButtonLiveAccessLog = new javax.swing.JButton();
         ButtonRegisterExit = new javax.swing.JButton();
         ButtonDownloadReports = new javax.swing.JButton();
@@ -117,24 +116,6 @@ public class InterfaceSecurityGuardMenu extends javax.swing.JFrame {
         ButtonVehicle.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ButtonVehicleActionPerformed(evt);
-            }
-        });
-
-        ButtonIndividual.setBackground(new java.awt.Color(240, 242, 235));
-        ButtonIndividual.setFont(new java.awt.Font("Nimbus Sans Narrow", 0, 18)); // NOI18N
-        ButtonIndividual.setIcon(new javax.swing.ImageIcon(getClass().getResource("/projectacme/view/images/icons8-gerente-48.png"))); // NOI18N
-        ButtonIndividual.setText("Individual");
-        ButtonIndividual.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        ButtonIndividual.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        ButtonIndividual.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        ButtonIndividual.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                ButtonIndividualMouseClicked(evt);
-            }
-        });
-        ButtonIndividual.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ButtonIndividualActionPerformed(evt);
             }
         });
 
@@ -234,15 +215,10 @@ public class InterfaceSecurityGuardMenu extends javax.swing.JFrame {
             BackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(Header, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(BackgroundLayout.createSequentialGroup()
+                .addGap(57, 57, 57)
                 .addGroup(BackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(BackgroundLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(ButtonRegisterExit, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, BackgroundLayout.createSequentialGroup()
-                        .addGap(57, 57, 57)
-                        .addGroup(BackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(ButtonIndividual, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(ButtonLiveAccessLog, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addComponent(ButtonLiveAccessLog, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ButtonRegisterExit, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(52, 52, 52)
                 .addGroup(BackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(ButtonVehicle, javax.swing.GroupLayout.DEFAULT_SIZE, 205, Short.MAX_VALUE)
@@ -258,10 +234,11 @@ public class InterfaceSecurityGuardMenu extends javax.swing.JFrame {
             .addGroup(BackgroundLayout.createSequentialGroup()
                 .addComponent(Header, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(105, 105, 105)
-                .addGroup(BackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(ButtonDownloadReports, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(ButtonVehicle, javax.swing.GroupLayout.DEFAULT_SIZE, 134, Short.MAX_VALUE)
-                    .addComponent(ButtonIndividual, javax.swing.GroupLayout.DEFAULT_SIZE, 134, Short.MAX_VALUE))
+                .addGroup(BackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(BackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(ButtonDownloadReports, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(ButtonVehicle, javax.swing.GroupLayout.DEFAULT_SIZE, 134, Short.MAX_VALUE))
+                    .addComponent(ButtonRegisterExit, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(45, 45, 45)
                 .addGroup(BackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(BackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -270,12 +247,10 @@ public class InterfaceSecurityGuardMenu extends javax.swing.JFrame {
                             .addComponent(ButtonRegisterEntrty, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGap(9, 9, 9)))
                     .addComponent(ButtonViewReports1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 64, Short.MAX_VALUE)
-                .addComponent(ButtonRegisterExit, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(37, 37, 37))
+                .addContainerGap(75, Short.MAX_VALUE))
         );
 
-        getContentPane().add(Background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, 720));
+        getContentPane().add(Background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, 560));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -299,14 +274,6 @@ public class InterfaceSecurityGuardMenu extends javax.swing.JFrame {
     private void ButtonVehicleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonVehicleActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_ButtonVehicleActionPerformed
-
-    private void ButtonIndividualActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonIndividualActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_ButtonIndividualActionPerformed
-
-    private void ButtonIndividualMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ButtonIndividualMouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_ButtonIndividualMouseClicked
 
     private void ButtonVehicleMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ButtonVehicleMouseClicked
         // TODO add your handling code here:
@@ -352,9 +319,6 @@ public class InterfaceSecurityGuardMenu extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_ButtonRegisterEntrtyActionPerformed
 
-    public JButton getButtonIndividual(){
-        return ButtonIndividual;
-    }
     
     public JButton getButtonVehicle(){
         return ButtonVehicle;
@@ -418,7 +382,6 @@ public class InterfaceSecurityGuardMenu extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel Background;
     private javax.swing.JButton ButtonDownloadReports;
-    private javax.swing.JButton ButtonIndividual;
     private javax.swing.JButton ButtonLiveAccessLog;
     private javax.swing.JButton ButtonRegisterEntrty;
     private javax.swing.JButton ButtonRegisterExit;
