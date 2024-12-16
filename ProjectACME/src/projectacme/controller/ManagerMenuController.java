@@ -76,7 +76,7 @@ public class ManagerMenuController {
 
     private void openCreateOfficer() {
         InterfaceCreateOfficer officerView = new InterfaceCreateOfficer();
-        CreateOfficerController officerController = new CreateOfficerController(UserActual.getAccessSubjectManager(), officerView);
+        CreateOfficerController officerController = new CreateOfficerController(officerView);
         officerView.setVisible(true);
         managerMenuView.dispose(); 
     }

@@ -46,7 +46,6 @@ public class InterfaceInactivateGuard extends javax.swing.JFrame {
         TextExitButton1 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         textMessage = new javax.swing.JLabel();
-        TextMessage = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setLocationByPlatform(true);
@@ -189,7 +188,7 @@ public class InterfaceInactivateGuard extends javax.swing.JFrame {
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 54, Short.MAX_VALUE)
+            .addGap(0, 55, Short.MAX_VALUE)
             .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                     .addContainerGap(16, Short.MAX_VALUE)
@@ -209,18 +208,6 @@ public class InterfaceInactivateGuard extends javax.swing.JFrame {
 
         textMessage.setFont(new java.awt.Font("Rasa Light", 0, 18)); // NOI18N
         textMessage.setText("Message");
-
-        TextMessage.setForeground(new java.awt.Color(102, 102, 102));
-        TextMessage.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                TextMessageMousePressed(evt);
-            }
-        });
-        TextMessage.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                TextMessageActionPerformed(evt);
-            }
-        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -248,14 +235,13 @@ public class InterfaceInactivateGuard extends javax.swing.JFrame {
                                         .addGap(30, 30, 30)
                                         .addComponent(Title, javax.swing.GroupLayout.PREFERRED_SIZE, 299, javax.swing.GroupLayout.PREFERRED_SIZE))))
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(174, 174, 174)
-                                .addComponent(CreateButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(70, 70, 70)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(textMessage)
                                     .addComponent(inputID, javax.swing.GroupLayout.PREFERRED_SIZE, 269, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(TextMessage, javax.swing.GroupLayout.PREFERRED_SIZE, 269, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                                    .addComponent(textMessage, javax.swing.GroupLayout.PREFERRED_SIZE, 332, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(154, 154, 154)
+                                .addComponent(CreateButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -277,9 +263,7 @@ public class InterfaceInactivateGuard extends javax.swing.JFrame {
                                 .addComponent(inputID, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(33, 33, 33)
                                 .addComponent(textMessage)
-                                .addGap(29, 29, 29)
-                                .addComponent(TextMessage, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(109, 109, 109)
+                                .addGap(34, 34, 34)
                                 .addComponent(CreateButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -336,14 +320,6 @@ public class InterfaceInactivateGuard extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_BackButton1MouseClicked
 
-    private void TextMessageMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TextMessageMousePressed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_TextMessageMousePressed
-
-    private void TextMessageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TextMessageActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_TextMessageActionPerformed
-
     public JTextField getinputID(){
         return inputID;
     }
@@ -398,7 +374,6 @@ public class InterfaceInactivateGuard extends javax.swing.JFrame {
     private javax.swing.JLabel TextExitButton;
     private javax.swing.JLabel TextExitButton1;
     private javax.swing.JLabel TextInactivate;
-    private javax.swing.JTextField TextMessage;
     private javax.swing.JLabel Title;
     private javax.swing.JTextField inputID;
     private javax.swing.JLabel jLabel1;

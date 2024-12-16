@@ -16,6 +16,7 @@ public class RegisterExitController {
 
     public RegisterExitController(InterfaceRegisterExit registerExitView) {
         this.registerExitView = registerExitView;
+        registerExitView.getTextMessage().setForeground(Color.WHITE);
         initController();
     }
 
@@ -31,6 +32,11 @@ public class RegisterExitController {
     public void registerExit(){
         if (!UserActual.getAccessSubjectOfficer().registerAccess(ScannerType.exit, registerExitView.getinputID().getText())) {
             registerExitView.getinputID().setForeground(Color.RED);
-        };
+            registerExitView.getTextMessage().setText("Successful exit recorded");
+            registerExitView.getTextMessage().setForeground(Color.GREEN);
+        } else{
+            registerExitView.getTextMessage().setText("Invalid data");
+            registerExitView.getTextMessage().setForeground(Color.RED);
+        }
     }
 }

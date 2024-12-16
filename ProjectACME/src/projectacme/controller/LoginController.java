@@ -18,6 +18,7 @@ public class LoginController {
     public LoginController(IntefarceLogin loginView) {
         this.loginView = loginView;
         this.accessSubjectService = new AccessSubjectImpl();
+        loginView.getTextMessage().setForeground(Color.white);
         initController();
     }
 
@@ -46,18 +47,20 @@ public class LoginController {
                     default -> null;
                 };
                 if (newWindow != null){
+                    loginView.getTextMessage().setText("Successful login");
+                    loginView.getTextMessage().setForeground(Color.GREEN);
                 newWindow.setVisible(true);
                 }
             loginView.dispose(); // * Close Actual Window
             } else {
             System.out.println("User Is Not Valid");
-            loginView.getInputUsername().setForeground(Color.RED);
-            loginView.getInputPassword().setForeground(Color.RED);
+            loginView.getTextMessage().setText("User is not valid");
+            loginView.getTextMessage().setForeground(Color.RED);
             }
         } else {
             System.out.println("User Is Not Valid");
-            loginView.getInputUsername().setForeground(Color.RED);
-            loginView.getInputPassword().setForeground(Color.RED);
+            loginView.getTextMessage().setText("User is not valid");
+            loginView.getTextMessage().setForeground(Color.RED);
         }
     }
 }

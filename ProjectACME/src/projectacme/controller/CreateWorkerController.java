@@ -18,6 +18,7 @@ public class CreateWorkerController {
 
     public CreateWorkerController(InterfaceCreateWorker interfaceCreateWorker) {
         this.interfaceCreateWorker = interfaceCreateWorker;
+        interfaceCreateWorker.getTextMessage().setForeground(Color.WHITE);
         initController();
     }
 
@@ -35,13 +36,21 @@ public class CreateWorkerController {
         String name = interfaceCreateWorker.getInputName().getText();
         String phone = interfaceCreateWorker.getInputPhone().getText();
         String emailAddress = interfaceCreateWorker.getInputEmailAddress().getText();
+        boolean result = UserActual.getAccessSubjectOfficer().workerRegistration(id, name, phone, emailAddress);
+        System.out.println("Success: -" + result);
 
-        System.out.println("Success: -" + UserActual.getAccessSubjectOfficer().workerRegistration(id, name, phone, emailAddress));
+        if(result){
+            interfaceCreateWorker.getTextMessage().setForeground(Color.GREEN);
+            interfaceCreateWorker.getTextMessage().setText("Create worker sucessfully");
 
-        interfaceCreateWorker.getInputID().setText("");
-        interfaceCreateWorker.getInputName().setText("");
-        interfaceCreateWorker.getInputPhone().setText("");
-        interfaceCreateWorker.getInputEmailAddress().setText("");
+            interfaceCreateWorker.getInputID().setText("");
+            interfaceCreateWorker.getInputName().setText("");
+            interfaceCreateWorker.getInputPhone().setText("");
+            interfaceCreateWorker.getInputEmailAddress().setText("");
+        } else{
+            interfaceCreateWorker.getTextMessage().setForeground(Color.RED);
+            interfaceCreateWorker.getTextMessage().setText("Invalid data");
+        }
     }
 
 }

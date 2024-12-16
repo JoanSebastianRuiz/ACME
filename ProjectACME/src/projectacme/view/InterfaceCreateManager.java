@@ -40,7 +40,7 @@ public class InterfaceCreateManager extends javax.swing.JFrame {
         inputName = new javax.swing.JTextField();
         textPassword = new javax.swing.JLabel();
         inputPassword = new javax.swing.JPasswordField();
-        textEmailAddress = new javax.swing.JLabel();
+        textMessage = new javax.swing.JLabel();
         inputEmailAddress = new javax.swing.JTextField();
         CreateButton = new javax.swing.JPanel();
         TextButtonCreate = new javax.swing.JLabel();
@@ -49,6 +49,7 @@ public class InterfaceCreateManager extends javax.swing.JFrame {
         Header = new javax.swing.JPanel();
         BackButton1 = new javax.swing.JLabel();
         ImageSudoInterface = new javax.swing.JLabel();
+        textEmailAddress = new javax.swing.JLabel();
 
         textPhone.setFont(new java.awt.Font("Rasa Light", 0, 18)); // NOI18N
         textPhone.setText("Phone");
@@ -134,9 +135,9 @@ public class InterfaceCreateManager extends javax.swing.JFrame {
         });
         jPanel1.add(inputPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(594, 314, 175, 36));
 
-        textEmailAddress.setFont(new java.awt.Font("Rasa Light", 0, 18)); // NOI18N
-        textEmailAddress.setText("Email");
-        jPanel1.add(textEmailAddress, new org.netbeans.lib.awtextra.AbsoluteConstraints(393, 384, 166, -1));
+        textMessage.setFont(new java.awt.Font("Rasa Light", 0, 18)); // NOI18N
+        textMessage.setText("Message");
+        jPanel1.add(textMessage, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 470, 350, -1));
 
         inputEmailAddress.setForeground(new java.awt.Color(102, 102, 102));
         inputEmailAddress.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -257,6 +258,10 @@ public class InterfaceCreateManager extends javax.swing.JFrame {
         ImageSudoInterface.setText("jLabel1");
         jPanel1.add(ImageSudoInterface, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 350, -1));
 
+        textEmailAddress.setFont(new java.awt.Font("Rasa Light", 0, 18)); // NOI18N
+        textEmailAddress.setText("Email");
+        jPanel1.add(textEmailAddress, new org.netbeans.lib.awtextra.AbsoluteConstraints(393, 384, 166, -1));
+
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 881, -1));
 
         pack();
@@ -354,6 +359,13 @@ public class InterfaceCreateManager extends javax.swing.JFrame {
     public JLabel getTextButtonCreate(){
         return TextButtonCreate;
     }
+
+    public JLabel getTextMessage() {
+        return textMessage;
+    }
+
+   
+    
     
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -405,6 +417,7 @@ public class InterfaceCreateManager extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel textEmailAddress;
     private javax.swing.JLabel textID;
+    private javax.swing.JLabel textMessage;
     private javax.swing.JLabel textName;
     private javax.swing.JLabel textPassword;
     private javax.swing.JLabel textPhone;

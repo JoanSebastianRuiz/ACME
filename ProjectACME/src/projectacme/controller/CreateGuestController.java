@@ -4,6 +4,7 @@ import projectacme.UserActual;
 import projectacme.view.InterfaceCreateGuest;
 import projectacme.view.InterfaceCreateWorker;
 
+import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
@@ -13,6 +14,7 @@ public class CreateGuestController {
 
     public CreateGuestController(InterfaceCreateGuest interfaceCreateGuest) {
         this.interfaceCreateGuest = interfaceCreateGuest;
+        interfaceCreateGuest.getTextMessage().setForeground(Color.WHITE);
         initController();
     }
 
@@ -31,12 +33,23 @@ public class CreateGuestController {
         String phone = interfaceCreateGuest.getInputPhone().getText();
         String emailAddress = interfaceCreateGuest.getInputEmailAddress().getText();
 
-        System.out.println("Success: -" + UserActual.getAccessSubjectOfficer().guestRegistration(id, name, phone, emailAddress));
+        boolean result = UserActual.getAccessSubjectOfficer().guestRegistration(id, name, phone, emailAddress);
+        System.out.println("Success: -" +result );
 
-        interfaceCreateGuest.getInputID().setText("");
-        interfaceCreateGuest.getInputName().setText("");
-        interfaceCreateGuest.getInputPhone().setText("");
-        interfaceCreateGuest.getInputEmailAddress().setText("");
+        if(result){
+            interfaceCreateGuest.getTextMessage().setForeground(Color.GREEN);
+            interfaceCreateGuest.getTextMessage().setText("Create guest sucessfully");
+        } else{
+            interfaceCreateGuest.getTextMessage().setForeground(Color.RED);
+            interfaceCreateGuest.getTextMessage().setText("Invalid data");
+
+            interfaceCreateGuest.getInputID().setText("");
+            interfaceCreateGuest.getInputName().setText("");
+            interfaceCreateGuest.getInputPhone().setText("");
+            interfaceCreateGuest.getInputEmailAddress().setText("");
+        }
+
+
     }
 
 }
