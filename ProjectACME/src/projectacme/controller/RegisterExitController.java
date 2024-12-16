@@ -16,11 +16,11 @@ public class RegisterExitController {
 
     public RegisterExitController(InterfaceRegisterExit registerExitView) {
         this.registerExitView = registerExitView;
-        registerExitView.getTextMessage().setForeground(Color.WHITE);
         initController();
     }
 
     public void initController() {
+        registerExitView.getTextMessage().setForeground(Color.WHITE);
         registerExitView.getTextRegister().addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent evt) {
@@ -31,16 +31,21 @@ public class RegisterExitController {
 
     public void registerExit() {
         try {
-            if (!UserActual.getAccessSubjectOfficer().registerAccess(ScannerType.exit, registerExitView.getinputID().getText())) {
+            if (UserActual.getAccessSubjectOfficer().registerAccess(ScannerType.exit, registerExitView.getinputID().getText())) {
+                registerExitView.getTextMessage().setText("Successful exit recorded");
+                registerExitView.getTextMessage().setForeground(Color.GREEN);
+            } else{
                 registerExitView.getinputID().setForeground(Color.RED);
+                registerExitView.getTextMessage().setText("Invalid data");
+                registerExitView.getTextMessage().setForeground(Color.RED);
             }
         } catch (Exception e) {
             System.out.println(e.getMessage());
-            if (!UserActual.getAccessSubjectSecurityGuard().registerAccess(ScannerType.exit, registerExitView.getinputID().getText())) {
-                registerExitView.getinputID().setForeground(Color.RED);
+            if (UserActual.getAccessSubjectSecurityGuard().registerAccess(ScannerType.exit, registerExitView.getinputID().getText())) {
                 registerExitView.getTextMessage().setText("Successful exit recorded");
                 registerExitView.getTextMessage().setForeground(Color.GREEN);
             } else {
+                registerExitView.getinputID().setForeground(Color.RED);
                 registerExitView.getTextMessage().setText("Invalid data");
                 registerExitView.getTextMessage().setForeground(Color.RED);
             }

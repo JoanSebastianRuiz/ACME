@@ -30,6 +30,9 @@ public class CreateOfficerController {
     public CreateOfficerController(InterfaceCreateOfficer view) {
         this.manager = UserActual.getAccessSubjectManager();
         this.view = view;
+        view.getTextInvalid().setForeground(Color.WHITE);
+
+
         view.getTextButtonCreate().addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
@@ -40,7 +43,7 @@ public class CreateOfficerController {
                 String password = new String(view.getInputPassword().getPassword());
                 String emailAddress = view.getInputEmailAddress().getText();
                 String companyName = view.getComboCompany().getSelectedItem().toString();
-                view.getTextInvalid().setForeground(Color.WHITE);
+
 
                 int idCompany = companyImpl.getAllCompanies().stream()
                         .filter(element->element.getName().equals(companyName))

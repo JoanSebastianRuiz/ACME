@@ -8,6 +8,9 @@ import java.util.List;
 import java.util.Map;
 import javax.swing.JLabel;
 import javax.swing.table.DefaultTableModel;
+import projectacme.UserActual;
+import projectacme.controller.ReportsSudoController;
+import projectacme.util.Enum.AccessSubjectRoleEnum;
 
 /**
  *
@@ -27,6 +30,7 @@ public class InterfaceViewReports extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        BackButton1 = new javax.swing.JLabel();
         Background = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tableInformationReport = new javax.swing.JTable();
@@ -41,6 +45,15 @@ public class InterfaceViewReports extends javax.swing.JFrame {
         setUndecorated(true);
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        BackButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/projectacme/view/images/icons8-flecha-responder-24.png"))); // NOI18N
+        BackButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        BackButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                BackButton1MouseClicked(evt);
+            }
+        });
+        getContentPane().add(BackButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 60, 50));
 
         Background.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -166,6 +179,27 @@ public class InterfaceViewReports extends javax.swing.JFrame {
         yMouse = evt.getY();
     }//GEN-LAST:event_HeaderMousePressed
 
+    private void BackButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BackButton1MouseClicked
+        if(UserActual.getAccessSubject().getRole()== AccessSubjectRoleEnum.sudo){
+            InterfaceSudoMenu view = new InterfaceSudoMenu();
+            view.setVisible(true);
+            
+        }else if(UserActual.getAccessSubject().getRole()== AccessSubjectRoleEnum.manager){
+            InterfaceManagerMenu view = new InterfaceManagerMenu();
+            view.setVisible(true);
+            
+        }else if(UserActual.getAccessSubject().getRole()== AccessSubjectRoleEnum.officer){
+            InterfaceOfficerMenu view = new InterfaceOfficerMenu();
+            view.setVisible(true);
+            
+        }else if(UserActual.getAccessSubject().getRole()== AccessSubjectRoleEnum.securityGuard){
+            InterfaceSecurityGuardMenu view = new InterfaceSecurityGuardMenu();
+            view.setVisible(true);
+        }
+        
+        this.dispose();
+    }//GEN-LAST:event_BackButton1MouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -203,6 +237,7 @@ public class InterfaceViewReports extends javax.swing.JFrame {
     }
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel BackButton1;
     private javax.swing.JPanel Background;
     private javax.swing.JPanel Header;
     private javax.swing.JLabel jLabel2;

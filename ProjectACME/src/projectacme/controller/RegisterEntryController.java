@@ -21,6 +21,7 @@ public class RegisterEntryController {
     }
 
     public void initController() {
+        registerExitView.getTextMessage().setForeground(Color.WHITE);
         registerExitView.getTextRegister().addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent evt) {
@@ -31,14 +32,22 @@ public class RegisterEntryController {
 
     public void registerExit(){
         try {
-            if(!UserActual.getAccessSubjectOfficer().registerAccess(ScannerType.entry, registerExitView.getinputID().getText())){
+            if(UserActual.getAccessSubjectOfficer().registerAccess(ScannerType.entry, registerExitView.getinputID().getText())){
+                registerExitView.getTextMessage().setText("Successful entry recorded");
+                registerExitView.getTextMessage().setForeground(Color.GREEN);
+            } else{
                 registerExitView.getinputID().setForeground(Color.RED);
+                registerExitView.getTextMessage().setText("Invalid data");
+                registerExitView.getTextMessage().setForeground(Color.RED);
             }
         } catch(Exception e) {
             System.out.println(e.getMessage());
-            if (!UserActual.getAccessSubjectSecurityGuard().registerAccess(ScannerType.entry, registerExitView.getinputID().getText())) {
+            if (UserActual.getAccessSubjectSecurityGuard().registerAccess(ScannerType.entry, registerExitView.getinputID().getText())) {
+                registerExitView.getTextMessage().setText("Successful exit recorded");
+                registerExitView.getTextMessage().setForeground(Color.GREEN);
+            } else{
                 registerExitView.getinputID().setForeground(Color.RED);
-            };
+            }
         }
     }
 }

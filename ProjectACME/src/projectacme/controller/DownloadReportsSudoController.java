@@ -44,7 +44,7 @@ public class DownloadReportsSudoController {
 
     private void addReports(){
         if(view.getCheckManagers().isSelected()){
-            reportFunctions.put("Guests", ()->sudo.getReportsManager());
+            reportFunctions.put("Managers", ()->sudo.getReportsManager());
         }
     }
 }

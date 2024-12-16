@@ -39,14 +39,14 @@ public class CreateGuestController {
         if(result){
             interfaceCreateGuest.getTextMessage().setForeground(Color.GREEN);
             interfaceCreateGuest.getTextMessage().setText("Create guest sucessfully");
-        } else{
-            interfaceCreateGuest.getTextMessage().setForeground(Color.RED);
-            interfaceCreateGuest.getTextMessage().setText("Invalid data");
 
             interfaceCreateGuest.getInputID().setText("");
             interfaceCreateGuest.getInputName().setText("");
             interfaceCreateGuest.getInputPhone().setText("");
             interfaceCreateGuest.getInputEmailAddress().setText("");
+        } else{
+            interfaceCreateGuest.getTextMessage().setForeground(Color.RED);
+            interfaceCreateGuest.getTextMessage().setText("Invalid data");
         }
 
 

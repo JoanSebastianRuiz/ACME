@@ -6,6 +6,8 @@ package projectacme.view;
 
 import javax.swing.JLabel;
 import javax.swing.JTextField;
+import projectacme.UserActual;
+import projectacme.util.Enum.AccessSubjectRoleEnum;
 
 /**
  *
@@ -306,8 +308,14 @@ public class InterfaceRegisterExit extends javax.swing.JFrame {
     }//GEN-LAST:event_HeaderMouseDragged
 
     private void BackButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BackButton1MouseClicked
-        InterfaceOfficerMenu nuevaVentana = new InterfaceOfficerMenu();
-        nuevaVentana.setVisible(true);
+        if(UserActual.getAccessSubject().getRole()== AccessSubjectRoleEnum.officer){
+            InterfaceOfficerMenu view = new InterfaceOfficerMenu();
+            view.setVisible(true);
+            
+        }else if(UserActual.getAccessSubject().getRole()== AccessSubjectRoleEnum.securityGuard){
+            InterfaceSecurityGuardMenu view = new InterfaceSecurityGuardMenu();
+            view.setVisible(true);
+        }
 
         this.dispose();
     }//GEN-LAST:event_BackButton1MouseClicked
