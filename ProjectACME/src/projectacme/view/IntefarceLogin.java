@@ -19,6 +19,8 @@ public class IntefarceLogin extends javax.swing.JFrame {
     int xMouse, yMouse;
     
     public IntefarceLogin() {
+        this.setResizable(false);
+        this.setLocationRelativeTo(null);
         initComponents();
     }
 

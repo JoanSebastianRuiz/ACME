@@ -1,9 +1,13 @@
 package projectacme.controller;
 
+import projectacme.UserActual;
+import projectacme.service.SecurityGuard;
+import projectacme.util.Report;
 import projectacme.view.InterfaceCreateSecurityGuard;
 import projectacme.view.InterfaceCreateOfficer;
 import projectacme.view.InterfaceViewReports;
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import projectacme.view.InterfaceAccssesUsers;
@@ -16,6 +20,7 @@ import projectacme.view.InterfaceSecurityGuardMenu;
 public class SecurityGuardMenuController {
 
     private InterfaceSecurityGuardMenu securityGuardMenuView;
+    private SecurityGuard securityGuard = UserActual.getAccessSubjectSecurityGuard();
 
     public SecurityGuardMenuController(InterfaceSecurityGuardMenu securityGuardMenuView) {
         this.securityGuardMenuView = securityGuardMenuView;
@@ -49,6 +54,19 @@ public class SecurityGuardMenuController {
             @Override
             public void actionPerformed(ActionEvent e) {
                 openCreateReportView();
+            }
+        });
+
+        securityGuardMenuView.getButtonLiveAccessLog().addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Report report = new Report(securityGuard.getReportsAccessLogs(),"Live Access Log");
+                InterfaceViewReports viewReports = new InterfaceViewReports();
+                viewReports.getTextTitle().setText("Live Access Log");
+                viewReports.getTextTitleReport().setForeground(Color.white);
+                ViewReportsController viewReportsController = new ViewReportsController(viewReports, report);
+                viewReports.setVisible(true);
+                securityGuardMenuView.setVisible(false);
             }
         });
     }

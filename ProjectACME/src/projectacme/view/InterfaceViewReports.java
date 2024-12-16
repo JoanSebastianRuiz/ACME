@@ -6,6 +6,7 @@ package projectacme.view;
 
 import java.util.List;
 import java.util.Map;
+import javax.swing.JLabel;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -30,7 +31,7 @@ public class InterfaceViewReports extends javax.swing.JFrame {
         textTitleReport = new javax.swing.JLabel();
         Header = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
+        textTitle = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -39,7 +40,7 @@ public class InterfaceViewReports extends javax.swing.JFrame {
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        Background.setBackground(new java.awt.Color(255, 240, 235));
+        Background.setBackground(new java.awt.Color(255, 255, 255));
 
         tableInformationReport.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -85,10 +86,10 @@ public class InterfaceViewReports extends javax.swing.JFrame {
         jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel6.setText("ZONA -  ACME");
 
-        jLabel7.setFont(new java.awt.Font("Times New Roman", 2, 36)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel7.setText("Reports");
+        textTitle.setFont(new java.awt.Font("Times New Roman", 2, 36)); // NOI18N
+        textTitle.setForeground(new java.awt.Color(255, 255, 255));
+        textTitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        textTitle.setText("Reports");
 
         jLabel2.setFont(new java.awt.Font("Liberation Sans", 0, 36)); // NOI18N
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -105,8 +106,8 @@ public class InterfaceViewReports extends javax.swing.JFrame {
         HeaderLayout.setHorizontalGroup(
             HeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, HeaderLayout.createSequentialGroup()
-                .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, 299, Short.MAX_VALUE)
-                .addGap(95, 95, 95)
+                .addComponent(textTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 403, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(51, 51, 51)
                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -115,7 +116,7 @@ public class InterfaceViewReports extends javax.swing.JFrame {
             HeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(HeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                 .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(textTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
@@ -204,9 +205,9 @@ public class InterfaceViewReports extends javax.swing.JFrame {
     private javax.swing.JPanel Header;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable tableInformationReport;
+    private javax.swing.JLabel textTitle;
     private javax.swing.JLabel textTitleReport;
     // End of variables declaration//GEN-END:variables
 
@@ -225,4 +226,14 @@ public void setTable(List<Map<String, Object>>  information){
     
     this.tableInformationReport.setModel(table);
 }
+
+    public JLabel getTextTitle() {
+        return textTitle;
+    }
+
+    public JLabel getTextTitleReport() {
+        return textTitleReport;
+    }
+
+
 }

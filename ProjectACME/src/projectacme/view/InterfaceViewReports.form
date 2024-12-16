@@ -31,7 +31,7 @@
     <Container class="javax.swing.JPanel" name="Background">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="eb" green="f0" red="ff" type="rgb"/>
+          <Color blue="ff" green="ff" red="ff" type="rgb"/>
         </Property>
       </Properties>
       <Constraints>
@@ -153,8 +153,8 @@
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="1" attributes="0">
-                      <Component id="jLabel7" pref="299" max="32767" attributes="0"/>
-                      <EmptySpace min="-2" pref="95" max="-2" attributes="0"/>
+                      <Component id="textTitle" min="-2" pref="403" max="-2" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
                       <Component id="jLabel6" min="-2" pref="300" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="51" max="-2" attributes="0"/>
                       <Component id="jLabel2" min="-2" pref="55" max="-2" attributes="0"/>
@@ -165,7 +165,7 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="103" alignment="0" groupAlignment="3" attributes="0">
                       <Component id="jLabel6" alignment="3" max="32767" attributes="0"/>
-                      <Component id="jLabel7" alignment="3" min="-2" pref="58" max="-2" attributes="0"/>
+                      <Component id="textTitle" alignment="3" min="-2" pref="58" max="-2" attributes="0"/>
                   </Group>
                   <Component id="jLabel2" alignment="0" max="32767" attributes="0"/>
               </Group>
@@ -184,7 +184,7 @@
                 <Property name="text" type="java.lang.String" value="ZONA -  ACME"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="jLabel7">
+            <Component class="javax.swing.JLabel" name="textTitle">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Times New Roman" size="36" style="2"/>
