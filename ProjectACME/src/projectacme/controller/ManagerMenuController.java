@@ -7,7 +7,6 @@ import projectacme.view.InterfaceViewReports;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import projectacme.view.InterfaceActivateGuard;
-import projectacme.view.InterfaceCreateReport;
 import projectacme.view.InterfaceDownloadReportsManager;
 import projectacme.view.InterfaceInactivateGuard;
 import projectacme.view.InterfaceManagerMenu;
@@ -64,13 +63,6 @@ public class ManagerMenuController {
             }
         });
         
-        managerMenuView.ButtonRegisterReport().addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                openCreateReport();
-            }
-        });
-        
         managerMenuView.getButtonDownloadReports().addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -108,13 +100,6 @@ public class ManagerMenuController {
     private void openInactivate() {
         // Crear la interfaz para Ver Reportes
         InterfaceInactivateGuard reportsView = new InterfaceInactivateGuard();
-        reportsView.setVisible(true);
-        managerMenuView.dispose(); // Cierra la ventana actual
-    }
-    
-    private void openCreateReport() {
-        // Crear la interfaz para Ver Reportes
-        InterfaceCreateReport reportsView = new InterfaceCreateReport();
         reportsView.setVisible(true);
         managerMenuView.dispose(); // Cierra la ventana actual
     }

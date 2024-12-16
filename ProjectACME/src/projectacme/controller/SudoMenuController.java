@@ -14,7 +14,6 @@ import projectacme.view.InterfaceActivateGuard;
 import projectacme.view.InterfaceActivateManager;
 import projectacme.view.InterfaceCreateManager;
 import projectacme.view.InterfaceCreateOfficer;
-import projectacme.view.InterfaceCreateReport;
 import projectacme.view.InterfaceCreateSecurityGuard;
 import projectacme.view.InterfaceDownloadReportsSudo;
 import projectacme.view.InterfaceInactivateGuard;

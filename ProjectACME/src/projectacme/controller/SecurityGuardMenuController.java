@@ -13,7 +13,6 @@ import java.awt.event.ActionListener;
 import projectacme.view.InterfaceAccssesUsers;
 import projectacme.view.InterfaceCreateVehicle;
 import projectacme.view.InterfaceActivateGuard;
-import projectacme.view.InterfaceCreateReport;
 import projectacme.view.InterfaceDownloadReportsManager;
 import projectacme.view.InterfaceDownloadReportsSecurityGuard;
 import projectacme.view.InterfaceInactivateGuard;
@@ -44,20 +43,6 @@ public class SecurityGuardMenuController {
             @Override
             public void actionPerformed(ActionEvent e) {
                 openVehicleView();
-            }
-        });
-
-        securityGuardMenuView.getButtonReport().addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                openReportsView();
-            }
-        });
-
-        securityGuardMenuView.getButtonCreateReport().addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                openCreateReportView();
             }
         });
 
@@ -98,18 +83,6 @@ public class SecurityGuardMenuController {
     private void openVehicleView() {
         InterfaceCreateVehicle vehicleView = new InterfaceCreateVehicle();
         vehicleView.setVisible(true);
-        securityGuardMenuView.dispose(); 
-    }
-
-    private void openReportsView() {
-        InterfaceViewReports reportsView = new InterfaceViewReports();
-        reportsView.setVisible(true);
-        securityGuardMenuView.dispose(); 
-    }
-
-    private void openCreateReportView() {
-        InterfaceCreateReport createReportView = new InterfaceCreateReport();
-        createReportView.setVisible(true);
         securityGuardMenuView.dispose(); 
     }
     
