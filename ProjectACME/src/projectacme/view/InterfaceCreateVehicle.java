@@ -8,6 +8,7 @@ import java.awt.Color;
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
+import projectacme.controller.CreateOfficerController;
 import projectacme.util.Enum.VehicleEnum;
 
 /**
@@ -22,6 +23,7 @@ public class InterfaceCreateVehicle extends javax.swing.JFrame {
         this.setResizable(false);
         this.setLocationRelativeTo(null);
          fillsComboUp();
+        
     }
 
     /**

@@ -8,6 +8,7 @@ import java.awt.Color;
 import javax.swing.JLabel;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
+import projectacme.controller.CreateManagerController;
 
 /**
  *
@@ -21,6 +22,7 @@ public class InterfaceCreateManager extends javax.swing.JFrame {
         initComponents();
         this.setResizable(false);
         this.setLocationRelativeTo(null);
+        new CreateManagerController(this);
     }
 
     @SuppressWarnings("unchecked")
