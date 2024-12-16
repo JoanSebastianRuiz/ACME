@@ -30,7 +30,13 @@ public class RegisterExitController {
     }
 
     public void registerExit(){
-        if (!UserActual.getAccessSubjectOfficer().registerAccess(ScannerType.exit, registerExitView.getinputID().getText())) {
+        try {
+            if(!UserActual.getAccessSubjectOfficer().registerAccess(ScannerType.exit, registerExitView.getinputID().getText())){
+                registerExitView.getinputID().setForeground(Color.RED);
+            }
+        } catch(Exception e) {
+            System.out.println(e.getMessage());
+            if (!UserActual.getAccessSubjectSecurityGuard().registerAccess(ScannerType.exit, registerExitView.getinputID().getText())) {
             registerExitView.getinputID().setForeground(Color.RED);
             registerExitView.getTextMessage().setText("Successful exit recorded");
             registerExitView.getTextMessage().setForeground(Color.GREEN);

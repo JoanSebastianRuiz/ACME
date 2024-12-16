@@ -74,7 +74,7 @@ public class IntefarceLogin extends javax.swing.JFrame {
 
         TextUsername.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         TextUsername.setForeground(new java.awt.Color(153, 153, 153));
-        TextUsername.setText("USERNAME");
+        TextUsername.setText("IDENTIFICATION");
         Background.add(TextUsername, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 120, 140, 40));
 
         InputUsername.addMouseListener(new java.awt.event.MouseAdapter() {

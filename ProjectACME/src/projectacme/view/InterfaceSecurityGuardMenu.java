@@ -214,7 +214,7 @@ public class InterfaceSecurityGuardMenu extends javax.swing.JFrame {
 
         ButtonRegisterEntrty.setBackground(new java.awt.Color(240, 242, 235));
         ButtonRegisterEntrty.setFont(new java.awt.Font("Nimbus Sans Narrow", 0, 18)); // NOI18N
-        ButtonRegisterEntrty.setIcon(new javax.swing.ImageIcon(getClass().getResource("/projectacme/view/images/icons8-documento-compartido-48.png"))); // NOI18N
+        ButtonRegisterEntrty.setIcon(new javax.swing.ImageIcon(getClass().getResource("/projectacme/view/images/entry-icon (1).jpg"))); // NOI18N
         ButtonRegisterEntrty.setText("Register Entrty");
         ButtonRegisterEntrty.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         ButtonRegisterEntrty.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -265,18 +265,19 @@ public class InterfaceSecurityGuardMenu extends javax.swing.JFrame {
                     .addComponent(ButtonVehicle, javax.swing.GroupLayout.DEFAULT_SIZE, 134, Short.MAX_VALUE)
                     .addComponent(ButtonIndividual, javax.swing.GroupLayout.DEFAULT_SIZE, 134, Short.MAX_VALUE))
                 .addGap(45, 45, 45)
-                .addGroup(BackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(BackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(ButtonViewReports1, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(ButtonLiveAccessLog, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(BackgroundLayout.createSequentialGroup()
-                        .addComponent(ButtonRegisterEntrty, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(9, 9, 9)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 21, Short.MAX_VALUE)
-                .addComponent(ButtonRegisterExit, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(BackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(BackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(ButtonLiveAccessLog, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(BackgroundLayout.createSequentialGroup()
+                            .addComponent(ButtonRegisterEntrty, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(9, 9, 9)))
+                    .addComponent(ButtonViewReports1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 64, Short.MAX_VALUE)
+                .addComponent(ButtonRegisterExit, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(37, 37, 37))
         );
 
-        getContentPane().add(Background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, 640));
+        getContentPane().add(Background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, 720));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -367,7 +368,7 @@ public class InterfaceSecurityGuardMenu extends javax.swing.JFrame {
     
     
     public JButton getButtonViewReports(){
-        return ButtonRegisterExit;
+        return ButtonViewReports1;
     }
     
     public JButton getButtonDownloadReports(){

@@ -38,6 +38,7 @@ public class InterfaceDownloadReportsManager extends javax.swing.JFrame {
         ExitButton = new javax.swing.JPanel();
         TextExitButton = new javax.swing.JLabel();
         Header = new javax.swing.JPanel();
+        BackButton1 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         CreateButton1 = new javax.swing.JPanel();
@@ -105,15 +106,29 @@ public class InterfaceDownloadReportsManager extends javax.swing.JFrame {
             }
         });
 
+        BackButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/projectacme/view/images/icons8-flecha-responder-24.png"))); // NOI18N
+        BackButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        BackButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                BackButton1MouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout HeaderLayout = new javax.swing.GroupLayout(Header);
         Header.setLayout(HeaderLayout);
         HeaderLayout.setHorizontalGroup(
             HeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 758, Short.MAX_VALUE)
+            .addGroup(HeaderLayout.createSequentialGroup()
+                .addGap(18, 18, 18)
+                .addComponent(BackButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(690, Short.MAX_VALUE))
         );
         HeaderLayout.setVerticalGroup(
             HeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 50, Short.MAX_VALUE)
+            .addGroup(HeaderLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(BackButton1, javax.swing.GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         jPanel2.setBackground(new java.awt.Color(136, 169, 195));
@@ -352,6 +367,13 @@ public class InterfaceDownloadReportsManager extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_checkVehiclesActionPerformed
 
+    private void BackButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BackButton1MouseClicked
+        InterfaceManagerMenu nuevaVentana = new InterfaceManagerMenu();
+        nuevaVentana.setVisible(true);
+
+        this.dispose();
+    }//GEN-LAST:event_BackButton1MouseClicked
+
     public JLabel getTextDownload() {
         return TextDownload;
     }
@@ -429,6 +451,7 @@ public class InterfaceDownloadReportsManager extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel BackButton1;
     private javax.swing.JPanel CreateButton1;
     private javax.swing.JPanel ExitButton;
     private javax.swing.JPanel Header;
