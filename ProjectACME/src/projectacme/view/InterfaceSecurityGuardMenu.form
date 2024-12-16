@@ -335,7 +335,7 @@
               <Font name="Nimbus Sans Narrow" size="18" style="0"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/projectacme/view/images/icons8-documento-compartido-48.png"/>
+              <Image iconType="3" name="/projectacme/view/images/entry-icon (1).jpg"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Register Entrty"/>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">

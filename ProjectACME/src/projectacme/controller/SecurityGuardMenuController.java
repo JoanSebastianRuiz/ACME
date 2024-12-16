@@ -122,12 +122,4 @@ public class SecurityGuardMenuController {
         reportsView.setVisible(true);
         securityGuardMenuView.dispose(); 
     }
-    
-    private void openRegisterExit() {
-       
-        InterfaceRegisterExit reportsView = new InterfaceRegisterExit();
-        RegisterExitController RegisterExitController = new RegisterExitController(reportsView);
-        reportsView.setVisible(true);
-        securityGuardMenuView.dispose(); 
-    }
 }

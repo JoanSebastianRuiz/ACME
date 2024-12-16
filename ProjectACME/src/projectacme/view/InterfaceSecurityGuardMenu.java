@@ -214,7 +214,7 @@ public class InterfaceSecurityGuardMenu extends javax.swing.JFrame {
 
         ButtonRegisterEntrty.setBackground(new java.awt.Color(240, 242, 235));
         ButtonRegisterEntrty.setFont(new java.awt.Font("Nimbus Sans Narrow", 0, 18)); // NOI18N
-        ButtonRegisterEntrty.setIcon(new javax.swing.ImageIcon(getClass().getResource("/projectacme/view/images/icons8-documento-compartido-48.png"))); // NOI18N
+        ButtonRegisterEntrty.setIcon(new javax.swing.ImageIcon(getClass().getResource("/projectacme/view/images/entry-icon (1).jpg"))); // NOI18N
         ButtonRegisterEntrty.setText("Register Entrty");
         ButtonRegisterEntrty.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         ButtonRegisterEntrty.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
