@@ -11,6 +11,8 @@ import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
+
+import projectacme.UserActual;
 import projectacme.controller.CreateOfficerController;
 import projectacme.repository.implementation.CompanyImpl;
 
@@ -27,7 +29,7 @@ public class InterfaceCreateOfficer extends javax.swing.JFrame {
         initComponents();
         this.setResizable(false);
         this.setLocationRelativeTo(null);
-        new CreateOfficerController(this);
+        new CreateOfficerController(UserActual.getAccessSubjectManager(), this);
         fillsComboUp();
         
     }

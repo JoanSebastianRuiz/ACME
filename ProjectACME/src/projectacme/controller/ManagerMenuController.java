@@ -1,5 +1,6 @@
 package projectacme.controller;
 
+import projectacme.UserActual;
 import projectacme.view.InterfaceCreateSecurityGuard;
 import projectacme.view.InterfaceCreateOfficer;
 import projectacme.view.InterfaceViewReports;
@@ -70,11 +71,12 @@ public class ManagerMenuController {
         InterfaceCreateSecurityGuard securityGuardView = new InterfaceCreateSecurityGuard();
         CreateSecurityGuardController securityGuardController = new CreateSecurityGuardController(securityGuardView);
         securityGuardView.setVisible(true);
-        managerMenuView.dispose(); 
+        managerMenuView.dispose();
     }
 
     private void openCreateOfficer() {
         InterfaceCreateOfficer officerView = new InterfaceCreateOfficer();
+        CreateOfficerController officerController = new CreateOfficerController(UserActual.getAccessSubjectManager(), officerView);
         officerView.setVisible(true);
         managerMenuView.dispose(); 
     }
