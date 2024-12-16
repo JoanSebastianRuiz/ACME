@@ -19,6 +19,8 @@ public class InterfaceCreateWorker extends javax.swing.JFrame {
     
     public InterfaceCreateWorker() {
         initComponents();
+        this.setResizable(false);
+        this.setLocationRelativeTo(null);
     }
 
     /**

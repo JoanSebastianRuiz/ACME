@@ -16,6 +16,8 @@ public class InterfaceReportsOfficer extends javax.swing.JFrame {
     int xMouse,yMouse;
     public InterfaceReportsOfficer() {
         initComponents();
+        this.setResizable(false);
+        this.setLocationRelativeTo(null);
     }
 
     /**

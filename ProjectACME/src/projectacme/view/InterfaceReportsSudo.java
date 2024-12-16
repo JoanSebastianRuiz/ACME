@@ -16,6 +16,8 @@ public class InterfaceReportsSudo extends javax.swing.JFrame {
     int xMouse,yMouse;
     public InterfaceReportsSudo() {
         initComponents();
+        this.setResizable(false);
+        this.setLocationRelativeTo(null);
     }
 
     /**

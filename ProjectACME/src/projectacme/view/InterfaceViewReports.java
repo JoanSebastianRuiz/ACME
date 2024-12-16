@@ -19,6 +19,8 @@ public class InterfaceViewReports extends javax.swing.JFrame {
     
     public InterfaceViewReports() {
         initComponents();
+        this.setResizable(false);
+        this.setLocationRelativeTo(null);
     }
 
     @SuppressWarnings("unchecked")

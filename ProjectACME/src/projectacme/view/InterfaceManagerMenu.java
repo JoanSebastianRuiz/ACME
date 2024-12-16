@@ -15,6 +15,8 @@ public class InterfaceManagerMenu extends javax.swing.JFrame {
     public InterfaceManagerMenu() {
         initComponents();
         new ManagerMenuController(this);
+        this.setResizable(false);
+        this.setLocationRelativeTo(null);
     }
 
     /**

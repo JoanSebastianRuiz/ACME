@@ -16,6 +16,8 @@ public class InterfaceRegisterExit extends javax.swing.JFrame {
     int xMouse, yMouse;
     public InterfaceRegisterExit() {
         initComponents();
+        this.setResizable(false);
+        this.setLocationRelativeTo(null);
     }
 
     /**

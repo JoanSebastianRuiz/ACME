@@ -16,6 +16,8 @@ public class InterfaceActivateGuard extends javax.swing.JFrame {
     int xMouse,yMouse;
     public InterfaceActivateGuard() {
         initComponents();
+        this.setResizable(false);
+        this.setLocationRelativeTo(null);
     }
 
     /**

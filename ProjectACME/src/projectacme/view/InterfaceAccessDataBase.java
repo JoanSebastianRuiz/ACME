@@ -19,6 +19,8 @@ public class InterfaceAccessDataBase extends javax.swing.JFrame {
     int xMouse,yMouse;
     public InterfaceAccessDataBase() {
         initComponents();
+        this.setResizable(false);
+        this.setLocationRelativeTo(null);
     }
 
     /**

@@ -16,6 +16,8 @@ public class InterfaceOfficerMenu extends javax.swing.JFrame {
     int xMouse, yMouse;
     public InterfaceOfficerMenu() {
         initComponents();
+        this.setResizable(false);
+        this.setLocationRelativeTo(null);
         new OfficerMenuController(this);
 
     }

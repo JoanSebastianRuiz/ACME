@@ -16,6 +16,8 @@ public class InterfaceInactivateIndividual extends javax.swing.JFrame {
     int xMouse, yMouse;
     public InterfaceInactivateIndividual() {
         initComponents();
+        this.setResizable(false);
+        this.setLocationRelativeTo(null);
     }
 
     /**

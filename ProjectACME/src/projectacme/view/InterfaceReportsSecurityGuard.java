@@ -16,6 +16,8 @@ public class InterfaceReportsSecurityGuard extends javax.swing.JFrame {
     int xMouse,yMouse;
     public InterfaceReportsSecurityGuard() {
         initComponents();
+        this.setResizable(false);
+        this.setLocationRelativeTo(null);
     }
 
     /**

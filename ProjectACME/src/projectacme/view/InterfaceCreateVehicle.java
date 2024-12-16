@@ -19,6 +19,8 @@ public class InterfaceCreateVehicle extends javax.swing.JFrame {
     int xMouse, yMouse;
     public InterfaceCreateVehicle() {
         initComponents();
+        this.setResizable(false);
+        this.setLocationRelativeTo(null);
          fillsComboUp();
     }
 

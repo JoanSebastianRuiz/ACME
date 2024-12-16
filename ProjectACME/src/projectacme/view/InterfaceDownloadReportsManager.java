@@ -17,6 +17,8 @@ public class InterfaceDownloadReportsManager extends javax.swing.JFrame {
     int xMouse,yMouse;
     public InterfaceDownloadReportsManager() {
         initComponents();
+        this.setResizable(false);
+        this.setLocationRelativeTo(null);
     }
 
     /**

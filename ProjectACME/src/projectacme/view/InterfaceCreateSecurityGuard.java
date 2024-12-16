@@ -19,6 +19,8 @@ public class InterfaceCreateSecurityGuard extends javax.swing.JFrame {
     
     public InterfaceCreateSecurityGuard() {
         initComponents();
+        this.setResizable(false);
+        this.setLocationRelativeTo(null);
     }
 
     /**

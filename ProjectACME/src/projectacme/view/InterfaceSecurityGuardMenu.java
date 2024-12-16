@@ -17,6 +17,8 @@ public class InterfaceSecurityGuardMenu extends javax.swing.JFrame {
     
     public InterfaceSecurityGuardMenu() {
         initComponents();
+        this.setResizable(false);
+        this.setLocationRelativeTo(null);
         new SecurityGuardMenuController(this);
         
     }

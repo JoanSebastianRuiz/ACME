@@ -19,6 +19,8 @@ public class InterfaceCreateGuest extends javax.swing.JFrame {
     
     public InterfaceCreateGuest() {
         initComponents();
+        this.setResizable(false);
+        this.setLocationRelativeTo(null);
     }
 
     /**

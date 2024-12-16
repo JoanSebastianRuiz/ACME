@@ -16,6 +16,8 @@ public class InterfaceActivateManager extends javax.swing.JFrame {
     int xMouse,yMouse;
     public InterfaceActivateManager() {
         initComponents();
+        this.setResizable(false);
+        this.setLocationRelativeTo(null);
     }
 
     /**

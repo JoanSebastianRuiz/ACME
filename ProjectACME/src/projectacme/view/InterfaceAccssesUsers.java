@@ -19,6 +19,8 @@ public class InterfaceAccssesUsers extends javax.swing.JFrame {
     
     public InterfaceAccssesUsers() {
         initComponents();
+        this.setResizable(false);
+        this.setLocationRelativeTo(null);
     }
 
     /**

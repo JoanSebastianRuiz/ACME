@@ -24,6 +24,8 @@ public class InterfaceCreateOfficer extends javax.swing.JFrame {
     
     public InterfaceCreateOfficer() {
         initComponents();
+        this.setResizable(false);
+        this.setLocationRelativeTo(null);
         fillsComboUp();
     }
 

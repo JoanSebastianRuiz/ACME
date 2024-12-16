@@ -17,6 +17,8 @@ public class InterfaceDownloadReportsSecurityGuard extends javax.swing.JFrame {
     int xMouse,yMouse;
     public InterfaceDownloadReportsSecurityGuard() {
         initComponents();
+        this.setResizable(false);
+        this.setLocationRelativeTo(null);
     }
 
     /**

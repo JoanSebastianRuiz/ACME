@@ -17,6 +17,8 @@ public class InterfaceSudoMenu extends javax.swing.JFrame {
     
     public InterfaceSudoMenu() {
         initComponents();
+        this.setResizable(false);
+        this.setLocationRelativeTo(null);
         new SudoMenuController(this);
     }
 

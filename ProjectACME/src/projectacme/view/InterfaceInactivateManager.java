@@ -16,6 +16,8 @@ public class InterfaceInactivateManager extends javax.swing.JFrame {
     int xMouse,yMouse;
     public InterfaceInactivateManager() {
         initComponents();
+        this.setResizable(false);
+        this.setLocationRelativeTo(null);
     }
 
     /**
