@@ -4,6 +4,7 @@
  */
 package projectacme.view;
 import javax.swing.JButton;
+import projectacme.controller.ManagerMenuController;
 /**
  *
  * @author Sebastian
@@ -15,6 +16,7 @@ public class InterfaceManagerMenu extends javax.swing.JFrame {
         initComponents();
         this.setResizable(false);
         this.setLocationRelativeTo(null);
+        new ManagerMenuController(this);
     }
 
     /**

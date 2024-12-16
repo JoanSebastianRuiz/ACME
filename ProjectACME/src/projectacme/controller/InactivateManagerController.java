@@ -48,7 +48,7 @@ public class InactivateManagerController {
                         view.getTextMessage().setForeground(Color.GREEN);
                         view.getinputID().setText("");
                 } else{
-                    
+
                         view.getTextMessage().setText("Invalid ID");
                         view.getTextMessage().setForeground(Color.RED);
 

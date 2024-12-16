@@ -5,6 +5,7 @@
 package projectacme.view;
 
 import javax.swing.JButton;
+import projectacme.controller.SecurityGuardMenuController;
 
 /**
  *
@@ -18,6 +19,7 @@ public class InterfaceSecurityGuardMenu extends javax.swing.JFrame {
         initComponents();
         this.setResizable(false);
         this.setLocationRelativeTo(null);
+        new SecurityGuardMenuController(this);
         
     }
 

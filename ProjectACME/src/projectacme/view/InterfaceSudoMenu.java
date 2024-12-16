@@ -5,6 +5,7 @@
 package projectacme.view;
 
 import javax.swing.JButton;
+import projectacme.controller.SudoMenuController;
 
 /**
  *
@@ -18,6 +19,7 @@ public class InterfaceSudoMenu extends javax.swing.JFrame {
         initComponents();
         this.setResizable(false);
         this.setLocationRelativeTo(null);
+        new SudoMenuController(this);
     }
 
     /**

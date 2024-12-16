@@ -5,6 +5,7 @@
 package projectacme.view;
 
 import javax.swing.JButton;
+import projectacme.controller.OfficerMenuController;
 
 /**
  *
@@ -17,7 +18,7 @@ public class InterfaceOfficerMenu extends javax.swing.JFrame {
         initComponents();
         this.setResizable(false);
         this.setLocationRelativeTo(null);
-
+        new OfficerMenuController(this);
     }
 
     /**
