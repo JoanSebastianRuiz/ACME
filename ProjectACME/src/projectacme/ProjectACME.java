@@ -18,11 +18,7 @@ import projectacme.view.InterfaceSudoMenu;
 public class ProjectACME {
 
 public static void main(String[] args) {
-    InterfaceReportsSecurityGuard SudoMenuView = new InterfaceReportsSecurityGuard();
-        // Crear el controlador que maneja la vista
-        
-        // Mostrar la ventana
-        SudoMenuView.setVisible(true);
+    FileManagement.ReadConnectionDatabaseInformation(); // * Part Of The Final Main Loop
     }
 }
 
