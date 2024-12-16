@@ -98,6 +98,8 @@ public class SecurityGuardMenuController {
          securityGuardMenuView.dispose();
         
     }
+     
+     
 
 
     private void openVehicleView() {
@@ -122,4 +124,5 @@ public class SecurityGuardMenuController {
         reportsView.setVisible(true);
         securityGuardMenuView.dispose(); 
     }
+    
 }
