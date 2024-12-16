@@ -38,8 +38,10 @@ public class InterfaceSudoMenu extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         ButtonActivateManager = new javax.swing.JButton();
         ButtonInactivateManager = new javax.swing.JButton();
-        ButtonAccessDatabase = new javax.swing.JButton();
+        ButtonViewReports = new javax.swing.JButton();
         ButtonCreateManager = new javax.swing.JButton();
+        ButtonDownloadReports = new javax.swing.JButton();
+        ButtonAccessDatabase2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setLocationByPlatform(true);
@@ -141,21 +143,21 @@ public class InterfaceSudoMenu extends javax.swing.JFrame {
             }
         });
 
-        ButtonAccessDatabase.setBackground(new java.awt.Color(240, 242, 235));
-        ButtonAccessDatabase.setFont(new java.awt.Font("Nimbus Sans Narrow", 0, 24)); // NOI18N
-        ButtonAccessDatabase.setIcon(new javax.swing.ImageIcon(getClass().getResource("/projectacme/view/images/icons8-base-de-datos-48.png"))); // NOI18N
-        ButtonAccessDatabase.setText("Access Database");
-        ButtonAccessDatabase.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        ButtonAccessDatabase.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        ButtonAccessDatabase.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        ButtonAccessDatabase.addMouseListener(new java.awt.event.MouseAdapter() {
+        ButtonViewReports.setBackground(new java.awt.Color(240, 242, 235));
+        ButtonViewReports.setFont(new java.awt.Font("Nimbus Sans Narrow", 0, 24)); // NOI18N
+        ButtonViewReports.setIcon(new javax.swing.ImageIcon(getClass().getResource("/projectacme/view/images/icons8-documento-compartido-48.png"))); // NOI18N
+        ButtonViewReports.setText("View Reports");
+        ButtonViewReports.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        ButtonViewReports.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        ButtonViewReports.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        ButtonViewReports.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                ButtonAccessDatabaseMouseClicked(evt);
+                ButtonViewReportsMouseClicked(evt);
             }
         });
-        ButtonAccessDatabase.addActionListener(new java.awt.event.ActionListener() {
+        ButtonViewReports.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ButtonAccessDatabaseActionPerformed(evt);
+                ButtonViewReportsActionPerformed(evt);
             }
         });
 
@@ -177,6 +179,42 @@ public class InterfaceSudoMenu extends javax.swing.JFrame {
             }
         });
 
+        ButtonDownloadReports.setBackground(new java.awt.Color(240, 242, 235));
+        ButtonDownloadReports.setFont(new java.awt.Font("Nimbus Sans Narrow", 0, 24)); // NOI18N
+        ButtonDownloadReports.setIcon(new javax.swing.ImageIcon(getClass().getResource("/projectacme/view/images/icons8-descargar-48.png"))); // NOI18N
+        ButtonDownloadReports.setText("Download Reports");
+        ButtonDownloadReports.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        ButtonDownloadReports.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        ButtonDownloadReports.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        ButtonDownloadReports.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                ButtonDownloadReportsMouseClicked(evt);
+            }
+        });
+        ButtonDownloadReports.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ButtonDownloadReportsActionPerformed(evt);
+            }
+        });
+
+        ButtonAccessDatabase2.setBackground(new java.awt.Color(240, 242, 235));
+        ButtonAccessDatabase2.setFont(new java.awt.Font("Nimbus Sans Narrow", 0, 24)); // NOI18N
+        ButtonAccessDatabase2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/projectacme/view/images/icons8-base-de-datos-48.png"))); // NOI18N
+        ButtonAccessDatabase2.setText("Access Database");
+        ButtonAccessDatabase2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        ButtonAccessDatabase2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        ButtonAccessDatabase2.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        ButtonAccessDatabase2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                ButtonAccessDatabase2MouseClicked(evt);
+            }
+        });
+        ButtonAccessDatabase2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ButtonAccessDatabase2ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -186,44 +224,61 @@ public class InterfaceSudoMenu extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(35, 35, 35)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(ButtonAccessDatabase)
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(ButtonActivateManager)))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(ButtonActivateManager, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(ButtonViewReports, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addGap(58, 58, 58)
-                .addComponent(ButtonInactivateManager)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(ButtonDownloadReports)
+                    .addComponent(ButtonInactivateManager))
                 .addGap(50, 50, 50))
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel1Layout.createSequentialGroup()
                     .addGap(55, 55, 55)
                     .addComponent(ButtonCreateManager, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addContainerGap(561, Short.MAX_VALUE)))
+            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel1Layout.createSequentialGroup()
+                    .addGap(72, 72, 72)
+                    .addComponent(ButtonAccessDatabase2)
+                    .addContainerGap(539, Short.MAX_VALUE)))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(Header, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(36, 36, 36)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(27, 27, 27)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(ButtonActivateManager, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(ButtonInactivateManager, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 45, Short.MAX_VALUE)
-                .addComponent(ButtonAccessDatabase, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(36, 36, 36)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(27, 27, 27)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(ButtonActivateManager, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(ButtonInactivateManager, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 45, Short.MAX_VALUE)
+                        .addComponent(ButtonDownloadReports, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(ButtonViewReports, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                     .addContainerGap(191, Short.MAX_VALUE)
                     .addComponent(ButtonCreateManager, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGap(175, 175, 175)))
+            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                    .addContainerGap(360, Short.MAX_VALUE)
+                    .addComponent(ButtonAccessDatabase2, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap()))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -264,13 +319,13 @@ public class InterfaceSudoMenu extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_ButtonInactivateManagerActionPerformed
 
-    private void ButtonAccessDatabaseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonAccessDatabaseActionPerformed
+    private void ButtonViewReportsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonViewReportsActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_ButtonAccessDatabaseActionPerformed
+    }//GEN-LAST:event_ButtonViewReportsActionPerformed
 
-    private void ButtonAccessDatabaseMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ButtonAccessDatabaseMouseClicked
+    private void ButtonViewReportsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ButtonViewReportsMouseClicked
         // TODO add your handling code here:
-    }//GEN-LAST:event_ButtonAccessDatabaseMouseClicked
+    }//GEN-LAST:event_ButtonViewReportsMouseClicked
 
     private void ButtonActivateManagerMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ButtonActivateManagerMouseClicked
         // TODO add your handling code here:
@@ -287,6 +342,22 @@ public class InterfaceSudoMenu extends javax.swing.JFrame {
     private void ButtonCreateManagerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonCreateManagerActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_ButtonCreateManagerActionPerformed
+
+    private void ButtonDownloadReportsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ButtonDownloadReportsMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ButtonDownloadReportsMouseClicked
+
+    private void ButtonDownloadReportsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonDownloadReportsActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ButtonDownloadReportsActionPerformed
+
+    private void ButtonAccessDatabase2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ButtonAccessDatabase2MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ButtonAccessDatabase2MouseClicked
+
+    private void ButtonAccessDatabase2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonAccessDatabase2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ButtonAccessDatabase2ActionPerformed
     
     public JButton getButtonCreateManager(){
         return ButtonCreateManager;
@@ -302,8 +373,17 @@ public class InterfaceSudoMenu extends javax.swing.JFrame {
     
     
     public JButton getButtonAccessDatabase(){
-        return ButtonAccessDatabase;
+        return ButtonAccessDatabase2;
     }
+    
+    public JButton getButtonViewReports(){
+        return ButtonViewReports;
+    }
+    
+    public JButton getButtonDownloadReports(){
+        return ButtonDownloadReports;
+    }
+
     
     
     public static void main(String args[]) {
@@ -339,10 +419,12 @@ public class InterfaceSudoMenu extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton ButtonAccessDatabase;
+    private javax.swing.JButton ButtonAccessDatabase2;
     private javax.swing.JButton ButtonActivateManager;
     private javax.swing.JButton ButtonCreateManager;
+    private javax.swing.JButton ButtonDownloadReports;
     private javax.swing.JButton ButtonInactivateManager;
+    private javax.swing.JButton ButtonViewReports;
     private javax.swing.JPanel Header;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;

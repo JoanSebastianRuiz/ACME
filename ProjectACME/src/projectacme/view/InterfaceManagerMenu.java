@@ -38,7 +38,9 @@ public class InterfaceManagerMenu extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         ButtonRegisterReport = new javax.swing.JButton();
         ButtonActivate = new javax.swing.JButton();
-        ButtonInactive = new javax.swing.JButton();
+        ButtonViewReports = new javax.swing.JButton();
+        ButtonDownloadReports = new javax.swing.JButton();
+        ButtonInactive2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setLocationByPlatform(true);
@@ -144,7 +146,7 @@ public class InterfaceManagerMenu extends javax.swing.JFrame {
         HeaderLayout.setHorizontalGroup(
             HeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, HeaderLayout.createSequentialGroup()
-                .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, 299, Short.MAX_VALUE)
+                .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGap(95, 95, 95)
                 .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(51, 51, 51)
@@ -195,21 +197,57 @@ public class InterfaceManagerMenu extends javax.swing.JFrame {
             }
         });
 
-        ButtonInactive.setBackground(new java.awt.Color(240, 242, 235));
-        ButtonInactive.setFont(new java.awt.Font("Nimbus Sans Narrow", 0, 24)); // NOI18N
-        ButtonInactive.setIcon(new javax.swing.ImageIcon(getClass().getResource("/projectacme/view/images/icons8-alternar-apagado-48.png"))); // NOI18N
-        ButtonInactive.setText("Inactivate Guard");
-        ButtonInactive.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        ButtonInactive.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        ButtonInactive.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        ButtonInactive.addMouseListener(new java.awt.event.MouseAdapter() {
+        ButtonViewReports.setBackground(new java.awt.Color(240, 242, 235));
+        ButtonViewReports.setFont(new java.awt.Font("Nimbus Sans Narrow", 0, 24)); // NOI18N
+        ButtonViewReports.setIcon(new javax.swing.ImageIcon(getClass().getResource("/projectacme/view/images/icons8-documento-compartido-48.png"))); // NOI18N
+        ButtonViewReports.setText("ViewReports");
+        ButtonViewReports.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        ButtonViewReports.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        ButtonViewReports.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        ButtonViewReports.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                ButtonInactiveMouseClicked(evt);
+                ButtonViewReportsMouseClicked(evt);
             }
         });
-        ButtonInactive.addActionListener(new java.awt.event.ActionListener() {
+        ButtonViewReports.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ButtonInactiveActionPerformed(evt);
+                ButtonViewReportsActionPerformed(evt);
+            }
+        });
+
+        ButtonDownloadReports.setBackground(new java.awt.Color(240, 242, 235));
+        ButtonDownloadReports.setFont(new java.awt.Font("Nimbus Sans Narrow", 0, 24)); // NOI18N
+        ButtonDownloadReports.setIcon(new javax.swing.ImageIcon(getClass().getResource("/projectacme/view/images/icons8-descargar-48.png"))); // NOI18N
+        ButtonDownloadReports.setText("Download Reports");
+        ButtonDownloadReports.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        ButtonDownloadReports.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        ButtonDownloadReports.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        ButtonDownloadReports.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                ButtonDownloadReportsMouseClicked(evt);
+            }
+        });
+        ButtonDownloadReports.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ButtonDownloadReportsActionPerformed(evt);
+            }
+        });
+
+        ButtonInactive2.setBackground(new java.awt.Color(240, 242, 235));
+        ButtonInactive2.setFont(new java.awt.Font("Nimbus Sans Narrow", 0, 24)); // NOI18N
+        ButtonInactive2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/projectacme/view/images/icons8-alternar-apagado-48.png"))); // NOI18N
+        ButtonInactive2.setText("Inactivate Guard");
+        ButtonInactive2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        ButtonInactive2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        ButtonInactive2.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        ButtonInactive2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                ButtonInactive2MouseClicked(evt);
+            }
+        });
+        ButtonInactive2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ButtonInactive2ActionPerformed(evt);
             }
         });
 
@@ -219,43 +257,62 @@ public class InterfaceManagerMenu extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(Header, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(35, 35, 35)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(ButtonCreateOfficer, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(ButtonActivate, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(ButtonCreateGuard, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(ButtonInactive, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(56, 56, 56)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(35, 35, 35)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(ButtonCreateOfficer)
+                            .addComponent(ButtonActivate, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(40, 40, 40)))
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(ButtonReports, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(ButtonRegisterReport, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(64, 64, 64))
+                    .addComponent(ButtonCreateGuard, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ButtonInactive2, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(30, 30, 30)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(ButtonReports, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ButtonViewReports, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(ButtonRegisterReport, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ButtonDownloadReports, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                .addContainerGap(57, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(Header, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(29, 29, 29)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(29, 29, 29)
-                        .addComponent(ButtonCreateOfficer, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(ButtonReports, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(ButtonCreateGuard, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 50, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(ButtonRegisterReport, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(ButtonInactive, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(ButtonActivate, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(17, 17, 17))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(ButtonCreateOfficer, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 79, Short.MAX_VALUE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                .addComponent(ButtonCreateGuard, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(ButtonActivate, javax.swing.GroupLayout.DEFAULT_SIZE, 117, Short.MAX_VALUE)
+                            .addComponent(ButtonInactive2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(34, 34, 34))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(ButtonReports, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(ButtonRegisterReport, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(73, 73, 73)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(ButtonViewReports, javax.swing.GroupLayout.DEFAULT_SIZE, 117, Short.MAX_VALUE)
+                            .addComponent(ButtonDownloadReports, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -308,9 +365,9 @@ public class InterfaceManagerMenu extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_ButtonActivateActionPerformed
 
-    private void ButtonInactiveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonInactiveActionPerformed
+    private void ButtonViewReportsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonViewReportsActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_ButtonInactiveActionPerformed
+    }//GEN-LAST:event_ButtonViewReportsActionPerformed
 
     private void ButtonCreateOfficerMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ButtonCreateOfficerMouseClicked
         // TODO add your handling code here:
@@ -328,13 +385,29 @@ public class InterfaceManagerMenu extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_ButtonActivateMouseClicked
 
-    private void ButtonInactiveMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ButtonInactiveMouseClicked
+    private void ButtonViewReportsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ButtonViewReportsMouseClicked
         // TODO add your handling code here:
-    }//GEN-LAST:event_ButtonInactiveMouseClicked
+    }//GEN-LAST:event_ButtonViewReportsMouseClicked
 
     private void ButtonRegisterReportMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ButtonRegisterReportMouseClicked
         // TODO add your handling code here:
     }//GEN-LAST:event_ButtonRegisterReportMouseClicked
+
+    private void ButtonDownloadReportsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ButtonDownloadReportsMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ButtonDownloadReportsMouseClicked
+
+    private void ButtonDownloadReportsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonDownloadReportsActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ButtonDownloadReportsActionPerformed
+
+    private void ButtonInactive2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ButtonInactive2MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ButtonInactive2MouseClicked
+
+    private void ButtonInactive2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonInactive2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ButtonInactive2ActionPerformed
 
     public JButton getButtonCreateGuard(){
         return ButtonCreateGuard;
@@ -353,11 +426,19 @@ public class InterfaceManagerMenu extends javax.swing.JFrame {
     }
     
     public JButton getButtonInactive(){
-        return ButtonInactive;
+        return ButtonInactive2;
     }
     
     public JButton ButtonRegisterReport(){
         return ButtonRegisterReport;
+    }
+    
+    public JButton getButtonViewReports(){
+        return ButtonViewReports;
+    }
+    
+    public JButton getButtonDownloadReports(){
+        return ButtonDownloadReports;
     }
     
     public static void main(String args[]) {
@@ -397,9 +478,11 @@ public class InterfaceManagerMenu extends javax.swing.JFrame {
     private javax.swing.JButton ButtonActivate;
     private javax.swing.JButton ButtonCreateGuard;
     private javax.swing.JButton ButtonCreateOfficer;
-    private javax.swing.JButton ButtonInactive;
+    private javax.swing.JButton ButtonDownloadReports;
+    private javax.swing.JButton ButtonInactive2;
     private javax.swing.JButton ButtonRegisterReport;
     private javax.swing.JButton ButtonReports;
+    private javax.swing.JButton ButtonViewReports;
     private javax.swing.JPanel Header;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;

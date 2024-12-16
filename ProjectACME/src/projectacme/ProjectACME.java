@@ -8,6 +8,7 @@ import projectacme.repository.implementation.AnnotationImpl;
 import projectacme.util.FileManagement;
 import projectacme.view.InterfaceAccessDataBase;
 import projectacme.view.InterfaceManagerMenu;
+import projectacme.view.InterfaceOfficerMenu;
 import projectacme.view.InterfaceReportsSecurityGuard;
 import projectacme.view.InterfaceSecurityGuardMenu;
 import projectacme.view.InterfaceSudoMenu;

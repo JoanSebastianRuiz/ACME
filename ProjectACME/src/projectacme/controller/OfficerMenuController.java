@@ -45,6 +45,20 @@ public class OfficerMenuController {
                 openRegisterExit();
             }
         });
+        
+        officerMenuView.getButtonViewReports().addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                openViewReports();
+            }
+        });
+        
+        officerMenuView.getButtonDownloadReports().addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                openDownloadReport();
+            }
+        });
     }
 
     private void openActivateIndividual() {
@@ -83,4 +97,18 @@ public class OfficerMenuController {
         registerExit.setVisible(true);
         officerMenuView.dispose();
     }
+    
+    private void openViewReports() {
+        InterfaceReportsSecurityGuard reportsView = new InterfaceReportsSecurityGuard();
+        reportsView.setVisible(true);
+        officerMenuView.dispose(); 
+    }
+    
+    private void openDownloadReport() {
+        // Crear la interfaz para Ver Reportes
+        InterfaceDownloadReportsSecurityGuard reportsView = new InterfaceDownloadReportsSecurityGuard();
+        reportsView.setVisible(true);
+        officerMenuView.dispose(); // Cierra la ventana actual
+    }
+    
 }
