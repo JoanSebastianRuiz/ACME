@@ -3,22 +3,12 @@ package projectacme.controller;
 import projectacme.UserActual;
 import projectacme.service.SecurityGuard;
 import projectacme.util.Report;
-import projectacme.view.InterfaceCreateSecurityGuard;
-import projectacme.view.InterfaceCreateOfficer;
-import projectacme.view.InterfaceViewReports;
+import projectacme.view.*;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import projectacme.view.InterfaceAccssesUsers;
-import projectacme.view.InterfaceCreateVehicle;
-import projectacme.view.InterfaceActivateGuard;
-import projectacme.view.InterfaceDownloadReportsManager;
-import projectacme.view.InterfaceDownloadReportsSecurityGuard;
-import projectacme.view.InterfaceInactivateGuard;
-import projectacme.view.InterfaceReportsManager;
-import projectacme.view.InterfaceReportsSecurityGuard;
-import projectacme.view.InterfaceSecurityGuardMenu;
 
 public class SecurityGuardMenuController {
 
@@ -66,8 +56,38 @@ public class SecurityGuardMenuController {
                 openDownloadReport();
             }
         });
+        
+        securityGuardMenuView.getButtonRegisterEntrty().addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                openRegisterEntry();
+            }
+        });
+        securityGuardMenuView.getButtonRegisterExit().addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                openRegisterExit();
+            }
+        });
     }
 
+    private void openRegisterEntry() {
+        System.out.println("A");
+        InterfaceRegisterEntry interfaceRegisterEntry = new InterfaceRegisterEntry();
+        RegisterEntryController registerExitController = new RegisterEntryController(interfaceRegisterEntry);
+        interfaceRegisterEntry.setVisible(true);
+        securityGuardMenuView.dispose();
+        
+    }
+    
+     private void openRegisterExit() {
+                 System.out.println("B");
+         InterfaceRegisterExit interfaceRegisterExit = new InterfaceRegisterExit();
+         RegisterExitController registerExitController = new RegisterExitController(interfaceRegisterExit);
+         interfaceRegisterExit.setVisible(true);
+         securityGuardMenuView.dispose();
+        
+    }
 
 
     private void openVehicleView() {
