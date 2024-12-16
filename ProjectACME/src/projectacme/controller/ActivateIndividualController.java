@@ -1,5 +1,6 @@
 package projectacme.controller;
 
+import projectacme.UserActual;
 import projectacme.model.AccessSubject;
 import projectacme.repository.implementation.AccessSubjectImpl;
 import projectacme.service.Individual;
@@ -17,9 +18,9 @@ public class ActivateIndividualController {
     private Officer officer;
     private final AccessSubjectImpl accessSubjectImpl = new AccessSubjectImpl();
 
-    public ActivateIndividualController(InterfaceActivateIndividual view, Officer officer) {
+    public ActivateIndividualController(InterfaceActivateIndividual view) {
         this.view = view;
-        this.officer = officer;
+        this.officer = UserActual.getAccessSubjectOfficer();
 
         view.getTextMessage().setForeground(Color.white);
 

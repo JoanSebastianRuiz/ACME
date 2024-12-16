@@ -53,7 +53,7 @@ public class SecurityGuardMenuController {
                 InterfaceViewReports viewReports = new InterfaceViewReports();
                 viewReports.getTextTitle().setText("Live Access Log");
                 viewReports.getTextTitleReport().setForeground(Color.white);
-                ViewReportsController viewReportsController = new ViewReportsController(viewReports, report);
+                ViewReportsController viewReportsController = new ViewReportsController(viewReports, report, securityGuard.getRole().toString());
                 viewReports.setVisible(true);
                 securityGuardMenuView.setVisible(false);
             }

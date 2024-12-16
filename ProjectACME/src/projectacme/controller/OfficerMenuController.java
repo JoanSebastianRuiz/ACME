@@ -2,6 +2,7 @@ package projectacme.controller;
 
 import projectacme.UserActual;
 import projectacme.service.Officer;
+import projectacme.service.SecurityGuard;
 import projectacme.util.Report;
 import projectacme.view.InterfaceOfficerMenu;
 import projectacme.view.*;
@@ -14,7 +15,7 @@ import java.awt.event.ActionListener;
 public class OfficerMenuController {
 
     private InterfaceOfficerMenu officerMenuView;
-    private Officer officer;
+    private Officer officer = UserActual.getAccessSubjectOfficer();
 
     public OfficerMenuController(InterfaceOfficerMenu officerMenuView) {
         this.officerMenuView = officerMenuView;
@@ -73,7 +74,7 @@ public class OfficerMenuController {
                 InterfaceViewReports viewReports = new InterfaceViewReports();
                 viewReports.getTextTitle().setText("Live Access Log");
                 viewReports.getTextTitleReport().setForeground(Color.white);
-                ViewReportsController viewReportsController = new ViewReportsController(viewReports, report);
+                ViewReportsController viewReportsController = new ViewReportsController(viewReports, report, officer.getRole().toString());
                 viewReports.setVisible(true);
                 officerMenuView.setVisible(false);
             }

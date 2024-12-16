@@ -1,5 +1,6 @@
 package projectacme.controller;
 
+import projectacme.UserActual;
 import projectacme.model.AccessSubject;
 import projectacme.repository.implementation.AccessSubjectImpl;
 import projectacme.service.Manager;
@@ -17,9 +18,9 @@ public class ActivateManagerController {
     private Sudo sudo;
     private final AccessSubjectImpl accessSubjectImpl = new AccessSubjectImpl();
 
-    public ActivateManagerController(InterfaceActivateManager view, Sudo sudo) {
+    public ActivateManagerController(InterfaceActivateManager view) {
         this.view = view;
-        this.sudo = sudo;
+        this.sudo = UserActual.getAccessSubjectSudo();
         view.getTextMessage().setForeground(Color.white);
 
         view.getTextActivate().addMouseListener(new MouseAdapter() {

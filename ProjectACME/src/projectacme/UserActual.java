@@ -24,6 +24,10 @@ public class UserActual {
     public static SecurityGuard getAccessSubjectSecurityGuard() {
         return (SecurityGuard) accessSubject;
     }
+    
+    public static AccessSubject getAccessSubject() {
+        return accessSubject;
+    }
 
     public static void setAccessSubject(AccessSubject accessSubject) {
         UserActual.accessSubject = accessSubject;
