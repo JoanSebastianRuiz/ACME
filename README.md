@@ -70,8 +70,8 @@ git clone https://github.com/JoanSebastianRuiz/ACME.git
 **Using Apache NetBeans:**
 
 4. Open the **ProjectACME** folder.  
-5. Install the libraries from the **lib** package.  
-6. Run the `main` file.  
+5. Install the libraries from the **Dependencies** folder.  
+6. Run the `main` file. 
 
 **Credentials To Test**¨
 
