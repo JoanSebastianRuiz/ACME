@@ -40,8 +40,10 @@ public class InterfaceSecurityGuardMenu extends javax.swing.JFrame {
         ButtonVehicle = new javax.swing.JButton();
         ButtonIndividual = new javax.swing.JButton();
         ButtonLiveAccessLog = new javax.swing.JButton();
-        ButtonViewReports = new javax.swing.JButton();
+        ButtonRegisterExit = new javax.swing.JButton();
         ButtonDownloadReports = new javax.swing.JButton();
+        ButtonViewReports1 = new javax.swing.JButton();
+        ButtonRegisterEntrty = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setLocationByPlatform(true);
@@ -156,21 +158,21 @@ public class InterfaceSecurityGuardMenu extends javax.swing.JFrame {
             }
         });
 
-        ButtonViewReports.setBackground(new java.awt.Color(240, 242, 235));
-        ButtonViewReports.setFont(new java.awt.Font("Nimbus Sans Narrow", 0, 18)); // NOI18N
-        ButtonViewReports.setIcon(new javax.swing.ImageIcon(getClass().getResource("/projectacme/view/images/icons8-documento-compartido-48.png"))); // NOI18N
-        ButtonViewReports.setText("View Reports");
-        ButtonViewReports.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        ButtonViewReports.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        ButtonViewReports.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        ButtonViewReports.addMouseListener(new java.awt.event.MouseAdapter() {
+        ButtonRegisterExit.setBackground(new java.awt.Color(240, 242, 235));
+        ButtonRegisterExit.setFont(new java.awt.Font("Nimbus Sans Narrow", 0, 18)); // NOI18N
+        ButtonRegisterExit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/projectacme/view/images/exit.-con.png"))); // NOI18N
+        ButtonRegisterExit.setText("Register Exit");
+        ButtonRegisterExit.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        ButtonRegisterExit.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        ButtonRegisterExit.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        ButtonRegisterExit.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                ButtonViewReportsMouseClicked(evt);
+                ButtonRegisterExitMouseClicked(evt);
             }
         });
-        ButtonViewReports.addActionListener(new java.awt.event.ActionListener() {
+        ButtonRegisterExit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ButtonViewReportsActionPerformed(evt);
+                ButtonRegisterExitActionPerformed(evt);
             }
         });
 
@@ -192,23 +194,66 @@ public class InterfaceSecurityGuardMenu extends javax.swing.JFrame {
             }
         });
 
+        ButtonViewReports1.setBackground(new java.awt.Color(240, 242, 235));
+        ButtonViewReports1.setFont(new java.awt.Font("Nimbus Sans Narrow", 0, 18)); // NOI18N
+        ButtonViewReports1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/projectacme/view/images/icons8-documento-compartido-48.png"))); // NOI18N
+        ButtonViewReports1.setText("View Reports");
+        ButtonViewReports1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        ButtonViewReports1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        ButtonViewReports1.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        ButtonViewReports1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                ButtonViewReports1MouseClicked(evt);
+            }
+        });
+        ButtonViewReports1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ButtonViewReports1ActionPerformed(evt);
+            }
+        });
+
+        ButtonRegisterEntrty.setBackground(new java.awt.Color(240, 242, 235));
+        ButtonRegisterEntrty.setFont(new java.awt.Font("Nimbus Sans Narrow", 0, 18)); // NOI18N
+        ButtonRegisterEntrty.setIcon(new javax.swing.ImageIcon(getClass().getResource("/projectacme/view/images/icons8-documento-compartido-48.png"))); // NOI18N
+        ButtonRegisterEntrty.setText("Register Entrty");
+        ButtonRegisterEntrty.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        ButtonRegisterEntrty.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        ButtonRegisterEntrty.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        ButtonRegisterEntrty.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                ButtonRegisterEntrtyMouseClicked(evt);
+            }
+        });
+        ButtonRegisterEntrty.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ButtonRegisterEntrtyActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout BackgroundLayout = new javax.swing.GroupLayout(Background);
         Background.setLayout(BackgroundLayout);
         BackgroundLayout.setHorizontalGroup(
             BackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(Header, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(BackgroundLayout.createSequentialGroup()
-                .addGap(57, 57, 57)
                 .addGroup(BackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(ButtonIndividual, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(ButtonLiveAccessLog, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(BackgroundLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(ButtonRegisterExit, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, BackgroundLayout.createSequentialGroup()
+                        .addGap(57, 57, 57)
+                        .addGroup(BackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(ButtonIndividual, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(ButtonLiveAccessLog, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(52, 52, 52)
                 .addGroup(BackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(ButtonVehicle, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(ButtonViewReports, javax.swing.GroupLayout.DEFAULT_SIZE, 205, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(ButtonDownloadReports, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(60, 60, 60))
+                    .addComponent(ButtonVehicle, javax.swing.GroupLayout.DEFAULT_SIZE, 205, Short.MAX_VALUE)
+                    .addComponent(ButtonViewReports1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 58, Short.MAX_VALUE)
+                .addGroup(BackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(ButtonDownloadReports, javax.swing.GroupLayout.DEFAULT_SIZE, 205, Short.MAX_VALUE)
+                    .addComponent(ButtonRegisterEntrty, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(39, 39, 39))
         );
         BackgroundLayout.setVerticalGroup(
             BackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -219,14 +264,19 @@ public class InterfaceSecurityGuardMenu extends javax.swing.JFrame {
                     .addComponent(ButtonDownloadReports, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(ButtonVehicle, javax.swing.GroupLayout.DEFAULT_SIZE, 134, Short.MAX_VALUE)
                     .addComponent(ButtonIndividual, javax.swing.GroupLayout.DEFAULT_SIZE, 134, Short.MAX_VALUE))
-                .addGap(0, 36, Short.MAX_VALUE)
-                .addGroup(BackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(ButtonLiveAccessLog, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(ButtonViewReports, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(33, 33, 33))
+                .addGap(45, 45, 45)
+                .addGroup(BackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(BackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(ButtonViewReports1, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(ButtonLiveAccessLog, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(BackgroundLayout.createSequentialGroup()
+                        .addComponent(ButtonRegisterEntrty, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(9, 9, 9)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 21, Short.MAX_VALUE)
+                .addComponent(ButtonRegisterExit, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
-        getContentPane().add(Background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, 500));
+        getContentPane().add(Background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, 640));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -279,13 +329,29 @@ public class InterfaceSecurityGuardMenu extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_ButtonDownloadReportsActionPerformed
 
-    private void ButtonViewReportsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ButtonViewReportsMouseClicked
+    private void ButtonRegisterExitMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ButtonRegisterExitMouseClicked
         // TODO add your handling code here:
-    }//GEN-LAST:event_ButtonViewReportsMouseClicked
+    }//GEN-LAST:event_ButtonRegisterExitMouseClicked
 
-    private void ButtonViewReportsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonViewReportsActionPerformed
+    private void ButtonRegisterExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonRegisterExitActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_ButtonViewReportsActionPerformed
+    }//GEN-LAST:event_ButtonRegisterExitActionPerformed
+
+    private void ButtonViewReports1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ButtonViewReports1MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ButtonViewReports1MouseClicked
+
+    private void ButtonViewReports1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonViewReports1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ButtonViewReports1ActionPerformed
+
+    private void ButtonRegisterEntrtyMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ButtonRegisterEntrtyMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ButtonRegisterEntrtyMouseClicked
+
+    private void ButtonRegisterEntrtyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonRegisterEntrtyActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ButtonRegisterEntrtyActionPerformed
 
     public JButton getButtonIndividual(){
         return ButtonIndividual;
@@ -301,12 +367,22 @@ public class InterfaceSecurityGuardMenu extends javax.swing.JFrame {
     
     
     public JButton getButtonViewReports(){
-        return ButtonViewReports;
+        return ButtonRegisterExit;
     }
     
     public JButton getButtonDownloadReports(){
         return ButtonDownloadReports;
     }
+
+    public JButton getButtonRegisterEntrty() {
+        return ButtonRegisterEntrty;
+    }
+
+    public JButton getButtonRegisterExit() {
+        return ButtonRegisterExit;
+    }
+    
+    
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -345,8 +421,10 @@ public class InterfaceSecurityGuardMenu extends javax.swing.JFrame {
     private javax.swing.JButton ButtonDownloadReports;
     private javax.swing.JButton ButtonIndividual;
     private javax.swing.JButton ButtonLiveAccessLog;
+    private javax.swing.JButton ButtonRegisterEntrty;
+    private javax.swing.JButton ButtonRegisterExit;
     private javax.swing.JButton ButtonVehicle;
-    private javax.swing.JButton ButtonViewReports;
+    private javax.swing.JButton ButtonViewReports1;
     private javax.swing.JPanel Header;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel6;
