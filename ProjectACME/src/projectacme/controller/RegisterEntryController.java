@@ -1,6 +1,7 @@
 package projectacme.controller;
 
 import projectacme.UserActual;
+import projectacme.util.Enum.AccessSubjectRoleEnum;
 import projectacme.util.Enum.ScannerType;
 import projectacme.view.InterfaceRegisterEntry;
 import projectacme.view.InterfaceRegisterExit;
@@ -31,23 +32,29 @@ public class RegisterEntryController {
     }
 
     public void registerExit(){
-        try {
-            if(UserActual.getAccessSubjectOfficer().registerAccess(ScannerType.entry, registerExitView.getinputID().getText())){
+        if(UserActual.getAccessSubject().getRole()== AccessSubjectRoleEnum.officer) {
+            boolean result = UserActual.getAccessSubjectOfficer().registerAccess(ScannerType.entry, registerExitView.getinputID().getText());
+            if (result) {
                 registerExitView.getTextMessage().setText("Successful entry recorded");
                 registerExitView.getTextMessage().setForeground(Color.GREEN);
-            } else{
+                registerExitView.getinputID().setText("");
+            } else {
                 registerExitView.getinputID().setForeground(Color.RED);
+
+            }
+        } else if (UserActual.getAccessSubject().getRole()== AccessSubjectRoleEnum.securityGuard) {
+            boolean result = UserActual.getAccessSubjectSecurityGuard().registerAccess(ScannerType.entry, registerExitView.getinputID().getText());
+            if (result) {
+                registerExitView.getTextMessage().setText("Successful entry recorded");
+                registerExitView.getTextMessage().setForeground(Color.GREEN);
+                registerExitView.getinputID().setText("");
+                System.out.println("True security guard");
+            } else {
                 registerExitView.getTextMessage().setText("Invalid data");
                 registerExitView.getTextMessage().setForeground(Color.RED);
-            }
-        } catch(Exception e) {
-            System.out.println(e.getMessage());
-            if (UserActual.getAccessSubjectSecurityGuard().registerAccess(ScannerType.entry, registerExitView.getinputID().getText())) {
-                registerExitView.getTextMessage().setText("Successful entry recorded");
-                registerExitView.getTextMessage().setForeground(Color.GREEN);
-            } else{
-                registerExitView.getinputID().setForeground(Color.RED);
+                System.out.println("False security guard");
             }
         }
+
     }
 }

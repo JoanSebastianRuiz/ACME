@@ -1,6 +1,7 @@
 package projectacme.controller;
 
 import projectacme.UserActual;
+import projectacme.util.Enum.AccessSubjectRoleEnum;
 import projectacme.util.Enum.ScannerType;
 import projectacme.view.InterfaceRegisterExit;
 
@@ -30,22 +31,25 @@ public class RegisterExitController {
     }
 
     public void registerExit() {
-        try {
-            if (UserActual.getAccessSubjectOfficer().registerAccess(ScannerType.exit, registerExitView.getinputID().getText())) {
+        if(UserActual.getAccessSubject().getRole()== AccessSubjectRoleEnum.officer) {
+            boolean result = UserActual.getAccessSubjectOfficer().registerAccess(ScannerType.exit, registerExitView.getinputID().getText());
+            System.out.println("");
+            System.out.println(result);
+            if (result) {
                 registerExitView.getTextMessage().setText("Successful exit recorded");
                 registerExitView.getTextMessage().setForeground(Color.GREEN);
-            } else{
-                registerExitView.getinputID().setForeground(Color.RED);
+                registerExitView.getinputID().setText("");
+            } else {
                 registerExitView.getTextMessage().setText("Invalid data");
                 registerExitView.getTextMessage().setForeground(Color.RED);
             }
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
-            if (UserActual.getAccessSubjectSecurityGuard().registerAccess(ScannerType.exit, registerExitView.getinputID().getText())) {
+        } else if (UserActual.getAccessSubject().getRole()== AccessSubjectRoleEnum.securityGuard) {
+            boolean result = UserActual.getAccessSubjectSecurityGuard().registerAccess(ScannerType.exit, registerExitView.getinputID().getText());
+            if (result) {
                 registerExitView.getTextMessage().setText("Successful exit recorded");
                 registerExitView.getTextMessage().setForeground(Color.GREEN);
+                registerExitView.getinputID().setText("");
             } else {
-                registerExitView.getinputID().setForeground(Color.RED);
                 registerExitView.getTextMessage().setText("Invalid data");
                 registerExitView.getTextMessage().setForeground(Color.RED);
             }

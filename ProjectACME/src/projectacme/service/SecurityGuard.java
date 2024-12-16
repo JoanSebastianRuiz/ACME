@@ -39,7 +39,7 @@ public class SecurityGuard extends User implements RegisterAccessService, Observ
                 .filter(accessLog -> accessLog.getIdAccessSubject().equals(id)).max(Comparator.comparing(AccessLog::getDatetime))
                 .orElse(null);
         if(type==ScannerType.exit){
-            if (lastAccessLog == null || !lastAccessLog.getType().toString().equals(ScannerType.exit.toString())){
+            if (lastAccessLog != null && !lastAccessLog.getType().toString().equals(ScannerType.exit.toString())){
            accessLogImpl.addAccessLog(new AccessLog.Builder(AccessType.exit,Timestamp.from(Instant.now()),id).setIdAccessSubjectLogger(this.getId()).build());
            return true;
             } else {
