@@ -8,6 +8,7 @@ import projectacme.repository.implementation.AnnotationImpl;
 import projectacme.util.FileManagement;
 import projectacme.view.InterfaceAccessDataBase;
 import projectacme.view.InterfaceManagerMenu;
+import projectacme.view.InterfaceOfficerMenu;
 import projectacme.view.InterfaceReportsSecurityGuard;
 import projectacme.view.InterfaceSecurityGuardMenu;
 import projectacme.view.InterfaceSudoMenu;
@@ -18,11 +19,7 @@ import projectacme.view.InterfaceSudoMenu;
 public class ProjectACME {
 
 public static void main(String[] args) {
-    InterfaceReportsSecurityGuard SudoMenuView = new InterfaceReportsSecurityGuard();
-        // Crear el controlador que maneja la vista
-        
-        // Mostrar la ventana
-        SudoMenuView.setVisible(true);
+    FileManagement.ReadConnectionDatabaseInformation(); // * Part Of The Final Main Loop
     }
 }
 

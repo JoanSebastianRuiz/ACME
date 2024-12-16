@@ -16,9 +16,11 @@ import projectacme.view.InterfaceCreateManager;
 import projectacme.view.InterfaceCreateOfficer;
 import projectacme.view.InterfaceCreateReport;
 import projectacme.view.InterfaceCreateSecurityGuard;
+import projectacme.view.InterfaceDownloadReportsSudo;
 import projectacme.view.InterfaceInactivateGuard;
 import projectacme.view.InterfaceInactivateManager;
 import projectacme.view.InterfaceManagerMenu;
+import projectacme.view.InterfaceReportsSudo;
 import projectacme.view.InterfaceSudoMenu;
 import projectacme.view.InterfaceViewReports;
 
@@ -67,6 +69,19 @@ public class SudoMenuController {
                 openAccessDatabase();
             }
         });
+        sudoMenuView.getButtonViewReports().addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                openViewReports();
+            }
+        });
+        
+        sudoMenuView.getButtonDownloadReports().addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                openDownloadReports();
+            }
+        });
 
 
     }
@@ -98,5 +113,16 @@ public class SudoMenuController {
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }
+    }
+    private void openViewReports() {
+        InterfaceReportsSudo InterfaceReportsSudoView = new InterfaceReportsSudo();
+        InterfaceReportsSudoView.setVisible(true);
+        sudoMenuView.dispose();
+    }
+    
+    private void openDownloadReports() {
+        InterfaceDownloadReportsSudo InterfaceDownloadReportsSudoView = new InterfaceDownloadReportsSudo();
+        InterfaceDownloadReportsSudoView.setVisible(true);
+        sudoMenuView.dispose();
     }
 }

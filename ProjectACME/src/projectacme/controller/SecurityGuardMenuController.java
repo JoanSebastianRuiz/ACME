@@ -14,7 +14,11 @@ import projectacme.view.InterfaceAccssesUsers;
 import projectacme.view.InterfaceCreateVehicle;
 import projectacme.view.InterfaceActivateGuard;
 import projectacme.view.InterfaceCreateReport;
+import projectacme.view.InterfaceDownloadReportsManager;
+import projectacme.view.InterfaceDownloadReportsSecurityGuard;
 import projectacme.view.InterfaceInactivateGuard;
+import projectacme.view.InterfaceReportsManager;
+import projectacme.view.InterfaceReportsSecurityGuard;
 import projectacme.view.InterfaceSecurityGuardMenu;
 
 public class SecurityGuardMenuController {
@@ -69,6 +73,20 @@ public class SecurityGuardMenuController {
                 securityGuardMenuView.setVisible(false);
             }
         });
+        
+        securityGuardMenuView.getButtonViewReports().addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                openViewReports();
+            }
+        });
+        
+        securityGuardMenuView.getButtonDownloadReports().addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                openDownloadReport();
+            }
+        });
     }
 
     private void openIndividualView() {
@@ -93,5 +111,19 @@ public class SecurityGuardMenuController {
         InterfaceCreateReport createReportView = new InterfaceCreateReport();
         createReportView.setVisible(true);
         securityGuardMenuView.dispose(); 
+    }
+    
+    private void openViewReports() {
+        // Crear la interfaz para Ver Reportes
+        InterfaceReportsSecurityGuard reportsView = new InterfaceReportsSecurityGuard();
+        reportsView.setVisible(true);
+        securityGuardMenuView.dispose(); // Cierra la ventana actual
+    }
+    
+    private void openDownloadReport() {
+        // Crear la interfaz para Ver Reportes
+        InterfaceDownloadReportsSecurityGuard reportsView = new InterfaceDownloadReportsSecurityGuard();
+        reportsView.setVisible(true);
+        securityGuardMenuView.dispose(); // Cierra la ventana actual
     }
 }

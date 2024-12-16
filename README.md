@@ -277,6 +277,9 @@ Provides explanations for annotations or access-related issues.
 ## Factory
 <img src="readmeFiles/AcmeClassDiagram7.png">
 
+## Config
+<img src="readmeFiles/AcmeClassDiagram8.png">
+
 ## Authors 🪶
 
 ### Juan José Torres Becerra
