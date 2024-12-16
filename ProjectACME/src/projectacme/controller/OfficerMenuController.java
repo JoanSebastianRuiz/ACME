@@ -84,19 +84,19 @@ public class OfficerMenuController {
     private void openActivateIndividual() {
         // Crear la interfaz para Activar Individuo
         InterfaceActivateIndividual activateView = new InterfaceActivateIndividual();
+        ActivateIndividualController activateIndividualController = new ActivateIndividualController(activateView);
         activateView.setVisible(true);
         officerMenuView.dispose(); // Cierra la ventana actual
     }
 
     private void openInactivateIndividual() {
-        // Crear la interfaz para Inactivar Individuo
         InterfaceInactivateIndividual inactivateView = new InterfaceInactivateIndividual();
+        InactivateIndividualController inactivateIndividualController = new InactivateIndividualController(inactivateView);
         inactivateView.setVisible(true);
         officerMenuView.dispose(); // Cierra la ventana actual
     }
 
     private void openRegisterGuest() {
-        // Crear la interfaz para Registrar Invitado
         InterfaceCreateGuest registerGuestView = new InterfaceCreateGuest();
         CreateGuestController createGuestController = new CreateGuestController(registerGuestView);
         registerGuestView.setVisible(true);
@@ -104,7 +104,6 @@ public class OfficerMenuController {
     }
 
     private void openRegisterWorker() {
-        // Crear la interfaz para Registrar Trabajador
         InterfaceCreateWorker registerWorkerView = new InterfaceCreateWorker();
         CreateWorkerController createWorkerController = new CreateWorkerController(registerWorkerView);
         registerWorkerView.setVisible(true);
@@ -119,14 +118,15 @@ public class OfficerMenuController {
     }
     
     private void openViewReports() {
-        InterfaceReportsSecurityGuard reportsView = new InterfaceReportsSecurityGuard();
+        InterfaceReportsOfficer reportsView = new InterfaceReportsOfficer();
+        ReportsOfficerController reportsOfficerController = new ReportsOfficerController(reportsView);
         reportsView.setVisible(true);
         officerMenuView.dispose(); 
     }
     
     private void openDownloadReport() {
-        // Crear la interfaz para Ver Reportes
-        InterfaceDownloadReportsSecurityGuard reportsView = new InterfaceDownloadReportsSecurityGuard();
+        InterfaceDownloadReportsOfficer reportsView = new InterfaceDownloadReportsOfficer();
+        DownloadReportsOfficerController downloadReportsOfficerController = new DownloadReportsOfficerController(reportsView);
         reportsView.setVisible(true);
         officerMenuView.dispose(); // Cierra la ventana actual
     }

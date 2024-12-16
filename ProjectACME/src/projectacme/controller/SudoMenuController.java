@@ -117,12 +117,14 @@ public class SudoMenuController {
     }
     private void openViewReports() {
         InterfaceReportsSudo InterfaceReportsSudoView = new InterfaceReportsSudo();
+        ReportsSudoController reportsSudoController = new ReportsSudoController(InterfaceReportsSudoView);
         InterfaceReportsSudoView.setVisible(true);
         sudoMenuView.dispose();
     }
     
     private void openDownloadReports() {
         InterfaceDownloadReportsSudo InterfaceDownloadReportsSudoView = new InterfaceDownloadReportsSudo();
+        DownloadReportsSudoController downloadReportsSudoController = new DownloadReportsSudoController(InterfaceDownloadReportsSudoView);
         InterfaceDownloadReportsSudoView.setVisible(true);
         sudoMenuView.dispose();
     }

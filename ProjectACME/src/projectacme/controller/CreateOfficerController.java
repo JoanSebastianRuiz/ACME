@@ -9,6 +9,7 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.util.stream.Collectors;
 
+import projectacme.UserActual;
 import projectacme.repository.implementation.CompanyImpl;
 import projectacme.service.Manager;
 import projectacme.util.validators.*;
@@ -26,8 +27,8 @@ public class CreateOfficerController {
     private InterfaceCreateOfficer view;
     private static final CompanyImpl companyImpl = new CompanyImpl();
 
-    public CreateOfficerController(Manager model, InterfaceCreateOfficer view) {
-        this.manager = model;
+    public CreateOfficerController(InterfaceCreateOfficer view) {
+        this.manager = UserActual.getAccessSubjectManager();
         this.view = view;
         view.getTextButtonCreate().addMouseListener(new MouseAdapter() {
             @Override
@@ -74,7 +75,7 @@ public class CreateOfficerController {
                     view.getTextInvalid().setText("Company already has officer");
                     view.getTextInvalid().setForeground(Color.RED);
                 } else{
-                    model.createOfficer(document,name,phone,emailAddress,password,idCompany);
+                    manager.createOfficer(document,name,phone,emailAddress,password,idCompany);
                     view.getTextInvalid().setText("Officer added");
                     view.getTextInvalid().setForeground(Color.GREEN);
 
