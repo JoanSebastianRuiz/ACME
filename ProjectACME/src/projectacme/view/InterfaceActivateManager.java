@@ -19,7 +19,7 @@ public class InterfaceActivateManager extends javax.swing.JFrame {
         initComponents();
         this.setResizable(false);
         this.setLocationRelativeTo(null);
-        
+        new ActivateManagerController(this);
     }
 
     /**

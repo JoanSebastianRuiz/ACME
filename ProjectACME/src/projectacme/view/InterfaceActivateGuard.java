@@ -19,7 +19,7 @@ public class InterfaceActivateGuard extends javax.swing.JFrame {
         initComponents();
         this.setResizable(false);
         this.setLocationRelativeTo(null);
-        
+        new ActivateGuardController(this);
     }
 
     /**
