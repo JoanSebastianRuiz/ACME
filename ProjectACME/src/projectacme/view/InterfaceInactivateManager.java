@@ -295,7 +295,10 @@ public class InterfaceInactivateManager extends javax.swing.JFrame {
     }//GEN-LAST:event_ExitButton1MouseClicked
 
     private void BackButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BackButton1MouseClicked
-        // TODO add your handling code here:
+        InterfaceSudoMenu nuevaVentana = new InterfaceSudoMenu();
+        nuevaVentana.setVisible(true);
+
+        this.dispose();
     }//GEN-LAST:event_BackButton1MouseClicked
 
     public JTextField getinputID(){

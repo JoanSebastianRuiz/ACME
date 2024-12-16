@@ -239,7 +239,11 @@ public class InterfaceCreateVehicle extends javax.swing.JFrame {
     }//GEN-LAST:event_inputPlateActionPerformed
 
     private void BackButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BackButton1MouseClicked
-        // TODO add your handling code here:
+        InterfaceSecurityGuardMenu nuevaVentana = new InterfaceSecurityGuardMenu();
+        nuevaVentana.setVisible(true);
+
+       
+        this.dispose();
     }//GEN-LAST:event_BackButton1MouseClicked
 
     public JTextField getinputID(){

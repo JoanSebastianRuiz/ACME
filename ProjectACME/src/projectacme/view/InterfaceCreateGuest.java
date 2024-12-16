@@ -362,7 +362,10 @@ public class InterfaceCreateGuest extends javax.swing.JFrame {
     }//GEN-LAST:event_HeaderMousePressed
 
     private void BackButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BackButton1MouseClicked
-        // TODO add your handling code here:
+        InterfaceOfficerMenu nuevaVentana = new InterfaceOfficerMenu();
+        nuevaVentana.setVisible(true);
+
+        this.dispose();
     }//GEN-LAST:event_BackButton1MouseClicked
 
     

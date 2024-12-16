@@ -432,7 +432,10 @@ public class InterfaceCreateOfficer extends javax.swing.JFrame {
     }//GEN-LAST:event_HeaderMousePressed
 
     private void BackButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BackButton1MouseClicked
-        // TODO add your handling code here:
+        InterfaceManagerMenu nuevaVentana = new InterfaceManagerMenu();
+        nuevaVentana.setVisible(true);
+
+        this.dispose();
     }//GEN-LAST:event_BackButton1MouseClicked
     
     public JTextField getInputID(){

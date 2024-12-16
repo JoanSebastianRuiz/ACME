@@ -8,7 +8,7 @@ import java.awt.Color;
 import javax.swing.JLabel;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
-
+ 
 /**
  *
  * @author Sebastian
@@ -16,6 +16,7 @@ import javax.swing.JTextField;
 public class InterfaceAccssesUsers extends javax.swing.JFrame {
 
     int xMouse,yMouse;
+    
     public InterfaceAccssesUsers() {
         initComponents();
     }
@@ -257,7 +258,12 @@ public class InterfaceAccssesUsers extends javax.swing.JFrame {
     }//GEN-LAST:event_ButtonAccessMouseClicked
 
     private void BackButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BackButtonMouseClicked
-        // TODO add your handling code here:
+        InterfaceSecurityGuardMenu nuevaVentana = new InterfaceSecurityGuardMenu();
+        nuevaVentana.setVisible(true);
+
+       
+        this.dispose();
+      
     }//GEN-LAST:event_BackButtonMouseClicked
 
     public JTextField getinputID(){
