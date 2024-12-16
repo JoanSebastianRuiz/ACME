@@ -2,6 +2,7 @@ package projectacme.controller;
 
 import projectacme.UserActual;
 import projectacme.util.Enum.ScannerType;
+import projectacme.view.InterfaceRegisterEntry;
 import projectacme.view.InterfaceRegisterExit;
 
 import java.awt.*;
@@ -10,12 +11,12 @@ import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
-public class RegisterExitController {
+public class RegisterEntryController {
 
-    private InterfaceRegisterExit registerExitView;
+    private InterfaceRegisterEntry registerExitView;
 
-    public RegisterExitController(InterfaceRegisterExit registerExitView) {
-        this.registerExitView = registerExitView;
+    public RegisterEntryController(InterfaceRegisterEntry registerEntryView) {
+        this.registerExitView = registerEntryView;
         initController();
     }
 
@@ -30,14 +31,14 @@ public class RegisterExitController {
 
     public void registerExit(){
         try {
-            if(!UserActual.getAccessSubjectOfficer().registerAccess(ScannerType.exit, registerExitView.getinputID().getText())){
+            if(!UserActual.getAccessSubjectOfficer().registerAccess(ScannerType.entry, registerExitView.getinputID().getText())){
                 registerExitView.getinputID().setForeground(Color.RED);
             }
         } catch(Exception e) {
             System.out.println(e.getMessage());
-            if (!UserActual.getAccessSubjectSecurityGuard().registerAccess(ScannerType.exit, registerExitView.getinputID().getText())) {
-            registerExitView.getinputID().setForeground(Color.RED);
-        };
+            if (!UserActual.getAccessSubjectSecurityGuard().registerAccess(ScannerType.entry, registerExitView.getinputID().getText())) {
+                registerExitView.getinputID().setForeground(Color.RED);
+            };
         }
     }
 }

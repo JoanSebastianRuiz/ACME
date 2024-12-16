@@ -3,9 +3,8 @@ package projectacme.controller;
 import projectacme.UserActual;
 import projectacme.service.SecurityGuard;
 import projectacme.util.Report;
-import projectacme.view.InterfaceCreateSecurityGuard;
-import projectacme.view.InterfaceCreateOfficer;
-import projectacme.view.InterfaceViewReports;
+import projectacme.view.*;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -68,6 +67,12 @@ public class SecurityGuardMenuController {
             }
         });
         
+        securityGuardMenuView.getButtonRegisterEntrty().addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                openRegisterEntry();
+            }
+        });
         securityGuardMenuView.getButtonRegisterExit().addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -76,6 +81,23 @@ public class SecurityGuardMenuController {
         });
     }
 
+    private void openRegisterEntry() {
+        System.out.println("A");
+        InterfaceRegisterEntry interfaceRegisterEntry = new InterfaceRegisterEntry();
+        RegisterEntryController registerExitController = new RegisterEntryController(interfaceRegisterEntry);
+        interfaceRegisterEntry.setVisible(true);
+        securityGuardMenuView.dispose();
+        
+    }
+    
+     private void openRegisterExit() {
+                 System.out.println("B");
+         InterfaceRegisterExit interfaceRegisterExit = new InterfaceRegisterExit();
+         RegisterExitController registerExitController = new RegisterExitController(interfaceRegisterExit);
+         interfaceRegisterExit.setVisible(true);
+         securityGuardMenuView.dispose();
+        
+    }
 
 
     private void openVehicleView() {
@@ -97,14 +119,6 @@ public class SecurityGuardMenuController {
         
         InterfaceDownloadReportsSecurityGuard reportsView = new InterfaceDownloadReportsSecurityGuard();
         DownloadReportsSecurityGuardController downloadReportsSecurityGuardController = new DownloadReportsSecurityGuardController(reportsView);
-        reportsView.setVisible(true);
-        securityGuardMenuView.dispose(); 
-    }
-    
-    private void openRegisterExit() {
-       
-        InterfaceRegisterExit reportsView = new InterfaceRegisterExit();
-        RegisterExitController RegisterExitController = new RegisterExitController(reportsView);
         reportsView.setVisible(true);
         securityGuardMenuView.dispose(); 
     }
