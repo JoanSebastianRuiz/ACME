@@ -1,18 +1,24 @@
 package projectacme.controller;
 
+import projectacme.UserActual;
+import projectacme.service.Officer;
+import projectacme.util.Report;
 import projectacme.view.InterfaceOfficerMenu;
 import projectacme.view.*;
 
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class OfficerMenuController {
 
     private InterfaceOfficerMenu officerMenuView;
+    private Officer officer;
 
     public OfficerMenuController(InterfaceOfficerMenu officerMenuView) {
         this.officerMenuView = officerMenuView;
+        this.officer = UserActual.getAccessSubjectOfficer();
         initController();
     }
 
@@ -57,6 +63,19 @@ public class OfficerMenuController {
             @Override
             public void actionPerformed(ActionEvent e) {
                 openDownloadReport();
+            }
+        });
+
+        officerMenuView.getButtonLiveAccessLog().addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Report report = new Report(officer.getReportsAccessLogs(),"Live Access Log");
+                InterfaceViewReports viewReports = new InterfaceViewReports();
+                viewReports.getTextTitle().setText("Live Access Log");
+                viewReports.getTextTitleReport().setForeground(Color.white);
+                ViewReportsController viewReportsController = new ViewReportsController(viewReports, report);
+                viewReports.setVisible(true);
+                officerMenuView.setVisible(false);
             }
         });
     }

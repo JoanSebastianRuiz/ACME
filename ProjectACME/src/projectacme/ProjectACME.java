@@ -4,6 +4,7 @@
  */
 package projectacme;
 import projectacme.controller.AccessDatabaseController;
+import projectacme.controller.OfficerMenuController;
 import projectacme.repository.implementation.AnnotationImpl;
 import projectacme.util.FileManagement;
 import projectacme.view.InterfaceAccessDataBase;
@@ -19,7 +20,7 @@ import projectacme.view.InterfaceSudoMenu;
 public class ProjectACME {
 
 public static void main(String[] args) {
-    FileManagement.ReadConnectionDatabaseInformation(); // * Part Of The Final Main Loop
+    FileManagement.ReadConnectionDatabaseInformation();
     }
 }
 

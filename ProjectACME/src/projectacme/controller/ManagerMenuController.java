@@ -37,12 +37,7 @@ public class ManagerMenuController {
             }
         });
 
-        managerMenuView.getButtonReports().addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                openReports();
-            }
-        });
+
         managerMenuView.getButtonActivate().addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
