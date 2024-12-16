@@ -22,7 +22,6 @@ public class ActivateManagerController {
         this.view = view;
         this.sudo = UserActual.getAccessSubjectSudo();
         view.getTextMessage().setForeground(Color.white);
-
         view.getTextActivate().addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
@@ -41,19 +40,23 @@ public class ActivateManagerController {
                 boolean result = sudo.activityManager(manager);
 
                 if(result){
+                    System.out.println("A");
                     view.getinputID().setText("");
                     view.getTextMessage().setText("Manager activated");
                     view.getTextMessage().setForeground(Color.GREEN);
                 } else{
+                    System.out.println("B");
                     view.getTextMessage().setText("Invalid ID");
                     view.getTextMessage().setForeground(Color.RED);
                 }
             }
             else{
+                System.out.println("C");
                 view.getTextMessage().setText("Invalid ID");
                 view.getTextMessage().setForeground(Color.RED);
             }
         } else{
+            System.out.println("D");
             view.getTextMessage().setText("Invalid ID");
             view.getTextMessage().setForeground(Color.RED);
         }
