@@ -8,8 +8,10 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import projectacme.view.InterfaceActivateGuard;
 import projectacme.view.InterfaceCreateReport;
+import projectacme.view.InterfaceDownloadReportsManager;
 import projectacme.view.InterfaceInactivateGuard;
 import projectacme.view.InterfaceManagerMenu;
+import projectacme.view.InterfaceReportsManager;
 
 public class ManagerMenuController {
 
@@ -55,10 +57,24 @@ public class ManagerMenuController {
             }
         });
         
+        managerMenuView.getButtonViewReports().addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                openViewReports();
+            }
+        });
+        
         managerMenuView.ButtonRegisterReport().addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 openCreateReport();
+            }
+        });
+        
+        managerMenuView.getButtonDownloadReports().addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                openDownloadReport();
             }
         });
     }
@@ -99,6 +115,20 @@ public class ManagerMenuController {
     private void openCreateReport() {
         // Crear la interfaz para Ver Reportes
         InterfaceCreateReport reportsView = new InterfaceCreateReport();
+        reportsView.setVisible(true);
+        managerMenuView.dispose(); // Cierra la ventana actual
+    }
+    
+    private void openViewReports() {
+        // Crear la interfaz para Ver Reportes
+        InterfaceReportsManager reportsView = new InterfaceReportsManager();
+        reportsView.setVisible(true);
+        managerMenuView.dispose(); // Cierra la ventana actual
+    }
+    
+    private void openDownloadReport() {
+        // Crear la interfaz para Ver Reportes
+        InterfaceDownloadReportsManager reportsView = new InterfaceDownloadReportsManager();
         reportsView.setVisible(true);
         managerMenuView.dispose(); // Cierra la ventana actual
     }
