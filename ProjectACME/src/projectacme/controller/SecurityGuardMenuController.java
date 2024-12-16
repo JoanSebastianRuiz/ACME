@@ -16,6 +16,7 @@ import projectacme.view.InterfaceActivateGuard;
 import projectacme.view.InterfaceDownloadReportsManager;
 import projectacme.view.InterfaceDownloadReportsSecurityGuard;
 import projectacme.view.InterfaceInactivateGuard;
+import projectacme.view.InterfaceRegisterExit;
 import projectacme.view.InterfaceReportsManager;
 import projectacme.view.InterfaceReportsSecurityGuard;
 import projectacme.view.InterfaceSecurityGuardMenu;
@@ -66,6 +67,13 @@ public class SecurityGuardMenuController {
                 openDownloadReport();
             }
         });
+        
+        securityGuardMenuView.getButtonRegisterExit().addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                openRegisterExit();
+            }
+        });
     }
 
 
@@ -78,18 +86,26 @@ public class SecurityGuardMenuController {
     }
     
     private void openViewReports() {
-        // Crear la interfaz para Ver Reportes
+        
         InterfaceReportsSecurityGuard reportsView = new InterfaceReportsSecurityGuard();
         ReportsSecurityGuardController reportsSecurityGuardController = new ReportsSecurityGuardController(reportsView);
         reportsView.setVisible(true);
-        securityGuardMenuView.dispose(); // Cierra la ventana actual
+        securityGuardMenuView.dispose(); 
     }
     
     private void openDownloadReport() {
-        // Crear la interfaz para Ver Reportes
+        
         InterfaceDownloadReportsSecurityGuard reportsView = new InterfaceDownloadReportsSecurityGuard();
         DownloadReportsSecurityGuardController downloadReportsSecurityGuardController = new DownloadReportsSecurityGuardController(reportsView);
         reportsView.setVisible(true);
-        securityGuardMenuView.dispose(); // Cierra la ventana actual
+        securityGuardMenuView.dispose(); 
+    }
+    
+    private void openRegisterExit() {
+       
+        InterfaceRegisterExit reportsView = new InterfaceRegisterExit();
+        RegisterExitController RegisterExitController = new RegisterExitController(reportsView);
+        reportsView.setVisible(true);
+        securityGuardMenuView.dispose(); 
     }
 }
