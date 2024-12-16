@@ -14,6 +14,7 @@ public class AccessDatabaseController {
     public AccessDatabaseController(InterfaceAccessDataBase accessDataBaseView) {
         System.out.println("AccessDatabaseController initialized");
         this.accessDataBaseView = accessDataBaseView;
+        accessDataBaseView.getTextMessage().setForeground(Color.WHITE);
         initController();
     }
 
@@ -29,11 +30,19 @@ public class AccessDatabaseController {
                             new String(accessDataBaseView.getInputPassword().getPassword()));
                     if (ConnectionData.getConnectionDatabase() == null) {
                         System.out.println("Connection Database Failed");
+                        accessDataBaseView.getTextMessage().setText("Connection database failed");
+                        accessDataBaseView.getTextMessage().setForeground(Color.RED);
                         accessDataBaseView.getInputID().setForeground(Color.red);
                         accessDataBaseView.getInputUser().setForeground(Color.red);
                         accessDataBaseView.getInputPassword().setForeground(Color.red);
                     } else {
                         System.out.println("Connection Database Successfully");
+                        accessDataBaseView.getTextMessage().setText("Connection database successfully");
+                        accessDataBaseView.getTextMessage().setForeground(Color.GREEN);
+
+                        accessDataBaseView.getInputID().setText("");
+                        accessDataBaseView.getInputUser().setText("");
+                        accessDataBaseView.getInputPassword().setText("");
                     }
                 } catch (Exception e) {
                     System.out.println("Error: " + e.getMessage());

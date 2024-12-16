@@ -4,6 +4,7 @@ import projectacme.UserActual;
 import projectacme.service.Manager;
 import projectacme.view.InterfaceCreateManager;
 
+import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
@@ -13,6 +14,7 @@ public class CreateManagerController {
 
     public CreateManagerController(InterfaceCreateManager createManagerView) {
         this.interfaceCreateManager = createManagerView;
+        interfaceCreateManager.getTextMessage().setForeground(Color.WHITE);
         initController();
     }
 
@@ -31,7 +33,22 @@ public class CreateManagerController {
         String phone = interfaceCreateManager.getInputPhone().getText();
         String email = interfaceCreateManager.getInputEmailAddress().getText();
         String password = new String(interfaceCreateManager.getInputPassword().getPassword());
-        System.out.println("Success: -" + UserActual.getAccessSubjectSudo().creationManager(id, name, phone, email, password));
+        boolean result = UserActual.getAccessSubjectSudo().creationManager(id, name, phone, email, password);
+        System.out.println("Success: -" + result);
+
+        if(result){
+            interfaceCreateManager.getTextMessage().setForeground(Color.GREEN);
+            interfaceCreateManager.getTextMessage().setText("Create manager sucessfully");
+
+            interfaceCreateManager.getInputID().setText("");
+            interfaceCreateManager.getInputName().setText("");
+            interfaceCreateManager.getInputPhone().setText("");
+            interfaceCreateManager.getInputEmailAddress().setText("");
+            interfaceCreateManager.getInputPassword().setText("");
+        } else{
+            interfaceCreateManager.getTextMessage().setForeground(Color.RED);
+            interfaceCreateManager.getTextMessage().setText("Invalid data");
+        }
     }
 
 

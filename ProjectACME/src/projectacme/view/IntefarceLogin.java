@@ -35,13 +35,14 @@ public class IntefarceLogin extends javax.swing.JFrame {
         TextLogin = new javax.swing.JLabel();
         TextUsername = new javax.swing.JLabel();
         InputUsername = new javax.swing.JTextField();
-        TextPassword = new javax.swing.JLabel();
+        TextMessage = new javax.swing.JLabel();
         InputPassword = new javax.swing.JPasswordField();
         ButtonEnter = new javax.swing.JPanel();
         TextButtonEnter = new javax.swing.JLabel();
         Header = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
         ButtonExit = new javax.swing.JLabel();
+        TextPassword = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setLocationByPlatform(true);
@@ -88,10 +89,10 @@ public class IntefarceLogin extends javax.swing.JFrame {
         });
         Background.add(InputUsername, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 170, 260, 50));
 
-        TextPassword.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        TextPassword.setForeground(new java.awt.Color(153, 153, 153));
-        TextPassword.setText("PASSWORD");
-        Background.add(TextPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 240, 140, 40));
+        TextMessage.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        TextMessage.setForeground(new java.awt.Color(153, 153, 153));
+        TextMessage.setText("Message");
+        Background.add(TextMessage, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 350, 350, 40));
 
         InputPassword.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
@@ -176,6 +177,11 @@ public class IntefarceLogin extends javax.swing.JFrame {
 
         Background.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 0, 50, 40));
 
+        TextPassword.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        TextPassword.setForeground(new java.awt.Color(153, 153, 153));
+        TextPassword.setText("PASSWORD");
+        Background.add(TextPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 240, 140, 40));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -233,6 +239,12 @@ public class IntefarceLogin extends javax.swing.JFrame {
     public JPasswordField getInputPassword(){
         return InputPassword;
     }
+
+    public JLabel getTextMessage() {
+        return TextMessage;
+    }
+    
+    
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -276,6 +288,7 @@ public class IntefarceLogin extends javax.swing.JFrame {
     private javax.swing.JLabel TextACME;
     private javax.swing.JLabel TextButtonEnter;
     private javax.swing.JLabel TextLogin;
+    private javax.swing.JLabel TextMessage;
     private javax.swing.JLabel TextPassword;
     private javax.swing.JLabel TextSingUp;
     private javax.swing.JLabel TextUsername;
