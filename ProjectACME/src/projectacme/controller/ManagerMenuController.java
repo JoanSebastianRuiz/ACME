@@ -80,13 +80,6 @@ public class ManagerMenuController {
         officerView.setVisible(true);
         managerMenuView.dispose(); 
     }
-
-    private void openReports() {
-        // Crear la interfaz para Ver Reportes
-        InterfaceViewReports reportsView = new InterfaceViewReports();
-        reportsView.setVisible(true);
-        managerMenuView.dispose(); // Cierra la ventana actual
-    }
     
     private void openActivate() {
         // Crear la interfaz para Ver Reportes
@@ -107,6 +100,7 @@ public class ManagerMenuController {
     private void openViewReports() {
         // Crear la interfaz para Ver Reportes
         InterfaceReportsManager reportsView = new InterfaceReportsManager();
+        ReportsManagerController reportsManagerController = new ReportsManagerController(reportsView);
         reportsView.setVisible(true);
         managerMenuView.dispose(); // Cierra la ventana actual
     }
@@ -114,6 +108,7 @@ public class ManagerMenuController {
     private void openDownloadReport() {
         // Crear la interfaz para Ver Reportes
         InterfaceDownloadReportsManager reportsView = new InterfaceDownloadReportsManager();
+        DownloadReportsManagerController controller = new DownloadReportsManagerController(reportsView);
         reportsView.setVisible(true);
         managerMenuView.dispose(); // Cierra la ventana actual
     }

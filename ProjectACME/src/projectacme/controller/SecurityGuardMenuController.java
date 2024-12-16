@@ -32,12 +32,6 @@ public class SecurityGuardMenuController {
 
     private void initController() {
         // Agregar ActionListener a los botones
-        securityGuardMenuView.getButtonIndividual().addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                openIndividualView();
-            }
-        });
 
         securityGuardMenuView.getButtonVehicle().addActionListener(new ActionListener() {
             @Override
@@ -74,14 +68,11 @@ public class SecurityGuardMenuController {
         });
     }
 
-    private void openIndividualView() {
-        InterfaceAccssesUsers individualView = new InterfaceAccssesUsers();
-        individualView.setVisible(true);
-        securityGuardMenuView.dispose(); 
-    }
+
 
     private void openVehicleView() {
         InterfaceCreateVehicle vehicleView = new InterfaceCreateVehicle();
+        CreateVehicleController createVehicleController = new CreateVehicleController(vehicleView);
         vehicleView.setVisible(true);
         securityGuardMenuView.dispose(); 
     }
@@ -89,6 +80,7 @@ public class SecurityGuardMenuController {
     private void openViewReports() {
         // Crear la interfaz para Ver Reportes
         InterfaceReportsSecurityGuard reportsView = new InterfaceReportsSecurityGuard();
+        ReportsSecurityGuardController reportsSecurityGuardController = new ReportsSecurityGuardController(reportsView);
         reportsView.setVisible(true);
         securityGuardMenuView.dispose(); // Cierra la ventana actual
     }
@@ -96,6 +88,7 @@ public class SecurityGuardMenuController {
     private void openDownloadReport() {
         // Crear la interfaz para Ver Reportes
         InterfaceDownloadReportsSecurityGuard reportsView = new InterfaceDownloadReportsSecurityGuard();
+        DownloadReportsSecurityGuardController downloadReportsSecurityGuardController = new DownloadReportsSecurityGuardController(reportsView);
         reportsView.setVisible(true);
         securityGuardMenuView.dispose(); // Cierra la ventana actual
     }

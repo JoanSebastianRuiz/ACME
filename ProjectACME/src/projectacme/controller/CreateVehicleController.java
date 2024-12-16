@@ -1,5 +1,6 @@
 package projectacme.controller;
 
+import projectacme.UserActual;
 import projectacme.service.SecurityGuard;
 import projectacme.util.validators.AccessSubjectValidator;
 import projectacme.util.validators.PlateValidator;
@@ -13,9 +14,9 @@ public class CreateVehicleController {
     InterfaceCreateVehicle view;
     SecurityGuard securityGuard;
 
-    public CreateVehicleController(InterfaceCreateVehicle view, SecurityGuard securityGuard) {
+    public CreateVehicleController(InterfaceCreateVehicle view) {
         this.view = view;
-        this.securityGuard = securityGuard;
+        this.securityGuard = UserActual.getAccessSubjectSecurityGuard();
         view.getTextMessage().setForeground(Color.white);
         view.getButtonCreate().addMouseListener(new MouseAdapter() {
             @Override
