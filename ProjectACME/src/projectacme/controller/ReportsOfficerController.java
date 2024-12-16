@@ -1,5 +1,6 @@
 package projectacme.controller;
 
+import projectacme.UserActual;
 import projectacme.service.Manager;
 import projectacme.service.Officer;
 import projectacme.util.Report;
@@ -11,12 +12,12 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
 public class ReportsOfficerController {
-    InterfaceReportsOfficer view;
-    Officer officer;
+    private InterfaceReportsOfficer view;
+    private Officer officer;
 
-    public ReportsOfficerController(InterfaceReportsOfficer view, Officer officer) {
+    public ReportsOfficerController(InterfaceReportsOfficer view) {
         this.view = view;
-        this.officer = officer;
+        this.officer = UserActual.getAccessSubjectOfficer();
 
         view.getTextWorkers().addMouseListener(new MouseAdapter() {
             @Override

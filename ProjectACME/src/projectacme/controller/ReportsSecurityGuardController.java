@@ -1,5 +1,6 @@
 package projectacme.controller;
 
+import projectacme.UserActual;
 import projectacme.service.Manager;
 import projectacme.service.SecurityGuard;
 import projectacme.util.Report;
@@ -11,12 +12,12 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
 public class ReportsSecurityGuardController {
-    InterfaceReportsSecurityGuard view;
-    SecurityGuard securityGuard;
+    private InterfaceReportsSecurityGuard view;
+    private SecurityGuard securityGuard;
 
-    public ReportsSecurityGuardController(InterfaceReportsSecurityGuard view, SecurityGuard securityGuard) {
+    public ReportsSecurityGuardController(InterfaceReportsSecurityGuard view) {
         this.view = view;
-        this.securityGuard = securityGuard;
+        this.securityGuard = UserActual.getAccessSubjectSecurityGuard();
 
         view.getTextAuthorizedPeople().addMouseListener(new MouseAdapter() {
             @Override

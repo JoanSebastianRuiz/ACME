@@ -1,5 +1,6 @@
 package projectacme.controller;
 
+import projectacme.UserActual;
 import projectacme.service.Manager;
 import projectacme.service.Officer;
 import projectacme.util.ThreadReportManage;
@@ -19,9 +20,9 @@ public class DownloadReportsOfficerController {
     private Officer officer;
     private Map<String, Supplier<List<Map<String, Object>>>> reportFunctions = new HashMap<>();
 
-    public DownloadReportsOfficerController(InterfaceDownloadReportsOfficer view, Officer officer) {
+    public DownloadReportsOfficerController(InterfaceDownloadReportsOfficer view) {
         this.view = view;
-        this.officer = officer;
+        this.officer = UserActual.getAccessSubjectOfficer();
         view.getTextMessage().setForeground(Color.white);
 
         view.getTextDownload().addMouseListener(new MouseAdapter() {

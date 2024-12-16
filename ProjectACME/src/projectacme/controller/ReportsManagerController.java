@@ -1,5 +1,6 @@
 package projectacme.controller;
 
+import projectacme.UserActual;
 import projectacme.service.Manager;
 import projectacme.util.Report;
 import projectacme.view.InterfaceReportsManager;
@@ -9,12 +10,12 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
 public class ReportsManagerController {
-    InterfaceReportsManager view;
-    Manager manager;
+    private InterfaceReportsManager view;
+    private Manager manager;
 
-    public ReportsManagerController(InterfaceReportsManager view, Manager manager) {
+    public ReportsManagerController(InterfaceReportsManager view) {
         this.view = view;
-        this.manager = manager;
+        this.manager = UserActual.getAccessSubjectManager();
 
         view.getTextWorkers().addMouseListener(new MouseAdapter() {
             @Override

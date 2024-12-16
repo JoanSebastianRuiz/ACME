@@ -1,5 +1,6 @@
 package projectacme.controller;
 
+import projectacme.UserActual;
 import projectacme.service.Officer;
 import projectacme.service.Sudo;
 import projectacme.util.ThreadReportManage;
@@ -19,9 +20,9 @@ public class DownloadReportsSudoController {
     Sudo sudo;
     private Map<String, Supplier<List<Map<String, Object>>>> reportFunctions = new HashMap<>();
 
-    public DownloadReportsSudoController(InterfaceDownloadReportsSudo view, Sudo sudo) {
+    public DownloadReportsSudoController(InterfaceDownloadReportsSudo view) {
         this.view = view;
-        this.sudo = sudo;
+        this.sudo = UserActual.getAccessSubjectSudo();
         view.getTextMessage().setForeground(Color.white);
 
         view.getTextDownload().addMouseListener(new MouseAdapter() {

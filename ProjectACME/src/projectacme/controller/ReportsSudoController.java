@@ -1,5 +1,6 @@
 package projectacme.controller;
 
+import projectacme.UserActual;
 import projectacme.service.Sudo;
 import projectacme.util.Report;
 import projectacme.view.InterfaceReportsSudo;
@@ -12,9 +13,9 @@ public class ReportsSudoController {
     private InterfaceReportsSudo view;
     private Sudo sudo;
 
-    public ReportsSudoController(InterfaceReportsSudo view, Sudo sudo) {
+    public ReportsSudoController(InterfaceReportsSudo view) {
         this.view = view;
-        this.sudo = sudo;
+        this.sudo = UserActual.getAccessSubjectSudo();
 
         view.getTextManagers().addMouseListener(new MouseAdapter() {
             @Override

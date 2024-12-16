@@ -1,5 +1,6 @@
 package projectacme.controller;
 
+import projectacme.UserActual;
 import projectacme.service.Manager;
 import projectacme.service.SecurityGuard;
 import projectacme.util.ThreadReportManage;
@@ -20,9 +21,9 @@ public class DownloadReportsSecurityGuardController {
     SecurityGuard securityGuard;
     private Map<String, Supplier<List<Map<String, Object>>>> reportFunctions = new HashMap<>();
 
-    public DownloadReportsSecurityGuardController(InterfaceDownloadReportsSecurityGuard view, SecurityGuard securityGuard) {
+    public DownloadReportsSecurityGuardController(InterfaceDownloadReportsSecurityGuard view) {
         this.view = view;
-        this.securityGuard = securityGuard;
+        this.securityGuard = UserActual.getAccessSubjectSecurityGuard();
         view.getTextMessage().setForeground(Color.white);
 
         view.getTextDownload().addMouseListener(new MouseAdapter() {
