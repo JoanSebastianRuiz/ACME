@@ -6,6 +6,7 @@ package projectacme;
 import projectacme.controller.AccessDatabaseController;
 import projectacme.controller.OfficerMenuController;
 import projectacme.repository.implementation.AnnotationImpl;
+import projectacme.util.ConnectionData;
 import projectacme.util.FileManagement;
 import projectacme.view.InterfaceAccessDataBase;
 import projectacme.view.InterfaceManagerMenu;
@@ -20,8 +21,7 @@ import projectacme.view.InterfaceSudoMenu;
 public class ProjectACME {
 
 public static void main(String[] args) {
-        InterfaceSudoMenu securityGuardView = new InterfaceSudoMenu();
-        securityGuardView.setVisible(true);
+        FileManagement.ReadConnectionDatabaseInformation();
     }
 }
 
