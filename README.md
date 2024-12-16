@@ -12,6 +12,8 @@
 4. [Installation and Configuration](#installation-and-configuration-)
 5. [Database Model](#database-model-%EF%B8%8F)
 6. [Class Structure](#class-structure-)
+7. [Solid](#solid-)
+
 ## General Information 📒
 
 **Acme Business Complex Access Control** is a program developed in Java to record access to a business complex.
@@ -279,6 +281,39 @@ Provides explanations for annotations or access-related issues.
 
 ## Config
 <img src="readmeFiles/AcmeClassDiagram8.png">
+
+## SOLID 🪨
+
+solid principles used in our project
+
+## Single Responsibility Principle
+
+- DAO: Each DAO class is responsible for handling database operations related to a specific entity, separating data access logic from business logic.
+
+- Model View Controller: The separation of concerns ensures that the Model handles the data, the View handles the UI, and the Controller manages user interaction logic. Each component has a single, well-defined responsibility.
+
+## Open/Closed Principle
+
+- Factory: Factories allow you to introduce new types of objects without modifying existing code. For example, if you need a new AccessSubject type, you can extend the factory without altering its base implementation.
+
+- Model View Controller: Views can be extended or replaced without modifying the Model or Controller. For example, switching between a desktop or web UI doesn't require changing the core business logic.
+
+- Observer: You can add new observers without altering the observable object.
+
+## Liskov Substitution Principle
+
+- Factory and Builder: Subtypes of products or builders can replace their parent types without affecting client code, as they adhere to the expected contract.
+
+## Interface Segregation Principle
+
+- Model View Controller: Interfaces are applied to separate controller, view, and model behaviors, ensuring each class only implements the methods it needs.
+
+- DAO: DAOs Interfaces are designed for a specific entity so classes implementing them are not forced to implement methods they don't need..
+
+## Dependency Inversion Principle
+
+- DAO: interfaces for DAOs, enabling you to swap implementations like switching from SQL to NoSQL without modifying dependent code.
+- Factory: Factories depend on abstractions to create objects, reducing coupling between the creation process and concrete implementations.
 
 ## Authors 🪶
 
