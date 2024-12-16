@@ -79,6 +79,19 @@ public class SecurityGuardMenuController {
                 openRegisterExit();
             }
         });
+        securityGuardMenuView.getButtonAnnotation().addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                openAnnotation();
+            }
+        });
+
+        securityGuardMenuView.getButtonJustification().addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                openJustification();
+            }
+        });
     }
 
     private void openRegisterEntry() {
@@ -124,5 +137,20 @@ public class SecurityGuardMenuController {
         reportsView.setVisible(true);
         securityGuardMenuView.dispose(); 
     }
-    
+
+    private void openAnnotation() {
+
+        InterfaceCreateAnnotation reportsView = new InterfaceCreateAnnotation();
+        CreateAnnotationController createAnnotationController = new CreateAnnotationController(reportsView);
+        reportsView.setVisible(true);
+        securityGuardMenuView.dispose();
+    }
+
+    private void openJustification() {
+
+        InterfaceCreateJustification reportsView = new InterfaceCreateJustification();
+        CreateJustificationController createJustificationController = new CreateJustificationController(reportsView);
+        reportsView.setVisible(true);
+        securityGuardMenuView.dispose();
+    }
 }

@@ -3,6 +3,8 @@ package projectacme.controller;
 import projectacme.UserActual;
 import projectacme.util.Enum.AccessSubjectRoleEnum;
 import projectacme.util.Enum.ScannerType;
+import projectacme.util.validators.AccessSubjectValidator;
+import projectacme.util.validators.NumberValidator;
 import projectacme.view.InterfaceRegisterExit;
 
 import java.awt.*;
@@ -32,27 +34,47 @@ public class RegisterExitController {
 
     public void registerExit() {
         if(UserActual.getAccessSubject().getRole()== AccessSubjectRoleEnum.officer) {
-            boolean result = UserActual.getAccessSubjectOfficer().registerAccess(ScannerType.exit, registerExitView.getinputID().getText());
-            System.out.println("");
-            System.out.println(result);
-            if (result) {
-                registerExitView.getTextMessage().setText("Successful exit recorded");
-                registerExitView.getTextMessage().setForeground(Color.GREEN);
-                registerExitView.getinputID().setText("");
-            } else {
+            if(NumberValidator.isNumeric(registerExitView.getinputID().getText())) {
+                if (AccessSubjectValidator.accessSubjectValidator(registerExitView.getinputID().getText())) {
+                    boolean result = UserActual.getAccessSubjectOfficer().registerAccess(ScannerType.exit, registerExitView.getinputID().getText());
+                    if (result) {
+                        registerExitView.getTextMessage().setText("Successful exit recorded");
+                        registerExitView.getTextMessage().setForeground(Color.GREEN);
+                        registerExitView.getinputID().setText("");
+                    } else {
+                        registerExitView.getTextMessage().setText("Invalid data");
+                        registerExitView.getTextMessage().setForeground(Color.RED);
+                    }
+                } else{
+                    registerExitView.getTextMessage().setText("Invalid data");
+                    registerExitView.getTextMessage().setForeground(Color.RED);
+                }
+            } else{
                 registerExitView.getTextMessage().setText("Invalid data");
                 registerExitView.getTextMessage().setForeground(Color.RED);
             }
+
         } else if (UserActual.getAccessSubject().getRole()== AccessSubjectRoleEnum.securityGuard) {
-            boolean result = UserActual.getAccessSubjectSecurityGuard().registerAccess(ScannerType.exit, registerExitView.getinputID().getText());
-            if (result) {
-                registerExitView.getTextMessage().setText("Successful exit recorded");
-                registerExitView.getTextMessage().setForeground(Color.GREEN);
-                registerExitView.getinputID().setText("");
-            } else {
+            if(NumberValidator.isNumeric(registerExitView.getinputID().getText())) {
+                if (AccessSubjectValidator.accessSubjectValidator(registerExitView.getinputID().getText())) {
+                    boolean result = UserActual.getAccessSubjectSecurityGuard().registerAccess(ScannerType.exit, registerExitView.getinputID().getText());
+                    if (result) {
+                        registerExitView.getTextMessage().setText("Successful exit recorded");
+                        registerExitView.getTextMessage().setForeground(Color.GREEN);
+                        registerExitView.getinputID().setText("");
+                    } else {
+                        registerExitView.getTextMessage().setText("Invalid data");
+                        registerExitView.getTextMessage().setForeground(Color.RED);
+                    }
+                }else{
+                    registerExitView.getTextMessage().setText("Invalid data");
+                    registerExitView.getTextMessage().setForeground(Color.RED);
+                }
+            }else{
                 registerExitView.getTextMessage().setText("Invalid data");
                 registerExitView.getTextMessage().setForeground(Color.RED);
             }
+
         }
     }
 }

@@ -96,7 +96,7 @@ public class SecurityGuard extends User implements RegisterAccessService, Observ
         }
     }
 
-    public boolean registerJustification(Timestamp datetime, String reason, int idAnnotation){
+    public boolean registerJustification(String reason, int idAnnotation){
         if(AnnotationValidator.annotationValidator(idAnnotation)){
             if(StringValidator.StringLengthLessThanValidator(reason,500)
                 && !AnnotationValidator.annotationHasJustification(idAnnotation)){

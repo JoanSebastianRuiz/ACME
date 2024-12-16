@@ -28,9 +28,18 @@ public class AnnotationValidator {
 
     public static boolean annotationHasJustification(int id){
         int countJustification = reportManagerImpl.getInformationJustifications().stream()
-                .filter(element->(Integer)element.get("Identifier")==id)
+                .filter(element-> {
+                    if(element.get("Identifer Annotation")!=null){
+                        return (Integer) element.get("Identifer Annotation") == id;
+                    }
+                    else{
+                        return false;
+                    }
+                }
+                )
                 .collect(Collectors.toList())
                 .size();
+
 
         return countJustification>=1;
     }
