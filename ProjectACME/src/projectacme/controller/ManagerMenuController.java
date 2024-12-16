@@ -68,7 +68,7 @@ public class ManagerMenuController {
 
     private void openCreateSecurityGuard() {
         InterfaceCreateSecurityGuard securityGuardView = new InterfaceCreateSecurityGuard();
-        // TODO: CONTROLLER
+        CreateSecurityGuardController securityGuardController = new CreateSecurityGuardController(securityGuardView);
         securityGuardView.setVisible(true);
         managerMenuView.dispose(); 
     }
