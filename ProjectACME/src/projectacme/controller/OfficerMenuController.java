@@ -46,6 +46,13 @@ public class OfficerMenuController {
             }
         });
 
+        officerMenuView.getButtonRegisterWorker().addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                openRegisterWorker();
+            }
+        });
+
         officerMenuView.getButtonRegisterExit().addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {

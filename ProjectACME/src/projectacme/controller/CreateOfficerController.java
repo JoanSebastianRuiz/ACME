@@ -27,7 +27,7 @@ public class CreateOfficerController {
     private InterfaceCreateOfficer view;
     private static final CompanyImpl companyImpl = new CompanyImpl();
 
-    public CreateOfficerController(InterfaceCreateOfficer view) {
+    public CreateOfficerController(Manager accessSubjectManager, InterfaceCreateOfficer view) {
         this.manager = UserActual.getAccessSubjectManager();
         this.view = view;
         view.getTextButtonCreate().addMouseListener(new MouseAdapter() {
