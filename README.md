@@ -277,7 +277,7 @@ Provides explanations for annotations or access-related issues.
 ## Factory
 <img src="readmeFiles/AcmeClassDiagram7.png">
 
-## Factory
+## Config
 <img src="readmeFiles/AcmeClassDiagram8.png">
 
 ## Authors 🪶
