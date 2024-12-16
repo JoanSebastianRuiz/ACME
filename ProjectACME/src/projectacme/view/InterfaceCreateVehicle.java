@@ -184,7 +184,7 @@ public class InterfaceCreateVehicle extends javax.swing.JFrame {
         getContentPane().add(inputPlate, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 340, 166, 36));
 
         Title.setFont(new java.awt.Font("MathJax_Typewriter", 0, 24)); // NOI18N
-        Title.setText("Crew new Vehicle");
+        Title.setText("Create new Vehicle");
         getContentPane().add(Title, new org.netbeans.lib.awtextra.AbsoluteConstraints(434, 91, 248, 37));
 
         textName1.setFont(new java.awt.Font("Rasa Light", 0, 18)); // NOI18N
@@ -307,7 +307,6 @@ public class InterfaceCreateVehicle extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel BackButton;
     private javax.swing.JLabel BackButton1;
     private javax.swing.JLabel ButtonCreate;
     private javax.swing.JPanel CreateButton24;

@@ -88,10 +88,6 @@
                                           <EmptySpace min="159" pref="159" max="-2" attributes="0"/>
                                           <Component id="textPassword" min="-2" max="-2" attributes="0"/>
                                       </Group>
-                                      <Group type="102" attributes="0">
-                                          <EmptySpace min="134" pref="134" max="-2" attributes="0"/>
-                                          <Component id="CreateButton" min="-2" max="-2" attributes="0"/>
-                                      </Group>
                                       <Group type="102" alignment="0" attributes="0">
                                           <Component id="textEmailAddress" min="-2" pref="166" max="-2" attributes="0"/>
                                           <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
@@ -104,6 +100,10 @@
                               <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
                                   <Component id="textInvalid" min="-2" pref="345" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace min="-2" pref="167" max="-2" attributes="0"/>
+                                  <Component id="CreateButton" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
@@ -122,24 +122,16 @@
                           <EmptySpace max="32767" attributes="0"/>
                           <Component id="ImageSudoInterface" min="-2" pref="552" max="-2" attributes="0"/>
                       </Group>
-                      <Group type="102" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="ExitButton" min="-2" max="-2" attributes="0"/>
-                              <Group type="102" attributes="0">
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <EmptySpace min="314" pref="314" max="-2" attributes="0"/>
-                                          <Component id="inputName" min="-2" pref="36" max="-2" attributes="0"/>
-                                      </Group>
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <EmptySpace min="210" pref="210" max="-2" attributes="0"/>
-                                          <Component id="inputID" min="-2" pref="36" max="-2" attributes="0"/>
-                                      </Group>
-                                  </Group>
-                                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Component id="textInvalid" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
-                                  <Component id="CreateButton" min="-2" max="-2" attributes="0"/>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace min="314" pref="314" max="-2" attributes="0"/>
+                                  <Component id="inputName" min="-2" pref="36" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace min="210" pref="210" max="-2" attributes="0"/>
+                                  <Component id="inputID" min="-2" pref="36" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" attributes="0">
                                   <Group type="103" groupAlignment="0" attributes="0">
@@ -182,7 +174,11 @@
                                   </Group>
                               </Group>
                           </Group>
-                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
+                          <Component id="textInvalid" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Component id="CreateButton" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="52" max="-2" attributes="0"/>
                       </Group>
                   </Group>
               </Group>
