@@ -94,12 +94,14 @@ public class SudoMenuController {
 
     private void openActivateManager() {
         InterfaceActivateManager activateManagerView = new InterfaceActivateManager();
+        ActivateManagerController activateManagerController = new ActivateManagerController(activateManagerView);
         activateManagerView.setVisible(true);
         sudoMenuView.dispose();
     }
 
     private void openInactivateManager() {
         InterfaceInactivateManager inactivateManagerView = new InterfaceInactivateManager();
+        InactivateManagerController inactivateManagerController = new InactivateManagerController(inactivateManagerView);
         inactivateManagerView.setVisible(true);
         sudoMenuView.dispose();
     }

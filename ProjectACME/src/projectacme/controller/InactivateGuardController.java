@@ -1,5 +1,6 @@
 package projectacme.controller;
 
+import projectacme.UserActual;
 import projectacme.model.AccessSubject;
 import projectacme.repository.implementation.AccessSubjectImpl;
 import projectacme.service.Manager;
@@ -17,9 +18,9 @@ public class InactivateGuardController {
     private Manager manager;
     private final AccessSubjectImpl accessSubjectImpl = new AccessSubjectImpl();
 
-    public InactivateGuardController(InterfaceInactivateGuard view, Manager manager) {
+    public InactivateGuardController(InterfaceInactivateGuard view) {
         this.view = view;
-        this.manager = manager;
+        this.manager = UserActual.getAccessSubjectManager();
 
         view.getTextMessage().setForeground(Color.white);
 

@@ -87,15 +87,17 @@ public class ManagerMenuController {
     
     private void openActivate() {
         // Crear la interfaz para Ver Reportes
-        InterfaceActivateGuard reportsView = new InterfaceActivateGuard();
-        reportsView.setVisible(true);
+        InterfaceActivateGuard view = new InterfaceActivateGuard();
+        ActivateGuardController activateGuardController = new ActivateGuardController(view);
+        view.setVisible(true);
         managerMenuView.dispose(); // Cierra la ventana actual
     }
     
     private void openInactivate() {
         // Crear la interfaz para Ver Reportes
-        InterfaceInactivateGuard reportsView = new InterfaceInactivateGuard();
-        reportsView.setVisible(true);
+        InterfaceInactivateGuard view = new InterfaceInactivateGuard();
+        InactivateGuardController inactivateGuardController = new InactivateGuardController(view);
+        view.setVisible(true);
         managerMenuView.dispose(); // Cierra la ventana actual
     }
     
