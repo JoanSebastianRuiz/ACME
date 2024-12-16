@@ -6,6 +6,7 @@ package projectacme.view;
 
 import javax.swing.JLabel;
 import javax.swing.JTextField;
+import projectacme.controller.ReportsSudoController;
 
 /**
  *
@@ -18,6 +19,7 @@ public class InterfaceReportsSudo extends javax.swing.JFrame {
         initComponents();
         this.setResizable(false);
         this.setLocationRelativeTo(null);
+        new ReportsSudoController(this);
     }
 
     /**
