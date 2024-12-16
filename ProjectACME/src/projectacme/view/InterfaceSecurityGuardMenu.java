@@ -367,7 +367,7 @@ public class InterfaceSecurityGuardMenu extends javax.swing.JFrame {
     
     
     public JButton getButtonViewReports(){
-        return ButtonRegisterExit;
+        return ButtonViewReports1;
     }
     
     public JButton getButtonDownloadReports(){

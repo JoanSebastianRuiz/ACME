@@ -20,7 +20,8 @@ import projectacme.view.InterfaceSudoMenu;
 public class ProjectACME {
 
 public static void main(String[] args) {
-    FileManagement.ReadConnectionDatabaseInformation();
+        InterfaceSudoMenu securityGuardView = new InterfaceSudoMenu();
+        securityGuardView.setVisible(true);
     }
 }
 
