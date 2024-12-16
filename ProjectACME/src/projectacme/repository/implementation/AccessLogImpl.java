@@ -39,14 +39,18 @@ public class AccessLogImpl implements AccessLogDao, Subject{
             stmt.setString(1,accessLog.getType().name());
             stmt.setTimestamp(2,accessLog.getDatetime());
             stmt.setString(3,accessLog.getIdAccessSubject());
+            if (accessLog.getIdScanner() != null){
             stmt.setInt(4,accessLog.getIdScanner());
+            } else {
+                stmt.setNull(4, Types.INTEGER);
+            }
             stmt.setString(5,accessLog.getIdAccessSubjectLogger());
             stmt.executeUpdate();
             System.out.println("Added new AccessLog");
             notifyObservers("New AccessLog added: " + accessLog.getId());
 
         } catch (SQLException e){
-            throw new RuntimeException("Error inserting AccessLog", e);
+            System.out.println(e.getMessage());
         }
     }
 

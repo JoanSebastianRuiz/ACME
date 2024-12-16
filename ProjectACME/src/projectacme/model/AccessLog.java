@@ -9,7 +9,7 @@ public class AccessLog {
     private final AccessType type;
     private final Timestamp datetime;
     private final String idAccessSubject;
-    private final int idScanner;
+    private final Integer idScanner;
     private final String idAccessSubjectLogger;
 
     private AccessLog(Builder builder){
@@ -37,7 +37,7 @@ public class AccessLog {
         return idAccessSubject;
     }
 
-    public int getIdScanner() {
+    public Integer getIdScanner() {
         return idScanner;
     }
 
@@ -50,7 +50,7 @@ public class AccessLog {
         private final AccessType type; // * required
         private final Timestamp datetime; // * required
         private final String idAccessSubject; // * required
-        private int idScanner; // * optional
+        private Integer idScanner; // * optional
         private String idAccessSubjectLogger; // * optional
 
         // * Methods to optional fields
@@ -66,7 +66,7 @@ public class AccessLog {
             return this;
         }
 
-        public Builder setIdScanner(int idScanner){
+        public Builder setIdScanner(Integer idScanner){
             this.idScanner=idScanner;
             return this;
         }

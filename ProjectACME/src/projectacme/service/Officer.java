@@ -18,6 +18,7 @@ import projectacme.util.validators.StringValidator;
 
 import java.sql.Timestamp;
 import java.time.Instant;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -135,8 +136,9 @@ public class Officer extends User implements ReportService, Observer, RegisterAc
 
     @Override
     public boolean registerAccess(ScannerType type, String id) {
-        AccessLog lastAccessLog = accessLogImpl.getAllAccessLog().stream().filter(accessLog -> accessLog.getIdAccessSubject().equals(id)).findFirst().orElse(null);
-
+        AccessLog lastAccessLog = accessLogImpl.getAllAccessLog().stream()
+                .filter(accessLog -> accessLog.getIdAccessSubject().equals(id)).max(Comparator.comparing(AccessLog::getDatetime))
+                .orElse(null);
         if(type==ScannerType.exit){
             if (lastAccessLog == null || !lastAccessLog.getType().toString().equals(ScannerType.exit.toString())){
 
